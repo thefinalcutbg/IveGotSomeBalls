@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://cl62vwhpr4w16"]
+
+[ext_resource type="Script" path="res://scenes/game/player/player.gd" id="1_v06wv"]
+[ext_resource type="Texture2D" uid="uid://blnndpajke38q" path="res://assets/sprites/rrr.png" id="2_skcn4"]
+[ext_resource type="AudioStream" uid="uid://ci23vbd280plg" path="res://assets/audio/start.wav" id="4_b4hq6"]
+[ext_resource type="Script" path="res://scenes/game/player/powerup_player.gd" id="4_q346t"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u3vxc"]
+friction = 0.0
+bounce = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qedv7"]
+depth_draw_mode = 1
+specular_mode = 2
+albedo_color = Color(1, 1, 1, 0.490196)
+albedo_texture = ExtResource("2_skcn4")
+roughness = 0.0
+roughness_texture_channel = 4
+backlight = Color(1, 0, 0, 1)
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mc7ej"]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("StandardMaterial3D_qedv7")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5cx7j"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
+radius = 3.5
+
+[node name="Player" type="RigidBody3D"]
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_u3vxc")
+max_contacts_reported = 1
+contact_monitor = true
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_v06wv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00104721, 1, 0, -1, 0.00104721, 0, 0, 0)
+mesh = SubResource("SphereMesh_mc7ej")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5cx7j")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="ThunderRange" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ThunderRange"]
+shape = SubResource("SphereShape3D_mbjqs")
+
+[node name="PowerUpPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("4_q346t")
+
+[node name="SpawnAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_b4hq6")
+volume_db = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

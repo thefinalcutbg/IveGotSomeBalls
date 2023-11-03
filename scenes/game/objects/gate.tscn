@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dexyp2wo1yx7k"]
+
+[ext_resource type="Script" path="res://scenes/game/objects/gate.gd" id="1_r2od2"]
+[ext_resource type="Texture2D" uid="uid://b3b53jyar3hbl" path="res://assets/sprites/KAAKELI2.BMP" id="2_l8el8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1yarv"]
+size = Vector3(1, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sjh1"]
+albedo_texture = ExtResource("2_l8el8")
+uv1_scale = Vector3(1, 3, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eolcf"]
+material = SubResource("StandardMaterial3D_4sjh1")
+size = Vector3(1, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qe1kv"]
+resource_local_to_scene = true
+transparency = 1
+
+[sub_resource type="PrismMesh" id="PrismMesh_q23lp"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_qe1kv")
+size = Vector3(5, 4, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_17wrn"]
+size = Vector3(5, 4, 0.01)
+
+[node name="Gate" type="StaticBody3D"]
+script = ExtResource("1_r2od2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.75655, 0.653936, 0, -0.653936, 0.75655, 0, 0.166416, 0.248264)
+shape = SubResource("BoxShape3D_1yarv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.75655, 0.653936, 0, -0.653936, 0.75655, 0, 0.166416, 0.248264)
+mesh = SubResource("BoxMesh_eolcf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.806455, -0.591296, 0, 0.591296, 0.806455, 0, 0.350109, -2.69081)
+shape = SubResource("BoxShape3D_1yarv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.806455, -0.591296, 0, 0.591296, 0.806455, 0, 0.124004, -2.95463)
+mesh = SubResource("BoxMesh_eolcf")
+
+[node name="Node3D" type="Area3D" parent="."]
+transform = Transform3D(-0.000488683, 0, -1, 0, 1, 0, 1, 0, -0.000488683, 0, 0, -1.262)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("PrismMesh_q23lp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
+transform = Transform3D(0.689317, -0.724461, 0.000151826, 0.724461, 0.689316, -0.000354031, 0.000151826, 0.000354031, 1, 0, -1.4922, 0)
+shape = SubResource("BoxShape3D_17wrn")
+
+[connection signal="body_entered" from="Node3D" to="." method="_on_body_entered"]

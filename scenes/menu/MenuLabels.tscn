@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://etg646j8kmmb"]
+
+[ext_resource type="FontFile" uid="uid://co6wlid0v0bqi" path="res://assets/impact.ttf" id="1_et8co"]
+[ext_resource type="Script" path="res://scenes/menu/MenuLabels.gd" id="1_mljel"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lfxg2"]
+font = ExtResource("1_et8co")
+font_size = 35
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mljel")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 576.0
+offset_bottom = 272.0
+color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="L5" type="Label" parent="."]
+offset_left = 128.0
+offset_right = 448.0
+offset_bottom = 64.0
+text = "QUIT
+"
+label_settings = SubResource("LabelSettings_lfxg2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L4" type="Label" parent="."]
+offset_left = 128.0
+offset_top = -64.0
+offset_right = 448.0
+text = "SETUP
+"
+label_settings = SubResource("LabelSettings_lfxg2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L1" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 448.0
+offset_bottom = 128.0
+text = "START GAME
+"
+label_settings = SubResource("LabelSettings_lfxg2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L2" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 448.0
+offset_bottom = 192.0
+text = "SINGLE MAP
+"
+label_settings = SubResource("LabelSettings_lfxg2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="L3" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 448.0
+offset_bottom = 256.0
+text = "TOP SCORES
+"
+label_settings = SubResource("LabelSettings_lfxg2")
+horizontal_alignment = 1
+vertical_alignment = 1
