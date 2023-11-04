@@ -11,6 +11,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func playGame():
+func start_game():
 	$MainMenu.queue_free()
 	add_child(GAME.instantiate())

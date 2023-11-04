@@ -5,63 +5,58 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_lfxg2"]
 font = ExtResource("1_et8co")
-font_size = 35
+font_size = 70
+font_color = Color(1, 1, 1, 0.819608)
+outline_size = 5
+outline_color = Color(0, 0.843137, 0.843137, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="CanvasGroup"]
 script = ExtResource("1_mljel")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 576.0
-offset_bottom = 272.0
-color = Color(0.180392, 0.180392, 0.180392, 1)
-
-[node name="L5" type="Label" parent="."]
-offset_left = 128.0
-offset_right = 448.0
-offset_bottom = 64.0
-text = "QUIT
-"
-label_settings = SubResource("LabelSettings_lfxg2")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="L4" type="Label" parent="."]
-offset_left = 128.0
-offset_top = -64.0
-offset_right = 448.0
+[node name="Setup" type="Label" parent="."]
+offset_top = -192.0
+offset_right = 700.0
+offset_bottom = -1.52588e-05
+rotation = -0.00149303
 text = "SETUP
 "
 label_settings = SubResource("LabelSettings_lfxg2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="L1" type="Label" parent="."]
-offset_left = 128.0
-offset_top = 64.0
-offset_right = 448.0
-offset_bottom = 128.0
+[node name="Quit" type="Label" parent="."]
+offset_right = 700.0
+offset_bottom = 192.0
+text = "QUIT
+"
+label_settings = SubResource("LabelSettings_lfxg2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Label" parent="."]
+offset_top = 192.0
+offset_right = 700.0
+offset_bottom = 384.0
 text = "START GAME
 "
 label_settings = SubResource("LabelSettings_lfxg2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="L2" type="Label" parent="."]
-offset_left = 128.0
-offset_top = 128.0
-offset_right = 448.0
-offset_bottom = 192.0
+[node name="Select" type="Label" parent="."]
+offset_top = 384.0
+offset_right = 700.0
+offset_bottom = 576.0
 text = "SINGLE MAP
 "
 label_settings = SubResource("LabelSettings_lfxg2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="L3" type="Label" parent="."]
-offset_left = 128.0
-offset_top = 192.0
-offset_right = 448.0
-offset_bottom = 256.0
+[node name="Scores" type="Label" parent="."]
+offset_top = 576.0
+offset_right = 700.0
+offset_bottom = 768.0
 text = "TOP SCORES
 "
 label_settings = SubResource("LabelSettings_lfxg2")

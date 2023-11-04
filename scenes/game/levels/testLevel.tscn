@@ -1,15 +1,14 @@
 [gd_scene load_steps=20 format=3 uid="uid://djue48ehpr0v6"]
 
 [ext_resource type="Script" path="res://scenes/game/levels/testLevel.gd" id="1_hxt3u"]
-[ext_resource type="Texture2D" uid="uid://dgrkiu4ycufi3" path="res://assets/sprites/Sky.bmp" id="2_wtcmg"]
+[ext_resource type="Texture2D" uid="uid://cgohdvfgokkc1" path="res://assets/sprites/hotorget.png" id="2_oy0w6"]
 [ext_resource type="Texture2D" uid="uid://bp3bbi5ku3dbw" path="res://assets/sprites/KIVI.BMP" id="3_lpoq3"]
 [ext_resource type="Texture2D" uid="uid://b3b53jyar3hbl" path="res://assets/sprites/KAAKELI2.BMP" id="4_jmtau"]
-[ext_resource type="Script" path="res://scenes/game/levels/StaticBody3D6.gd" id="5_mpxdo"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/objects/gate.tscn" id="5_nm2h4"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/objects/diamond.tscn" id="6_iiisy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vikvj"]
-panorama = ExtResource("2_wtcmg")
+panorama = ExtResource("2_oy0w6")
 
 [sub_resource type="Sky" id="Sky_a0ymo"]
 sky_material = SubResource("PanoramaSkyMaterial_vikvj")
@@ -17,7 +16,16 @@ sky_material = SubResource("PanoramaSkyMaterial_vikvj")
 [sub_resource type="Environment" id="Environment_utbq8"]
 background_mode = 2
 sky = SubResource("Sky_a0ymo")
+sky_rotation = Vector3(0, 3.14159, 0)
 tonemap_mode = 2
+ssr_max_steps = 1
+ssr_fade_in = 1.883
+ssr_fade_out = 0.183011
+ssr_depth_tolerance = 49.71
+ssao_radius = 3.55
+ssao_intensity = 6.03
+ssao_power = 0.11949
+ssao_horizon = 1.0
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnbs0"]
@@ -52,6 +60,26 @@ size = Vector3(5, 7, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2s5i7"]
 size = Vector3(5, 7, 7)
+
+[sub_resource type="GDScript" id="GDScript_terq6"]
+script/source = "extends StaticBody3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+var movement = 0.1
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	
+	if global_position.z > 24: movement = -0.05
+	
+	if global_position.z < -20: movement = 0.05
+	
+	global_position.z += movement
+"
 
 [node name="testLevel" type="Node3D"]
 script = ExtResource("1_hxt3u")
@@ -105,7 +133,7 @@ shape = SubResource("BoxShape3D_2s5i7")
 
 [node name="StaticBody3D6" type="StaticBody3D" parent="LevelMap"]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 27.885, 3.89598, 24.3137)
-script = ExtResource("5_mpxdo")
+script = SubResource("GDScript_terq6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LevelMap/StaticBody3D6"]
 mesh = SubResource("BoxMesh_scpmk")
