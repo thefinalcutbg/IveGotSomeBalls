@@ -4,16 +4,14 @@ extends Node2D
 
 @onready var main_menu = get_parent().get_parent()
 
-var is_current = true
-
+var frame_counter = 0
+var direction = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	if !is_current: return
 	
 	if !direction:
 		direction = Input.get_axis("ui_up", "ui_down")*-1
@@ -29,8 +27,7 @@ func _process(delta):
 	
 
 
-var frame_counter = 0
-var direction = 0
+
 
 func move():
 	

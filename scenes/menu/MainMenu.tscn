@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://0e6ysdyu3yi0"]
+[gd_scene load_steps=28 format=3 uid="uid://0e6ysdyu3yi0"]
 
 [ext_resource type="Script" path="res://scenes/menu/MainMenu.gd" id="1_kwkpn"]
 [ext_resource type="Texture2D" uid="uid://b3rw8qbsvdjnl" path="res://assets/sprites/ballsEndless.png" id="2_4hgcw"]
@@ -185,6 +185,21 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, -2.84217e-14, 2.5)]
 }
 
+[sub_resource type="Animation" id="Animation_xv50p"]
+resource_name = "GoIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.4822, 2.2974),
+"update": 0,
+"values": [Vector3(0, -2.84217e-14, 2.5), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_spu3d"]
 length = 0.001
 tracks/0/type = "value"
@@ -203,6 +218,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ikgck"]
 _data = {
 "ComeOut": SubResource("Animation_ufaw8"),
+"GoIn": SubResource("Animation_xv50p"),
 "RESET": SubResource("Animation_spu3d")
 }
 
@@ -286,4 +302,5 @@ mesh = SubResource("PlaneMesh_5o5mv")
 disable_3d = true
 transparent_bg = true
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="finished" from="MfBallsAudio" to="MfBallsAudio" method="_on_finished"]

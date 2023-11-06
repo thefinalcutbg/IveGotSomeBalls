@@ -2,17 +2,22 @@ extends Control
 
 const LABEL = preload("res://scenes/menu/Label.tscn")
 
-const offset = 220
-var current_index = 0
-var target_index = 0
-var main_menu
-var direction = 0
+var scroll = true
+var offset_y = 220
+
+var _current_index = 0
+var _target_index = 0
+var _main_menu
+var _direction = 0
+var _frame_counter = 0
+
 
 func set_main_menu(menu):
-	main_menu = menu
+	_main_menu = menu
 
 
 func _ready():
+	set_process_input(false)
 	add_label("lala", "gudsadasdgu")
 	add_label("lala", "gudsadasdasdadsaagu")
 	add_label("lala", "gudasdasdasdasdasdasgu")
@@ -23,40 +28,45 @@ func _ready():
 func _process(delta):
 	
 	if !animation_in_progress():
-		direction = Input.get_axis("ui_up", "ui_down")
-		calculate_target_index(direction)
+		_direction = Input.get_axis("ui_up", "ui_down")
+		calculate_target_index(_direction)
 	else:
 		animate()
+
 	
 	if Input.is_key_label_pressed(KEY_ESCAPE):
-		main_menu.close_submenu()
+		_main_menu.close_submenu()
 
-var frame_counter = 0
+	
+	if Input.is_key_label_pressed(KEY_SPACE):
+		_main_menu.sub_menu_index_selected(_current_index)
+
 
 func animate():
 
-	if direction == 0: return
+	if _direction == 0: return
 
 	#the animation has just finished
-	if frame_counter == 16:
-		current_index = target_index
-		direction = 0
-		frame_counter = 0
+	if _frame_counter == 16:
+		_current_index = _target_index
+		_direction = 0
+		_frame_counter = 0
 		return
 	
-	var reloop = target_index != current_index+direction
+	var _reloop = _target_index != _current_index+_direction
 	
-	if frame_counter==0: 
-		get_child(current_index).deselect()
-		get_child(target_index).select()
-		if reloop: handle_reloop()
-			
+	if _frame_counter==0: 
+		get_child(_current_index).deselect()
+		get_child(_target_index).select()
+		if _reloop: 
+			handle_reloop()
+			_frame_counter+=8
 	
-	if !reloop:
+	if !_reloop and scroll:
 		for child in get_children():
-			child.position.y -= 4*direction
+			child.position.y -= 4*_direction
 	
-	frame_counter+=1
+	_frame_counter+=1
 	
 func add_label(name, text):
 	
@@ -68,34 +78,36 @@ func add_label(name, text):
 
 	
 	add_child(label)
-	label.position.y = labelCount*64+offset
+	label.position.y = labelCount*64+offset_y
 	
 	if !labelCount:
 		label.select()
 
 
 func animation_in_progress():
-	return current_index != target_index
+	return _current_index != _target_index
 
 func calculate_target_index(dir):
 	
 		var max = get_child_count()-1
 		
-		if direction == 1 and current_index == max:
-			target_index = 0
+		if _direction == 1 and _current_index == max:
+			_target_index = 0
 			return
 			
-		if direction == -1 and current_index == 0:
-			target_index = max
-			print(target_index)
+		if _direction == -1 and _current_index == 0:
+			_target_index = max
+			print(_target_index)
 			return
 		
-		target_index += dir
+		_target_index += dir
 
 
 func handle_reloop():
-
-	var pos_y = offset-(64*target_index)
+	
+	if !scroll: return
+	
+	var pos_y = offset_y-(64*_target_index)
 	
 	for label in get_children():
 		label.position.y = pos_y

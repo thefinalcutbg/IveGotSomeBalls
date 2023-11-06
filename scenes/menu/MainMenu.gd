@@ -37,24 +37,47 @@ func start_game():
 	
 func open_submenu():
 	
+		menu_labels.set_process(false)
 		var subMenu = SUBMENU.instantiate()
+		subMenu.set_process(false)
 		subMenu.set_main_menu(self)
+		
 		$SubMenuScreen/SubMenuViewport.add_child(subMenu)
 		subMenu.add_label("L1", "HAHAHA")
 		subMenu.add_label("L2", "HAHAHA")
 		#if $AnimationPlayer.is_playing(): return
-		$AnimationPlayer.play_backwards("ComeOut")
-		menu_labels.is_current = false
+		$AnimationPlayer.play("GoIn")
+		
 		$SubMenuScreen.visible = true
+		
 
 func close_submenu():
-		$SubMenuScreen/SubMenuViewport.get_child(0).queue_free()
-		#if $AnimationPlayer.is_playing(): return
-		$AnimationPlayer.play("ComeOut")
-		menu_labels.is_current = true
+		
+	$SubMenuScreen/SubMenuViewport.get_child(0).set_process(false)
+	$AnimationPlayer.play("ComeOut")
+
 
 func quit():
 	get_tree().quit()
 	
 func set_option(index):
 	print(index)
+
+func sub_menu_index_selected(index):
+	print(index)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	
+	match anim_name:
+		"GoIn": 
+			$SubMenuScreen/SubMenuViewport.get_child(0).set_process(true)
+		"ComeOut":
+			var submenu = $SubMenuScreen/SubMenuViewport.get_child(0)
+			if submenu: submenu.free()
+			menu_labels.set_process(true)
+			
+				
+
+			
+		

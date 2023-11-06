@@ -1,21 +1,21 @@
 [gd_scene load_steps=20 format=3 uid="uid://djue48ehpr0v6"]
 
 [ext_resource type="Script" path="res://scenes/game/levels/testLevel.gd" id="1_hxt3u"]
-[ext_resource type="Texture2D" uid="uid://cgohdvfgokkc1" path="res://assets/sprites/hotorget.png" id="2_oy0w6"]
+[ext_resource type="Texture2D" uid="uid://cgohdvfgokkc1" path="res://assets/sprites/hotorget.png" id="2_w6x8m"]
 [ext_resource type="Texture2D" uid="uid://bp3bbi5ku3dbw" path="res://assets/sprites/KIVI.BMP" id="3_lpoq3"]
 [ext_resource type="Texture2D" uid="uid://b3b53jyar3hbl" path="res://assets/sprites/KAAKELI2.BMP" id="4_jmtau"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/objects/gate.tscn" id="5_nm2h4"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/objects/diamond.tscn" id="6_iiisy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vikvj"]
-panorama = ExtResource("2_oy0w6")
+panorama = ExtResource("2_w6x8m")
 
-[sub_resource type="Sky" id="Sky_a0ymo"]
+[sub_resource type="Sky" id="Sky_b4pu1"]
 sky_material = SubResource("PanoramaSkyMaterial_vikvj")
 
 [sub_resource type="Environment" id="Environment_utbq8"]
 background_mode = 2
-sky = SubResource("Sky_a0ymo")
+sky = SubResource("Sky_b4pu1")
 sky_rotation = Vector3(0, 3.14159, 0)
 tonemap_mode = 2
 ssr_max_steps = 1
@@ -39,12 +39,12 @@ size = Vector3(20, 1, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wnjbh"]
 size = Vector3(20, 1, 20)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dipv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cnevh"]
 albedo_texture = ExtResource("4_jmtau")
 uv1_scale = Vector3(50, 50, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ogeib"]
-material = SubResource("StandardMaterial3D_5dipv")
+material = SubResource("StandardMaterial3D_cnevh")
 size = Vector3(50, 1, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a76up"]

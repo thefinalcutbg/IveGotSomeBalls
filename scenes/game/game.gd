@@ -1,9 +1,12 @@
 extends Node3D
 
-const testLevel = preload("res://scenes/game/levels/testLevel.tscn")
+const levels = [
+	preload("res://scenes/game/levels/Test2.tscn"),
+	preload("res://scenes/game/levels/testLevel.tscn")
+]
 
 var current_level
-
+var current_index = -1
 var diamondCount = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -17,9 +20,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func load_level():
-	if current_level: current_level.queue_free()
 	
-	current_level = testLevel.instantiate()
+	if current_level:
+		current_level.queue_free()
+
+	current_level = levels[current_index].instantiate()
+	
 	add_child(current_level)
 	var diamondNode = current_level.find_child("Diamonds")
 	diamondCount = diamondNode.get_child_count()
@@ -33,9 +39,15 @@ func diamond_collected():
 	diamondCount -= 1
 	print(diamondCount)
 	
-	if !diamondCount: load_level()
+	if !diamondCount: 
+		current_index
+		load_level()
 
 func _process(delta):
+	
+	if Input.is_key_pressed(KEY_ESCAPE):
+		get_parent().exit_to_menu()
+	
 	pass
 
 
@@ -50,3 +62,5 @@ func spawn_thunder(player, diamond):
 	
 func _on_death_area_area_entered(area):
 	load_level()
+
+	

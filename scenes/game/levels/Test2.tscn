@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://bo3l0j0tchanm"]
+
+[ext_resource type="Texture2D" uid="uid://c4wj1g23b78oi" path="res://assets/sprites/sunrise.png" id="1_lyip0"]
+[ext_resource type="Texture2D" uid="uid://b3b53jyar3hbl" path="res://assets/sprites/KAAKELI2.BMP" id="1_t1kre"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/objects/diamond.tscn" id="3_q1qce"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pwfno"]
+panorama = ExtResource("1_lyip0")
+
+[sub_resource type="Sky" id="Sky_a0ymo"]
+sky_material = SubResource("PanoramaSkyMaterial_pwfno")
+
+[sub_resource type="Environment" id="Environment_pms67"]
+background_mode = 2
+sky = SubResource("Sky_a0ymo")
+tonemap_mode = 2
+ssr_max_steps = 1
+ssr_fade_in = 1.883
+ssr_fade_out = 0.183011
+ssr_depth_tolerance = 49.71
+ssao_radius = 3.55
+ssao_intensity = 6.03
+ssao_power = 0.11949
+ssao_horizon = 1.0
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dipv"]
+albedo_texture = ExtResource("1_t1kre")
+uv1_scale = Vector3(50, 50, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_exy1f"]
+material = SubResource("StandardMaterial3D_5dipv")
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iuuw1"]
+size = Vector3(50, 1, 50)
+
+[node name="Test2" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pms67")
+
+[node name="RigidBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0295395, 0)
+
+[node name="MeshInstance33D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_exy1f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_iuuw1")
+
+[node name="Diamonds" type="Node3D" parent="."]
+
+[node name="Diamond3" parent="Diamonds" instance=ExtResource("3_q1qce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.758, 1.11677, 0)
+
+[node name="Diamond2" parent="Diamonds" instance=ExtResource("3_q1qce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5547, 1.16817, 0)
+
+[node name="Diamond" parent="Diamonds" instance=ExtResource("3_q1qce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77735, 1.32346, 0)
