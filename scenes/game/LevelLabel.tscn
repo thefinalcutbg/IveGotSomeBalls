@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://mjomh0q6wrt5"]
+
+[ext_resource type="PackedScene" uid="uid://c6t1cf86e0egb" path="res://scenes/menu/Label.tscn" id="1_muvmb"]
+[ext_resource type="Script" path="res://scenes/game/LevelLabel.gd" id="1_q6bfp"]
+[ext_resource type="FontFile" uid="uid://co6wlid0v0bqi" path="res://assets/impact.ttf" id="2_k6i7i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0dng3"]
+resource_local_to_scene = true
+font = ExtResource("2_k6i7i")
+font_size = 48
+font_color = Color(0, 0.85098, 0.780392, 0.286275)
+
+[node name="LevelLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6bfp")
+
+[node name="Label" parent="." instance=ExtResource("1_muvmb")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -63.0
+offset_right = 109.0
+offset_bottom = 63.0
+pivot_offset = Vector2(110, 70)
+text = "Level
+Completed
+"
+label_settings = SubResource("LabelSettings_0dng3")

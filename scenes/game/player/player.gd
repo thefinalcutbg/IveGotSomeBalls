@@ -7,9 +7,7 @@ extends RigidBody3D
 var twist_pivot
 var camera
 
-enum POWERUP {NONE, JUMP, BREAK, SPEED, THUNDER}
-
-var m_powerup := POWERUP.NONE
+var m_powerup := Globals.POWERUP.NONE
 
 var collision := false
 
@@ -26,17 +24,17 @@ func set_powerup(pw):
 	var color = Color("WHITE", 1)
 		
 	match m_powerup:
-		POWERUP.JUMP: 
+		Globals.POWERUP.JUMP: 
 			color = Color("YELLOW", 1)
-		POWERUP.BREAK:
+		Globals.POWERUP.BREAK:
 			color = Color("GREEN", 0.8)
-		POWERUP.SPEED:
+		Globals.POWERUP.SPEED:
 			color = Color("RED", 0.8)
 			apply_central_impulse(linear_velocity*12)
-		POWERUP.THUNDER:
+		Globals.POWERUP.THUNDER:
 			color = Color("BLUE", 0.3)
 	
-	if m_powerup != POWERUP.NONE:
+	if m_powerup != Globals.POWERUP.NONE:
 		$PowerUpPlayer.play_sound(m_powerup)
 	
 	$MeshInstance3D.mesh.material.albedo_color = color
@@ -62,7 +60,7 @@ func _process(delta):
 	
 	rotate_camera()
 	
-	if m_powerup == POWERUP.SPEED: force*=2.3
+	if m_powerup == Globals.POWERUP.SPEED: force*=2.3
 	
 	force = 9000*delta*force
 	
@@ -72,7 +70,7 @@ func _process(delta):
 	
 	processBreak()
 	
-	rotate_mesh()
+	#rotate_mesh()
 	
 	twist_pivot.position = global_position
 
@@ -125,7 +123,7 @@ func processJump():
 	
 	#NOT DETECTING FLOOR
 	
-	if m_powerup != POWERUP.JUMP: return
+	if m_powerup != Globals.POWERUP.JUMP: return
 	
 	jump_index = clamp(jump_index, 0, jump_velocity.size()-1)
 
@@ -158,7 +156,7 @@ func playPickupSound():
 	
 func processBreak():
 	
-	if m_powerup != POWERUP.BREAK: return
+	if m_powerup != Globals.POWERUP.BREAK: return
 	
 	if !Input.is_key_pressed(KEY_SPACE): return
 	

@@ -13,15 +13,11 @@ func _process(delta):
 	pass
 
 func start_game():
-	var current = get_child(0)
-	if(current): current.queue_free()
+	if get_child(0): get_child(0).queue_free()
 	add_child(GAME.instantiate())
 
-
-
-func exit_to_menu():
-	var current = get_child(0)
-	if(current): current.queue_free()
+func quit_to_menu():
+	if get_child(0): get_child(0).queue_free()
 	add_child(MENU.instantiate())
 	
 

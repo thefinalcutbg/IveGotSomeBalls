@@ -3,24 +3,21 @@ extends Control
 const LABEL = preload("res://scenes/menu/Label.tscn")
 
 var scroll = true
-var offset_y = 220
+var offset_y = 0
 
 var _current_index = 0
 var _target_index = 0
 var _main_menu
 var _direction = 0
 var _frame_counter = 0
+var menu_type
 
 
-func set_main_menu(menu):
-	_main_menu = menu
-
-
+func set_param(parent, type):
+	_main_menu = parent
+	menu_type = type
+	
 func _ready():
-	set_process_input(false)
-	add_label("lala", "gudsadasdgu")
-	add_label("lala", "gudsadasdasdadsaagu")
-	add_label("lala", "gudasdasdasdasdasdasgu")
 	pass # Replace with function body.
 
 
@@ -34,12 +31,12 @@ func _process(delta):
 		animate()
 
 	
-	if Input.is_key_label_pressed(KEY_ESCAPE):
-		_main_menu.close_submenu()
+	if Input.is_action_just_pressed("ui_cancel"):
+		_main_menu.close_menu_requested()
 
 	
-	if Input.is_key_label_pressed(KEY_SPACE):
-		_main_menu.sub_menu_index_selected(_current_index)
+	if Input.is_action_just_pressed("ui_select"):
+		_main_menu.option_selected(_target_index)
 
 
 func animate():
@@ -68,10 +65,9 @@ func animate():
 	
 	_frame_counter+=1
 	
-func add_label(name, text):
+func add_label(text):
 	
 	var label = LABEL.instantiate()
-	label.name = name
 	label.text = text
 	
 	var labelCount = get_child_count()
@@ -97,7 +93,6 @@ func calculate_target_index(dir):
 			
 		if _direction == -1 and _current_index == 0:
 			_target_index = max
-			print(_target_index)
 			return
 		
 		_target_index += dir
@@ -113,3 +108,5 @@ func handle_reloop():
 		label.position.y = pos_y
 		pos_y += 64
 		
+func set_label_text(index, text):
+	get_child(index).text = text

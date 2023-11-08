@@ -3,7 +3,6 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	deselect()
 	pass # Replace with function body.
 
 
@@ -15,5 +14,5 @@ func select():
 	label_settings.font_color = Color.TOMATO
 
 func deselect():
-	label_settings.font_color = Color.AQUA
+	label_settings.font_color = Color("b1f3ff")
 

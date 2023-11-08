@@ -35,23 +35,32 @@ func _process(delta):
 func start_game():
 	get_parent().start_game()
 	
-func open_submenu():
-	
-		menu_labels.set_process(false)
+func open_submenu(type):
+		
+		menu_labels.disable_input = true
+		
 		var subMenu = SUBMENU.instantiate()
-		subMenu.set_process(false)
-		subMenu.set_main_menu(self)
-		
+		subMenu.set_param(self, type)
 		$SubMenuScreen/SubMenuViewport.add_child(subMenu)
-		subMenu.add_label("L1", "HAHAHA")
-		subMenu.add_label("L2", "HAHAHA")
-		#if $AnimationPlayer.is_playing(): return
-		$AnimationPlayer.play("GoIn")
+		subMenu.set_process(false)
 		
+		match type:
+			Globals.MENU_TYPE.SETUP:
+				subMenu.add_label("SOUND VOLUME: 100%")
+				subMenu.add_label("MUSIC VOLUME: 100%")
+				subMenu.scroll = false
+			_:
+				for i in 35:
+					subMenu.add_label("HAHAHA")
+
+		
+		#match the type of the submenu
+
+		$AnimationPlayer.play("GoIn")
 		$SubMenuScreen.visible = true
 		
 
-func close_submenu():
+func close_menu_requested():
 		
 	$SubMenuScreen/SubMenuViewport.get_child(0).set_process(false)
 	$AnimationPlayer.play("ComeOut")
@@ -60,24 +69,25 @@ func close_submenu():
 func quit():
 	get_tree().quit()
 	
-func set_option(index):
-	print(index)
-
-func sub_menu_index_selected(index):
-	print(index)
 
 
 func _on_animation_player_animation_finished(anim_name):
 	
 	match anim_name:
 		"GoIn": 
-			$SubMenuScreen/SubMenuViewport.get_child(0).set_process(true)
+			current_submenu().set_process(true)
 		"ComeOut":
-			var submenu = $SubMenuScreen/SubMenuViewport.get_child(0)
-			if submenu: submenu.free()
-			menu_labels.set_process(true)
+			var submenu = current_submenu()
+			if submenu: submenu.queue_free()
+			menu_labels.disable_input = false
 			
-				
 
+
+func option_selected(index):
+	print(index)
+
+
+func current_submenu():
+	return $SubMenuScreen/SubMenuViewport.get_child(0)
 			
 		

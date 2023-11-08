@@ -17,13 +17,18 @@ albedo_texture = ExtResource("2_skcn4")
 roughness = 0.0
 roughness_texture_channel = 4
 backlight = Color(1, 0, 0, 1)
-uv1_scale = Vector3(1, 2, 1)
+uv1_scale = Vector3(1, 1, 0)
+uv1_offset = Vector3(10, 10, 0)
+uv1_triplanar_sharpness = 0.466517
+texture_filter = 0
 
 [sub_resource type="SphereMesh" id="SphereMesh_mc7ej"]
 lightmap_size_hint = Vector2i(17, 9)
 material = SubResource("StandardMaterial3D_qedv7")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_5cx7j"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_phosk"]
+radius = 0.3
+height = 0.65
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
 radius = 3.5
@@ -38,11 +43,12 @@ lock_rotation = true
 script = ExtResource("1_v06wv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.00104721, 1, 0, -1, 0.00104721, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.65, 0, -1, -2.84124e-08, 0, 0, 0)
 mesh = SubResource("SphereMesh_mc7ej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_5cx7j")
+transform = Transform3D(1.667, 0, 0, 0, 1, 0, 0, 0, 1.667, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_phosk")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 

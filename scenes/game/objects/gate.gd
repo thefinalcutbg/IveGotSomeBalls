@@ -6,9 +6,7 @@ func _ready():
 func _process(delta):
 	pass
 
-enum POWERUP {NONE, JUMP, BREAK, SPEED, LIGHTNING}
-
-var m_powerup := POWERUP.NONE
+var m_powerup := Globals.POWERUP.NONE
 
 var color := Color("WHITE")
 
@@ -17,13 +15,13 @@ func set_powerup(powerup):
 	m_powerup = powerup
 	
 	match(powerup):
-		POWERUP.JUMP:
+		Globals.POWERUP.JUMP:
 			color = Color("YELLOW", 0.6)
-		POWERUP.BREAK:
+		Globals.POWERUP.BREAK:
 			color = Color("GREEN", 0.6)
-		POWERUP.SPEED:
+		Globals.POWERUP.SPEED:
 			color = Color("RED", 0.6)
-		POWERUP.LIGHTNING:
+		Globals.POWERUP.THUNDER:
 			color = Color("BLUE", 0.6)
 
 	$Node3D/MeshInstance3D.mesh.material.albedo_color = color

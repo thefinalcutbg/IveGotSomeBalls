@@ -10,24 +10,27 @@ var direction = 0
 func _ready():
 	pass # Replace with function body.
 
+var disable_input = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+	move()	
+	
+	if disable_input: return
+	
 	if !direction:
 		direction = Input.get_axis("ui_up", "ui_down")*-1
-		
-	move()
 	
-	if Input.is_key_pressed(KEY_SPACE):
+	
+	if Input.is_action_just_pressed("ui_select"):
 		
 		match labels[2].name:
 			"Start": main_menu.start_game()
+			"Select": main_menu.open_submenu(Globals.MENU_TYPE.SINGLE_MAP)
+			"Scores": main_menu.open_submenu(Globals.MENU_TYPE.SCORES)
+			"Setup": main_menu.open_submenu(Globals.MENU_TYPE.SETUP)
 			"Quit": main_menu.quit()
-			_: main_menu.open_submenu()
-	
-
-
-
 
 func move():
 	
