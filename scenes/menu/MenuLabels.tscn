@@ -14,9 +14,9 @@ outline_color = Color(0, 0.843137, 0.843137, 1)
 script = ExtResource("1_mljel")
 
 [node name="Setup" type="Label" parent="."]
-offset_top = -192.0
+offset_top = -128.0
 offset_right = 700.0
-offset_bottom = -1.52588e-05
+offset_bottom = -1.0
 rotation = -0.00149303
 text = "SETUP
 "
@@ -26,7 +26,7 @@ vertical_alignment = 1
 
 [node name="Quit" type="Label" parent="."]
 offset_right = 700.0
-offset_bottom = 192.0
+offset_bottom = 128.0
 text = "QUIT
 "
 label_settings = SubResource("LabelSettings_lfxg2")
@@ -34,9 +34,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Start" type="Label" parent="."]
-offset_top = 192.0
+offset_top = 128.0
 offset_right = 700.0
-offset_bottom = 384.0
+offset_bottom = 256.0
 text = "START GAME
 "
 label_settings = SubResource("LabelSettings_lfxg2")
@@ -44,9 +44,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Select" type="Label" parent="."]
-offset_top = 384.0
+offset_top = 256.0
 offset_right = 700.0
-offset_bottom = 576.0
+offset_bottom = 384.0
 text = "SINGLE MAP
 "
 label_settings = SubResource("LabelSettings_lfxg2")
@@ -54,9 +54,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Scores" type="Label" parent="."]
-offset_top = 576.0
+offset_top = 384.0
 offset_right = 700.0
-offset_bottom = 768.0
+offset_bottom = 512.0
 text = "TOP SCORES
 "
 label_settings = SubResource("LabelSettings_lfxg2")

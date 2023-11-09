@@ -21,7 +21,7 @@ func set_powerup(pw):
 	
 	m_powerup = pw
 	
-	var color = Color("WHITE", 1)
+	var color
 		
 	match m_powerup:
 		Globals.POWERUP.JUMP: 
@@ -33,6 +33,8 @@ func set_powerup(pw):
 			apply_central_impulse(linear_velocity*12)
 		Globals.POWERUP.THUNDER:
 			color = Color("BLUE", 0.3)
+		Globals.POWERUP.NONE:
+			color = Color("WHITE", 1)
 	
 	if m_powerup != Globals.POWERUP.NONE:
 		$PowerUpPlayer.play_sound(m_powerup)
@@ -45,7 +47,8 @@ func _ready():
 
 func respawn():
 	$SpawnAudio.play()
-	set_powerup(0)
+	$MeshInstance3D.mesh.material.albedo_color = Color("White", 1)
+	set_powerup(Globals.POWERUP.NONE)
 	linear_velocity = Vector3.ZERO
 	global_position = Vector3(0,3,0)
 	twist_pivot.rotation = Vector3.ZERO

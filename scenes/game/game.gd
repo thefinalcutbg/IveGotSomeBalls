@@ -143,12 +143,13 @@ func option_selected(index):
 
 func level_completed():
 	#put high score logic here
+	
+	var bestTime = false
+	
 	var color
 	var text
 	var sound
-	
-	var bestTime = true
-	
+
 	if bestTime:
 		text = "BEST\nTIME"
 		color = Color("RED")

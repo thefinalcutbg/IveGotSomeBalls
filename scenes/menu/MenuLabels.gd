@@ -44,14 +44,14 @@ func move():
 	if frame_counter == 0: 
 		if direction == 1:
 			labels.push_front(labels.pop_back())
-			labels.front().position.y = -384
+			labels.front().position.y = -256
 		elif direction == -1:
 			labels.push_back(labels.pop_front())
-			labels.back().position.y = 768
+			labels.back().position.y = 512
 			
 	
 	for n in labels.size():
-		labels[n].position.y += 6*direction
+		labels[n].position.y += 4*direction
 	
 	frame_counter+=1
 	
