@@ -10,12 +10,12 @@ var _target_index = 0
 var _main_menu
 var _direction = 0
 var _frame_counter = 0
-var menu_type
+var type
 
 
 func set_param(parent, type):
 	_main_menu = parent
-	menu_type = type
+	self.type = type
 	
 func _ready():
 	pass # Replace with function body.

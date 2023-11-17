@@ -10,7 +10,7 @@ func setViewport(object, vp):
 	var material = object.get_active_material(0)
 	material.set_texture(0, vp.get_texture())
 	object.set_surface_override_material(0, material)
-	
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -46,8 +46,8 @@ func open_submenu(type):
 		
 		match type:
 			Globals.MENU_TYPE.SETUP:
-				subMenu.add_label("SOUND VOLUME: 100%")
-				subMenu.add_label("MUSIC VOLUME: 100%")
+				subMenu.add_label("SOUND VOLUME: " + db_to_percent(1))
+				subMenu.add_label("MUSIC VOLUME: " + db_to_percent(2))
 				subMenu.scroll = false
 			_:
 				for i in 35:
@@ -84,10 +84,47 @@ func _on_animation_player_animation_finished(anim_name):
 
 
 func option_selected(index):
-	print(index)
-
+	
+	var submenu = current_submenu()
+	
+	match submenu.type:
+		Globals.MENU_TYPE.SETUP:
+			if !index:
+				set_volume(index+1) 
+				submenu.set_label_text(index, "SOUND VOLUME: " + db_to_percent(index+1))
+			else:
+				set_volume(index+1) 
+				submenu.set_label_text(index, "MUSIC VOLUME: " + db_to_percent(index+1))
 
 func current_submenu():
 	return $SubMenuScreen/SubMenuViewport.get_child(0)
 			
 		
+func db_to_percent(bus_index):
+	
+	var dictionary = {
+		-80.0: "0%",
+		-20.0: "25%",
+		-10.0: "50%",
+		-5.0: "75%",
+		0.0: "100%"
+	}
+	
+	return dictionary[AudioServer.get_bus_volume_db(bus_index)]
+
+func set_volume(idx):
+	
+	var increment = {
+		0.0:	-80.0,
+		-80.0:	-20.0,
+		-20.0:	-10.0,
+		-10.0:	-5.0,
+		-5.0:	0.0
+	}
+	
+	AudioServer.set_bus_volume_db(
+		idx, 
+		increment[
+			AudioServer.get_bus_volume_db(idx)
+			]
+		)

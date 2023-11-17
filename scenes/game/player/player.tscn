@@ -1,39 +1,40 @@
-[gd_scene load_steps=10 format=3 uid="uid://cl62vwhpr4w16"]
+[gd_scene load_steps=9 format=3 uid="uid://cl62vwhpr4w16"]
 
 [ext_resource type="Script" path="res://scenes/game/player/player.gd" id="1_v06wv"]
-[ext_resource type="Texture2D" uid="uid://blnndpajke38q" path="res://assets/sprites/rrr.png" id="2_skcn4"]
+[ext_resource type="Texture2D" uid="uid://ckudf8vicb70r" path="res://assets/sprites/capture.png" id="2_tfgwo"]
 [ext_resource type="AudioStream" uid="uid://ci23vbd280plg" path="res://assets/audio/start.wav" id="4_b4hq6"]
-[ext_resource type="Script" path="res://scenes/game/player/powerup_player.gd" id="4_q346t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u3vxc"]
 friction = 0.0
-bounce = 0.7
+bounce = 0.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qedv7"]
 depth_draw_mode = 1
-specular_mode = 2
-albedo_color = Color(1, 1, 1, 0.490196)
-albedo_texture = ExtResource("2_skcn4")
-roughness = 0.0
+albedo_color = Color(0.67451, 0.67451, 0.67451, 1)
+albedo_texture = ExtResource("2_tfgwo")
+roughness = 0.5
 roughness_texture_channel = 4
+rim = 0.65
+rim_tint = 0.19
 backlight = Color(1, 0, 0, 1)
-uv1_scale = Vector3(4, 2, 0)
+refraction_scale = -0.04
+uv1_scale = Vector3(1, 1, 0)
 uv1_triplanar_sharpness = 0.466517
 texture_filter = 0
 
 [sub_resource type="SphereMesh" id="SphereMesh_mc7ej"]
-lightmap_size_hint = Vector2i(17, 9)
+lightmap_size_hint = Vector2i(17, 10)
 material = SubResource("StandardMaterial3D_qedv7")
 height = 0.7
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_y6gn0"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4jhba"]
 height = 0.7
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
 radius = 3.5
 
 [node name="Player" type="RigidBody3D"]
-mass = 10.0
+mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_u3vxc")
 max_contacts_reported = 1
 contact_monitor = true
@@ -42,10 +43,12 @@ lock_rotation = true
 script = ExtResource("1_v06wv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_mc7ej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_y6gn0")
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("CylinderShape3D_4jhba")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 
@@ -55,11 +58,19 @@ shape = SubResource("CylinderShape3D_y6gn0")
 shape = SubResource("SphereShape3D_mbjqs")
 
 [node name="PowerUpPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource("4_q346t")
+bus = &"Sound"
 
 [node name="SpawnAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_b4hq6")
 volume_db = 10.0
+bus = &"Sound"
+
+[node name="Camera" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 0.838119, 0.545487, 0, -0.545487, 0.838119, -2.05495e-07, 13.1777, 18.5018)
+fov = 60.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

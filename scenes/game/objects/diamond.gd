@@ -20,7 +20,7 @@ func _process(delta):
 	$Inner.scale = lerp($Inner.scale, Vector3.ZERO, 0.1)
 	$Outer.scale = lerp($Outer.scale, Vector3.ZERO, 0.1)
 	
-	if $Outer.scale < Vector3(0.05,0.05,0.05):
+	if $Outer.scale < Vector3(0.01,0.01,0.01):
 		queue_free()
 
 

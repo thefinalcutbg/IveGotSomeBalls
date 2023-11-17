@@ -181,7 +181,7 @@ _data = {
 "RESET": SubResource("Animation_spu3d")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ixgt6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_07ec2"]
 viewport_path = NodePath("SubMenuScreen/SubMenuViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u11wu"]
@@ -191,7 +191,7 @@ transparency = 1
 cull_mode = 2
 depth_draw_mode = 1
 albedo_color = Color(1, 1, 1, 0.72549)
-albedo_texture = SubResource("ViewportTexture_ixgt6")
+albedo_texture = SubResource("ViewportTexture_07ec2")
 emission = Color(0.490196, 0.490196, 0.490196, 1)
 emission_energy_multiplier = 8.74
 normal_scale = 0.3
@@ -244,10 +244,12 @@ libraries = {
 
 [node name="MfBallsAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_u8r1i")
+bus = &"Music"
 script = ExtResource("7_8n722")
 
 [node name="MenuLoopAudio" type="AudioStreamPlayer" parent="MfBallsAudio"]
 stream = ExtResource("8_66ved")
+bus = &"Music"
 
 [node name="SubMenuScreen" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, -0.000767945, 0, 0.000767945, 1, 0, 0, 0, 1, 0, 0, -0.269917)

@@ -5,6 +5,7 @@ const MENU = preload("res://scenes/menu/MainMenu.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_child(MENU.instantiate())
+	Engine.physics_ticks_per_second = 120
 	pass # Replace with function body.
 
 

@@ -3,15 +3,22 @@ extends RigidBody3D
 #these nodes are children of the player
 @onready var mesh = $MeshInstance3D
 @onready var rayCast = $RayCast3D
-
-var twist_pivot
-var camera
-
+@onready var twist_pivot = $Camera
+@onready var camera = $Camera/Camera3D
 var m_powerup := Globals.POWERUP.NONE
+
+var _powerup_sounds = [
+	0, 
+	load("res://assets/audio/byellow.wav"),
+	load("res://assets/audio/bgreen.wav"),
+	load("res://assets/audio/bred.wav"),
+	load("res://assets/audio/bblue.wav")
+	]
 
 var collision := false
 
 func set_camera(cameraNode):
+	return
 	twist_pivot = cameraNode
 	camera = cameraNode.get_node("Camera3D")
 
@@ -20,6 +27,8 @@ func set_powerup(pw):
 	if m_powerup == pw: return
 	
 	m_powerup = pw
+	
+	$PowerUpPlayer.stream = _powerup_sounds[pw]
 	
 	var color
 		
@@ -30,14 +39,19 @@ func set_powerup(pw):
 			color = Color("GREEN", 0.8)
 		Globals.POWERUP.SPEED:
 			color = Color("RED", 0.8)
-			apply_central_impulse(linear_velocity*12)
 		Globals.POWERUP.THUNDER:
 			color = Color("BLUE", 0.3)
 		Globals.POWERUP.NONE:
 			color = Color("WHITE", 1)
 	
+	if m_powerup == Globals.POWERUP.SPEED:
+			apply_central_impulse(linear_velocity*12)
+			gravity_scale = 2
+	else:
+		gravity_scale = 1
+	
 	if m_powerup != Globals.POWERUP.NONE:
-		$PowerUpPlayer.play_sound(m_powerup)
+		$PowerUpPlayer.play()
 	
 	$MeshInstance3D.mesh.material.albedo_color = color
 	
@@ -47,10 +61,10 @@ func _ready():
 
 func respawn():
 	$SpawnAudio.play()
-	$MeshInstance3D.mesh.material.albedo_color = Color("White", 1)
-	set_powerup(Globals.POWERUP.NONE)
+	$MeshInstance3D.mesh.material.albedo_color = Color("WHITE", 1)
+	m_powerup = Globals.POWERUP.NONE
 	linear_velocity = Vector3.ZERO
-	global_position = Vector3(0,3,0)
+	global_position = Vector3(0,1,0)
 	twist_pivot.rotation = Vector3.ZERO
 
 func _process(delta):
@@ -59,23 +73,18 @@ func _process(delta):
 	input.x = Input.get_axis("ui_left", "ui_right")
 	input.z = Input.get_axis("ui_up", "ui_down")
 
-	var force = twist_pivot.basis * input
+	var force = twist_pivot.basis * input *1.3
 	
 	rotate_camera()
 	
-	if m_powerup == Globals.POWERUP.SPEED: force*=2.3
+	if m_powerup == Globals.POWERUP.SPEED: force*=3.0
 	
-	force = 9000*delta*force
-	
-	apply_central_force(force)
+	apply_central_impulse(force)
+	#apply_central_force(force)
 		
 	processJump()
 	
 	processBreak()
-	
-	#rotate_mesh()
-	
-	twist_pivot.position = global_position
 
 
 
@@ -91,28 +100,28 @@ func rotate_camera():
 	elif twist_input > 90 :
 		twist_input = 180-twist_input
 		
-	twist_pivot.rotate_y(twist_input*0.00007*movement_vec2d.length())
+	twist_pivot.rotate_y(twist_input*0.00003*movement_vec2d.length())
 
 
-var rotation_x = 0.0
-var rotation_z = 0.0
-
-func rotate_mesh():
-
-	var vec = linear_velocity.normalized()
-	var speed = linear_velocity.length()
-	
-	if !speed : return
-	
-	if !collision: 
-		rotation_x = lerp(rotation_x, 0.0, 0.01)
-		rotation_z = lerp(rotation_z, 0.0, 0.01)
-	else:
-		rotation_x = vec.z*0.0314*speed
-		rotation_z = -vec.x*0.0314*speed
-		
-	mesh.rotate_x(rotation_x)
-	mesh.rotate_z(rotation_z)
+#var rotation_x = 0.0
+#var rotation_z = 0.0
+#
+#func rotate_mesh():
+#
+#	var vec = linear_velocity.normalized()
+#	var speed = linear_velocity.length()
+#
+#	if !speed : return
+#
+#	if !collision: 
+#		rotation_x = lerp(rotation_x, 0.0, 0.01)
+#		rotation_z = lerp(rotation_z, 0.0, 0.01)
+#	else:
+#		rotation_x = vec.z*0.0314*speed
+#		rotation_z = -vec.x*0.0314*speed
+#
+#	mesh.rotate_x(rotation_x)
+#	mesh.rotate_z(rotation_z)
 
 
 #static variables:
@@ -120,7 +129,7 @@ var jump_index := 0
 #in case of longer collisions:
 var on_ground_jumping := false
 
-const jump_velocity = [12,17,20,21,22]
+const jump_velocity = [15,24,27,32]
 
 func processJump():
 	
