@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends Area3D
 
 func _ready():
 	pass
@@ -24,7 +24,7 @@ func set_powerup(powerup):
 		Globals.POWERUP.THUNDER:
 			color = Color("BLUE", 0.6)
 
-	$Node3D/MeshInstance3D.mesh.material.albedo_color = color
+	$MeshInstance3D.mesh.material.albedo_color = color
 	
 func player_passed_through(player):
 		

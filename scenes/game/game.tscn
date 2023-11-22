@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7er706kltch8"]
+[gd_scene load_steps=11 format=3 uid="uid://c7er706kltch8"]
 
 [ext_resource type="PackedScene" uid="uid://cl62vwhpr4w16" path="res://scenes/game/player/player.tscn" id="1_ntt6g"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_qi7a4"]
@@ -7,9 +7,16 @@
 [ext_resource type="AudioStream" uid="uid://mikfjssxt4x" path="res://assets/audio/drumfill.wav" id="4_35r4d"]
 [ext_resource type="Script" path="res://scenes/game/GameMusic.gd" id="5_2c1vc"]
 [ext_resource type="AudioStream" uid="uid://dxncrl87xcsnb" path="res://assets/audio/gameloop.wav" id="6_npud7"]
+[ext_resource type="FontFile" uid="uid://co6wlid0v0bqi" path="res://assets/impact.ttf" id="8_10duo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_odg7j"]
 size = Vector3(1000, 0.1, 1000)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ne2xj"]
+resource_local_to_scene = true
+font = ExtResource("8_10duo")
+font_size = 48
+font_color = Color(0.694118, 0.952941, 1, 1)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_qi7a4")
@@ -18,11 +25,61 @@ script = ExtResource("1_qi7a4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88253, 0)
 
 [node name="DeathArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.6879, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.11629, 0)
 shape = SubResource("BoxShape3D_odg7j")
+
+[node name="HUD" type="CanvasGroup" parent="."]
+modulate = Color(1, 1, 1, 0.890196)
+position = Vector2(997, 539)
+
+[node name="Best" type="Label" parent="HUD"]
+offset_left = -992.0
+offset_top = -527.0
+offset_right = -639.0
+offset_bottom = -464.0
+size_flags_horizontal = 4
+text = "BEST: 000.000 TFC
+"
+label_settings = SubResource("LabelSettings_ne2xj")
+justification_flags = 162
+
+[node name="Time" type="Label" parent="HUD"]
+offset_left = -991.0
+offset_top = -465.0
+offset_right = -691.0
+offset_bottom = -402.0
+text = "TIME:
+"
+label_settings = SubResource("LabelSettings_ne2xj")
+justification_flags = 162
+
+[node name="Left" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 755.0
+offset_top = -520.0
+offset_right = 900.0
+offset_bottom = -457.0
+grow_horizontal = 0
+text = "0
+"
+label_settings = SubResource("LabelSettings_ne2xj")
+horizontal_alignment = 2
+justification_flags = 162
+
+[node name="Speed" type="Label" parent="HUD"]
+offset_left = -991.0
+offset_top = -401.0
+offset_right = -691.0
+offset_bottom = -338.0
+text = "SPEED:
+"
+label_settings = SubResource("LabelSettings_ne2xj")
+justification_flags = 162
 
 [node name="ThunderSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_f4glk")

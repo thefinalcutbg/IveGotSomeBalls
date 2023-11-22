@@ -73,14 +73,14 @@ func _process(delta):
 	input.x = Input.get_axis("ui_left", "ui_right")
 	input.z = Input.get_axis("ui_up", "ui_down")
 
-	var force = twist_pivot.basis * input *1.3
+	var force = twist_pivot.basis * input *350
 	
 	rotate_camera()
 	
 	if m_powerup == Globals.POWERUP.SPEED: force*=3.0
 	
-	apply_central_impulse(force)
-	#apply_central_force(force)
+	#apply_central_impulse(force)
+	apply_central_force(force)
 		
 	processJump()
 	
@@ -129,7 +129,7 @@ var jump_index := 0
 #in case of longer collisions:
 var on_ground_jumping := false
 
-const jump_velocity = [15,24,27,32]
+const jump_velocity = [15,24,32,38]
 
 func processJump():
 	
@@ -139,12 +139,12 @@ func processJump():
 	
 	jump_index = clamp(jump_index, 0, jump_velocity.size()-1)
 
-	
 	if !collision:
 		on_ground_jumping = false
 		return
 	
 	if !Input.is_key_pressed(KEY_SPACE):
+		print("no space")
 		jump_index -= 1
 		return
 	
@@ -154,7 +154,8 @@ func processJump():
 		#handle bounce of body
 		return
 	
-	if on_ground_jumping: return
+	if on_ground_jumping: 
+		return
 	
 	on_ground_jumping = true
 	
@@ -175,12 +176,11 @@ func processBreak():
 	apply_central_impulse(-linear_velocity*0.7)
 
 
+
 func _on_body_entered(body):
 	collision = true
-	
+	processJump()
+
 
 func _on_body_exited(body):
 	collision = false
-
-
-
