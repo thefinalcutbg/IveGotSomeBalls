@@ -73,7 +73,7 @@ func _process(delta):
 	input.x = Input.get_axis("ui_left", "ui_right")
 	input.z = Input.get_axis("ui_up", "ui_down")
 
-	var force = twist_pivot.basis * input *350
+	var force = twist_pivot.basis * input * 22000 * delta
 	
 	rotate_camera()
 	
@@ -144,7 +144,6 @@ func processJump():
 		return
 	
 	if !Input.is_key_pressed(KEY_SPACE):
-		print("no space")
 		jump_index -= 1
 		return
 	

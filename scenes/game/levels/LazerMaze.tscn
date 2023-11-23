@@ -91,7 +91,7 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pms67")
 
-[node name="lazermaze" parent="WorldEnvironment" instance=ExtResource("2_12lae")]
+[node name="lazermaze" parent="." instance=ExtResource("2_12lae")]
 
 [node name="Diamonds" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89963, 1.83216, -20.7707)
@@ -169,25 +169,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7479, -48.8508, 33.3609)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90889, -48.8508, 33.3609)
 
 [node name="Diamond27" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(0.999998, -0.00165837, 0.000514304, 0.00165752, 0.999997, 0.0016444, -0.000517032, -0.00164355, 0.999998, 39.735, -55.8309, -136.867)
+transform = Transform3D(0.999998, -0.00165837, 0.000514304, 0.00165752, 0.999997, 0.0016444, -0.000517032, -0.00164355, 0.999998, 38.8121, -55.8309, -100.44)
 
 [node name="Diamond28" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.735, -55.8309, -166.707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -138.949)
 
 [node name="Diamond29" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.735, -55.8309, -231.016)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -217.489)
 
 [node name="Diamond30" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, -0.000847242, 0.000263111, 0.000847012, 0.999999, 0.000840103, -0.00026385, -0.000839871, 1, 39.735, -55.8309, -264.036)
+transform = Transform3D(1, -0.000847242, 0.000263111, 0.000847012, 0.999999, 0.000840103, -0.00026385, -0.000839871, 1, 38.8121, -55.8309, -256.301)
 
 [node name="Diamond31" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.735, -55.8309, -295.03)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -295.03)
 
 [node name="Diamond32" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.735, -55.8309, -327.36)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -332.564)
 
 [node name="Diamond33" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.735, -55.8309, -196.126)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -178.258)
 
 [node name="Diamond34" parent="Diamonds" instance=ExtResource("2_wggrt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3775, -37.7136, -376.294)
@@ -215,14 +215,14 @@ skeleton = NodePath("")
 [node name="Barrier2" type="StaticBody3D" parent="Barriers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -157.51)
 disable_mode = 2
-constant_linear_velocity = Vector3(-100, 0, 100)
+constant_linear_velocity = Vector3(-100, 100, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 36.414)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
@@ -238,7 +238,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 17.8134)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
@@ -246,7 +246,7 @@ skeleton = NodePath("")
 [node name="Barrier4" type="StaticBody3D" parent="Barriers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -283.627)
 disable_mode = 2
-constant_linear_velocity = Vector3(-100, 0, 100)
+constant_linear_velocity = Vector3(-100, 100, 0)
 constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier4"]
@@ -254,7 +254,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 7.48248)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
@@ -262,7 +262,7 @@ skeleton = NodePath("")
 [node name="Barrier5" type="StaticBody3D" parent="Barriers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -347.226)
 disable_mode = 2
-constant_linear_velocity = Vector3(-100, 0, 100)
+constant_linear_velocity = Vector3(-100, 100, 0)
 constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier5"]
@@ -270,7 +270,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, -5.20413)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
@@ -278,7 +278,7 @@ skeleton = NodePath("")
 [node name="Barrier6" type="StaticBody3D" parent="Barriers"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.3166, -45, -313.297)
 disable_mode = 2
-constant_linear_velocity = Vector3(100, 0, 100)
+constant_linear_velocity = Vector3(100, 100, 0)
 constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier6"]
@@ -286,7 +286,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 1.22797)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
@@ -302,7 +302,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, -14.3837)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
@@ -318,7 +318,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, -28.052)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
