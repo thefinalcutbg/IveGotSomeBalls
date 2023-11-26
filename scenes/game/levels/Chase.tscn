@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://ba835hwxstvau"]
+
+[ext_resource type="Texture2D" uid="uid://doelc6a6gh2il" path="res://assets/sprites/night.jpg" id="1_q3y5o"]
+[ext_resource type="Script" path="res://scenes/game/levels/Chase.gd" id="1_v12mk"]
+[ext_resource type="PackedScene" uid="uid://brq5aya1i4t1s" path="res://blender/chase.gltf" id="2_qajf3"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/objects/diamond.tscn" id="3_abfcx"]
+[ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/objects/gate.tscn" id="5_a83ci"]
+[ext_resource type="PackedScene" uid="uid://dsh6g0qknhuac" path="res://scenes/game/objects/acceleration_area.tscn" id="6_3qqai"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pwfno"]
+panorama = ExtResource("1_q3y5o")
+
+[sub_resource type="Sky" id="Sky_a0ymo"]
+sky_material = SubResource("PanoramaSkyMaterial_pwfno")
+
+[sub_resource type="Environment" id="Environment_pms67"]
+background_mode = 2
+sky = SubResource("Sky_a0ymo")
+tonemap_mode = 2
+ssr_max_steps = 1
+ssr_fade_in = 1.883
+ssr_fade_out = 0.183011
+ssr_depth_tolerance = 49.71
+ssao_radius = 3.55
+ssao_intensity = 6.03
+ssao_power = 0.11949
+ssao_horizon = 1.0
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ee31h"]
+size = Vector3(10, 0.5, 50)
+
+[node name="Chase" type="Node3D"]
+script = ExtResource("1_v12mk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+light_color = Color(0.431373, 0.709804, 1, 1)
+light_energy = 0.858
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pms67")
+
+[node name="chase" parent="." instance=ExtResource("2_qajf3")]
+
+[node name="Diamonds" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89963, 1.83216, -20.7707)
+
+[node name="Diamond3" parent="Diamonds" instance=ExtResource("3_abfcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.878, -37.0212, 1210.78)
+
+[node name="Gate" parent="." instance=ExtResource("5_a83ci")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 150.62, -34.1744, 498.303)
+
+[node name="AccelerationArea" parent="." instance=ExtResource("6_3qqai")]
+transform = Transform3D(0.999301, -0.027348, 0.0254927, 0.00577426, 0.786574, 0.617471, -0.0369384, -0.616891, 0.786182, 32.0146, 0.335791, 20.636)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AccelerationArea"]
+transform = Transform3D(0.999486, 0.0198727, -0.0251429, -0.0198362, 0.999801, 0.00170612, 0.0251719, -0.0012061, 0.999682, -0.800613, 0.921423, 21.1172)
+shape = SubResource("BoxShape3D_ee31h")

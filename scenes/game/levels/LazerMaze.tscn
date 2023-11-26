@@ -133,40 +133,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7298, -14.452, 10.3137)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8274, -14.452, 10.2862)
 
 [node name="Diamond15" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2477, -48.8508, 48.4542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9952, -48.8508, 48.4542)
 
 [node name="Diamond16" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1363, -48.8508, 48.4542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8838, -48.8508, 48.4542)
 
 [node name="Diamond17" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7479, -48.8508, 48.4542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4954, -48.8508, 48.4542)
 
 [node name="Diamond18" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90889, -48.8508, 48.4542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65634, -48.8508, 48.4542)
 
 [node name="Diamond19" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2477, -48.8508, 40.9432)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9952, -48.8508, 40.9432)
 
 [node name="Diamond20" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1363, -48.8508, 40.9432)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8838, -48.8508, 40.9432)
 
 [node name="Diamond21" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7479, -48.8508, 40.9432)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4954, -48.8508, 40.9432)
 
 [node name="Diamond22" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90889, -48.8508, 40.9432)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65634, -48.8508, 40.9432)
 
 [node name="Diamond23" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2477, -48.8508, 33.3609)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9952, -48.8508, 33.3609)
 
 [node name="Diamond24" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1363, -48.8508, 33.3609)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8838, -48.8508, 33.3609)
 
 [node name="Diamond25" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7479, -48.8508, 33.3609)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4954, -48.8508, 33.3609)
 
 [node name="Diamond35" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90889, -48.8508, 33.3609)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65634, -48.8508, 33.3609)
 
 [node name="Diamond27" parent="Diamonds" instance=ExtResource("2_wggrt")]
 transform = Transform3D(0.999998, -0.00165837, 0.000514304, 0.00165752, 0.999997, 0.0016444, -0.000517032, -0.00164355, 0.999998, 38.8121, -55.8309, -100.44)
@@ -218,7 +218,7 @@ disable_mode = 2
 constant_linear_velocity = Vector3(-100, 100, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 36.414)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier2"]
@@ -228,23 +228,23 @@ mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
 
 [node name="Barrier3" type="StaticBody3D" parent="Barriers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -216.309)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -196.588)
 disable_mode = 2
 constant_linear_velocity = Vector3(-100, 0, 100)
 constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 17.8134)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
 
 [node name="Barrier4" type="StaticBody3D" parent="Barriers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -283.627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -275.177)
 disable_mode = 2
 constant_linear_velocity = Vector3(-100, 100, 0)
 constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
@@ -254,13 +254,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 7.48248)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
 
 [node name="Barrier5" type="StaticBody3D" parent="Barriers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -347.226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -351.405)
 disable_mode = 2
 constant_linear_velocity = Vector3(-100, 100, 0)
 constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
@@ -270,13 +270,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, -5.20413)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
 
 [node name="Barrier6" type="StaticBody3D" parent="Barriers"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.3166, -45, -313.297)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.3166, -45, -314.081)
 disable_mode = 2
 constant_linear_velocity = Vector3(100, 100, 0)
 constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
@@ -286,13 +286,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 1.22797)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
 
 [node name="Barrier7" type="StaticBody3D" parent="Barriers"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.3166, -45, -252.257)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.3166, -45, -236.903)
 disable_mode = 2
 constant_linear_velocity = Vector3(100, 0, 100)
 constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
@@ -302,13 +302,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, -14.3837)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")
 
 [node name="Barrier8" type="StaticBody3D" parent="Barriers"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.3166, -45, -187.179)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.3166, -45, -157.19)
 disable_mode = 2
 constant_linear_velocity = Vector3(100, 0, 100)
 constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
@@ -318,7 +318,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 shape = SubResource("BoxShape3D_tj2u3")
 
 [node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, -28.052)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1nmn5")
 skeleton = NodePath("")

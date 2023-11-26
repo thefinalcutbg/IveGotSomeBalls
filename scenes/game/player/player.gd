@@ -129,7 +129,7 @@ var jump_index := 0
 #in case of longer collisions:
 var on_ground_jumping := false
 
-const jump_velocity = [15,24,32,38]
+const jump_velocity = [40,50,60]
 
 func processJump():
 	

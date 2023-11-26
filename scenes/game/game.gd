@@ -4,6 +4,7 @@ const SUBMENU = preload("res://scenes/menu/SubMenu.tscn")
 const LEVELLABEL = preload("res://scenes/game/LevelLabel.tscn")
 
 const levels = [
+	preload("res://scenes/game/levels/Chase.tscn"),
 	preload("res://scenes/game/levels/LazerMaze.tscn"),
 	preload("res://scenes/game/levels/Loops.tscn"),
 	preload("res://scenes/game/levels/testLevel.tscn"),
