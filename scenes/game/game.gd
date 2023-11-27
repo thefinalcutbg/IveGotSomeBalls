@@ -4,11 +4,9 @@ const SUBMENU = preload("res://scenes/menu/SubMenu.tscn")
 const LEVELLABEL = preload("res://scenes/game/LevelLabel.tscn")
 
 const levels = [
-	preload("res://scenes/game/levels/Chase.tscn"),
 	preload("res://scenes/game/levels/LazerMaze.tscn"),
+	preload("res://scenes/game/levels/Chase.tscn"),
 	preload("res://scenes/game/levels/Loops.tscn"),
-	preload("res://scenes/game/levels/testLevel.tscn"),
-
 ]
 var _time = 0.0
 var current_level
@@ -29,16 +27,22 @@ func load_level():
 	
 	if current_level:
 		current_level.queue_free()
-
+	
+	remove_child(current_level)
+	
 	current_level = levels[current_index].instantiate()
 	_create_label(current_level.name, Color("DODGERBLUE"))
+	
 	add_child(current_level)
-	var diamondNode = current_level.find_child("Diamonds")
-	diamondCount = diamondNode.get_child_count()
+	
+	var diamonds = get_tree().get_nodes_in_group("Diamonds")
+
+	diamondCount = diamonds.size()
 	$HUD/Left.text = str(diamondCount)
 	
-	for d in diamondNode.get_children():
+	for d in diamonds:
 		d.set_game(self)
+		print("d pos:", d.position)
 	
 	$Player.respawn()
 	_time = 0.0
@@ -47,11 +51,13 @@ func load_level():
 func diamond_collected():
 	diamondCount -= 1
 	$HUD/Left.text = str(diamondCount)
+	print("diamondCount")
 	if !diamondCount: level_completed()
 
 func _process(delta):
 	
-	_time += delta
+	if diamondCount > 0:
+		_time += delta
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if diamondCount != 0: open_ingame_menu()

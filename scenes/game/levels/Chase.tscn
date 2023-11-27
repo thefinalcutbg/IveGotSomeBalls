@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ba835hwxstvau"]
+[gd_scene load_steps=18 format=3 uid="uid://ba835hwxstvau"]
 
 [ext_resource type="Texture2D" uid="uid://doelc6a6gh2il" path="res://assets/sprites/night.jpg" id="1_q3y5o"]
 [ext_resource type="Script" path="res://scenes/game/levels/Chase.gd" id="1_v12mk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/objects/diamond.tscn" id="3_abfcx"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/objects/gate.tscn" id="5_a83ci"]
 [ext_resource type="PackedScene" uid="uid://dsh6g0qknhuac" path="res://scenes/game/objects/acceleration_area.tscn" id="6_3qqai"]
+[ext_resource type="Texture2D" uid="uid://cvmq30ql25i0w" path="res://assets/sprites/BETON.BMP" id="7_148e2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pwfno"]
 panorama = ExtResource("1_q3y5o")
@@ -30,6 +31,40 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_ee31h"]
 size = Vector3(10, 0.5, 50)
 
+[sub_resource type="Curve3D" id="Curve3D_mcfgf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0711207, -7.15256e-06, -1.46993, 0, 0, 0, 0, 0, 0, -0.108053, -7.15256e-06, -8.78273, 0, 0, 0, 0, 0, 0, 0.10241, 1.86828, -15.528, 0, 0, 0, 0, 0, 0, 1.92412, 3.29943, -20.7381, 0, 0, 0, 0, 0, 0, 6.36754, 4.33569, -24.5927, 0, 0, 0, 0, 0, 0, 10.8337, 4.74023, -26.1693, 0, 0, 0, 0, 0, 0, 16.6532, 4.88818, -26.8558, 0, 0, 0, 0, 0, 0, 22.9188, 4.61181, -26.023, 0, 0, 0, 0, 0, 0, 26.4934, 3.90112, -23.5533, 0, 0, 0, 0, 0, 0, 30.9187, 2.39098, -18.222, 0, 0, 0, 0, 0, 0, 31.8778, 1.22631, -14.0461, 0, 0, 0, 0, 0, 0, 32.3902, 0.101067, -10.0008, 0, 0, 0, 0, 0, 0, 32.7621, -1.1659, -5.44083, 0, 0, 0, 0, 0, 0, 32.2462, -2.35035, -1.15509, 0, 0, 0, 0, 0, 0, 32.5475, -3.92664, 7.62082, 0, 0, 0, 0, 0, 0, 32.1399, -3.92664, 20.2036, 0, 0, 0, 0, 0, 0, 31.8469, -3.92664, 26.885, 0, 0, 0, 0, 0, 0, 31.8469, -3.92664, 34.4455, 0, 0, 0, 0, 0, 0, 32.485, 27.548, 77.857, 0, 0, 0, 0, 0, 0, 32.3792, 57.9427, 114.362, 0, 0, 0, 0, 0, 0, 31.561, 54.413, 323.047, 0, 0, 0, 0, 0, 0, 31.597, 47.918, 345.108, 0, 0, 0, 0, 0, 0, 29.8606, 22.0596, 369.333, 0, 0, 0, 0, 0, 0, 30.066, -27.607, 375.725, 0, 0, 0, 0, 0, 0, 31.3021, -35.5135, 396.482, 0, 0, 0, 0, 0, 0, 32.4916, -35.5134, 481.317, 0, 0, 0, 0, 0, 0, 134.777, -35.5134, 489.185, 0, 0, 0, 0, 0, 0, 136.863, -35.5134, 608.369, 0, 0, 0, 0, 0, 0, 136.54, -30.4384, 615.951, 0, 0, 0, 0, 0, 0, 136.631, -35.5134, 625.031, 0, 0, 0, 0, 0, 0, 136.517, -35.715, 815.55, 0, 0, 0, 0, 0, 0, 137.259, -31.1054, 822.298, 0, 0, 0, 0, 0, 0, 136.492, -35.5134, 830.971, 0, 0, 0, 0, 0, 0, 136.943, -35.5134, 935.229, 0, 0, 0, 0, 0, 0, 136.193, -35.5134, 1026.41, 0, 0, 0, 0, 0, 0, 136.424, -28.7961, 1033.49, 0, 0, 0, 0, 0, 0, 136.887, -35.5134, 1039.36, 0, 0, 0, 0, 0, 0, 137.618, -35.5134, 1136.52),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 39
+
+[sub_resource type="Animation" id="Animation_2s77m"]
+resource_name = "BarrierAnimation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Barriers")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, -4, 0, 2, 1, 0, -4, 0, 3, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0w3o6"]
+_data = {
+"BarrierAnimation": SubResource("Animation_2s77m")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dmcy"]
+size = Vector3(9, 4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc4dk"]
+albedo_texture = ExtResource("7_148e2")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ui4e2"]
+material = SubResource("StandardMaterial3D_dc4dk")
+size = Vector3(9, 4, 1)
+
 [node name="Chase" type="Node3D"]
 script = ExtResource("1_v12mk")
 
@@ -45,18 +80,179 @@ environment = SubResource("Environment_pms67")
 
 [node name="chase" parent="." instance=ExtResource("2_qajf3")]
 
-[node name="Diamonds" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89963, 1.83216, -20.7707)
-
-[node name="Diamond3" parent="Diamonds" instance=ExtResource("3_abfcx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.878, -37.0212, 1210.78)
-
-[node name="Gate" parent="." instance=ExtResource("5_a83ci")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 150.62, -34.1744, 498.303)
-
 [node name="AccelerationArea" parent="." instance=ExtResource("6_3qqai")]
 transform = Transform3D(0.999301, -0.027348, 0.0254927, 0.00577426, 0.786574, 0.617471, -0.0369384, -0.616891, 0.786182, 32.0146, 0.335791, 20.636)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AccelerationArea"]
 transform = Transform3D(0.999486, 0.0198727, -0.0251429, -0.0198362, 0.999801, 0.00170612, 0.0251719, -0.0012061, 0.999682, -0.800613, 0.921423, 21.1172)
 shape = SubResource("BoxShape3D_ee31h")
+
+[node name="Diamonds" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89963, 1.83216, -20.7707)
+
+[node name="Path3D" type="Path3D" parent="Diamonds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.89963, -0.970703, -4.97161)
+curve = SubResource("Curve3D_mcfgf")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Diamonds/Path3D"]
+transform = Transform3D(0.998831, -2.3488e-07, 0.048327, 7.10542e-15, 0.999996, 4.86021e-06, -0.0483272, -4.85453e-06, 0.998827, 0, 0, 0)
+loop = false
+
+[node name="Diamond3" parent="Diamonds/Path3D/PathFollow3D" instance=ExtResource("3_abfcx")]
+transform = Transform3D(0.995329, -2.34883e-07, -0.0965418, -7.04102e-07, 1.00001, -9.69216e-06, 0.0965422, 9.71486e-06, 0.995335, -0.239728, -0.117686, 1.11649)
+
+[node name="Gate" parent="." instance=ExtResource("5_a83ci")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 137.297, -34.1744, 498.303)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_0w3o6")
+}
+
+[node name="Barriers" type="Node3D" parent="AnimationPlayer"]
+transform = Transform3D(1, -1.86265e-09, 0, 3.72529e-09, 1, 2.98023e-08, 3.72529e-09, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AnimationPlayer/Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8547, 0.481593, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimationPlayer/Barriers/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.591454, -3.00203, 0)
+shape = SubResource("BoxShape3D_4dmcy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimationPlayer/Barriers/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.591454, -2.92277, 0)
+mesh = SubResource("BoxMesh_ui4e2")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="AnimationPlayer/Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0125465, 1.0085, -23.2195)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimationPlayer/Barriers/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485738, 0.337918, 0.0929546)
+shape = SubResource("BoxShape3D_4dmcy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimationPlayer/Barriers/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485738, 0.417182, 0.0929546)
+mesh = SubResource("BoxMesh_ui4e2")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.294, 3.53831, -28.3303)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 17.753
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5716, 2.69667, -5.80707)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 17.753
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5626, 5.18738, -15.5307)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 17.753
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(0.999837, 0, 0.0180457, 0, 1, 0, -0.0180457, 0, 0.999837, -3.56384, 5.94588, -38.4526)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 17.753
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91038, 5.18738, 0.839777)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 17.753
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8905, 9.10101, 19.8491)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 17.753
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.428, -30.3468, 380.946)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 17.753
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9611, -30.3468, 450.66)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 90.96
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9629, -30.3468, 451.933)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 151.997
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.902, -30.3468, 465.694)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 151.997
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.426, -30.3468, 861.128)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 151.997
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.892, -30.3468, 994.231)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 151.997
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.704, -30.3468, 1112.57)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 151.997
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.385, -30.3468, 529.608)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 151.997
+omni_attenuation = 0.275546
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.253, -30.3468, 675.011)
+light_color = Color(1, 1, 0.572549, 1)
+light_size = 0.043
+light_specular = 0.05
+omni_range = 151.997
+omni_attenuation = 0.275546

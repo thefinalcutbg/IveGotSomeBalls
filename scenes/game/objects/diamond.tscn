@@ -82,7 +82,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xdq46")
 
-[node name="Diamond" type="Area3D"]
+[node name="Diamond" type="Area3D" groups=["Diamonds"]]
 script = ExtResource("1_2bsul")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

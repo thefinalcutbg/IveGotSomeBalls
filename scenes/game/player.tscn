@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://cl62vwhpr4w16"]
+
+[ext_resource type="Script" path="res://scenes/game/player.gd" id="1_kerjs"]
+[ext_resource type="Texture2D" uid="uid://ckudf8vicb70r" path="res://assets/sprites/capture.png" id="2_2ce53"]
+[ext_resource type="AudioStream" uid="uid://ci23vbd280plg" path="res://assets/audio/start.wav" id="3_ql3or"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u3vxc"]
+friction = 0.0
+bounce = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qedv7"]
+depth_draw_mode = 1
+albedo_color = Color(0.67451, 0.67451, 0.67451, 1)
+albedo_texture = ExtResource("2_2ce53")
+roughness = 0.5
+roughness_texture_channel = 4
+rim = 0.65
+rim_tint = 0.19
+backlight = Color(1, 0, 0, 1)
+refraction_scale = -0.04
+uv1_scale = Vector3(1, 1, 0)
+uv1_triplanar_sharpness = 0.466517
+texture_filter = 0
+
+[sub_resource type="SphereMesh" id="SphereMesh_mc7ej"]
+lightmap_size_hint = Vector2i(17, 10)
+material = SubResource("StandardMaterial3D_qedv7")
+height = 0.7
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cetci"]
+height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
+radius = 3.5
+
+[node name="Player" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936, 0, 0, 0)
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_u3vxc")
+continuous_cd = true
+max_contacts_reported = 1
+contact_monitor = true
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_kerjs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_mc7ej")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.2065, 0)
+shape = SubResource("CapsuleShape3D_cetci")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307349, 0)
+
+[node name="ThunderRange" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ThunderRange"]
+shape = SubResource("SphereShape3D_mbjqs")
+
+[node name="PowerUpPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Sound"
+
+[node name="SpawnAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_ql3or")
+volume_db = 10.0
+bus = &"Sound"
+
+[node name="Camera" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 0.838119, 0.545487, 0, -0.545487, 0.838119, -2.05495e-07, 13.1777, 18.5018)
+fov = 60.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

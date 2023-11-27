@@ -27,4 +27,5 @@ window/stretch/mode="viewport"
 
 [physics]
 
+common/physics_ticks_per_second=30
 3d/default_gravity=50.0

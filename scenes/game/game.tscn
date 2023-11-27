@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c7er706kltch8"]
 
-[ext_resource type="PackedScene" uid="uid://cl62vwhpr4w16" path="res://scenes/game/player/player.tscn" id="1_ntt6g"]
+[ext_resource type="PackedScene" uid="uid://cl62vwhpr4w16" path="res://scenes/game/player.tscn" id="1_ntt6g"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_qi7a4"]
 [ext_resource type="AudioStream" uid="uid://40vapaye3uie" path="res://assets/audio/thun.wav" id="3_f4glk"]
 [ext_resource type="AudioStream" uid="uid://dyy15wd1ca6h8" path="res://assets/audio/end.wav" id="4_7xwjy"]
@@ -23,6 +23,7 @@ script = ExtResource("1_qi7a4")
 
 [node name="Player" parent="." instance=ExtResource("1_ntt6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88253, 0)
+continuous_cd = false
 
 [node name="DeathArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)

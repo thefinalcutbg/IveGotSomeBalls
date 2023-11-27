@@ -25,6 +25,7 @@ func _process(delta):
 
 
 func collect():
+
 	m_game.diamond_collected()
 	collected = true
 
