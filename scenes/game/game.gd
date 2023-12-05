@@ -4,25 +4,53 @@ const SUBMENU = preload("res://scenes/menu/SubMenu.tscn")
 const LEVELLABEL = preload("res://scenes/game/LevelLabel.tscn")
 
 const levels = [
+	#preload("res://scenes/game/levels/testLevel.tscn"),
 	preload("res://scenes/game/levels/LazerMaze.tscn"),
 	preload("res://scenes/game/levels/Chase.tscn"),
-	preload("res://scenes/game/levels/Loops.tscn"),
+	preload("res://scenes/game/levels/Loops.tscn")
 ]
 var _time = 0.0
 var current_level
-var current_index = 0
+var current_index = -1
 var diamondCount = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
+
+func _process(delta):
 	
+	if diamondCount > 0:
+		_time += delta
+	
+	if Input.is_action_just_pressed("ui_cancel"):
+		if diamondCount != 0: open_ingame_menu()
+	
+	_update_hud()
+
+func play_campaign():
+	current_index = 0
 	load_level()
 
-	pass # Replace with function body.
+func play_level(level):
+	
+	current_index = -1
+	print(level)
+	current_level = load(level).instantiate()
+	_create_label(current_level.name, Color("DODGERBLUE"))
+	
+	add_child(current_level)
+	
+	var diamonds = get_tree().get_nodes_in_group("Diamonds")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-
-
+	diamondCount = diamonds.size()
+	$HUD/Left.text = str(diamondCount)
+	
+	for d in diamonds: d.set_game(self)
+	
+	$Player.respawn()
+	_time = 0.0
+	
+	
 func load_level():
 	
 	if current_level:
@@ -40,9 +68,7 @@ func load_level():
 	diamondCount = diamonds.size()
 	$HUD/Left.text = str(diamondCount)
 	
-	for d in diamonds:
-		d.set_game(self)
-		print("d pos:", d.position)
+	for d in diamonds: d.set_game(self)
 	
 	$Player.respawn()
 	_time = 0.0
@@ -51,18 +77,7 @@ func load_level():
 func diamond_collected():
 	diamondCount -= 1
 	$HUD/Left.text = str(diamondCount)
-	print("diamondCount")
 	if !diamondCount: level_completed()
-
-func _process(delta):
-	
-	if diamondCount > 0:
-		_time += delta
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-		if diamondCount != 0: open_ingame_menu()
-	
-	_update_hud()
 
 
 func spawn_thunder(player, diamond):
@@ -124,13 +139,16 @@ func open_ingame_menu():
 		
 		_choices.clear()
 		
-		if !diamondCount or can_continue:
+		if (!diamondCount or can_continue) and current_index != -1:
 			subMenu.add_label("CONTINUE TO THE NEXT LEVEL")
 			_choices.push_back(MENU_OPTIONS.CONTINUE)
 			
 		if diamondCount > 0:
 			subMenu.add_label("RESUME GAME")
 			_choices.push_back(MENU_OPTIONS.RESUME)
+			#CONTINUE TO NEXT LEVEL IS PRESENT
+			if _choices.size() == 2 and diamondCount:
+				subMenu.setCurrentIndex(1)
 		
 		subMenu.add_label("RESTART LEVEL")
 		_choices.push_back(MENU_OPTIONS.RESTART)

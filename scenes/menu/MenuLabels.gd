@@ -27,7 +27,7 @@ func _process(delta):
 		
 		match labels[2].name:
 			"Start": main_menu.start_game()
-			"Select": main_menu.open_submenu(Globals.MENU_TYPE.SINGLE_MAP)
+			"Select": main_menu.open_submenu(Globals.MENU_TYPE.SINGLE_LEVEL)
 			"Scores": main_menu.open_submenu(Globals.MENU_TYPE.SCORES)
 			"Setup": main_menu.open_submenu(Globals.MENU_TYPE.SETUP)
 			"Quit": main_menu.quit()

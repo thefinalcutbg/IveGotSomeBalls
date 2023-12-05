@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl62vwhpr4w16"]
+[gd_scene load_steps=13 format=3 uid="uid://cl62vwhpr4w16"]
 
 [ext_resource type="Script" path="res://scenes/game/player.gd" id="1_kerjs"]
 [ext_resource type="Texture2D" uid="uid://ckudf8vicb70r" path="res://assets/sprites/capture.png" id="2_2ce53"]
 [ext_resource type="AudioStream" uid="uid://ci23vbd280plg" path="res://assets/audio/start.wav" id="3_ql3or"]
+[ext_resource type="Texture2D" uid="uid://cp1bftdlx3qtj" path="res://assets/sprites/particles/smoke_07.png" id="4_vbuex"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u3vxc"]
 friction = 0.0
@@ -33,15 +34,45 @@ height = 1.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
 radius = 3.5
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y6yds"]
+emission_shape = 2
+emission_sphere_radius = 0.3
+direction = Vector3(0, 0, 0)
+spread = 10.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.01
+initial_velocity_max = 0.01
+scale_min = 0.0
+scale_max = 0.0
+turbulence_noise_scale = 1.29
+turbulence_noise_speed_random = 4.0
+turbulence_influence_min = 0.24
+turbulence_influence_max = 0.44
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd7jm"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0, 1, 0.0117647, 1)
+albedo_texture = ExtResource("4_vbuex")
+emission_enabled = true
+emission = Color(0, 1, 0.0117647, 1)
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w40ge"]
+material = SubResource("StandardMaterial3D_sd7jm")
+size = Vector2(1.5, 1.5)
+orientation = 2
+
 [node name="Player" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936, 0, 0.0937856, 0)
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_u3vxc")
 continuous_cd = true
-max_contacts_reported = 1
+max_contacts_reported = 5
 contact_monitor = true
 can_sleep = false
 lock_rotation = true
+linear_velocity = Vector3(0, 5, 0)
 script = ExtResource("1_kerjs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -72,8 +103,19 @@ bus = &"Sound"
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Camera"]
-transform = Transform3D(1, 0, 0, 0, 0.838119, 0.545487, 0, -0.545487, 0.838119, -2.05495e-07, 13.1777, 18.5018)
+transform = Transform3D(1, 5.58794e-09, 4.19095e-09, -6.51926e-09, 0.838119, 0.545487, -5.32907e-14, -0.545487, 0.838119, 0.00956507, 12.3346, 16.0829)
 fov = 60.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 5.58794e-09, 0, -5.58794e-09, 1, 0, -0.015911, -0.000180512)
+emitting = false
+amount = 200
+lifetime = 3.5
+speed_scale = 10.0
+fixed_fps = 60
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_y6yds")
+draw_pass_1 = SubResource("PlaneMesh_w40ge")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

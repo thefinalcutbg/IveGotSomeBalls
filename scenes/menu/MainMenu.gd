@@ -6,6 +6,13 @@ const SUBMENU = preload("res://scenes/menu/SubMenu.tscn")
 @onready var viewport = $SubViewport
 @onready var menu_labels = $SubViewport/MenuLabels
 
+
+var single_levels = {
+	"Chase": "res://scenes/game/levels/Chase.tscn",
+	"Loops": "res://scenes/game/levels/Loops.tscn",
+	"LazerMaze": "res://scenes/game/levels/LazerMaze.tscn"
+}
+
 func setViewport(object, vp):
 	var material = object.get_active_material(0)
 	material.set_texture(0, vp.get_texture())
@@ -23,6 +30,8 @@ func _ready():
 	$SubMenuScreen.visible = false
 	
 	$AnimationPlayer.play("ComeOut")
+	
+	menu_labels.disable_input = true
 	
 	pass
 
@@ -49,9 +58,12 @@ func open_submenu(type):
 				subMenu.add_label("SOUND VOLUME: " + db_to_percent(1))
 				subMenu.add_label("MUSIC VOLUME: " + db_to_percent(2))
 				subMenu.scroll = false
+			Globals.MENU_TYPE.SINGLE_LEVEL:
+				for key in single_levels:
+					subMenu.add_label(key)
 			_:
-				for i in 35:
-					subMenu.add_label("HAHAHA")
+				for key in single_levels:
+					subMenu.add_label(key)
 
 		
 		#match the type of the submenu
@@ -72,7 +84,7 @@ func quit():
 
 
 func _on_animation_player_animation_finished(anim_name):
-	
+
 	match anim_name:
 		"GoIn": 
 			current_submenu().set_process(true)
@@ -95,7 +107,9 @@ func option_selected(index):
 			else:
 				set_volume(index+1) 
 				submenu.set_label_text(index, "MUSIC VOLUME: " + db_to_percent(index+1))
-
+		Globals.MENU_TYPE.SINGLE_LEVEL:
+			get_parent().play_level(single_levels[submenu.get_current_text()])
+			
 func current_submenu():
 	return $SubMenuScreen/SubMenuViewport.get_child(0)
 			

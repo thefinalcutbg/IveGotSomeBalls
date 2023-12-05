@@ -5,6 +5,7 @@ extends RigidBody3D
 @onready var rayCast = $RayCast3D
 @onready var twist_pivot = $Camera
 @onready var camera = $Camera/Camera3D
+@onready var particles = $GPUParticles3D
 var m_powerup := Globals.POWERUP.NONE
 
 var _powerup_sounds = [
@@ -16,6 +17,30 @@ var _powerup_sounds = [
 	]
 
 var collision := false
+
+func _ready():
+	pass
+
+func _process(delta):
+
+	var input := Vector3.ZERO
+	input.x = Input.get_axis("ui_left", "ui_right")
+	input.z = Input.get_axis("ui_up", "ui_down")
+
+	var force = twist_pivot.basis * input * 22000 * delta
+	
+	rotate_camera()
+	
+	if m_powerup == Globals.POWERUP.SPEED: force*=3.0
+	
+	#apply_central_impulse(force)
+	apply_central_force(force)
+		
+	processJump()
+	
+	processBreak()
+
+
 
 func set_camera(cameraNode):
 	return
@@ -44,20 +69,21 @@ func set_powerup(pw):
 		Globals.POWERUP.NONE:
 			color = Color("WHITE", 1)
 	
-	if m_powerup == Globals.POWERUP.SPEED:
-			apply_central_impulse(linear_velocity*12)
-			gravity_scale = 2
-	else:
-		gravity_scale = 1
-	
 	if m_powerup != Globals.POWERUP.NONE:
 		$PowerUpPlayer.play()
 	
 	$MeshInstance3D.mesh.material.albedo_color = color
+	particles.draw_pass_1.material.albedo_color = color
+	particles.draw_pass_1.material.emission = color
 	
-func _ready():
-#	$ReadySound.play()
-	pass
+	if m_powerup == Globals.POWERUP.SPEED:
+			apply_central_impulse(linear_velocity*12)
+			particles.emitting = true
+			gravity_scale = 2
+	else:
+		particles.emitting = false
+		gravity_scale = 1
+
 
 func respawn():
 	$SpawnAudio.play()
@@ -66,26 +92,6 @@ func respawn():
 	linear_velocity = Vector3.ZERO
 	global_position = Vector3(0,1,0)
 	twist_pivot.rotation = Vector3.ZERO
-
-func _process(delta):
-
-	var input := Vector3.ZERO
-	input.x = Input.get_axis("ui_left", "ui_right")
-	input.z = Input.get_axis("ui_up", "ui_down")
-
-	var force = twist_pivot.basis * input * 22000 * delta
-	
-	rotate_camera()
-	
-	if m_powerup == Globals.POWERUP.SPEED: force*=3.0
-	
-	#apply_central_impulse(force)
-	apply_central_force(force)
-		
-	processJump()
-	
-	processBreak()
-
 
 
 func rotate_camera():
@@ -131,35 +137,40 @@ var on_ground_jumping := false
 
 const jump_velocity = [40,50,60]
 
+
 func processJump():
-	
-	#NOT DETECTING FLOOR
 	
 	if m_powerup != Globals.POWERUP.JUMP: return
 	
+	var spacePressed = Input.is_key_pressed(KEY_SPACE)
+	
+	if !spacePressed:
+		particles.emitting = false
+	
 	jump_index = clamp(jump_index, 0, jump_velocity.size()-1)
-
+	
 	if !collision:
 		on_ground_jumping = false
 		return
+	elif spacePressed:
+		particles.emitting = true
 	
-	if !Input.is_key_pressed(KEY_SPACE):
+	if !spacePressed:
 		jump_index -= 1
 		return
 	
 	#enable animation here
 	
+	if on_ground_jumping: return
+	
 	if !$RayCast3D.is_colliding():
 		#handle bounce of body
 		return
-	
-	if on_ground_jumping: 
-		return
-	
+
 	on_ground_jumping = true
 	
 	linear_velocity.y = jump_velocity[jump_index]
-
+	
 	jump_index += 1
 
 func playPickupSound():
@@ -170,7 +181,11 @@ func processBreak():
 	
 	if m_powerup != Globals.POWERUP.BREAK: return
 	
-	if !Input.is_key_pressed(KEY_SPACE): return
+	if !Input.is_key_pressed(KEY_SPACE): 
+		particles.emitting = false
+		return
+	
+	particles.emitting = true
 	
 	apply_central_impulse(-linear_velocity*0.7)
 

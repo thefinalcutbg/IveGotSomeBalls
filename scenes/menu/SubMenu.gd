@@ -38,6 +38,19 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_select"):
 		_main_menu.option_selected(_target_index)
 
+func get_current_text():
+	return get_child(_target_index).text
+
+func setCurrentIndex(index):
+	if index < 0 or index >= get_child_count(): return
+	
+	_current_index = index
+	_target_index = index
+	
+	for child in get_children():
+		child.deselect()
+	
+	get_child(index).select()
 
 func animate():
 
