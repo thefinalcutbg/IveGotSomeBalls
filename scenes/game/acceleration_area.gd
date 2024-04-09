@@ -3,6 +3,8 @@ extends Area3D
 var _player = null
 var _vector = Vector3.ZERO
 
+var coef = 17000
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,7 +14,7 @@ func _physics_process(delta):
 	
 	if _player == null: return
 
-	_player.apply_central_force(_vector*delta*15000)
+	_player.apply_central_force(_vector*delta*coef)
 
 func set_vector(vector):
 	_vector = vector

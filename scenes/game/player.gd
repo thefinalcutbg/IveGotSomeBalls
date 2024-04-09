@@ -4,7 +4,7 @@ extends RigidBody3D
 const _break_coef = 0.08
 const _speed_coef = 2
 const _speed_boost = 2 #initial boost when speed powerup is applied
-const _jump_coef = [40,50,60] #for each successive jump
+const _jump_coef = [30,35,45] #for each successive jump
 var _is_colliding = false
 
 @onready var particles = $GPUParticles3D
@@ -80,13 +80,18 @@ func set_powerup(pw):
 	else:
 		particles.emitting = false
 		gravity_scale = 1
+	
+	$Thunder.visible = m_powerup == Globals.POWERUP.THUNDER
+	
 
 
 func respawn():
 
 	$MeshInstance3D.mesh.material.albedo_color = Color("WHITE", 1)
+	$Thunder.visible = false
 	m_powerup = Globals.POWERUP.NONE
 	particles.emitting = false
+	jump_guard = false
 	linear_velocity = Vector3.ZERO
 	global_position = Vector3(0,3,0)
 	$CameraPivot.rotation = Vector3.ZERO

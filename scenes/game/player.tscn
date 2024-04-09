@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cj0j47il8b1ry"]
+[gd_scene load_steps=19 format=3 uid="uid://cj0j47il8b1ry"]
 
 [ext_resource type="Script" path="res://scenes/game/player.gd" id="1_kerjs"]
 [ext_resource type="Texture2D" uid="uid://ckudf8vicb70r" path="res://assets/sprites/capture.png" id="2_2ce53"]
+[ext_resource type="Texture2D" uid="uid://cpl6xnbyigxyk" path="res://assets/sprites/thunder1.png" id="4_ncvar"]
 [ext_resource type="Texture2D" uid="uid://cp1bftdlx3qtj" path="res://assets/sprites/smoke_07.png" id="4_vbuex"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u3vxc"]
-friction = 0.01
-bounce = 0.5
+friction = 0.0
+bounce = 0.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qedv7"]
 depth_draw_mode = 1
@@ -75,13 +76,86 @@ material = SubResource("StandardMaterial3D_sd7jm")
 size = Vector2(1, 1)
 orientation = 2
 
+[sub_resource type="Shader" id="Shader_rryh2"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.1.3.rc1's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_disabled,diffuse_burley,specular_schlick_ggx;
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
+uniform float point_size : hint_range(0,128);
+uniform float roughness : hint_range(0,1);
+uniform sampler2D texture_metallic : hint_default_white,filter_linear_mipmap,repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r,filter_linear_mipmap,repeat_enable;
+uniform float specular;
+uniform float metallic;
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+uniform vec2 direction_and_speed = vec2(0.00, 2.0);
+uniform vec2 scale = vec2(1.0);
+uniform bool flip = false;
+
+
+
+void vertex() {
+	UV=UV*uv1_scale.xy+uv1_offset.xy;
+	
+}
+
+
+void fragment() {
+	vec2 base_uv = UV* scale - direction_and_speed * TIME;;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	float metallic_tex = dot(texture(texture_metallic,base_uv),metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	vec4 roughness_texture_channel = vec4(1.0,0.0,0.0,0.0);
+	float roughness_tex = dot(texture(texture_roughness,base_uv),roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+	SPECULAR = specular;
+	ALPHA *= albedo.a * albedo_tex.a;
+
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_brypd"]
+render_priority = 0
+shader = SubResource("Shader_rryh2")
+shader_parameter/albedo = Color(1, 1, 1, 0.392157)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(2, 5, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/direction_and_speed = Vector2(-0.3, 1.5)
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/flip = false
+shader_parameter/texture_albedo = ExtResource("4_ncvar")
+
+[sub_resource type="SphereMesh" id="SphereMesh_o5vgj"]
+material = SubResource("ShaderMaterial_brypd")
+radius = 0.8
+height = 1.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_or0d3"]
+material = SubResource("ShaderMaterial_brypd")
+radius = 0.8
+height = 1.2
+
 [node name="Player" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936, 0, 0.0937856, 0)
 physics_material_override = SubResource("PhysicsMaterial_u3vxc")
 can_sleep = false
 lock_rotation = true
-continuous_cd = true
-max_contacts_reported = 5
+max_contacts_reported = 2
 contact_monitor = true
 linear_velocity = Vector3(5, 0, 5)
 script = ExtResource("1_kerjs")
@@ -125,6 +199,18 @@ draw_pass_1 = SubResource("PlaneMesh_w40ge")
 
 [node name="JumpParticleTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Thunder" type="Node3D" parent="."]
+
+[node name="SphereThunder2" type="MeshInstance3D" parent="Thunder"]
+transform = Transform3D(1, 0, 0, 0, -0.999936, -0.0113443, 0, 0.0113443, -0.999936, 0, 0.0937856, 0)
+mesh = SubResource("SphereMesh_o5vgj")
+skeleton = NodePath("../Sphere")
+
+[node name="SphereThunder" type="MeshInstance3D" parent="Thunder"]
+transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936, 0, 0.0937856, 0)
+mesh = SubResource("SphereMesh_or0d3")
+skeleton = NodePath("../Sphere")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
