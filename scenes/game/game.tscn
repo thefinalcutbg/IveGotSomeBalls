@@ -39,6 +39,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="FPS" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 86.0
+grow_horizontal = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_aw8jc")
+horizontal_alignment = 1
+
 [node name="Diamonds" type="Label" parent="HUD"]
 layout_mode = 1
 anchors_preset = 1

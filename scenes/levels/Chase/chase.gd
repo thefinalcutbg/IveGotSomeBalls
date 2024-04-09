@@ -5,6 +5,6 @@ func _ready():
 	$AccelerationArea.set_vector(Vector3(0,0,1))
 	$AnimationPlayer.play("BarrierAnimation")
 
-func _process(delta):
+func _physics_process(delta):
 	$Diamonds/Path3D/PathFollow3D.progress += 90.0*delta
 	

@@ -15,7 +15,7 @@ func _ready():
 var disable_input = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	
 	move()	
 	
@@ -32,7 +32,7 @@ func move():
 	
 	if _direction == 0: return
 	
-	if _frame_counter == 32:
+	if _frame_counter == 64:
 		_direction = 0
 		_frame_counter = 0
 		return
@@ -47,7 +47,7 @@ func move():
 			
 	
 	for n in labels.size():
-		labels[n].position.y += 4*_direction
+		labels[n].position.y += 2*_direction
 	
 	_frame_counter+=1
 	

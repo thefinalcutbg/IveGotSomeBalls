@@ -12,9 +12,10 @@ func _ready():
 	$Audio/GameMusic.play()
 	pass
 
-func _physics_process(delta):
-	
+func _process(delta):
 	_update_hud()
+	
+func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if game_state != Globals.GAME_STATE.PLAYING: return
@@ -93,6 +94,8 @@ func _update_hud():
 	var playerSpeed = str($Player.linear_velocity.length()).pad_decimals(0)
 	
 	$HUD/Speed.text = "SPEED: " + playerSpeed + "KMH"
+	
+	$HUD/FPS.text = "FPS " + str(Engine.get_frames_per_second())
 	
 func _create_label(text : String, color : Color):
 	var label = LEVELLABEL.instantiate()
