@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c46hx8f6ck7ge"]
+
+[ext_resource type="Script" path="res://scenes/menu/menu.gd" id="1_2e77r"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_2e77r")

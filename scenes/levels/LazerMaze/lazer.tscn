@@ -1,0 +1,326 @@
+[gd_scene load_steps=16 format=3 uid="uid://ceb8hmayqvamy"]
+
+[ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="1_2lrt1"]
+[ext_resource type="Script" path="res://scenes/levels/LazerMaze/lazer.gd" id="1_14q3y"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="2_wggrt"]
+[ext_resource type="PackedScene" uid="uid://v3a5rvx8n8bj" path="res://scenes/levels/LazerMaze/lazer.gltf" id="3_flv0o"]
+[ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="4_7n5ih"]
+[ext_resource type="Texture2D" uid="uid://c7e8qwjikf0dj" path="res://assets/sprites/rrr.png" id="6_hbrwh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pwfno"]
+panorama = ExtResource("1_2lrt1")
+
+[sub_resource type="Sky" id="Sky_a0ymo"]
+sky_material = SubResource("PanoramaSkyMaterial_pwfno")
+
+[sub_resource type="Environment" id="Environment_pms67"]
+background_mode = 2
+sky = SubResource("Sky_a0ymo")
+sky_rotation = Vector3(0, 3.14159, 0)
+tonemap_mode = 2
+ssr_max_steps = 1
+ssr_fade_in = 1.883
+ssr_fade_out = 0.183011
+ssr_depth_tolerance = 49.71
+ssao_radius = 3.55
+ssao_intensity = 6.03
+ssao_power = 0.11949
+ssao_horizon = 1.0
+glow_enabled = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jjb7e"]
+data = PackedVector3Array(-12.7923, -0.378557, -0.0109994, -12.7923, -0.0171777, -1.63424, -12.7923, 0.496059, -0.0109994, 12.4235, -0.378557, -0.0109993, 12.4235, -0.0171777, 1.61224, 12.4235, 0.496059, -0.0109993, -12.7923, -0.378557, -0.0109994, 12.4235, -0.0171777, 1.61224, 12.4235, -0.378557, -0.0109993, -12.7923, -0.378557, -0.0109994, -12.7923, -0.0171777, 1.61224, 12.4235, -0.0171777, 1.61224, 12.4235, 0.496059, -0.0109993, -12.7923, -0.0171777, 1.61224, -12.7923, 0.496059, -0.0109994, 12.4235, 0.496059, -0.0109993, 12.4235, -0.0171777, 1.61224, -12.7923, -0.0171777, 1.61224, 12.4235, -0.0171777, -1.63424, -12.7923, 0.496059, -0.0109994, -12.7923, -0.0171777, -1.63424, 12.4235, -0.0171777, -1.63424, 12.4235, 0.496059, -0.0109993, -12.7923, 0.496059, -0.0109994, -12.7923, -0.0171777, -1.63424, 12.4235, -0.378557, -0.0109993, 12.4235, -0.0171777, -1.63424, -12.7923, -0.0171777, -1.63424, -12.7923, -0.378557, -0.0109994, 12.4235, -0.378557, -0.0109993, 12.4235, -0.0171777, -1.63424, 12.4235, -0.378557, -0.0109993, 12.4235, 0.496059, -0.0109993, -12.7923, -0.0171777, 1.61224, -12.7923, -0.378557, -0.0109994, -12.7923, 0.496059, -0.0109994, -12.7923, -0.0171777, 1.61224, -12.7923, -0.378557, -0.0109994, -12.7923, 0.496059, -0.0109994, -12.7923, -0.378557, -0.0109994, 12.4235, -0.0171777, -1.63424, -12.7923, -0.0171777, -1.63424, -12.7923, -0.0171777, 1.61224, 12.4235, -0.0171777, -1.63424, -12.7923, -0.378557, -0.0109994, 12.4235, -0.378557, -0.0109993, 12.4235, -0.0171777, 1.61224, 12.4235, 0.496059, -0.0109993, -12.7923, -0.0171777, 1.61224, 12.4235, -0.378557, -0.0109993, 12.4235, -0.0171777, -1.63424, 12.4235, -0.0171777, 1.61224, 12.4235, -0.378557, -0.0109993, -12.7923, -0.0171777, 1.61224)
+backface_collision = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6ngg"]
+resource_name = "Material.001"
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.495455)
+albedo_texture = ExtResource("6_hbrwh")
+roughness = 0.5
+emission_enabled = true
+emission = Color(0.555625, 0.973926, 0.961448, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ahlsx"]
+_surfaces = [{
+"aabb": AABB(-12.7923, -0.378557, -1.63424, 25.2158, 0.874617, 3.24649),
+"format": 34359742465,
+"index_count": 54,
+"index_data": PackedByteArray(4, 0, 1, 0, 5, 0, 6, 0, 2, 0, 7, 0, 4, 0, 2, 0, 6, 0, 4, 0, 0, 0, 2, 0, 7, 0, 0, 0, 5, 0, 7, 0, 2, 0, 0, 0, 3, 0, 5, 0, 1, 0, 3, 0, 7, 0, 5, 0, 1, 0, 6, 0, 3, 0, 1, 0, 4, 0, 6, 0, 3, 0, 6, 0, 7, 0, 0, 0, 4, 0, 5, 0, 0, 0, 4, 0, 5, 0, 4, 0, 3, 0, 1, 0, 0, 0, 3, 0, 4, 0, 6, 0, 2, 0, 7, 0, 0, 0, 6, 0, 3, 0, 2, 0, 6, 0, 0, 0),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(31, 173, 76, 193, 48, 184, 140, 188, 247, 93, 206, 63, 31, 173, 76, 193, 48, 184, 140, 188, 209, 46, 209, 191, 219, 198, 70, 65, 48, 184, 140, 188, 247, 93, 206, 63, 219, 198, 70, 65, 48, 184, 140, 188, 209, 46, 209, 191, 31, 173, 76, 193, 67, 210, 193, 190, 215, 54, 52, 188, 31, 173, 76, 193, 125, 251, 253, 62, 215, 54, 52, 188, 219, 198, 70, 65, 67, 210, 193, 190, 105, 54, 52, 188, 219, 198, 70, 65, 125, 251, 253, 62, 105, 54, 52, 188)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_aqa8a"]
+resource_name = "barrier_Cube_001"
+_surfaces = [{
+"aabb": AABB(-12.7923, -0.378557, -1.63424, 25.2158, 0.874617, 3.24649),
+"attribute_data": PackedByteArray(152, 164, 184, 61, 63, 209, 2, 63, 221, 190, 54, 192, 109, 235, 104, 63, 221, 190, 54, 192, 109, 235, 104, 63, 221, 190, 54, 192, 109, 235, 104, 63, 104, 235, 104, 63, 63, 209, 2, 63, 221, 190, 54, 192, 192, 164, 184, 61, 221, 190, 54, 192, 192, 164, 184, 61, 221, 190, 54, 192, 192, 164, 184, 61, 221, 190, 118, 64, 109, 235, 104, 63, 221, 190, 118, 64, 109, 235, 104, 63, 221, 190, 118, 64, 109, 235, 104, 63, 152, 164, 184, 61, 63, 209, 2, 63, 221, 190, 118, 64, 192, 164, 184, 61, 221, 190, 118, 64, 192, 164, 184, 61, 221, 190, 118, 64, 192, 164, 184, 61, 104, 235, 104, 63, 63, 209, 2, 63, 0, 0, 0, 63, 236, 44, 26, 63, 221, 190, 54, 192, 0, 0, 0, 63, 221, 190, 54, 192, 0, 0, 0, 63, 221, 190, 54, 192, 0, 0, 0, 63, 0, 0, 0, 63, 174, 73, 195, 62, 221, 190, 54, 192, 0, 0, 0, 63, 221, 190, 54, 192, 0, 0, 0, 63, 221, 190, 54, 192, 0, 0, 0, 63, 221, 190, 118, 64, 0, 0, 0, 63, 221, 190, 118, 64, 0, 0, 0, 63, 221, 190, 118, 64, 0, 0, 0, 63, 0, 0, 0, 63, 236, 44, 26, 63, 221, 190, 118, 64, 0, 0, 0, 63, 221, 190, 118, 64, 0, 0, 0, 63, 221, 190, 118, 64, 0, 0, 0, 63, 0, 0, 0, 63, 174, 73, 195, 62),
+"format": 34359742487,
+"index_count": 54,
+"index_data": PackedByteArray(16, 0, 4, 0, 20, 0, 27, 0, 11, 0, 31, 0, 19, 0, 9, 0, 26, 0, 19, 0, 2, 0, 9, 0, 30, 0, 3, 0, 23, 0, 30, 0, 10, 0, 3, 0, 14, 0, 22, 0, 7, 0, 14, 0, 29, 0, 22, 0, 6, 0, 25, 0, 13, 0, 6, 0, 18, 0, 25, 0, 15, 0, 27, 0, 31, 0, 0, 0, 16, 0, 20, 0, 1, 0, 17, 0, 21, 0, 17, 0, 12, 0, 5, 0, 1, 0, 12, 0, 17, 0, 24, 0, 8, 0, 28, 0, 1, 0, 24, 0, 12, 0, 8, 0, 24, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_h6ngg"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray(31, 173, 76, 193, 48, 184, 140, 188, 247, 93, 206, 63, 31, 173, 76, 193, 48, 184, 140, 188, 247, 93, 206, 63, 31, 173, 76, 193, 48, 184, 140, 188, 247, 93, 206, 63, 31, 173, 76, 193, 48, 184, 140, 188, 247, 93, 206, 63, 31, 173, 76, 193, 48, 184, 140, 188, 209, 46, 209, 191, 31, 173, 76, 193, 48, 184, 140, 188, 209, 46, 209, 191, 31, 173, 76, 193, 48, 184, 140, 188, 209, 46, 209, 191, 31, 173, 76, 193, 48, 184, 140, 188, 209, 46, 209, 191, 219, 198, 70, 65, 48, 184, 140, 188, 247, 93, 206, 63, 219, 198, 70, 65, 48, 184, 140, 188, 247, 93, 206, 63, 219, 198, 70, 65, 48, 184, 140, 188, 247, 93, 206, 63, 219, 198, 70, 65, 48, 184, 140, 188, 247, 93, 206, 63, 219, 198, 70, 65, 48, 184, 140, 188, 209, 46, 209, 191, 219, 198, 70, 65, 48, 184, 140, 188, 209, 46, 209, 191, 219, 198, 70, 65, 48, 184, 140, 188, 209, 46, 209, 191, 219, 198, 70, 65, 48, 184, 140, 188, 209, 46, 209, 191, 31, 173, 76, 193, 67, 210, 193, 190, 215, 54, 52, 188, 31, 173, 76, 193, 67, 210, 193, 190, 215, 54, 52, 188, 31, 173, 76, 193, 67, 210, 193, 190, 215, 54, 52, 188, 31, 173, 76, 193, 67, 210, 193, 190, 215, 54, 52, 188, 31, 173, 76, 193, 125, 251, 253, 62, 215, 54, 52, 188, 31, 173, 76, 193, 125, 251, 253, 62, 215, 54, 52, 188, 31, 173, 76, 193, 125, 251, 253, 62, 215, 54, 52, 188, 31, 173, 76, 193, 125, 251, 253, 62, 215, 54, 52, 188, 219, 198, 70, 65, 67, 210, 193, 190, 105, 54, 52, 188, 219, 198, 70, 65, 67, 210, 193, 190, 105, 54, 52, 188, 219, 198, 70, 65, 67, 210, 193, 190, 105, 54, 52, 188, 219, 198, 70, 65, 67, 210, 193, 190, 105, 54, 52, 188, 219, 198, 70, 65, 125, 251, 253, 62, 105, 54, 52, 188, 219, 198, 70, 65, 125, 251, 253, 62, 105, 54, 52, 188, 219, 198, 70, 65, 125, 251, 253, 62, 105, 54, 52, 188, 219, 198, 70, 65, 125, 251, 253, 62, 105, 54, 52, 188, 0, 0, 255, 127, 254, 255, 0, 0, 255, 127, 0, 0, 255, 255, 255, 63, 255, 127, 78, 23, 255, 255, 255, 63, 255, 127, 62, 225, 255, 255, 255, 191, 0, 0, 255, 127, 254, 255, 254, 127, 255, 127, 0, 0, 255, 255, 255, 63, 77, 151, 0, 0, 255, 255, 255, 63, 191, 158, 255, 255, 255, 255, 255, 191, 255, 127, 0, 0, 255, 255, 255, 63, 255, 127, 78, 23, 255, 255, 255, 63, 255, 127, 62, 225, 255, 255, 255, 191, 255, 255, 255, 127, 254, 255, 255, 255, 255, 127, 0, 0, 255, 255, 255, 63, 77, 151, 0, 0, 255, 255, 255, 63, 191, 158, 255, 255, 255, 255, 255, 191, 255, 255, 255, 127, 254, 255, 0, 128, 0, 0, 255, 127, 255, 255, 0, 0, 255, 127, 0, 0, 255, 255, 255, 63, 77, 151, 0, 0, 255, 255, 255, 63, 255, 127, 78, 23, 255, 255, 255, 63, 0, 0, 255, 127, 255, 255, 254, 127, 255, 127, 0, 0, 255, 255, 255, 191, 191, 158, 255, 255, 255, 255, 255, 191, 255, 127, 62, 225, 255, 255, 255, 191, 255, 127, 0, 0, 255, 255, 255, 63, 77, 151, 0, 0, 255, 255, 255, 63, 255, 127, 78, 23, 255, 255, 255, 63, 255, 255, 255, 127, 255, 255, 255, 255, 255, 127, 0, 0, 255, 255, 255, 191, 191, 158, 255, 255, 255, 255, 255, 191, 255, 127, 62, 225, 255, 255, 255, 191, 255, 255, 255, 127, 255, 255, 255, 255)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ahlsx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tj2u3"]
+size = Vector3(50, 1, 7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1nmn5"]
+material = SubResource("StandardMaterial3D_h6ngg")
+size = Vector3(50, 1, 7)
+
+[node name="LazerMaze" type="Node3D"]
+script = ExtResource("1_14q3y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pms67")
+
+[node name="lazer" parent="." instance=ExtResource("3_flv0o")]
+
+[node name="Diamonds" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89963, 1.83216, -20.7707)
+
+[node name="Diamond3" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1988, -14.452, 29.1905)
+
+[node name="Diamond4" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6537, -14.452, 29.2313)
+
+[node name="Diamond5" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7298, -14.452, 29.2313)
+
+[node name="Diamond6" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8106, -14.452, 29.2313)
+
+[node name="Diamond7" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1988, -14.452, 23.2612)
+
+[node name="Diamond10" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8106, -14.452, 23.302)
+
+[node name="Diamond11" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1988, -14.452, 16.6853)
+
+[node name="Diamond14" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8106, -14.452, 16.1545)
+
+[node name="Diamond36" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1988, -14.452, 10.2729)
+
+[node name="Diamond37" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6537, -14.452, 10.3137)
+
+[node name="Diamond38" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7298, -14.452, 10.3137)
+
+[node name="Diamond39" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8274, -14.452, 10.2862)
+
+[node name="Diamond15" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9952, -48.8508, 48.4542)
+
+[node name="Diamond16" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8838, -48.8508, 48.4542)
+
+[node name="Diamond17" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4954, -48.8508, 48.4542)
+
+[node name="Diamond18" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65634, -48.8508, 48.4542)
+
+[node name="Diamond19" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9952, -48.8508, 40.9432)
+
+[node name="Diamond20" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8838, -48.8508, 40.9432)
+
+[node name="Diamond21" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4954, -48.8508, 40.9432)
+
+[node name="Diamond22" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65634, -48.8508, 40.9432)
+
+[node name="Diamond23" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9952, -48.8508, 33.3609)
+
+[node name="Diamond24" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8838, -48.8508, 33.3609)
+
+[node name="Diamond25" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4954, -48.8508, 33.3609)
+
+[node name="Diamond35" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65634, -48.8508, 33.3609)
+
+[node name="Diamond27" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(0.999998, -0.00165837, 0.000514304, 0.00165752, 0.999997, 0.0016444, -0.000517032, -0.00164355, 0.999998, 38.8121, -55.8309, -100.44)
+
+[node name="Diamond28" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -138.949)
+
+[node name="Diamond29" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -217.489)
+
+[node name="Diamond30" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, -0.000847242, 0.000263111, 0.000847012, 0.999999, 0.000840103, -0.00026385, -0.000839871, 1, 38.8121, -55.8309, -256.301)
+
+[node name="Diamond31" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -295.03)
+
+[node name="Diamond32" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -332.564)
+
+[node name="Diamond33" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8121, -55.8309, -178.258)
+
+[node name="Diamond34" parent="Diamonds" instance=ExtResource("2_wggrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3775, -41.3629, -372.528)
+
+[node name="Gate" parent="." instance=ExtResource("4_7n5ih")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 61.3987, -10.2617, -11.3974)
+
+[node name="Barriers" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8187, -5.25993, -1.53605)
+
+[node name="Barrier" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(-3.93403e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, -3.93403e-08, 19.235, -7.39164, -0.434347)
+disable_mode = 2
+constant_linear_velocity = Vector3(20, 20, 20)
+constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier"]
+shape = SubResource("ConcavePolygonShape3D_jjb7e")
+
+[node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier"]
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_aqa8a")
+skeleton = NodePath("")
+
+[node name="Barrier2" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -157.51)
+disable_mode = 2
+constant_linear_velocity = Vector3(-100, 100, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 36.414)
+shape = SubResource("BoxShape3D_tj2u3")
+
+[node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 36.414)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_1nmn5")
+skeleton = NodePath("")
+
+[node name="Barrier3" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -196.588)
+disable_mode = 2
+constant_linear_velocity = Vector3(-100, 0, 100)
+constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
+shape = SubResource("BoxShape3D_tj2u3")
+
+[node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1559, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_1nmn5")
+skeleton = NodePath("")
+
+[node name="Barrier4" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -275.177)
+disable_mode = 2
+constant_linear_velocity = Vector3(-100, 100, 0)
+constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier4"]
+transform = Transform3D(1.00007, 0, 0, 0, 1.00007, 0, 0, 0, 1.00007, 25.156, 0, 0)
+shape = SubResource("BoxShape3D_tj2u3")
+
+[node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_1nmn5")
+skeleton = NodePath("")
+
+[node name="Barrier5" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14203, -45, -351.405)
+disable_mode = 2
+constant_linear_velocity = Vector3(-100, 100, 0)
+constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier5"]
+transform = Transform3D(0.988427, 0, 0, 0, 0.988427, 0, 0, 0, 0.988427, 25.156, 0, 0)
+shape = SubResource("BoxShape3D_tj2u3")
+
+[node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_1nmn5")
+skeleton = NodePath("")
+
+[node name="Barrier6" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(-0.996942, 0, -8.71554e-08, 0, 0.996942, 0, 8.71554e-08, 0, -0.996942, 31.3166, -45, -314.081)
+disable_mode = 2
+constant_linear_velocity = Vector3(100, 100, 0)
+constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+shape = SubResource("BoxShape3D_tj2u3")
+
+[node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_1nmn5")
+skeleton = NodePath("")
+
+[node name="Barrier7" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.3166, -45, -236.903)
+disable_mode = 2
+constant_linear_velocity = Vector3(100, 0, 100)
+constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+shape = SubResource("BoxShape3D_tj2u3")
+
+[node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_1nmn5")
+skeleton = NodePath("")
+
+[node name="Barrier8" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.3166, -45, -157.19)
+disable_mode = 2
+constant_linear_velocity = Vector3(100, 0, 100)
+constant_angular_velocity = Vector3(0.174533, 0.174533, 0.174533)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+shape = SubResource("BoxShape3D_tj2u3")
+
+[node name="barrier2" type="MeshInstance3D" parent="Barriers/Barrier8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.156, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_1nmn5")
+skeleton = NodePath("")

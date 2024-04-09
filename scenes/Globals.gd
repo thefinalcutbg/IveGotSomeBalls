@@ -1,18 +1,9 @@
-enum MENU_TYPE {
-	INGAME,
-	SCORES, 
-	SETUP, 
-	CAMPAIGN, 
-	SINGLE_LEVEL
+enum GAME_STATE {
+	PLAYING,
+	LEVEL_COMPLETED,
+	GAME_OVER
 }
 
-enum MAIN_MENU_OPTIONS {
-	START_GAME,
-	SINGLE_LEVEL,
-	SCORES,
-	SETUP,
-	QUIT
-}
 
 enum POWERUP {
 	NONE, 
@@ -22,4 +13,23 @@ enum POWERUP {
 	THUNDER
 }
 
+
+const LEVEL_MAP : Dictionary = {
+	"LAZER MAZE" : "res://scenes/levels/LazerMaze/lazer.tscn",
+	"CHASE" : "res://scenes/levels/Chase/chase.tscn",
+	"LOOPS" : "res://scenes/levels/Loops/loops.tscn",
+}
+
+
+const CAMPAIGN = [
+	"LAZER MAZE",
+	"CHASE",
+	"LOOPS"
+]
+
+const SINGLE_LEVEL = [
+	"LAZER MAZE",
+	"CHASE",
+	"LOOPS"
+]
 

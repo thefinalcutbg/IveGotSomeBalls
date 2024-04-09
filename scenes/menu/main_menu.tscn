@@ -1,0 +1,257 @@
+[gd_scene load_steps=24 format=3 uid="uid://0e6ysdyu3yi0"]
+
+[ext_resource type="Script" path="res://scenes/menu/main_menu.gd" id="1_kwkpn"]
+[ext_resource type="Texture2D" uid="uid://ctugo7k0o6sw3" path="res://assets/sprites/ballsEndless.png" id="2_4hgcw"]
+[ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="2_cxsb4"]
+[ext_resource type="PackedScene" uid="uid://ced4irrsxkwt5" path="res://scenes/menu/main_menu_labels.tscn" id="4_880jj"]
+[ext_resource type="Texture2D" uid="uid://cpl6xnbyigxyk" path="res://assets/sprites/thunder1.png" id="5_wcyib"]
+[ext_resource type="PackedScene" uid="uid://c46hx8f6ck7ge" path="res://scenes/menu/menu.tscn" id="8_djqin"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8cso1"]
+panorama = ExtResource("2_cxsb4")
+
+[sub_resource type="Sky" id="Sky_jt2pe"]
+sky_material = SubResource("PanoramaSkyMaterial_8cso1")
+
+[sub_resource type="Environment" id="Environment_7ubb7"]
+background_mode = 2
+background_energy_multiplier = 1.97
+sky = SubResource("Sky_jt2pe")
+reflected_light_source = 2
+tonemap_exposure = 1.51
+tonemap_white = 1.33
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_oou5q"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kty0g"]
+resource_local_to_scene = true
+specular_mode = 2
+albedo_color = Color(1, 1, 1, 0.411765)
+albedo_texture = SubResource("ViewportTexture_oou5q")
+albedo_texture_force_srgb = true
+metallic_specular = 1.0
+metallic_texture_channel = 3
+roughness = 0.0
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+emission_operator = 1
+normal_scale = -16.0
+rim_tint = 0.48
+anisotropy = -1.0
+backlight = Color(1, 1, 1, 1)
+refraction_scale = 1.0
+detail_blend_mode = 3
+uv1_triplanar_sharpness = 0.0268083
+uv2_scale = Vector3(0, 1, 1)
+texture_filter = 1
+texture_repeat = false
+proximity_fade_distance = 1.8
+
+[sub_resource type="Shader" id="Shader_wewya"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.1.3.rc1's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_disabled,diffuse_burley,specular_schlick_ggx;
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
+uniform float point_size : hint_range(0,128);
+uniform float roughness : hint_range(0,1);
+uniform sampler2D texture_metallic : hint_default_white,filter_linear_mipmap,repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r,filter_linear_mipmap,repeat_enable;
+uniform float specular;
+uniform float metallic;
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+uniform vec2 direction_and_speed = vec2(0.00, 2.0);
+uniform vec2 scale = vec2(1.0);
+uniform bool flip = false;
+
+
+
+void vertex() {
+	UV=UV*uv1_scale.xy+uv1_offset.xy;
+	
+}
+
+
+void fragment() {
+	vec2 base_uv = UV* scale - direction_and_speed * TIME;;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	float metallic_tex = dot(texture(texture_metallic,base_uv),metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	vec4 roughness_texture_channel = vec4(1.0,0.0,0.0,0.0);
+	float roughness_tex = dot(texture(texture_roughness,base_uv),roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+	SPECULAR = specular;
+	ALPHA *= albedo.a * albedo_tex.a;
+
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_brypd"]
+render_priority = 0
+shader = SubResource("Shader_wewya")
+shader_parameter/albedo = Color(1, 1, 1, 0.223529)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(2, 5, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/direction_and_speed = Vector2(-0.3, 1.5)
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/flip = false
+shader_parameter/texture_albedo = ExtResource("5_wcyib")
+
+[sub_resource type="SphereMesh" id="SphereMesh_6xxco"]
+material = SubResource("ShaderMaterial_brypd")
+radius = 2.0
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emlkm"]
+albedo_texture = ExtResource("2_4hgcw")
+uv1_scale = Vector3(7, 5, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2mhfd"]
+material = SubResource("StandardMaterial3D_emlkm")
+size = Vector2(40, 15)
+subdivide_width = 50
+subdivide_depth = 50
+
+[sub_resource type="Animation" id="Animation_ufaw8"]
+resource_name = "ComeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.2974, 3.4822),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2.84217e-14, 2.5)]
+}
+
+[sub_resource type="Animation" id="Animation_xv50p"]
+resource_name = "GoIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.29, 3.84),
+"update": 0,
+"values": [Vector3(0, -2.84217e-14, 2.5), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_spu3d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.84217e-14, 2.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ikgck"]
+_data = {
+"ComeOut": SubResource("Animation_ufaw8"),
+"GoIn": SubResource("Animation_xv50p"),
+"RESET": SubResource("Animation_spu3d")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_07ec2"]
+viewport_path = NodePath("SubMenuScreen/SubMenuViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u11wu"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_color = Color(1, 1, 1, 0.72549)
+albedo_texture = SubResource("ViewportTexture_07ec2")
+emission = Color(0.490196, 0.490196, 0.490196, 1)
+emission_energy_multiplier = 8.74
+normal_scale = 0.3
+backlight = Color(1, 1, 1, 1)
+refraction_scale = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5o5mv"]
+material = SubResource("StandardMaterial3D_u11wu")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_kwkpn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7ubb7")
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.573576, 0, -0.819152, 0, 1, 0, 0.819152, 0, 0.573576, 0, 0, -0.7)
+material_override = SubResource("StandardMaterial3D_kty0g")
+mesh = SubResource("SphereMesh_6xxco")
+
+[node name="SphereThunder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, -0.7)
+mesh = SubResource("SphereMesh_6xxco")
+skeleton = NodePath("../Sphere")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+process_mode = 3
+disable_3d = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(2300, 380)
+render_target_update_mode = 4
+
+[node name="MainMenuLabels" parent="SubViewport" instance=ExtResource("4_880jj")]
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -3.22274)
+mesh = SubResource("PlaneMesh_2mhfd")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.84217e-14, 2.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera3D")
+libraries = {
+"": SubResource("AnimationLibrary_ikgck")
+}
+
+[node name="SubMenuScreen" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -0.000767945, 0, 0.000767945, 1, 0, 0, 0, 1, 0, 0, -0.269917)
+mesh = SubResource("PlaneMesh_5o5mv")
+
+[node name="SubMenuViewport" type="SubViewport" parent="SubMenuScreen"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1000, 1000)
+
+[node name="SubMenu" parent="SubMenuScreen/SubMenuViewport" instance=ExtResource("8_djqin")]
+
+[connection signal="option_selected" from="SubViewport/MainMenuLabels" to="." method="_on_main_menu_labels_option_selected"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="menu_canceled" from="SubMenuScreen/SubMenuViewport/SubMenu" to="." method="_on_sub_menu_menu_canceled"]
+[connection signal="option_selected" from="SubMenuScreen/SubMenuViewport/SubMenu" to="." method="_on_sub_menu_option_selected"]

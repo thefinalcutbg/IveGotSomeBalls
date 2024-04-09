@@ -1,12 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cl62vwhpr4w16"]
+[gd_scene load_steps=14 format=3 uid="uid://cj0j47il8b1ry"]
 
 [ext_resource type="Script" path="res://scenes/game/player.gd" id="1_kerjs"]
 [ext_resource type="Texture2D" uid="uid://ckudf8vicb70r" path="res://assets/sprites/capture.png" id="2_2ce53"]
-[ext_resource type="AudioStream" uid="uid://ci23vbd280plg" path="res://assets/audio/start.wav" id="3_ql3or"]
-[ext_resource type="Texture2D" uid="uid://cp1bftdlx3qtj" path="res://assets/sprites/particles/smoke_07.png" id="4_vbuex"]
+[ext_resource type="Texture2D" uid="uid://cp1bftdlx3qtj" path="res://assets/sprites/smoke_07.png" id="4_vbuex"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u3vxc"]
-friction = 0.0
+friction = 0.01
 bounce = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qedv7"]
@@ -27,23 +26,32 @@ texture_filter = 0
 lightmap_size_hint = Vector2i(17, 10)
 material = SubResource("StandardMaterial3D_qedv7")
 height = 0.7
+radial_segments = 60
+rings = 20
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cetci"]
-height = 1.0
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bj3gt"]
+points = PackedVector3Array(-0.273722, -0.278231, -0.103801, 0.455948, 0.0631343, 0.164162, 0.426154, 0.152779, 0.134252, -0.261352, 0.0633852, 0.404302, -0.214258, 0.225857, -0.311317, 0.290567, -0.0707608, -0.386632, 0.172085, -0.279771, 0.238544, 0.141885, 0.330508, -0.0594206, -0.420826, 0.151342, 0.147877, -0.289923, -0.0709113, -0.387416, 0.00804378, 0.167327, 0.432064, 0.170863, -0.292554, -0.207157, -0.425496, -0.145913, 0.149515, 0.00811075, -0.146716, 0.450958, 0.261724, 0.137754, -0.373015, 0.461231, -0.0719249, -0.150927, -0.155301, 0.300451, 0.193039, -0.455598, 0.0633288, -0.164512, -0.0959807, -0.32336, 0.148607, -0.0217653, -0.0712227, -0.478844, 0.290567, -0.0707607, 0.386632, 0.366725, -0.220609, 0.119478, 0.231078, 0.226484, 0.297382, -0.259223, 0.285644, -0.103953, -0.0365736, -0.234539, -0.357199, 0.426154, 0.152779, -0.134252, -0.259555, -0.159988, 0.356986, 0.00804381, 0.167327, -0.432066, -0.425496, -0.145913, -0.149515, 0.0529356, -0.340726, -0.0748201, 0.00802184, 0.285632, -0.282162, -0.291789, 0.0634652, -0.389903)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
 radius = 3.5
 
+[sub_resource type="Gradient" id="Gradient_bs2hl"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gqcvh"]
+gradient = SubResource("Gradient_bs2hl")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y6yds"]
-emission_shape = 2
-emission_sphere_radius = 0.3
+emission_shape = 1
+emission_sphere_radius = 0.7
 direction = Vector3(0, 0, 0)
 spread = 10.0
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = 0.01
 initial_velocity_max = 0.01
+gravity = Vector3(0, 0, 0)
 scale_min = 0.0
 scale_max = 0.0
+color_ramp = SubResource("GradientTexture1D_gqcvh")
 turbulence_noise_scale = 1.29
 turbulence_noise_speed_random = 4.0
 turbulence_influence_min = 0.24
@@ -54,25 +62,28 @@ transparency = 1
 blend_mode = 1
 albedo_color = Color(0, 1, 0.0117647, 1)
 albedo_texture = ExtResource("4_vbuex")
+metallic_specular = 0.11
+roughness = 0.0
 emission_enabled = true
 emission = Color(0, 1, 0.0117647, 1)
+emission_energy_multiplier = 0.0
 billboard_mode = 1
+grow_amount = -1.318
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_w40ge"]
 material = SubResource("StandardMaterial3D_sd7jm")
-size = Vector2(1.5, 1.5)
+size = Vector2(1, 1)
 orientation = 2
 
 [node name="Player" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936, 0, 0.0937856, 0)
-mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_u3vxc")
+can_sleep = false
+lock_rotation = true
 continuous_cd = true
 max_contacts_reported = 5
 contact_monitor = true
-can_sleep = false
-lock_rotation = true
-linear_velocity = Vector3(0, 5, 0)
+linear_velocity = Vector3(5, 0, 5)
 script = ExtResource("1_kerjs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -80,11 +91,12 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_mc7ej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.2065, 0)
-shape = SubResource("CapsuleShape3D_cetci")
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_bj3gt")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307349, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 6.51926e-09, 0, -6.51926e-09, 1, 0, 0.193412, -0.00129263)
+target_position = Vector3(0, -1.2, 0)
 
 [node name="ThunderRange" type="Area3D" parent="."]
 
@@ -92,30 +104,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307349, 0)
 shape = SubResource("SphereShape3D_mbjqs")
 
 [node name="PowerUpPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Sound"
 
-[node name="SpawnAudio" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_ql3or")
-volume_db = 10.0
-bus = &"Sound"
-
-[node name="Camera" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Camera"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 5.58794e-09, 4.19095e-09, -6.51926e-09, 0.838119, 0.545487, -5.32907e-14, -0.545487, 0.838119, 0.00956507, 12.3346, 16.0829)
 fov = 60.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 5.58794e-09, 0, -5.58794e-09, 1, 0, -0.015911, -0.000180512)
+transform = Transform3D(1, 0, 0, 0, 1, 5.58794e-09, 0, -5.58794e-09, 1, 0, 0, 0)
 emitting = false
-amount = 200
-lifetime = 3.5
+amount = 5000
+lifetime = 5.0
 speed_scale = 10.0
 fixed_fps = 60
 trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_y6yds")
 draw_pass_1 = SubResource("PlaneMesh_w40ge")
 
+[node name="JumpParticleTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="JumpParticleTimer" to="." method="_on_jump_particle_timer_timeout"]

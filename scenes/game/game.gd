@@ -1,210 +1,127 @@
 extends Node3D
 
-const SUBMENU = preload("res://scenes/menu/SubMenu.tscn")
-const LEVELLABEL = preload("res://scenes/game/LevelLabel.tscn")
+var _diamond_count = 0
+var game_state := Globals.GAME_STATE.PLAYING
+var _level_path : String
 
-const levels = [
-	#preload("res://scenes/game/levels/testLevel.tscn"),
-	preload("res://scenes/game/levels/LazerMaze.tscn"),
-	preload("res://scenes/game/levels/Chase.tscn"),
-	preload("res://scenes/game/levels/Loops.tscn")
-]
-var _time = 0.0
-var current_level
-var current_index = -1
-var diamondCount = 0
+const LEVELLABEL = preload("res://scenes/game/level_label.tscn")
+
+signal menu_requested()
 
 func _ready():
+	$Audio/GameMusic.play()
 	pass
 
-func _process(delta):
-	
-	if diamondCount > 0:
-		_time += delta
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-		if diamondCount != 0: open_ingame_menu()
+func _physics_process(delta):
 	
 	_update_hud()
-
-func play_campaign():
-	current_index = 0
-	load_level()
-
-func play_level(level):
 	
-	current_index = -1
-	print(level)
-	current_level = load(level).instantiate()
-	_create_label(current_level.name, Color("DODGERBLUE"))
+	if Input.is_action_just_pressed("ui_cancel"):
+		if game_state != Globals.GAME_STATE.PLAYING: return
+		menu_requested.emit()
+		return
+
+func load_level(LevelName : String):
 	
-	add_child(current_level)
+	_level_path = Globals.LEVEL_MAP[LevelName]
+	
+	start_game()
+
+func start_game():
+	
+	game_state = Globals.GAME_STATE.PLAYING
+
+	var level = load(_level_path).instantiate()
+	
+	_create_label(level.name, Color("DODGERBLUE"))
+	
+	if $Level.get_child_count():
+		var oldLevel = $Level.get_child(0)
+		$Level.remove_child(oldLevel)
+		oldLevel.queue_free()
+	
+	$Level.add_child(level)
 	
 	var diamonds = get_tree().get_nodes_in_group("Diamonds")
-
-	diamondCount = diamonds.size()
-	$HUD/Left.text = str(diamondCount)
+	
+	_diamond_count = diamonds.size()
+	
+	$HUD/Diamonds.text = str(_diamond_count)
 	
 	for d in diamonds: d.set_game(self)
 	
+	$Audio/SpawnAudio.play()
+	
 	$Player.respawn()
-	_time = 0.0
 	
-	
-func load_level():
-	
-	if current_level:
-		current_level.queue_free()
-	
-	remove_child(current_level)
-	
-	current_level = levels[current_index].instantiate()
-	_create_label(current_level.name, Color("DODGERBLUE"))
-	
-	add_child(current_level)
-	
-	var diamonds = get_tree().get_nodes_in_group("Diamonds")
+	$HUD/Timer.reset()
 
-	diamondCount = diamonds.size()
-	$HUD/Left.text = str(diamondCount)
-	
-	for d in diamonds: d.set_game(self)
-	
-	$Player.respawn()
-	_time = 0.0
-	
+func open_ingame_menu(menu):
+	add_child(menu)
 
 func diamond_collected():
-	diamondCount -= 1
-	$HUD/Left.text = str(diamondCount)
-	if !diamondCount: level_completed()
+	
+	#_diamond_count = 0
+	_diamond_count -= 1
+	
+	$HUD/Diamonds.text = str(_diamond_count)
+	
+	$Audio/DiamondSound.play()
+	
+	if _diamond_count != 0: return
+	
+	game_state = Globals.GAME_STATE.LEVEL_COMPLETED
+	
+	$HUD/Timer.stop()
+	
+	_end_game(false)
 
+const THUNDER_BOLT = preload("res://scenes/game/thunder_bolt.tscn")
 
 func spawn_thunder(player, diamond):
 	
-	const THUNDER_SCENE = preload("res://scenes/game/objects/thunder_bolt.tscn")
-	
-	var thunder = THUNDER_SCENE.instantiate()
+	var thunder = THUNDER_BOLT.instantiate()
 	thunder.set_connectors(player, diamond)
 	add_child(thunder)
-	$ThunderSound.play()
-	
-func _on_death_area_area_entered(area):
-	#the level is completed
-	if !diamondCount: return
-	
-	diamondCount = -1
-	open_ingame_menu()
+	$Audio/ThunderSound.play()
 
+func close_ingame_menu():
+	get_node("IngameMenu").queue_free()
 
 func _update_hud():
 	
 	var playerSpeed = str($Player.linear_velocity.length()).pad_decimals(0)
 	
 	$HUD/Speed.text = "SPEED: " + playerSpeed + "KMH"
-	$HUD/Time.text = "TIME: " + str(_time).pad_decimals(2)
 	
-
-#MENU LOGIC
-
-func close_menu_requested():
-
-	#game is in progress
-	if diamondCount < 1: return
-	$MenuCanavas.get_child(0).queue_free()
-	get_tree().paused = false
-
-enum MENU_OPTIONS{
-	CONTINUE,
-	RESUME,
-	RESTART,
-	EXIT
-}
-
-var _choices = []
-
-func open_ingame_menu():
-		
-		#menu is already opened
-		if $MenuCanavas.get_child_count() == 1: return
-		var subMenu = SUBMENU.instantiate()
-
-		subMenu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-		subMenu.set_param(self, Globals.MENU_TYPE.INGAME)
-		subMenu.offset_y = -120
-		subMenu.scroll = false
-		$MenuCanavas.add_child(subMenu)
-		
-		var can_continue = _choices.size() and _choices[0] == MENU_OPTIONS.CONTINUE
-		
-		_choices.clear()
-		
-		if (!diamondCount or can_continue) and current_index != -1:
-			subMenu.add_label("CONTINUE TO THE NEXT LEVEL")
-			_choices.push_back(MENU_OPTIONS.CONTINUE)
-			
-		if diamondCount > 0:
-			subMenu.add_label("RESUME GAME")
-			_choices.push_back(MENU_OPTIONS.RESUME)
-			#CONTINUE TO NEXT LEVEL IS PRESENT
-			if _choices.size() == 2 and diamondCount:
-				subMenu.setCurrentIndex(1)
-		
-		subMenu.add_label("RESTART LEVEL")
-		_choices.push_back(MENU_OPTIONS.RESTART)
-		
-		subMenu.add_label("EXIT TO MAIN MENU")
-		_choices.push_back(MENU_OPTIONS.EXIT)
-		
-		get_tree().paused = true
-
-
-func option_selected(index):
-	
-	$MenuCanavas.get_child(0).queue_free()
-	get_tree().paused = false
-	
-	match _choices[index]:
-		MENU_OPTIONS.CONTINUE: 
-			_choices.clear()
-			current_index+=1
-			load_level()
-		MENU_OPTIONS.RESUME:
-			return
-		MENU_OPTIONS.RESTART:
-			load_level()
-		MENU_OPTIONS.EXIT:
-			get_parent().quit_to_menu()
-
-func level_completed():
-	#put high score logic here
-	
-	var bestTime = false
-	
-	var color
-	var text
-	var sound
-
-	if bestTime:
-		text = "BEST\nTIME"
-		color = Color("RED")
-		sound = load("res://assets/audio/endbest.wav")
-	else:
-		text = "LEVEL\nCOMPLETED"
-		color = Color("GREEN")
-		sound = load("res://assets/audio/end.wav")
-	
-	_create_label(text, color)
-
-	$EndSound.stream = sound
-	$EndSound.play()
-
-func _on_end_sound_finished():
-	open_ingame_menu()
-
-func _create_label(text, color):
-	
+func _create_label(text : String, color : Color):
 	var label = LEVELLABEL.instantiate()
 	label.set_text(text)
 	label.set_color(color)
-	$MenuCanavas.add_child(label)
+	add_child(label)
+
+func _end_game(best_time : bool)->void:
+	
+	if best_time:
+		_create_label("BEST\nTIME", Color("RED"))
+		$Audio/EndBest.play()
+	else:
+		_create_label("LEVEL\nCOMPLETED", Color("GREEN"))
+		$Audio/EndSound.play()
+
+func _on_death_area_body_entered(body):
+	
+	if _diamond_count == 0: return
+	
+	game_state = Globals.GAME_STATE.GAME_OVER
+	menu_requested.emit()
+
+func _on_end_sound_finished():
+	menu_requested.emit()
+
+func _on_end_best_finished():
+	#highscore input logic goes here
+	menu_requested.emit()
+
+func _on_game_music_finished():
+	$Audio/GameMusicLoop.play()
