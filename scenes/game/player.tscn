@@ -145,7 +145,7 @@ material = SubResource("ShaderMaterial_brypd")
 radius = 0.8
 height = 1.2
 
-[sub_resource type="SphereMesh" id="SphereMesh_or0d3"]
+[sub_resource type="SphereMesh" id="SphereMesh_51sb0"]
 material = SubResource("ShaderMaterial_brypd")
 radius = 0.8
 height = 1.2
@@ -205,12 +205,12 @@ one_shot = true
 [node name="SphereThunder2" type="MeshInstance3D" parent="Thunder"]
 transform = Transform3D(1, 0, 0, 0, -0.999936, -0.0113443, 0, 0.0113443, -0.999936, 0, 0.0937856, 0)
 mesh = SubResource("SphereMesh_o5vgj")
-skeleton = NodePath("../Sphere")
+skeleton = NodePath("")
 
 [node name="SphereThunder" type="MeshInstance3D" parent="Thunder"]
 transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936, 0, 0.0937856, 0)
-mesh = SubResource("SphereMesh_or0d3")
-skeleton = NodePath("../Sphere")
+mesh = SubResource("SphereMesh_51sb0")
+skeleton = NodePath("")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
