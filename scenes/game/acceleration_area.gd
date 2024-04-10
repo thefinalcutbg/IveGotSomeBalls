@@ -3,7 +3,7 @@ extends Area3D
 var _player = null
 var _vector = Vector3.ZERO
 
-var coef = 17000
+var coef = 13000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

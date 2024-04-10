@@ -95,7 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.89963, -0.970703, -4.97161)
 curve = SubResource("Curve3D_mcfgf")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Diamonds/Path3D"]
-transform = Transform3D(0.998831, -2.3488e-07, 0.048327, 1.42108e-14, 0.999996, 4.86021e-06, -0.0483272, -4.85453e-06, 0.998827, 0, 0, 0)
+transform = Transform3D(0.998831, -2.3488e-07, 0.048327, 7.10542e-15, 0.999996, 4.86021e-06, -0.0483272, -4.85453e-06, 0.998827, 0, 0, 0)
 loop = false
 
 [node name="Diamond3" parent="Diamonds/Path3D/PathFollow3D" instance=ExtResource("3_abfcx")]

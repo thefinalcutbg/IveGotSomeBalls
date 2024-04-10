@@ -8,7 +8,3 @@ func _ready():
 	$Gates/Gate3.set_powerup(Globals.POWERUP.SPEED)
 	$Gates/Gate4.set_powerup(Globals.POWERUP.BREAK)
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

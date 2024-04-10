@@ -4,7 +4,7 @@ extends RigidBody3D
 const _break_coef = 0.08
 const _speed_coef = 2
 const _speed_boost = 2 #initial boost when speed powerup is applied
-const _jump_coef = [30,35,45] #for each successive jump
+var _jump_coef = [30,35,45] #for each successive jump
 var _is_colliding = false
 
 @onready var particles = $GPUParticles3D
@@ -95,6 +95,9 @@ func respawn():
 	linear_velocity = Vector3.ZERO
 	global_position = Vector3(0,3,0)
 	$CameraPivot.rotation = Vector3.ZERO
+	physics_material_override.bounce = 0.6
+	gravity_scale = 1
+	_jump_coef = [30,35,45]
 
 func _rotate_camera():
 	

@@ -180,10 +180,10 @@ shape = SubResource("SphereShape3D_mbjqs")
 [node name="PowerUpPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="CameraPivot" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 5.58794e-09, 4.19095e-09, -6.51926e-09, 0.838119, 0.545487, -5.32907e-14, -0.545487, 0.838119, 0.00956507, 12.3346, 16.0829)
+transform = Transform3D(1, 5.46389e-09, 3.55622e-09, -6.51926e-09, 0.838119, 0.545487, -5.32907e-14, -0.545487, 0.838119, 0.00956507, 12.3346, 16.0829)
 fov = 60.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
@@ -203,12 +203,12 @@ one_shot = true
 [node name="Thunder" type="Node3D" parent="."]
 
 [node name="SphereThunder2" type="MeshInstance3D" parent="Thunder"]
-transform = Transform3D(1, 0, 0, 0, -0.999936, -0.0113443, 0, 0.0113443, -0.999936, 0, 0.0937856, 0)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
 mesh = SubResource("SphereMesh_o5vgj")
 skeleton = NodePath("")
 
 [node name="SphereThunder" type="MeshInstance3D" parent="Thunder"]
-transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936, 0, 0.0937856, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("SphereMesh_51sb0")
 skeleton = NodePath("")
 

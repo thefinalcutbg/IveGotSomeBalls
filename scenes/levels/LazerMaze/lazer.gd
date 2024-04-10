@@ -20,3 +20,5 @@ func _physics_process(delta):
 	barriers.get_child(6).rotate_z(-0.01)
 	barriers.get_child(7).rotate_z(-0.01)
 
+func set_player_parameters(player):
+	player.physics_material_override.bounce = 0.3

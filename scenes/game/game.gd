@@ -55,6 +55,9 @@ func start_game():
 	
 	$Player.respawn()
 	
+	if level.has_method("set_player_parameters"):
+		level.set_player_parameters($Player)
+	
 	$HUD/Timer.reset()
 
 func open_ingame_menu(menu):

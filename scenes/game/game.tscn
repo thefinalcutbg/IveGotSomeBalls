@@ -23,7 +23,6 @@ font_color = Color(0.694118, 0.952941, 1, 1)
 script = ExtResource("1_doodi")
 
 [node name="Player" parent="." instance=ExtResource("1_ps65f")]
-transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936, 0, 1.05038, 0)
 
 [node name="DeathArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -150, 0)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo3l0j0tchanm"]
+[gd_scene load_steps=8 format=3 uid="uid://bo3l0j0tchanm"]
 
+[ext_resource type="Script" path="res://scenes/levels/Loops/loops.gd" id="1_3q05h"]
 [ext_resource type="Texture2D" uid="uid://doelc6a6gh2il" path="res://assets/sprites/night.jpg" id="1_lqbbx"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="2_22vb4"]
 [ext_resource type="PackedScene" uid="uid://nlqaiovo0xd2" path="res://scenes/levels/Loops/loops.gltf" id="2_j7hmm"]
@@ -25,6 +26,7 @@ ssao_horizon = 1.0
 glow_enabled = true
 
 [node name="Loops" type="Node3D"]
+script = ExtResource("1_3q05h")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
