@@ -3,6 +3,7 @@ extends Node3D
 var _diamond_count = 0
 var game_state := Globals.GAME_STATE.PLAYING
 var _level_path : String
+var _level_name : String
 
 const LEVELLABEL = preload("res://scenes/game/level_label.tscn")
 
@@ -25,7 +26,7 @@ func _physics_process(delta):
 func load_level(LevelName : String):
 	
 	_level_path = Globals.LEVEL_MAP[LevelName]
-	
+	_level_name = LevelName
 	start_game()
 
 func start_game():
@@ -34,7 +35,7 @@ func start_game():
 
 	var level = load(_level_path).instantiate()
 	
-	_create_label(level.name, Color("DODGERBLUE"))
+	_create_label(_level_name, Color("DODGERBLUE"))
 	
 	if $Level.get_child_count():
 		var oldLevel = $Level.get_child(0)

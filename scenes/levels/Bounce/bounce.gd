@@ -3,9 +3,9 @@ extends Node3D
 
 func set_player_parameters(player):
 	
-	$Platform1/Piston/Wing.constant_angular_velocity.x = -2
-	$Platform2/Piston/Wing.constant_angular_velocity.z = -2
-	$Platform3/Piston/Wing.constant_angular_velocity.x = 2
+	$Platform1/Piston/Wing.constant_angular_velocity.x = -2.1
+	$Platform2/Piston/Wing.constant_angular_velocity.z = -2.1
+	$Platform3/Piston/Wing.constant_angular_velocity.x = 2.1
 	
 	#player.physics_material_override.bounce = 0.5
 	#player.gravity_scale = 0.85

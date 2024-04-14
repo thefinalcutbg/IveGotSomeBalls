@@ -23,7 +23,6 @@ const LEVEL_MAP : Dictionary = {
 
 
 const CAMPAIGN = [
-	"TEST LEVEL",
 	"LAZER MAZE",
 	"CHASE",
 	"BOUNCE",
@@ -31,6 +30,7 @@ const CAMPAIGN = [
 ]
 
 const SINGLE_LEVEL = [
+	"TEST LEVEL",
 	"BOUNCE",
 	"LAZER MAZE",
 	"CHASE",

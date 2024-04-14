@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxlt4a5d2s16m"]
+[gd_scene load_steps=9 format=3 uid="uid://dxlt4a5d2s16m"]
 
 [ext_resource type="Script" path="res://scenes/game/diamond.gd" id="1_2bsul"]
 [ext_resource type="Texture2D" uid="uid://cxcl0kd1o047d" path="res://assets/sprites/diamond_ame.png" id="2_4od2f"]
@@ -15,8 +15,10 @@ albedo_color = Color(1, 1, 1, 0.537255)
 albedo_texture = ExtResource("2_4od2f")
 roughness = 0.0
 emission_enabled = true
-emission = Color(0.960784, 0.666667, 0.768627, 1)
-emission_energy_multiplier = 0.13
+emission = Color(0.976471, 0.792157, 0.85098, 1)
+emission_energy_multiplier = 0.12
+backlight_enabled = true
+backlight = Color(0.792157, 0.705882, 0.447059, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xdq46"]
 _surfaces = [{
@@ -50,20 +52,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xdq46")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o5d5m"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfbah"]
 resource_local_to_scene = true
 resource_name = "Material"
 transparency = 1
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.901961, 0.85098, 0.819608, 0.32549)
-albedo_texture = SubResource("CompressedTexture2D_o5d5m")
+albedo_color = Color(1, 0.658824, 0.74902, 0.360784)
+albedo_texture = ExtResource("2_4od2f")
 roughness = 0.0
 emission_enabled = true
-emission = Color(0.776471, 0.427451, 0.466667, 1)
-emission_energy_multiplier = 0.14
+emission = Color(0.858824, 0.596078, 0.54902, 1)
+emission_energy_multiplier = 0.23
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xb5kl"]
 resource_name = "diamond_Cube"
@@ -87,17 +87,17 @@ shadow_mesh = SubResource("ArrayMesh_xdq46")
 script = ExtResource("1_2bsul")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, 0, 0)
+transform = Transform3D(3.40141, 0, 0, 0, 3.40141, 0, 0, 0, 3.40141, 0, 0.0162808, 0)
 shape = SubResource("BoxShape3D_7ytwk")
 
 [node name="Inner" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.431875, 0, 0.485782, 0, 0.65, 0, -0.485782, 0, 0.431875, 0, -0.0447196, 0)
+transform = Transform3D(0.66772, 0, 0.751066, 0, 1.00496, 0, -0.751066, 0, 0.66772, 0, -0.05286, 0)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_6mwfd")
 skeleton = NodePath("")
 
 [node name="Outer" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0447196, 0)
+transform = Transform3D(1.5461, 0, 0, 0, 1.5461, 0, 0, 0, 1.5461, 0, -0.05286, 0)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_xb5kl")
 skeleton = NodePath("")
