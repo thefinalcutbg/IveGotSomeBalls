@@ -155,6 +155,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999936, 0.0113444, 0, -0.0113444, 0.999936
 physics_material_override = SubResource("PhysicsMaterial_u3vxc")
 can_sleep = false
 lock_rotation = true
+continuous_cd = true
 max_contacts_reported = 2
 contact_monitor = true
 linear_velocity = Vector3(5, 0, 5)
@@ -180,7 +181,6 @@ shape = SubResource("SphereShape3D_mbjqs")
 [node name="PowerUpPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="CameraPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 5.46389e-09, 3.55622e-09, -6.51926e-09, 0.838119, 0.545487, -5.32907e-14, -0.545487, 0.838119, 0.00956507, 12.3346, 16.0829)
@@ -208,7 +208,6 @@ mesh = SubResource("SphereMesh_o5vgj")
 skeleton = NodePath("")
 
 [node name="SphereThunder" type="MeshInstance3D" parent="Thunder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("SphereMesh_51sb0")
 skeleton = NodePath("")
 

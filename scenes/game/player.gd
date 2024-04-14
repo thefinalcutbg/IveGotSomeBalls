@@ -57,6 +57,8 @@ func set_powerup(pw):
 	match m_powerup:
 		Globals.POWERUP.JUMP: 
 			color = Color("YELLOW", 1)
+			jump_guard = false
+			contact_monitor = true
 		Globals.POWERUP.BREAK:
 			color = Color("GREEN", 0.8)
 		Globals.POWERUP.SPEED:
@@ -86,18 +88,21 @@ func set_powerup(pw):
 
 
 func respawn():
-
-	$MeshInstance3D.mesh.material.albedo_color = Color("WHITE", 1)
-	$Thunder.visible = false
-	m_powerup = Globals.POWERUP.NONE
-	particles.emitting = false
+	
+	contact_monitor = false
 	jump_guard = false
+	_is_colliding = false
 	linear_velocity = Vector3.ZERO
 	global_position = Vector3(0,3,0)
 	$CameraPivot.rotation = Vector3.ZERO
 	physics_material_override.bounce = 0.6
 	gravity_scale = 1
 	_jump_coef = [30,35,45]
+	
+	m_powerup = Globals.POWERUP.NONE
+	$MeshInstance3D.mesh.material.albedo_color = Color("WHITE", 1)
+	$Thunder.visible = false
+	particles.emitting = false
 
 func _rotate_camera():
 	
@@ -115,7 +120,7 @@ func _rotate_camera():
 
 
 var jump_index := 0
-var jump_guard := false
+var jump_guard = false
 
 func processJump():
 	
