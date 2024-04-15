@@ -157,6 +157,7 @@ can_sleep = false
 lock_rotation = true
 continuous_cd = true
 max_contacts_reported = 5
+contact_monitor = true
 script = ExtResource("1_kerjs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

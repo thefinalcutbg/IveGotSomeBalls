@@ -114,6 +114,7 @@ func _process_menu_choice(option):
 			
 		MenuChoice.QUIT:
 			_level_index = -1
+			_can_continue = false
 			_game().queue_free()
 			add_child(_menu_scene)
 			_play_main_menu_music()

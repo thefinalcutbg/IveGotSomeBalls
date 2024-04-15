@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dukmodvnhgacq"]
+[gd_scene load_steps=16 format=3 uid="uid://dukmodvnhgacq"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_doodi"]
 [ext_resource type="PackedScene" uid="uid://cj0j47il8b1ry" path="res://scenes/game/player.tscn" id="1_ps65f"]
 [ext_resource type="AudioStream" uid="uid://dearrcky4qwvq" path="res://assets/audio/dia.wav" id="3_cght8"]
 [ext_resource type="AudioStream" uid="uid://40vapaye3uie" path="res://assets/audio/thun.wav" id="4_26ats"]
 [ext_resource type="AudioStream" uid="uid://dyy15wd1ca6h8" path="res://assets/audio/end.wav" id="5_hg3ko"]
+[ext_resource type="Texture2D" uid="uid://bi0lo5kg27unh" path="res://assets/sprites/diaIcon.png" id="5_mh1e8"]
 [ext_resource type="AudioStream" uid="uid://ci23vbd280plg" path="res://assets/audio/start.wav" id="5_paent"]
 [ext_resource type="AudioStream" uid="uid://mikfjssxt4x" path="res://assets/audio/drumfill.wav" id="6_23iaj"]
 [ext_resource type="Script" path="res://scenes/game/timer.gd" id="8_lklee"]
@@ -14,10 +15,19 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_t8si8"]
 size = Vector3(10000, 1, 10000)
 
-[sub_resource type="LabelSettings" id="LabelSettings_aw8jc"]
+[sub_resource type="LabelSettings" id="LabelSettings_23eju"]
 font = ExtResource("9_vo4aa")
 font_size = 70
 font_color = Color(0.694118, 0.952941, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mv4ge"]
+font = ExtResource("9_vo4aa")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_aw8jc"]
+font = ExtResource("9_vo4aa")
+font_size = 100
+font_color = Color(0.443137, 0.6, 0.996078, 0.890196)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_doodi")
@@ -49,7 +59,7 @@ offset_bottom = 86.0
 grow_horizontal = 2
 text = "0
 "
-label_settings = SubResource("LabelSettings_aw8jc")
+label_settings = SubResource("LabelSettings_23eju")
 horizontal_alignment = 1
 
 [node name="Diamonds" type="Label" parent="HUD"]
@@ -64,7 +74,7 @@ offset_bottom = 134.0
 grow_horizontal = 0
 text = "0
 "
-label_settings = SubResource("LabelSettings_aw8jc")
+label_settings = SubResource("LabelSettings_mv4ge")
 horizontal_alignment = 2
 
 [node name="Best" type="Label" parent="HUD"]
@@ -80,9 +90,9 @@ label_settings = SubResource("LabelSettings_aw8jc")
 [node name="Timer" type="Label" parent="HUD"]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 120.0
+offset_top = 144.0
 offset_right = 920.0
-offset_bottom = 206.0
+offset_bottom = 267.0
 text = "TIME:
 "
 label_settings = SubResource("LabelSettings_aw8jc")
@@ -91,12 +101,26 @@ script = ExtResource("8_lklee")
 [node name="Speed" type="Label" parent="HUD"]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 216.0
+offset_top = 256.0
 offset_right = 920.0
-offset_bottom = 302.0
+offset_bottom = 379.0
 text = "SPEED:
 "
 label_settings = SubResource("LabelSettings_aw8jc")
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -312.0
+offset_top = 36.0
+offset_right = -167.0
+offset_bottom = 176.0
+grow_horizontal = 0
+texture = ExtResource("5_mh1e8")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="Audio" type="Node" parent="."]
 process_mode = 3
