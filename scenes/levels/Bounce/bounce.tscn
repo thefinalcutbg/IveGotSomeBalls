@@ -10,12 +10,12 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pawxk"]
 panorama = ExtResource("2_uasub")
 
-[sub_resource type="Sky" id="Sky_a0ymo"]
+[sub_resource type="Sky" id="Sky_ea60k"]
 sky_material = SubResource("PanoramaSkyMaterial_pawxk")
 
 [sub_resource type="Environment" id="Environment_1lkdw"]
 background_mode = 2
-sky = SubResource("Sky_a0ymo")
+sky = SubResource("Sky_ea60k")
 sky_rotation = Vector3(0, 3.14159, 0)
 tonemap_mode = 2
 ssr_max_steps = 1
@@ -54,14 +54,6 @@ size = Vector3(16.6, 3, 33.5)
 
 [node name="Bounce" type="Node3D"]
 script = ExtResource("1_a6gj7")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
-visible = false
-light_color = Color(0.819608, 0.639216, 0.639216, 1)
-light_energy = 0.858
-shadow_enabled = true
-sky_mode = 1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, -32.618, 20.9557, -32.2615)

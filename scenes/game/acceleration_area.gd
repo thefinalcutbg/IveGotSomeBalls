@@ -1,14 +1,13 @@
 extends Area3D
 
 var _player = null
-var _vector = Vector3.ZERO
+var _vector
+var coef
+var _player_old_bounce
 
-var coef = 13000
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	coef = 13000
+	_vector = Vector3.ZERO
 
 func _physics_process(delta):
 	
@@ -24,11 +23,14 @@ func _on_body_entered(body):
 	if body.name != "Player": return
 	
 	_player = body
-
+	_player_old_bounce = _player.physics_material_override.bounce
+	_player.physics_material_override.bounce = 0.1
 
 func _on_body_exited(body):
 	
 	if body.name != "Player": return
+	
+	_player.physics_material_override.bounce = _player_old_bounce
 	
 	_player = null
 

@@ -1,0 +1,478 @@
+[gd_scene load_steps=15 format=3 uid="uid://55ryjxtwyfof"]
+
+[ext_resource type="Script" path="res://scenes/levels/Disco/disco.gd" id="1_mcue1"]
+[ext_resource type="Texture2D" uid="uid://csnsxb05nkmqr" path="res://assets/sprites/sunrise.png" id="2_fkt45"]
+[ext_resource type="PackedScene" uid="uid://dugc0g01ij7th" path="res://scenes/levels/Disco/disco.gltf" id="2_qcm0x"]
+[ext_resource type="PackedScene" uid="uid://dsh6g0qknhuac" path="res://scenes/game/acceleration_area.tscn" id="2_vd5nt"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_l1r6g"]
+[ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="4_cfh20"]
+[ext_resource type="PackedScene" uid="uid://dqyt4vebonevq" path="res://scenes/levels/Disco/disco_tube1.gltf" id="4_hkfnh"]
+[ext_resource type="PackedScene" uid="uid://cipp4lhi5jeo8" path="res://scenes/levels/Disco/disco_sphere.gltf" id="5_s6tos"]
+[ext_resource type="Script" path="res://scenes/levels/Disco/disco_light.gd" id="6_10y3n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fln31"]
+size = Vector3(5, 1, 18.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l60xh"]
+size = Vector3(25, 1, 18.5)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xf5r3"]
+panorama = ExtResource("2_fkt45")
+
+[sub_resource type="Sky" id="Sky_t2veq"]
+sky_material = SubResource("PanoramaSkyMaterial_xf5r3")
+
+[sub_resource type="Environment" id="Environment_ck0bj"]
+background_mode = 2
+sky = SubResource("Sky_t2veq")
+sky_rotation = Vector3(0, -1.5708, 0)
+
+[node name="Disco" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187425, 1.20001, 8.33474)
+script = ExtResource("1_mcue1")
+
+[node name="Accelerator" type="Node3D" parent="."]
+
+[node name="AccelerationArea" parent="Accelerator" instance=ExtResource("2_vd5nt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.874, 4.87889, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85133, -1.71995, -6.67346)
+shape = SubResource("BoxShape3D_fln31")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
+transform = Transform3D(0.938421, 0.345495, 0, -0.345495, 0.938421, 0, 0, 0, 1, -11.8418, -0.885577, -6.67346)
+shape = SubResource("BoxShape3D_fln31")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
+transform = Transform3D(0.780059, 0.625706, 0, -0.625706, 0.780059, 0, 0, 0, 1, -16.1242, 1.44532, -6.67346)
+shape = SubResource("BoxShape3D_fln31")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
+transform = Transform3D(0.685132, 0.728419, 0, -0.728419, 0.685132, 0, 0, 0, 1, -20.115, 4.46586, -6.67346)
+shape = SubResource("BoxShape3D_fln31")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
+transform = Transform3D(0.470581, 0.882357, 0, -0.882357, 0.470581, 0, 0, 0, 1, -23.0681, 7.92799, -6.67346)
+shape = SubResource("BoxShape3D_fln31")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
+transform = Transform3D(0.351547, 0.93617, 0, -0.93617, 0.351547, 0, 0, 0, 1, -25.0295, 12.5352, -6.67346)
+shape = SubResource("BoxShape3D_fln31")
+
+[node name="AccelerationArea2" parent="Accelerator" instance=ExtResource("2_vd5nt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.073, 26.6679, -6.53929)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Accelerator/AccelerationArea2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 6.09353, 0)
+shape = SubResource("BoxShape3D_l60xh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+light_energy = 0.211
+shadow_enabled = true
+sky_mode = 1
+
+[node name="disco" parent="." instance=ExtResource("2_qcm0x")]
+
+[node name="disco_tube1" parent="." instance=ExtResource("4_hkfnh")]
+transform = Transform3D(-0.98884, -0.148983, 8.74228e-08, -0.148983, 0.98884, 0, -8.64471e-08, -1.30245e-08, -1, -367.115, 83.02, -8.16664)
+
+[node name="disco_sphere" parent="." instance=ExtResource("5_s6tos")]
+transform = Transform3D(-0.836516, -0.258819, 0.482963, 0.224144, -0.965926, -0.12941, 0.5, 0, 0.866025, -734.7, 158.256, -7.76068)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ck0bj")
+
+[node name="Gate1" parent="." instance=ExtResource("4_cfh20")]
+transform = Transform3D(-6.11959e-08, 0, -1.4, 0, 1.4, 0, 1.4, 0, -6.11959e-08, -27.0866, 5.3915, -6.73968)
+
+[node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383177, 0)
+
+[node name="DiscoLight" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, 4.266, 8.18354, 0)
+light_color = Color(0.580392, 0, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight2" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, 16.4553, 8.18354, 0)
+light_color = Color(0.745098, 0.482353, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight3" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -8.19255, 8.18354, 0)
+light_color = Color(0.611765, 0.388235, 1, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight4" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -17.8978, 8.18354, 0)
+light_color = Color(0, 0.584314, 0.847059, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight5" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -33.5584, 8.18354, 0)
+light_color = Color(0, 0.627451, 0.596078, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight6" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, 8.68352e-08, -1.01194e-08, 0, 0.115752, 0.993278, 8.74228e-08, 0.993278, -0.115752, -19.837, 8.18354, -15.3651)
+light_color = Color(0.580392, 0, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight7" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, 8.68352e-08, -1.01194e-08, 0, 0.115752, 0.993278, 8.74228e-08, 0.993278, -0.115752, -32.0263, 8.18354, -15.3651)
+light_color = Color(0.745098, 0.482353, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight8" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, 8.68352e-08, -1.01194e-08, 0, 0.115752, 0.993278, 8.74228e-08, 0.993278, -0.115752, -7.37841, 8.18354, -15.3651)
+light_color = Color(0.611765, 0.388235, 1, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight9" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, 8.68352e-08, -1.01194e-08, 0, 0.115752, 0.993278, 8.74228e-08, 0.993278, -0.115752, 2.32682, 8.18354, -15.3651)
+light_color = Color(0, 0.584314, 0.847059, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight10" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, 8.68352e-08, -1.01194e-08, 0, 0.115752, 0.993278, 8.74228e-08, 0.993278, -0.115752, 17.9874, 8.18354, -15.3651)
+light_color = Color(0, 0.627451, 0.596078, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight11" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, -7.53951e-17, -6.46972e-16, 6.5135e-16, 0.115752, 0.993278, 0, -0.993278, 0.115752, 4.266, 8.18354, -28.1438)
+light_color = Color(0.580392, 0, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight12" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, -7.53951e-17, -6.46972e-16, 6.5135e-16, 0.115752, 0.993278, 0, -0.993278, 0.115752, 16.4553, 8.18354, -28.1438)
+light_color = Color(0.745098, 0.482353, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight13" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, -7.53951e-17, -6.46972e-16, 6.5135e-16, 0.115752, 0.993278, 0, -0.993278, 0.115752, -8.19255, 8.18354, -28.1438)
+light_color = Color(0.611765, 0.388235, 1, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight14" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, -7.53951e-17, -6.46972e-16, 6.5135e-16, 0.115752, 0.993278, 0, -0.993278, 0.115752, -17.8978, 8.18354, -28.1438)
+light_color = Color(0, 0.584314, 0.847059, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight15" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, -7.53951e-17, -6.46972e-16, 6.5135e-16, 0.115752, 0.993278, 0, -0.993278, 0.115752, -33.5584, 8.18354, -28.1438)
+light_color = Color(0, 0.627451, 0.596078, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight16" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, -8.68352e-08, 1.01194e-08, 6.5135e-16, 0.115752, 0.993278, -8.74228e-08, 0.993278, -0.115752, -19.837, 8.18354, -41.7504)
+light_color = Color(0.580392, 0, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight17" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, -8.68352e-08, 1.01194e-08, 6.5135e-16, 0.115752, 0.993278, -8.74228e-08, 0.993278, -0.115752, -32.0263, 8.18354, -41.7504)
+light_color = Color(0.745098, 0.482353, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight18" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, -8.68352e-08, 1.01194e-08, 6.5135e-16, 0.115752, 0.993278, -8.74228e-08, 0.993278, -0.115752, -7.37841, 8.18354, -41.7504)
+light_color = Color(0.611765, 0.388235, 1, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight19" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, -8.68352e-08, 1.01194e-08, 6.5135e-16, 0.115752, 0.993278, -8.74228e-08, 0.993278, -0.115752, 2.32682, 8.18354, -41.7504)
+light_color = Color(0, 0.584314, 0.847059, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight20" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-1, -8.68352e-08, 1.01194e-08, 6.5135e-16, 0.115752, 0.993278, -8.74228e-08, 0.993278, -0.115752, 17.9874, 8.18354, -41.7504)
+light_color = Color(0, 0.627451, 0.596078, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight21" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, 4.266, 8.18354, -52.6225)
+light_color = Color(0.580392, 0, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight22" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, 16.4553, 8.18354, -52.6225)
+light_color = Color(0.745098, 0.482353, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight23" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -8.19255, 8.18354, -52.6225)
+light_color = Color(0.611765, 0.388235, 1, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight24" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -17.8978, 8.18354, -52.6225)
+light_color = Color(0, 0.584314, 0.847059, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight25" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -33.5584, 8.18354, -52.6225)
+light_color = Color(0, 0.627451, 0.596078, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight26" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -345.884, 93.8667, -7.37627)
+light_color = Color(0.580392, 0, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight27" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -333.694, 102.632, -6.35477)
+light_color = Color(0.745098, 0.482353, 0, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight28" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -358.342, 82.7278, -8.67435)
+light_color = Color(0.611765, 0.388235, 1, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight29" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -368.047, 78.6029, -9.15504)
+light_color = Color(0, 0.584314, 0.847059, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="DiscoLight30" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.115752, 0.993278, 0, -0.993278, 0.115752, -383.708, 82.7278, -8.67435)
+light_color = Color(0, 0.627451, 0.596078, 1)
+light_energy = 8.09
+light_specular = 0.0
+spot_range = 42.807
+spot_attenuation = 0.732045
+spot_angle = 72.27
+spot_angle_attenuation = 0.707107
+script = ExtResource("6_10y3n")
+
+[node name="Diamonds" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.39752, 0.0564356, 2.50264)
+
+[node name="Diamond1" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8844, 1.59814, 17.3495)
+
+[node name="Diamond2" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8844, 1.59814, 22.0216)
+
+[node name="Diamond3" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8844, 1.59814, 26.3375)
+
+[node name="Diamond4" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.4719, 6.99093, -11.5905)
+
+[node name="Diamond5" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9145, 6.99093, -11.5905)
+
+[node name="Diamond6" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3851, 7.52542, -17.5287)
+
+[node name="Diamond7" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7751, 6.65534, -17.5288)
+
+[node name="Diamond8" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7833, 5.64344, -17.5287)
+
+[node name="Diamond9" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.284, 4.37202, -17.5295)
+
+[node name="Diamond10" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 103.709, 72.672)
+
+[node name="Diamond11" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 175.706, 99.7888)
+
+[node name="Diamond12" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 192.033, 194.874)
+
+[node name="Diamond13" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 154.167, 269.559)
+
+[node name="Diamond14" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 127.541, 305.631)
+
+[node name="Diamond15" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 132.693, 437.952)
+
+[node name="Diamond16" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 156.185, 507.688)
+
+[node name="Diamond17" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 175.807, 593.489)
+
+[node name="Diamond18" parent="Diamonds" instance=ExtResource("3_l1r6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 169.598, 676.913)
