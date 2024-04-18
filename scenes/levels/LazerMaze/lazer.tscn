@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="1_2lrt1"]
 [ext_resource type="Script" path="res://scenes/levels/LazerMaze/lazer.gd" id="1_14q3y"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="2_wggrt"]
-[ext_resource type="PackedScene" uid="uid://v3a5rvx8n8bj" path="res://scenes/levels/LazerMaze/lazer.gltf" id="3_flv0o"]
+[ext_resource type="PackedScene" uid="uid://b8tkshns8e6a0" path="res://assets/sprites/lazermaze.gltf" id="3_flv0o"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="4_7n5ih"]
 [ext_resource type="Texture2D" uid="uid://c7e8qwjikf0dj" path="res://assets/sprites/rrr.png" id="6_hbrwh"]
 

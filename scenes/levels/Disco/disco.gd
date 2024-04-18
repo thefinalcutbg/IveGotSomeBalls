@@ -14,7 +14,3 @@ func _ready():
 	$Accelerator/AccelerationArea.coef = 25000
 	$Accelerator/AccelerationArea2.coef = 15000
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

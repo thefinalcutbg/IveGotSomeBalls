@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/levels/Disco/disco.gd" id="1_mcue1"]
 [ext_resource type="Texture2D" uid="uid://csnsxb05nkmqr" path="res://assets/sprites/sunrise.png" id="2_fkt45"]
-[ext_resource type="PackedScene" uid="uid://dugc0g01ij7th" path="res://scenes/levels/Disco/disco.gltf" id="2_qcm0x"]
+[ext_resource type="PackedScene" uid="uid://dugc0g01ij7th" path="res://assets/sprites/disco.gltf" id="2_qcm0x"]
 [ext_resource type="PackedScene" uid="uid://dsh6g0qknhuac" path="res://scenes/game/acceleration_area.tscn" id="2_vd5nt"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_l1r6g"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="4_cfh20"]
-[ext_resource type="PackedScene" uid="uid://dqyt4vebonevq" path="res://scenes/levels/Disco/disco_tube1.gltf" id="4_hkfnh"]
-[ext_resource type="PackedScene" uid="uid://cipp4lhi5jeo8" path="res://scenes/levels/Disco/disco_sphere.gltf" id="5_s6tos"]
+[ext_resource type="PackedScene" uid="uid://77q3y6xlju77" path="res://assets/sprites/disco_tube.gltf" id="4_hkfnh"]
+[ext_resource type="PackedScene" uid="uid://cipp4lhi5jeo8" path="res://assets/sprites/disco_sphere.gltf" id="5_s6tos"]
 [ext_resource type="Script" path="res://scenes/levels/Disco/disco_light.gd" id="6_10y3n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fln31"]
@@ -24,6 +24,7 @@ sky_material = SubResource("PanoramaSkyMaterial_xf5r3")
 
 [sub_resource type="Environment" id="Environment_ck0bj"]
 background_mode = 2
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_t2veq")
 sky_rotation = Vector3(0, -1.5708, 0)
 
@@ -79,7 +80,7 @@ sky_mode = 1
 transform = Transform3D(-0.98884, -0.148983, 8.74228e-08, -0.148983, 0.98884, 0, -8.64471e-08, -1.30245e-08, -1, -367.115, 83.02, -8.16664)
 
 [node name="disco_sphere" parent="." instance=ExtResource("5_s6tos")]
-transform = Transform3D(-0.836516, -0.258819, 0.482963, 0.224144, -0.965926, -0.12941, 0.5, 0, 0.866025, -734.7, 158.256, -7.76068)
+transform = Transform3D(0.764531, -0.258819, 0.590342, -0.204855, -0.965926, -0.158182, 0.611168, 0, -0.791501, -739.732, 139.476, -7.76068)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ck0bj")
@@ -466,13 +467,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 154.167, 269.559)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 127.541, 305.631)
 
 [node name="Diamond15" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 132.693, 437.952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 117.874, 437.952)
 
 [node name="Diamond16" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 156.185, 507.688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 154.226, 507.688)
 
 [node name="Diamond17" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 175.807, 593.489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 160.988, 593.489)
 
 [node name="Diamond18" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 169.598, 676.913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 154.779, 676.913)

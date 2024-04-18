@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://cpqgjup1rm88v"]
 
 [ext_resource type="Script" path="res://scenes/levels/Bounce/bounce.gd" id="1_a6gj7"]
-[ext_resource type="PackedScene" uid="uid://cm5mmdv2gkg87" path="res://scenes/levels/Bounce/bounce.gltf" id="1_x5hyn"]
+[ext_resource type="PackedScene" uid="uid://cm5mmdv2gkg87" path="res://assets/sprites/bounce.gltf" id="1_x5hyn"]
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="2_uasub"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_cn5ut"]
 [ext_resource type="Texture2D" uid="uid://f8jpm36k6bd4" path="res://assets/sprites/Metal7.bmp" id="5_mlnxe"]
-[ext_resource type="PackedScene" uid="uid://bqcbx62skxl3r" path="res://scenes/levels/Bounce/bounce_simple.gltf" id="7_r7twn"]
+[ext_resource type="PackedScene" uid="uid://bqcbx62skxl3r" path="res://assets/sprites/bounce_simple.gltf" id="7_r7twn"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pawxk"]
 panorama = ExtResource("2_uasub")
@@ -56,9 +56,9 @@ size = Vector3(16.6, 3, 33.5)
 script = ExtResource("1_a6gj7")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, -32.618, 20.9557, -32.2615)
-light_color = Color(0.882353, 0.313726, 0.768627, 1)
-light_energy = 13.253
+transform = Transform3D(1, 0, 0, 0, -0.0516216, 0.998667, 0, -0.998667, -0.0516216, -9.88485, 20.9557, -32.2615)
+light_color = Color(0.964706, 0, 0.494118, 1)
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.651
@@ -69,8 +69,8 @@ spot_angle_attenuation = 0.615572
 
 [node name="SpotLight3D10" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, -13.4017, 20.9557, -12.3718)
-light_color = Color(0.882353, 0.313726, 0.768627, 1)
-light_energy = 13.253
+light_color = Color(1, 0.0156863, 0.513726, 1)
+light_energy = 9.132
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.651
@@ -82,7 +82,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D8" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, 70.9735, 56.7012, -88.8069)
 light_color = Color(0.882353, 0.313726, 0.768627, 1)
-light_energy = 13.253
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.651
@@ -94,7 +94,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D15" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, 70.9735, 56.7012, -77.6858)
 light_color = Color(0.882353, 0.313726, 0.768627, 1)
-light_energy = 13.253
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.651
@@ -106,7 +106,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, -26.2301, 42.2363, -114.01)
 light_color = Color(0.407843, 0.172549, 0.870588, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -118,7 +118,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D14" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, -51.9004, 9.12752, -8.65372)
 light_color = Color(0.407843, 0.172549, 0.870588, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -130,7 +130,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D11" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.100709, 0.994916, 0, -0.994916, 0.100709, -50.135, 18.991, -49.0269)
 light_color = Color(0, 0.890196, 0.772549, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -142,7 +142,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D6" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.631989, 0.774978, 0, -0.774978, 0.631989, -26.2301, 1.33585, -60.8425)
 light_color = Color(0.498039, 0.623529, 0.988235, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -154,7 +154,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, 14.8212, 37.3274, -85.3253)
 light_color = Color(0.215686, 0.760784, 0.388235, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -166,7 +166,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D4" type="SpotLight3D" parent="."]
 transform = Transform3D(0.999897, -0.0141727, -0.00222395, 0, -0.155021, 0.987911, -0.0143461, -0.98781, -0.155005, 33.6646, 72.4072, -96.3385)
 light_color = Color(0.215686, 0.760784, 0.388235, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -178,7 +178,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D16" type="SpotLight3D" parent="."]
 transform = Transform3D(0.999897, -0.0141727, -0.00222395, 0, -0.155021, 0.987911, -0.0143461, -0.98781, -0.155005, 33.6646, 71.3437, -96.3385)
 light_color = Color(0.215686, 0.760784, 0.388235, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -190,7 +190,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D12" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, 59.2968, 72.4072, -96.3385)
 light_color = Color(0.215686, 0.760784, 0.388235, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -202,7 +202,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D5" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, 62.8803, 87.528, -26.6882)
 light_color = Color(0.788235, 0.847059, 0.270588, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -214,7 +214,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D9" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, 30.5414, 87.528, -26.6882)
 light_color = Color(0.788235, 0.847059, 0.270588, 1)
-light_energy = 16.0
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -226,7 +226,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D7" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.155021, 0.987911, 0, -0.987911, -0.155021, -29.9448, 30.306, -85.1049)
 light_color = Color(0.866667, 0.929412, 0.00784314, 1)
-light_energy = 8.595
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
@@ -238,7 +238,7 @@ spot_angle_attenuation = 0.615572
 [node name="SpotLight3D13" type="SpotLight3D" parent="."]
 transform = Transform3D(0.999939, 0.0109142, 0.00171263, 0, -0.155021, 0.987911, 0.0110477, -0.987851, -0.155011, -29.9448, 30.306, -69.688)
 light_color = Color(0.866667, 0.929412, 0.00784314, 1)
-light_energy = 8.595
+light_energy = 6.869
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0

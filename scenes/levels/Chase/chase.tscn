@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://doelc6a6gh2il" path="res://assets/sprites/night.jpg" id="1_q3y5o"]
 [ext_resource type="Script" path="res://scenes/levels/Chase/chase.gd" id="1_v12mk"]
-[ext_resource type="PackedScene" uid="uid://caotxnknn5aek" path="res://scenes/levels/Chase/chase.gltf" id="2_qajf3"]
+[ext_resource type="PackedScene" uid="uid://caotxnknn5aek" path="res://assets/sprites/chase.gltf" id="2_qajf3"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_abfcx"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="5_a83ci"]
 [ext_resource type="PackedScene" uid="uid://dsh6g0qknhuac" path="res://scenes/game/acceleration_area.tscn" id="6_3qqai"]
