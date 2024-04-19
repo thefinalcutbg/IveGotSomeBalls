@@ -101,7 +101,7 @@ func respawn():
 	physics_material_override.bounce = 0.6
 	gravity_scale = 1
 	_jump_coef = [30,35,45]
-	set_thunder_range(5)
+	set_thunder_range(20)
 	m_powerup = Globals.POWERUP.NONE
 	$MeshInstance3D.mesh.material.albedo_color = Color("WHITE", 1)
 	$Thunder.visible = false

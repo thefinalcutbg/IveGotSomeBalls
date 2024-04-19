@@ -34,7 +34,7 @@ rings = 20
 height = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
-radius = 10.0
+radius = 20.0
 
 [sub_resource type="Gradient" id="Gradient_bs2hl"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
