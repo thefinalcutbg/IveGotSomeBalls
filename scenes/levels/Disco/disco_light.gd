@@ -12,8 +12,6 @@ func _process(delta):
 	else:
 		light_color.h = light_color.h - 0.01
 	
-	print(light_color.h)
-	
 	if light_color.h == 1:
 		color_forward = false
 	elif light_color.h == 0:
