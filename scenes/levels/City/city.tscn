@@ -79,13 +79,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0343, 3.443, -29.8236)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9233, 3.443, -29.8236)
 
 [node name="11" parent="diamonds" instance=ExtResource("4_715u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66584, 26.6665, 11.3079)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66584, 26.6665, 9.7493)
 
 [node name="12" parent="diamonds" instance=ExtResource("4_715u0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69584, 26.6665, -3.39475)
 
 [node name="13" parent="diamonds" instance=ExtResource("4_715u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2307, 26.6665, 11.3055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7218, 26.6665, 9.7469)
 
 [node name="14" parent="diamonds" instance=ExtResource("4_715u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.395, 26.6665, -3.26437)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8861, 26.6665, -3.26437)
