@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://8paw76dxoexp"]
+
+[ext_resource type="Script" path="res://scenes/levels/City/city.gd" id="1_b1f3s"]
+[ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="2_1jvnx"]
+[ext_resource type="PackedScene" uid="uid://ccb0x0l82dpfa" path="res://assets/sprites/city.gltf" id="3_nru7o"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="4_715u0"]
+[ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="4_x1l05"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ly4fj"]
+panorama = ExtResource("2_1jvnx")
+
+[sub_resource type="Sky" id="Sky_ygryj"]
+sky_material = SubResource("PanoramaSkyMaterial_ly4fj")
+
+[sub_resource type="Environment" id="Environment_agmkx"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_ygryj")
+sky_rotation = Vector3(0, 3.14159, 0)
+ambient_light_energy = 0.0
+tonemap_mode = 2
+ssr_max_steps = 1
+ssr_fade_in = 1.883
+ssr_fade_out = 0.183011
+ssr_depth_tolerance = 49.71
+ssao_radius = 3.55
+ssao_intensity = 6.03
+ssao_power = 0.11949
+ssao_horizon = 1.0
+
+[node name="City" type="Node3D"]
+script = ExtResource("1_b1f3s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_agmkx")
+
+[node name="city" parent="." instance=ExtResource("3_nru7o")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -2.70549e-08, -0.785436, 0.618943, 3.43325e-08, -0.618943, -0.785436, -9.90959, 13.1422, -41.9863)
+light_color = Color(0.713726, 0, 0, 1)
+light_energy = 1.646
+light_volumetric_fog_energy = 0.0
+sky_mode = 1
+
+[node name="Gate" parent="." instance=ExtResource("4_x1l05")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -13.58, 1.64468, 13.4957)
+
+[node name="diamonds" type="Node3D" parent="."]
+
+[node name="1" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7486, 0.800655, -23.3096)
+
+[node name="2" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4888, 0.800655, -18.4543)
+
+[node name="3" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7486, 0.800655, -14.3891)
+
+[node name="4" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0951, 3.443, -10.2442)
+
+[node name="5" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5073, 3.443, -15.9322)
+
+[node name="6" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6515, 3.443, -9.63639)
+
+[node name="7" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6515, 3.443, -16.0068)
+
+[node name="8" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6515, 3.443, -29.8236)
+
+[node name="9" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0343, 3.443, -29.8236)
+
+[node name="10" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9233, 3.443, -29.8236)
+
+[node name="11" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66584, 26.6665, 11.3079)
+
+[node name="12" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69584, 26.6665, -3.39475)
+
+[node name="13" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2307, 26.6665, 11.3055)
+
+[node name="14" parent="diamonds" instance=ExtResource("4_715u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.395, 26.6665, -3.26437)

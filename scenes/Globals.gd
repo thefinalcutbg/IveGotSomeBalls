@@ -19,6 +19,7 @@ const LEVEL_MAP : Dictionary = {
 	"CHASE" : "res://scenes/levels/Chase/chase.tscn",
 	"ROLLERCOASTER" : "res://scenes/levels/Rollercoaster/rollercoaster.tscn",
 	"LOOPS" : "res://scenes/levels/Loops/loops.tscn",
+	"CITY" : "res://scenes/levels/City/city.tscn",
 	"DISCO" : "res://scenes/levels/Disco/disco.tscn"
 	
 }
@@ -30,12 +31,14 @@ const CAMPAIGN = [
 	"BOUNCE",
 	"DISCO",
 	"LOOPS",
-	"ROLLERCOASTER"
+	"ROLLERCOASTER",
+	"CITY"
 ]
 
 const SINGLE_LEVEL = [
 	"BOUNCE",
 	"CHASE",
+	"CITY",
 	"DISCO",
 	"LAZER MAZE",
 	"LOOPS",
