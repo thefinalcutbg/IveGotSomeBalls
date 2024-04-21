@@ -440,16 +440,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.4719, 6.99093, -11.5905)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9145, 6.99093, -11.5905)
 
 [node name="Diamond6" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3851, 7.52542, -17.5287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3851, 7.24019, -17.5287)
 
 [node name="Diamond7" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7751, 6.65534, -17.5288)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.0897, 6.65534, -17.5288)
 
 [node name="Diamond8" parent="Diamonds" instance=ExtResource("3_l1r6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7833, 5.64344, -17.5287)
 
 [node name="Diamond9" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.284, 4.37202, -17.5295)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9736, 4.80225, -17.5295)
 
 [node name="Diamond10" parent="Diamonds" instance=ExtResource("3_l1r6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 103.709, 72.672)

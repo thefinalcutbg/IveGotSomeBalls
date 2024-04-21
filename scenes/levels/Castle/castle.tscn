@@ -161,7 +161,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00383377, 0.00359726, 0.000
 shape = SubResource("CylinderShape3D_bromv")
 
 [node name="SmallPiston2" type="AnimatableBody3D" parent="Pistons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.567, -58.963, 17.407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.567, -57.6075, 17.407)
 physics_material_override = SubResource("PhysicsMaterial_2yoa7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/SmallPiston2"]
@@ -179,7 +179,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_em8q4")
 shape = SubResource("CylinderShape3D_bromv")
 
 [node name="MediumPiston1" type="AnimatableBody3D" parent="Pistons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8581, -62.1034, 14.488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8582, -59.2814, 14.4881)
 physics_material_override = SubResource("PhysicsMaterial_4b300")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/MediumPiston1"]
@@ -196,7 +196,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_eyec8")
 shape = SubResource("CylinderShape3D_ab6sn")
 
 [node name="MediumPiston2" type="AnimatableBody3D" parent="Pistons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.324, -62.2147, 6.98899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3242, -58.1804, 6.98891)
 physics_material_override = SubResource("PhysicsMaterial_4b300")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/MediumPiston2"]
@@ -311,7 +311,7 @@ transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 38.4614, -5
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 31.207, -53.38, -514.905)
 
 [node name="31" parent="Diamonds" instance=ExtResource("3_u8p7g")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 37.8771, -54.5224, -524.622)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 38.5238, -54.5224, -525.647)
 
 [node name="23" parent="Diamonds" instance=ExtResource("3_u8p7g")]
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -34.1462, -47.2999, -581.103)
