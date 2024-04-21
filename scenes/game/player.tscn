@@ -26,15 +26,17 @@ texture_filter = 0
 [sub_resource type="SphereMesh" id="SphereMesh_mc7ej"]
 lightmap_size_hint = Vector2i(17, 10)
 material = SubResource("StandardMaterial3D_qedv7")
-height = 0.7
+radius = 0.75
+height = 1.05
 radial_segments = 60
 rings = 20
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vhjrk"]
-height = 1.0
+radius = 0.75
+height = 1.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
-radius = 20.0
+radius = 20.0512
 
 [sub_resource type="Gradient" id="Gradient_bs2hl"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
@@ -161,11 +163,10 @@ contact_monitor = true
 script = ExtResource("1_kerjs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_mc7ej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.208109, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.208109, 0)
 shape = SubResource("CapsuleShape3D_vhjrk")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]

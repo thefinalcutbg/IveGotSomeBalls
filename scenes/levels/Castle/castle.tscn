@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1ts4ydymmc4t"]
+
+[ext_resource type="Script" path="res://scenes/levels/Castle/castle.gd" id="1_xssdr"]
+[ext_resource type="Texture2D" uid="uid://doelc6a6gh2il" path="res://assets/sprites/night.jpg" id="1_xtipm"]
+[ext_resource type="PackedScene" uid="uid://bq58jnoqxh6pl" path="res://assets/sprites/castle.gltf" id="2_f6mco"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_u8p7g"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e4811"]
+panorama = ExtResource("1_xtipm")
+
+[sub_resource type="Sky" id="Sky_a0ymo"]
+sky_material = SubResource("PanoramaSkyMaterial_e4811")
+
+[sub_resource type="Environment" id="Environment_0fp0k"]
+background_mode = 2
+sky = SubResource("Sky_a0ymo")
+tonemap_mode = 2
+ssr_max_steps = 1
+ssr_fade_in = 1.883
+ssr_fade_out = 0.183011
+ssr_depth_tolerance = 49.71
+ssao_radius = 3.55
+ssao_intensity = 6.03
+ssao_power = 0.11949
+ssao_horizon = 1.0
+glow_enabled = true
+
+[node name="Castle" type="Node3D"]
+script = ExtResource("1_xssdr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+light_color = Color(0.431373, 0.709804, 1, 1)
+light_energy = 0.858
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0fp0k")
+
+[node name="castle" parent="." instance=ExtResource("2_f6mco")]
+
+[node name="Diamonds" type="Node3D" parent="."]
+
+[node name="1" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8204, 11.7498, -193.689)
+
+[node name="2" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.088, 11.7498, -194.954)
+
+[node name="3" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7965, 11.7498, -217.253)
+
+[node name="4" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9112, 11.7498, -216.97)
+
+[node name="5" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(0.847196, 0, -0.53128, 0, 1, 0, 0.53128, 0, 0.847196, 0.244587, 11.8766, -190.461)
+
+[node name="6" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(0.847196, 0, -0.53128, 0, 1, 0, 0.53128, 0, 0.847196, -16.5231, 11.7498, -205.671)
+
+[node name="7" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(0.847196, 0, -0.53128, 0, 1, 0, 0.53128, 0, 0.847196, 15.8201, 11.7498, -206.118)
