@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgsqnhi1pndn3"]
 
-[ext_resource type="PackedScene" uid="uid://la07l2h6ln26" path="res://scenes/menu/labell.tscn" id="1_muvmb"]
+[ext_resource type="PackedScene" uid="uid://la07l2h6ln26" path="res://scenes/menu/label.tscn" id="1_muvmb"]
 [ext_resource type="Script" path="res://scenes/game/level_label.gd" id="1_q6bfp"]
 [ext_resource type="FontFile" uid="uid://co6wlid0v0bqi" path="res://assets/impact.ttf" id="2_k6i7i"]
 
