@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://la07l2h6ln26"]
 
 [ext_resource type="FontFile" uid="uid://co6wlid0v0bqi" path="res://assets/impact.ttf" id="1_dn3fn"]
-[ext_resource type="Script" path="res://scenes/menu/label.gd" id="2_uk3uk"]
+[ext_resource type="Script" path="res://scenes/menu/label.gd" id="2_aoe4s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0mspk"]
 resource_local_to_scene = true
@@ -24,4 +24,4 @@ label_settings = SubResource("LabelSettings_0mspk")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-script = ExtResource("2_uk3uk")
+script = ExtResource("2_aoe4s")
