@@ -39,6 +39,7 @@ sky_mode = 1
 environment = SubResource("Environment_0fp0k")
 
 [node name="castle" parent="." instance=ExtResource("3_grufb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 520.817)
 
 [node name="Diamonds" type="Node3D" parent="."]
 
@@ -104,3 +105,33 @@ transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -0.685274, 
 
 [node name="21" parent="Diamonds" instance=ExtResource("3_u8p7g")]
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 49.2272, -25.9616, -621.464)
+
+[node name="22" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -34.1462, -47.2999, -560.046)
+
+[node name="25" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 36.9144, -50.3815, -540.004)
+
+[node name="26" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 51.6758, -51.9101, -528.071)
+
+[node name="27" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 53.6598, -53.0402, -507.712)
+
+[node name="28" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 42.8224, -54.8269, -514.775)
+
+[node name="29" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 43.1011, -54.8983, -502.998)
+
+[node name="30" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 29.1484, -53.38, -516.128)
+
+[node name="31" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 37.8771, -54.5224, -524.622)
+
+[node name="23" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -34.1462, -47.2999, -581.103)
+
+[node name="24" parent="Diamonds" instance=ExtResource("3_u8p7g")]
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -34.1462, -45.9591, -570.152)
