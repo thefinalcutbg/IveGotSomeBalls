@@ -1,9 +1,118 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1ts4ydymmc4t"]
+[gd_scene load_steps=27 format=3 uid="uid://c1ts4ydymmc4t"]
 
 [ext_resource type="Script" path="res://scenes/levels/Castle/castle.gd" id="1_xssdr"]
 [ext_resource type="Texture2D" uid="uid://doelc6a6gh2il" path="res://assets/sprites/night.jpg" id="1_xtipm"]
+[ext_resource type="Texture2D" uid="uid://cwu68l8axp7js" path="res://assets/sprites/Cedfence.png" id="2_mbn18"]
 [ext_resource type="PackedScene" uid="uid://bq58jnoqxh6pl" path="res://assets/sprites/castle.gltf" id="3_grufb"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_u8p7g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7ps03"]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="Animation" id="Animation_3olcn"]
+resource_name = "piston_animation"
+length = 0.25
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SmallPiston1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 38.5603, -57.5188, -3.60201, 0.25, 1, 38.56, -63, -3.602)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v2uhb"]
+_data = {
+"piston_animation": SubResource("Animation_3olcn")
+}
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vkdop"]
+top_radius = 2.5
+bottom_radius = 2.5
+height = 3.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcwv6"]
+albedo_texture = ExtResource("2_mbn18")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bromv"]
+height = 3.5
+radius = 2.5
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2yoa7"]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="Animation" id="Animation_uwl6m"]
+resource_name = "piston_animation"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 38.567, -57.4088, 17.407, 0.3, 1, 38.567, -63, 17.407)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74yyp"]
+_data = {
+"piston_animation": SubResource("Animation_uwl6m")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em8q4"]
+albedo_texture = ExtResource("2_mbn18")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4b300"]
+friction = 0.0
+bounce = 0.1
+
+[sub_resource type="Animation" id="Animation_oqkf2"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 50.8584, -56.6544, 14.4881, 1, 1, 50.858, -63, 14.488)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hluuq"]
+_data = {
+"new_animation": SubResource("Animation_oqkf2")
+}
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vsyvw"]
+top_radius = 3.5
+bottom_radius = 3.5
+height = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyec8"]
+albedo_texture = ExtResource("2_mbn18")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ab6sn"]
+height = 5.0
+radius = 3.5
+
+[sub_resource type="Animation" id="Animation_3ybij"]
+resource_name = "new_animation"
+length = 1.2
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 31.3242, -57.0334, 6.98889, 1.2, 1, 31.324, -63, 6.989)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nfc5f"]
+_data = {
+"new_animation": SubResource("Animation_3ybij")
+}
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e4811"]
 panorama = ExtResource("1_xtipm")
@@ -28,6 +137,81 @@ glow_enabled = true
 [node name="Castle" type="Node3D"]
 script = ExtResource("1_xssdr")
 
+[node name="Pistons" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -521.995)
+
+[node name="SmallPiston1" type="AnimatableBody3D" parent="Pistons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5602, -58.638, -3.60201)
+physics_material_override = SubResource("PhysicsMaterial_7ps03")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/SmallPiston1"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_v2uhb")
+}
+autoplay = "piston_animation"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pistons/SmallPiston1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00383377, 0.00359726, 0.000631332)
+mesh = SubResource("CylinderMesh_vkdop")
+surface_material_override/0 = SubResource("StandardMaterial3D_vcwv6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pistons/SmallPiston1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00383377, 0.00359726, 0.000631332)
+shape = SubResource("CylinderShape3D_bromv")
+
+[node name="SmallPiston2" type="AnimatableBody3D" parent="Pistons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.567, -58.963, 17.407)
+physics_material_override = SubResource("PhysicsMaterial_2yoa7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/SmallPiston2"]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_74yyp")
+}
+autoplay = "piston_animation"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pistons/SmallPiston2"]
+mesh = SubResource("CylinderMesh_vkdop")
+surface_material_override/0 = SubResource("StandardMaterial3D_em8q4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pistons/SmallPiston2"]
+shape = SubResource("CylinderShape3D_bromv")
+
+[node name="MediumPiston1" type="AnimatableBody3D" parent="Pistons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.8581, -62.1034, 14.488)
+physics_material_override = SubResource("PhysicsMaterial_4b300")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/MediumPiston1"]
+libraries = {
+"": SubResource("AnimationLibrary_hluuq")
+}
+autoplay = "new_animation"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pistons/MediumPiston1"]
+mesh = SubResource("CylinderMesh_vsyvw")
+surface_material_override/0 = SubResource("StandardMaterial3D_eyec8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pistons/MediumPiston1"]
+shape = SubResource("CylinderShape3D_ab6sn")
+
+[node name="MediumPiston2" type="AnimatableBody3D" parent="Pistons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.324, -62.2147, 6.98899)
+physics_material_override = SubResource("PhysicsMaterial_4b300")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/MediumPiston2"]
+libraries = {
+"": SubResource("AnimationLibrary_nfc5f")
+}
+autoplay = "new_animation"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pistons/MediumPiston2"]
+mesh = SubResource("CylinderMesh_vsyvw")
+surface_material_override/0 = SubResource("StandardMaterial3D_eyec8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pistons/MediumPiston2"]
+shape = SubResource("CylinderShape3D_ab6sn")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
 light_color = Color(0.431373, 0.709804, 1, 1)
@@ -39,7 +223,6 @@ sky_mode = 1
 environment = SubResource("Environment_0fp0k")
 
 [node name="castle" parent="." instance=ExtResource("3_grufb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 520.817)
 
 [node name="Diamonds" type="Node3D" parent="."]
 
@@ -116,16 +299,16 @@ transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 36.9144, -5
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 51.6758, -51.9101, -528.071)
 
 [node name="27" parent="Diamonds" instance=ExtResource("3_u8p7g")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 53.6598, -53.0402, -507.712)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 50.8938, -53.0402, -507.712)
 
 [node name="28" parent="Diamonds" instance=ExtResource("3_u8p7g")]
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 42.8224, -54.8269, -514.775)
 
 [node name="29" parent="Diamonds" instance=ExtResource("3_u8p7g")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 43.1011, -54.8983, -502.998)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 38.4614, -54.8983, -504.443)
 
 [node name="30" parent="Diamonds" instance=ExtResource("3_u8p7g")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 29.1484, -53.38, -516.128)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 31.207, -53.38, -514.905)
 
 [node name="31" parent="Diamonds" instance=ExtResource("3_u8p7g")]
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 37.8771, -54.5224, -524.622)

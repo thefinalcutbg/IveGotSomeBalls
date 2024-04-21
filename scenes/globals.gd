@@ -37,8 +37,8 @@ const CAMPAIGN = [
 ]
 
 const SINGLE_LEVEL = [
-	"CASTLE",
 	"BOUNCE",
+	"CASTLE",
 	"CHASE",
 	"CITY",
 	"DISCO",

@@ -9,9 +9,8 @@ func set_player_parameters(player):
 	pass
 
 func _ready():
+	$Pistons/SmallPiston1/AnimationPlayer.play("piston_animation")
 	pass # Replace with function body.
 
 func _physics_process(delta):
-	print(pistonM1.position.z)
-	print(pistonM2.position.z)
 	pass
