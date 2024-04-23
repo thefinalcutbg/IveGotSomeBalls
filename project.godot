@@ -24,6 +24,7 @@ Globals="*res://scenes/globals.gd"
 window/size/viewport_width=3840
 window/size/viewport_height=2160
 window/size/mode=3
+window/size/borderless=true
 
 [physics]
 

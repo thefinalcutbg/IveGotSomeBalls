@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f44g7hhv4ae2"
-path.s3tc="res://.godot/imported/beach.jpg-59533f26e7eb80cc16faa2d0387d3e81.s3tc.ctex"
+uid="uid://hqxpxjk5n5h0"
+path.s3tc="res://.godot/imported/rustpan_bmp.png-dc60b39a09880782b9a7974cfa36c9ab.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/beach.jpg"
-dest_files=["res://.godot/imported/beach.jpg-59533f26e7eb80cc16faa2d0387d3e81.s3tc.ctex"]
+source_file="res://assets/sprites/rustpan_bmp.png"
+dest_files=["res://.godot/imported/rustpan_bmp.png-dc60b39a09880782b9a7974cfa36c9ab.s3tc.ctex"]
 
 [params]
 
