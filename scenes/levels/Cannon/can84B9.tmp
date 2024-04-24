@@ -50,40 +50,40 @@ environment = SubResource("Environment_0cwdb")
 [node name="Diamonds" type="Node3D" parent="."]
 
 [node name="1" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 60.9215, 12.888, -14.6627)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 60.9215, 13.346, -14.6627)
 
 [node name="2" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 63.6647, 12.888, -41.6189)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 63.6647, 13.346, -41.6189)
 
 [node name="3" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 53.3392, 12.888, -65.2866)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 53.3392, 13.346, -65.2866)
 
 [node name="4" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 35.6011, 12.888, -80.0458)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 35.6011, 13.346, -80.0458)
 
 [node name="5" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 3.39809, 12.888, -81.4574)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 3.39809, 13.346, -81.4574)
 
 [node name="6" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -17.698, 12.888, -65.9873)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -17.698, 13.346, -65.9873)
 
 [node name="7" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -27.0798, 12.888, -49.3043)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -27.0798, 13.346, -49.3043)
 
 [node name="8" parent="Diamonds" instance=ExtResource("2_qo4gd")]
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 18.1861, -92.7916, -990.577)
 
 [node name="9" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 28.7783, -85.8251, -1249.37)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 28.7783, -85.8251, -1254.12)
 
 [node name="10" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 14.2287, -88.0886, -1403.87)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 18.2796, -90.5364, -1374.34)
 
 [node name="11" parent="Diamonds" instance=ExtResource("2_qo4gd")]
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 30.3682, -86.4982, -1543.89)
 
 [node name="12" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 18.5077, -90.1552, -1782.12)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 16.7878, -90.1552, -1782.12)
 
 [node name="AccelerationArea" parent="." instance=ExtResource("6_mlvk0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9987, 0.362178, -142.749)
