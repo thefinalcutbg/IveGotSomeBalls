@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://vfvugbsq1kos"]
+
+[ext_resource type="Script" path="res://scenes/levels/Jump/Jump.gd" id="1_fp2cr"]
+[ext_resource type="PackedScene" uid="uid://cioyuaf5mpe8n" path="res://assets/sprites/jump.gltf" id="2_tf484"]
+[ext_resource type="Texture2D" uid="uid://ls4fqdsgkwkc" path="res://assets/sprites/ta3.bmp" id="3_x4854"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="4_2fbti"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ehue8"]
+panorama = ExtResource("3_x4854")
+
+[sub_resource type="Sky" id="Sky_ygryj"]
+sky_material = SubResource("PanoramaSkyMaterial_ehue8")
+
+[sub_resource type="Environment" id="Environment_kwofh"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_ygryj")
+sky_rotation = Vector3(1.0472, 3.14159, 0)
+ambient_light_energy = 0.0
+tonemap_mode = 2
+ssr_max_steps = 1
+ssr_fade_in = 1.883
+ssr_fade_out = 0.183011
+ssr_depth_tolerance = 49.71
+ssao_radius = 3.55
+ssao_intensity = 6.03
+ssao_power = 0.11949
+ssao_horizon = 1.0
+
+[node name="Jump" type="Node3D"]
+script = ExtResource("1_fp2cr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+light_color = Color(0.431373, 0.709804, 1, 1)
+light_energy = 0.858
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kwofh")
+
+[node name="jump" parent="." instance=ExtResource("2_tf484")]
+
+[node name="1" parent="." instance=ExtResource("4_2fbti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7486, 0.800655, -23.3096)

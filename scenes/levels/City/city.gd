@@ -6,7 +6,7 @@ func set_player_parameters(player):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$city/revolve1/StaticBody3D.constant_angular_velocity.x = 1
+	#$city/revolve1/StaticBody3D.constant_angular_velocity.x = -1
 	$city/revolve2/StaticBody3D.constant_angular_velocity.y = -3
 	$city/revolve3/StaticBody3D.constant_angular_velocity.y = 3
 	$Gate.set_powerup(Globals.POWERUP.SPEED)

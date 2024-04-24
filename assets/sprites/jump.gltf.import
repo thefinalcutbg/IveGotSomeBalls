@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://6atkddk5hrnl"
-path="res://.godot/imported/disco.gltf-f5b1e658148add0a20a8061f7f62965d.scn"
+uid="uid://cioyuaf5mpe8n"
+path="res://.godot/imported/jump.gltf-fd1ed032df975329a4c8c18f117179cc.scn"
 
 [deps]
 
-source_file="res://scenes/game/disco.gltf"
-dest_files=["res://.godot/imported/disco.gltf-f5b1e658148add0a20a8061f7f62965d.scn"]
+source_file="res://assets/sprites/jump.gltf"
+dest_files=["res://.godot/imported/jump.gltf-fd1ed032df975329a4c8c18f117179cc.scn"]
 
 [params]
 
