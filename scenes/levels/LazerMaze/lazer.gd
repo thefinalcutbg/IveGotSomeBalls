@@ -22,7 +22,7 @@ func _physics_process(delta):
 	barriers.get_child(8).rotate_z(-0.01)
 
 func set_player_parameters(player):
-	player.physics_material_override.bounce = 0.3
+	player.physics_material_override.bounce = 0.4
 	
 	barriers.get_child(0).constant_angular_velocity.y = -4
 	barriers.get_child(1).constant_angular_velocity.z = 2

@@ -99,19 +99,19 @@ environment = SubResource("Environment_pms67")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89963, 1.83216, -20.7707)
 
 [node name="1" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1988, -14.452, 29.1905)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1988, -14.452, 28.1301)
 
 [node name="2" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6537, -14.452, 29.2313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6537, -14.452, 28.1709)
 
 [node name="3" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7298, -14.452, 29.2313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7298, -14.452, 28.1709)
 
 [node name="4" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8106, -14.452, 29.2313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8106, -14.452, 28.1709)
 
 [node name="5" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8106, -14.452, 19.7361)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8106, -14.452, 19.4351)
 
 [node name="6" parent="Diamonds" instance=ExtResource("2_wggrt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8274, -14.452, 10.2862)
@@ -126,7 +126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6537, -14.452, 10.3137)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1988, -14.452, 10.2729)
 
 [node name="10" parent="Diamonds" instance=ExtResource("2_wggrt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1988, -14.452, 19.9895)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1988, -14.452, 19.4632)
 
 [node name="11" parent="Diamonds" instance=ExtResource("2_wggrt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9952, -48.8508, 48.4542)
