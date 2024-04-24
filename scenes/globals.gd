@@ -34,12 +34,13 @@ const CAMPAIGN = [
 	"LOOPS",
 	"ROLLERCOASTER",
 	"CITY",
-	"CASTLE"
+	"CASTLE",
+	"CANNON"
 ]
 
 const SINGLE_LEVEL = [
-	"CANNON",
 	"BOUNCE",
+	"CANNON",
 	"CASTLE",
 	"CHASE",
 	"CITY",
