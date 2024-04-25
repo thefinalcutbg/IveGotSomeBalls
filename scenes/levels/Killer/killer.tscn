@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm4l8pyiohlke"]
+
+[ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="1_3n8yx"]
+[ext_resource type="Script" path="res://scenes/levels/Killer/killer.gd" id="1_cgquy"]
+[ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="2_hwdxu"]
+[ext_resource type="PackedScene" uid="uid://bf6lhj8qawdbj" path="res://assets/sprites/killer.gltf" id="2_ltf85"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="2_qdkeq"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mln5f"]
+panorama = ExtResource("1_3n8yx")
+
+[sub_resource type="Sky" id="Sky_ygryj"]
+sky_material = SubResource("PanoramaSkyMaterial_mln5f")
+
+[sub_resource type="Environment" id="Environment_lgcvh"]
+background_mode = 2
+sky = SubResource("Sky_ygryj")
+sky_rotation = Vector3(0, 3.14159, 0)
+ambient_light_sky_contribution = 0.36
+tonemap_mode = 2
+ssr_max_steps = 1
+ssr_fade_in = 1.883
+ssr_fade_out = 0.183011
+ssr_depth_tolerance = 49.71
+ssao_radius = 3.55
+ssao_intensity = 6.03
+ssao_power = 0.11949
+ssao_horizon = 1.0
+glow_enabled = true
+
+[node name="Killer" type="Node3D"]
+script = ExtResource("1_cgquy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+light_energy = 0.429
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lgcvh")
+
+[node name="Gate" parent="." instance=ExtResource("2_hwdxu")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.851719, 4.8922, -94.434)
+
+[node name="killer" parent="." instance=ExtResource("2_ltf85")]
+
+[node name="Diamonds" type="Node3D" parent="."]
+
+[node name="1" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47974, 4.13147, -65.7816)
+
+[node name="2" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5968, 4.13147, -65.7816)
+
+[node name="3" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8498, 4.13147, -65.7816)
+
+[node name="4" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3084, 4.13147, -65.7816)
+
+[node name="5" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5185, 4.13147, -65.9151)
+
+[node name="6" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6677, 4.13147, -46.3619)
+
+[node name="7" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.80921, 4.13147, -46.3619)
+
+[node name="8" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6677, 4.13147, 2.1047)
+
+[node name="9" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.80921, 4.13147, 2.1047)
+
+[node name="10" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.5898, 4.13147, -33.0455)
+
+[node name="11" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.5898, 4.13147, -25.5248)
+
+[node name="12" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6949, 4.13147, -33.0455)
+
+[node name="13" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6949, 4.13147, -25.5248)
+
+[node name="14" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6949, 4.13147, -113.131)
+
+[node name="15" parent="Diamonds" instance=ExtResource("2_qdkeq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.2817, 4.13147, -113.131)
