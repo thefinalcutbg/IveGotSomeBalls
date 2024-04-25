@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/levels/Jump/jump.gd" id="1_fp2cr"]
 [ext_resource type="PackedScene" uid="uid://cioyuaf5mpe8n" path="res://assets/sprites/jump.gltf" id="2_tf484"]
-[ext_resource type="Texture2D" uid="uid://ls4fqdsgkwkc" path="res://assets/sprites/ta3.bmp" id="3_x4854"]
+[ext_resource type="Texture2D" uid="uid://dpjiisq0vng0t" path="res://assets/sprites/ta3.png" id="2_yon20"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="4_2fbti"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="5_1r4x6"]
 [ext_resource type="Texture2D" uid="uid://d1qw5qhwut38" path="res://assets/sprites/Loosedrt.png" id="6_o86g2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ehue8"]
-panorama = ExtResource("3_x4854")
+panorama = ExtResource("2_yon20")
 
 [sub_resource type="Sky" id="Sky_ygryj"]
 sky_material = SubResource("PanoramaSkyMaterial_ehue8")
@@ -16,7 +16,7 @@ sky_material = SubResource("PanoramaSkyMaterial_ehue8")
 [sub_resource type="Environment" id="Environment_kwofh"]
 background_mode = 2
 sky = SubResource("Sky_ygryj")
-sky_rotation = Vector3(1.0472, 3.14159, 0)
+sky_rotation = Vector3(0, 3.14159, 0)
 ambient_light_energy = 0.0
 tonemap_mode = 2
 ssr_max_steps = 1
@@ -156,10 +156,13 @@ transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 
 transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 534.475, -137.237, -787.078)
 
 [node name="15" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 534.475, -127.535, -787.078)
+transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 534.475, -130.673, -787.078)
 
 [node name="16" parent="Diamonds" instance=ExtResource("4_2fbti")]
 transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 534.475, -118.127, -787.078)
+
+[node name="17" parent="Diamonds" instance=ExtResource("4_2fbti")]
+transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 534.475, -123.928, -787.078)
 
 [node name="SpotLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0516216, 0.998667, 0, -0.998667, -0.0516216, 534.475, -114.499, -787.078)

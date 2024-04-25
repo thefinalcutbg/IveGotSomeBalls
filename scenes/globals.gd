@@ -23,7 +23,7 @@ const LEVEL_MAP : Dictionary = {
 	"DISCO" : "res://scenes/levels/Disco/disco.tscn",
 	"CASTLE" : "res://scenes/levels/Castle/castle.tscn",
 	"CANNON" : "res://scenes/levels/Cannon/cannon.tscn",
-	"JUMP" : "res://scenes/levels/Jump/jumpp.tscn",
+	"JUMP" : "res://scenes/levels/Jump/jump.tscn",
 }
 
 
