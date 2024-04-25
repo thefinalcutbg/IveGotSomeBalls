@@ -4,7 +4,7 @@ extends RigidBody3D
 const _break_coef = 0.08
 const _speed_coef = 2.5
 const _speed_boost = 1.2 #initial boost when speed powerup is applied
-var _jump_coef = [30,35,45] #for each successive jump
+var _jump_coef = [30,35,45,55] #for each successive jump
 var _is_colliding = false
 
 @onready var particles = $GPUParticles3D

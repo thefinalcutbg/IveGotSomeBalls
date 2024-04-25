@@ -25,12 +25,10 @@ func _process(delta):
 	var max = _option_arr.size()-1
 	
 	if direction == 1 and _current_index == max:
-		_current_index = 0
+		_select_label(0)
 	elif direction == -1 and _current_index == 0:
-		_current_index = max
-	else: _current_index += direction
-	
-	_select_label(_current_index)
+		_select_label(max)
+	else: _select_label(_current_index + direction)
 	
 func add_label(text, option):
 	
@@ -55,3 +53,11 @@ func _select_label(index):
 		
 	$VBoxContainer.get_child(index).select()
 	
+	_current_index = index
+
+func set_selected(label_name):
+	
+	for i in $VBoxContainer.get_child_count():
+		if $VBoxContainer.get_child(i).get_text() == label_name:
+			_select_label(i)
+			return

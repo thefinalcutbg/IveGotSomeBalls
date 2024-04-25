@@ -69,11 +69,14 @@ func _menu_requested():
 	
 	var ingameMenu = INGAME_MENU.instantiate()
 	
+	var continue_label_added = false
+	
 	#ADDING CONTINUE LABEL
 	if _can_continue or _game().game_state == Globals.GAME_STATE.LEVEL_COMPLETED:
 		if _level_index != -1 :
 			_can_continue = true
 			ingameMenu.add_label("Continue to Next Level", MenuChoice.CONTINUE)
+			continue_label_added = true
 	
 	#ADDING RESUME LABEL
 	if _game().game_state == Globals.GAME_STATE.PLAYING:
@@ -82,6 +85,8 @@ func _menu_requested():
 	#ADDING THE OTHER LABELS
 	ingameMenu.add_label("Restart level", MenuChoice.RESTART)
 	ingameMenu.add_label("Quit to menu", MenuChoice.QUIT)
+	
+	ingameMenu.set_selected("Return to game")
 	
 	ingameMenu.option_selected.connect(_process_menu_choice)
 	

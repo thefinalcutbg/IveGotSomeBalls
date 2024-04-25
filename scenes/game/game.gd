@@ -35,7 +35,7 @@ func start_game():
 
 	var level = load(_level_path).instantiate()
 	
-	_create_label(_level_name, Color("DODGERBLUE"))
+	_create_label(_level_name, Color("#7199fe"))
 	
 	if $Level.get_child_count():
 		var oldLevel = $Level.get_child(0)
