@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://vfvugbsq1kos"]
 
-[ext_resource type="Script" path="res://scenes/levels/Jump/jumpp.gd" id="1_fp2cr"]
+[ext_resource type="Script" path="res://scenes/levels/Jump/jump.gd" id="1_fp2cr"]
 [ext_resource type="PackedScene" uid="uid://cioyuaf5mpe8n" path="res://assets/sprites/jump.gltf" id="2_tf484"]
 [ext_resource type="Texture2D" uid="uid://ls4fqdsgkwkc" path="res://assets/sprites/ta3.bmp" id="3_x4854"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="4_2fbti"]
