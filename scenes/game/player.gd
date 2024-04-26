@@ -37,6 +37,10 @@ func _physics_process(delta):
 	
 	if m_powerup == Globals.POWERUP.SPEED: force*=_speed_coef
 	
+	#grounding on slopes
+	if _is_colliding and $RayCast3D.is_colliding():
+		force.y = -15
+
 	apply_central_force(force)
 	
 	processJump()
@@ -58,7 +62,6 @@ func set_powerup(pw):
 		Globals.POWERUP.JUMP: 
 			color = Color("YELLOW", 1)
 			jump_guard = false
-			contact_monitor = true
 		Globals.POWERUP.BREAK:
 			color = Color("GREEN", 0.8)
 		Globals.POWERUP.SPEED:
@@ -92,7 +95,6 @@ func set_thunder_range(radius):
 
 func respawn():
 	
-	contact_monitor = false
 	jump_guard = false
 	_is_colliding = false
 	linear_velocity = Vector3.ZERO
@@ -162,7 +164,6 @@ func processBreak():
 	particles.emitting = true
 	
 	apply_central_impulse(-linear_velocity*_break_coef)
-
 
 func _on_jump_particle_timer_timeout():
 	particles.emitting = false

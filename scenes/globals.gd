@@ -29,7 +29,6 @@ const LEVEL_MAP : Dictionary = {
 
 
 const CAMPAIGN = [
-	"KILLER",
 	"LAZER MAZE",
 	"CHASE",
 	"BOUNCE",
