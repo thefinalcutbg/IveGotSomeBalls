@@ -39,7 +39,7 @@ func _physics_process(delta):
 	
 	#grounding on slopes
 	if _is_colliding and $RayCast3D.is_colliding():
-		force.y = -15
+		force.y = -10
 
 	apply_central_force(force)
 	
