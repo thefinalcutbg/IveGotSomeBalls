@@ -62,6 +62,8 @@ func set_powerup(pw):
 		Globals.POWERUP.JUMP: 
 			color = Color("YELLOW", 1)
 			jump_guard = false
+			#sometimes collision doesn't work
+			_is_colliding = true
 		Globals.POWERUP.BREAK:
 			color = Color("GREEN", 0.8)
 		Globals.POWERUP.SPEED:
