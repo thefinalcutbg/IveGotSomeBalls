@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v3.6.28",
+		"generator":"Khronos glTF Blender I/O v4.1.63",
 		"version":"2.0"
 	},
 	"scene":0,
@@ -138,7 +138,7 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Bricks.001",
+			"name":"HOTOGRET",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
@@ -160,7 +160,7 @@
 		{
 			"alphaMode":"BLEND",
 			"doubleSided":true,
-			"name":"Material.001",
+			"name":"THUNDER",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":2
@@ -182,7 +182,7 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Material.005",
+			"name":"METAL",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":4
@@ -193,7 +193,7 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Material.006",
+			"name":"CHROME",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":5
@@ -421,7 +421,7 @@
 			],
 			"min":[
 				5.883846759796143,
-				-1.5145769119262695,
+				-1.6099003553390503,
 				-6.6627936363220215
 			],
 			"type":"VEC3"

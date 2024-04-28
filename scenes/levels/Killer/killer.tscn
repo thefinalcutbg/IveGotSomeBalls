@@ -14,7 +14,6 @@ sky_material = SubResource("PanoramaSkyMaterial_mln5f")
 
 [sub_resource type="Environment" id="Environment_lgcvh"]
 background_mode = 2
-background_energy_multiplier = 0.49
 sky = SubResource("Sky_ygryj")
 sky_rotation = Vector3(0, 3.14159, 0)
 ambient_light_sky_contribution = 0.36
@@ -28,6 +27,8 @@ ssao_intensity = 6.03
 ssao_power = 0.11949
 ssao_horizon = 1.0
 glow_enabled = true
+glow_intensity = 1.35
+glow_strength = 0.89
 
 [node name="Killer" type="Node3D"]
 script = ExtResource("1_cgquy")
@@ -95,13 +96,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.2876, 4.13147, -113.131)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.2817, 4.13147, -113.131)
 
 [node name="16" parent="Diamonds" instance=ExtResource("2_qdkeq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.304, 118.61, -106.931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.304, 128.196, -106.931)
 
 [node name="17" parent="Diamonds" instance=ExtResource("2_qdkeq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.44, 118.61, -94.4303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.44, 128.196, -94.4303)
 
 [node name="18" parent="Diamonds" instance=ExtResource("2_qdkeq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.818, 118.61, -106.869)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.818, 128.196, -106.869)
 
 [node name="19" parent="Diamonds" instance=ExtResource("2_qdkeq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.818, 118.61, -94.6102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.818, 128.196, -94.6102)

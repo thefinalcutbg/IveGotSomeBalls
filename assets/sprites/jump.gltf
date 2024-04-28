@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v3.6.28",
+		"generator":"Khronos glTF Blender I/O v4.1.63",
 		"version":"2.0"
 	},
 	"extensionsUsed":[
@@ -271,41 +271,16 @@
 		{
 			"extensions":{
 				"KHR_materials_specular":{
-					"specularColorFactor":[
-						0,
-						0,
-						0
-					]
+					"specularFactor":0
 				},
 				"KHR_materials_ior":{
 					"ior":1.4500000476837158
 				}
 			},
-			"name":"Material.001",
+			"name":"DIRT",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
-				},
-				"metallicFactor":0
-			}
-		},
-		{
-			"extensions":{
-				"KHR_materials_specular":{
-					"specularColorFactor":[
-						0,
-						0,
-						0
-					]
-				},
-				"KHR_materials_ior":{
-					"ior":1.4500000476837158
-				}
-			},
-			"name":"Material.002",
-			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":1
 				},
 				"metallicFactor":0
 			}
@@ -315,7 +290,7 @@
 			"name":"Material.003",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
-					"index":2
+					"index":1
 				},
 				"metallicFactor":0,
 				"roughnessFactor":0.5
@@ -333,7 +308,7 @@
 					0.37988829612731934
 				],
 				"baseColorTexture":{
-					"index":3
+					"index":2
 				},
 				"metallicFactor":0,
 				"roughnessFactor":0.5
@@ -519,7 +494,7 @@
 						"TEXCOORD_0":50
 					},
 					"indices":51,
-					"material":1
+					"material":0
 				}
 			]
 		},
@@ -533,7 +508,7 @@
 						"TEXCOORD_0":54
 					},
 					"indices":55,
-					"material":2
+					"material":1
 				}
 			]
 		},
@@ -547,7 +522,7 @@
 						"TEXCOORD_0":58
 					},
 					"indices":59,
-					"material":3
+					"material":2
 				}
 			]
 		}
@@ -563,11 +538,7 @@
 		},
 		{
 			"sampler":0,
-			"source":2
-		},
-		{
-			"sampler":0,
-			"source":2
+			"source":1
 		}
 	],
 	"images":[
@@ -575,11 +546,6 @@
 			"mimeType":"image/png",
 			"name":"Loosedrt",
 			"uri":"Loosedrt.png"
-		},
-		{
-			"mimeType":"image/png",
-			"name":"Loosedrt.bmp",
-			"uri":"Loosedrt_bmp.png"
 		},
 		{
 			"mimeType":"image/png",

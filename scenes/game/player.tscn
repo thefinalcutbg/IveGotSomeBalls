@@ -75,6 +75,7 @@ grow_amount = -1.318
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_w40ge"]
 material = SubResource("StandardMaterial3D_sd7jm")
+uv2_padding = 0.0
 size = Vector2(1, 1)
 orientation = 2
 
@@ -190,10 +191,11 @@ fov = 60.0
 transform = Transform3D(1, 0, 0, 0, 1, 5.58794e-09, 0, -5.58794e-09, 1, 0, 0, 0)
 emitting = false
 amount = 1000
-lifetime = 5.0
+lifetime = 4.0
 speed_scale = 10.0
+randomness = 0.17
 fixed_fps = 60
-trail_lifetime = 1.0
+trail_lifetime = 2.26
 process_material = SubResource("ParticleProcessMaterial_y6yds")
 draw_pass_1 = SubResource("PlaneMesh_w40ge")
 

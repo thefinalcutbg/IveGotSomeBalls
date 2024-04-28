@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v3.6.28",
+		"generator":"Khronos glTF Blender I/O v4.1.63",
 		"version":"2.0"
 	},
 	"scene":0,
@@ -141,7 +141,7 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Material",
+			"name":"Tutshngl",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
@@ -151,79 +151,34 @@
 			}
 		},
 		{
+			"alphaMode":"BLEND",
 			"doubleSided":true,
-			"name":"Material.001",
+			"emissiveFactor":[
+				0.2198285013437271,
+				0.04432767629623413,
+				0.13733862340450287
+			],
+			"name":"PUNA",
 			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					1,
+					1,
+					0.20000000298023224
+				],
 				"baseColorTexture":{
 					"index":1
 				},
 				"metallicFactor":0,
-				"roughnessFactor":0.5
+				"roughnessFactor":0
 			}
 		},
 		{
-			"alphaMode":"BLEND",
 			"doubleSided":true,
-			"emissiveFactor":[
-				0.21927309036254883,
-				0.04474254325032234,
-				0.13633795082569122
-			],
-			"name":"Material.002",
+			"name":"BETON",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					1,
-					1,
-					0.5
-				],
 				"baseColorTexture":{
 					"index":2
-				},
-				"metallicFactor":0,
-				"roughnessFactor":0
-			}
-		},
-		{
-			"doubleSided":true,
-			"name":"M_Street_Lamp_1.001",
-			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":3
-				},
-				"metallicFactor":0,
-				"roughnessFactor":0.5
-			}
-		},
-		{
-			"alphaMode":"BLEND",
-			"doubleSided":true,
-			"emissiveFactor":[
-				0.4396570026874542,
-				0.08865535259246826,
-				0.27467724680900574
-			],
-			"name":"Material.006",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					1,
-					1,
-					0.5
-				],
-				"baseColorTexture":{
-					"index":4
-				},
-				"metallicFactor":0,
-				"roughnessFactor":0
-			}
-		},
-		{
-			"doubleSided":true,
-			"name":"M_Street_Lamp_1.002",
-			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":5
 				},
 				"metallicFactor":0,
 				"roughnessFactor":0.5
@@ -250,49 +205,11 @@
 			}
 		},
 		{
-			"alphaMode":"BLEND",
 			"doubleSided":true,
-			"emissiveFactor":[
-				0.21927309036254883,
-				0.04474254325032234,
-				0.13633795082569122
-			],
-			"name":"Material.005",
+			"name":"M_Street_Lamp_1.002",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					1,
-					1,
-					0.5
-				],
-				"baseColorTexture":{
-					"index":6
-				},
 				"metallicFactor":0,
-				"roughnessFactor":0
-			}
-		},
-		{
-			"alphaMode":"BLEND",
-			"doubleSided":true,
-			"emissiveFactor":[
-				0.2198285013437271,
-				0.04432767629623413,
-				0.13733862340450287
-			],
-			"name":"Material.008",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					1,
-					1,
-					0.5
-				],
-				"baseColorTexture":{
-					"index":7
-				},
-				"metallicFactor":0,
-				"roughnessFactor":0
+				"roughnessFactor":0.5
 			}
 		}
 	],
@@ -321,7 +238,7 @@
 						"TEXCOORD_0":6
 					},
 					"indices":7,
-					"material":1
+					"material":0
 				}
 			]
 		},
@@ -335,7 +252,7 @@
 						"TEXCOORD_0":10
 					},
 					"indices":11,
-					"material":2
+					"material":1
 				}
 			]
 		},
@@ -349,7 +266,7 @@
 						"TEXCOORD_0":14
 					},
 					"indices":15,
-					"material":3
+					"material":2
 				}
 			]
 		},
@@ -363,7 +280,7 @@
 						"TEXCOORD_0":18
 					},
 					"indices":19,
-					"material":4
+					"material":1
 				}
 			]
 		},
@@ -377,7 +294,7 @@
 						"TEXCOORD_0":22
 					},
 					"indices":23,
-					"material":5
+					"material":2
 				}
 			]
 		},
@@ -391,7 +308,7 @@
 						"TEXCOORD_0":26
 					},
 					"indices":27,
-					"material":6
+					"material":3
 				}
 			]
 		},
@@ -405,7 +322,7 @@
 						"TEXCOORD_0":30
 					},
 					"indices":23,
-					"material":5
+					"material":2
 				}
 			]
 		},
@@ -419,7 +336,7 @@
 						"TEXCOORD_0":33
 					},
 					"indices":27,
-					"material":6
+					"material":3
 				}
 			]
 		},
@@ -433,7 +350,7 @@
 						"TEXCOORD_0":36
 					},
 					"indices":23,
-					"material":5
+					"material":2
 				}
 			]
 		},
@@ -447,7 +364,7 @@
 						"TEXCOORD_0":39
 					},
 					"indices":23,
-					"material":5
+					"material":4
 				}
 			]
 		},
@@ -461,7 +378,7 @@
 						"TEXCOORD_0":42
 					},
 					"indices":23,
-					"material":5
+					"material":2
 				}
 			]
 		},
@@ -475,7 +392,7 @@
 						"TEXCOORD_0":45
 					},
 					"indices":46,
-					"material":7
+					"material":1
 				}
 			]
 		},
@@ -489,7 +406,7 @@
 						"TEXCOORD_0":49
 					},
 					"indices":50,
-					"material":8
+					"material":1
 				}
 			]
 		}
@@ -501,31 +418,11 @@
 		},
 		{
 			"sampler":0,
-			"source":0
-		},
-		{
-			"sampler":0,
 			"source":1
 		},
 		{
 			"sampler":0,
 			"source":2
-		},
-		{
-			"sampler":0,
-			"source":1
-		},
-		{
-			"sampler":0,
-			"source":2
-		},
-		{
-			"sampler":0,
-			"source":3
-		},
-		{
-			"sampler":0,
-			"source":3
 		}
 	],
 	"images":[
@@ -541,13 +438,8 @@
 		},
 		{
 			"mimeType":"image/png",
-			"name":"BETON.BMP",
-			"uri":"BETON_BMP.png"
-		},
-		{
-			"mimeType":"image/png",
-			"name":"puna.bmp",
-			"uri":"puna_bmp.png"
+			"name":"BETON",
+			"uri":"BETON.png"
 		}
 	],
 	"accessors":[

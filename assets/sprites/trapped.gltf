@@ -161,7 +161,7 @@
 			],
 			"translation":[
 				-72.07571411132812,
-				15.642979621887207,
+				15.583964347839355,
 				35.76970291137695
 			]
 		},
@@ -191,7 +191,7 @@
 					"ior":1.4500000476837158
 				}
 			},
-			"name":"Material.003",
+			"name":"stone",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
@@ -220,7 +220,7 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Material.001",
+			"name":"1ball",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":2
@@ -231,6 +231,7 @@
 		},
 		{
 			"alphaMode":"BLEND",
+			"doubleSided":true,
 			"emissiveFactor":[
 				0.6000020503997803,
 				0.5030041717772065,
@@ -257,9 +258,6 @@
 			"doubleSided":true,
 			"name":"Material.004",
 			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":3
-				},
 				"metallicFactor":0,
 				"roughnessFactor":0.5
 			}
@@ -268,9 +266,6 @@
 			"doubleSided":true,
 			"name":"Material.005",
 			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":4
-				},
 				"metallicFactor":0,
 				"roughnessFactor":0.5
 			}
@@ -453,14 +448,6 @@
 		{
 			"sampler":0,
 			"source":2
-		},
-		{
-			"sampler":0,
-			"source":3
-		},
-		{
-			"sampler":0,
-			"source":4
 		}
 	],
 	"images":[
@@ -478,16 +465,6 @@
 			"mimeType":"image/png",
 			"name":"1ball",
 			"uri":"1ball.png"
-		},
-		{
-			"mimeType":"image/png",
-			"name":"Tutshngl",
-			"uri":"Tutshngl.png"
-		},
-		{
-			"mimeType":"image/png",
-			"name":"Tutshngl.bmp",
-			"uri":"Tutshngl_bmp.png"
 		}
 	],
 	"accessors":[
@@ -830,14 +807,14 @@
 			"componentType":5126,
 			"count":192,
 			"max":[
-				5.179769515991211,
+				5.323575973510742,
 				0.15438497066497803,
-				9.661792755126953
+				9.681974411010742
 			],
 			"min":[
-				-7.826076984405518,
-				-28.089263916015625,
-				-10.186723709106445
+				-7.960360527038574,
+				-27.94692611694336,
+				-10.205659866333008
 			],
 			"type":"VEC3"
 		},
@@ -864,14 +841,14 @@
 			"componentType":5126,
 			"count":192,
 			"max":[
-				5.179769515991211,
+				5.318814754486084,
 				0.15438497066497803,
-				9.661792755126953
+				9.681351661682129
 			],
 			"min":[
-				-7.826076984405518,
-				-28.089263916015625,
-				-10.186723709106445
+				-7.965120315551758,
+				-27.942718505859375,
+				-10.206283569335938
 			],
 			"type":"VEC3"
 		},

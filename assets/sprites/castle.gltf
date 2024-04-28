@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v3.6.28",
+		"generator":"Khronos glTF Blender I/O v4.1.63",
 		"version":"2.0"
 	},
 	"extensionsUsed":[
@@ -243,11 +243,7 @@
 		{
 			"extensions":{
 				"KHR_materials_specular":{
-					"specularColorFactor":[
-						0,
-						0,
-						0
-					]
+					"specularFactor":0
 				},
 				"KHR_materials_ior":{
 					"ior":1.4500000476837158
@@ -265,11 +261,7 @@
 		{
 			"extensions":{
 				"KHR_materials_specular":{
-					"specularColorFactor":[
-						0,
-						0,
-						0
-					]
+					"specularFactor":0
 				},
 				"KHR_materials_ior":{
 					"ior":1.4500000476837158
@@ -289,26 +281,6 @@
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":2
-				},
-				"metallicFactor":0,
-				"roughnessFactor":0.5
-			}
-		},
-		{
-			"name":"Wood.001",
-			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":3
-				},
-				"metallicFactor":0,
-				"roughnessFactor":0.5
-			}
-		},
-		{
-			"name":"Wood.002",
-			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":4
 				},
 				"metallicFactor":0,
 				"roughnessFactor":0.5
@@ -577,7 +549,7 @@
 						"TEXCOORD_0":76
 					},
 					"indices":73,
-					"material":3
+					"material":2
 				}
 			]
 		},
@@ -591,7 +563,7 @@
 						"TEXCOORD_0":79
 					},
 					"indices":73,
-					"material":4
+					"material":2
 				}
 			]
 		}
@@ -608,14 +580,6 @@
 		{
 			"sampler":0,
 			"source":2
-		},
-		{
-			"sampler":0,
-			"source":3
-		},
-		{
-			"sampler":0,
-			"source":3
 		}
 	],
 	"images":[
@@ -633,11 +597,6 @@
 			"mimeType":"image/png",
 			"name":"Cedfence",
 			"uri":"Cedfence.png"
-		},
-		{
-			"mimeType":"image/png",
-			"name":"Cedfence.bmp",
-			"uri":"Cedfence_bmp.png"
 		}
 	],
 	"accessors":[
