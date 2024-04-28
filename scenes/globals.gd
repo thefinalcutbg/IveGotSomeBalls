@@ -23,7 +23,8 @@ const LEVEL_MAP : Dictionary = {
 	"CASTLE" : "res://scenes/levels/Castle/castle.tscn",
 	"CANNON" : "res://scenes/levels/Cannon/cannon.tscn",
 	"JUMP" : "res://scenes/levels/Jump/jump.tscn",
-	"KILLER" : "res://scenes/levels/Killer/killer.tscn"
+	"KILLER" : "res://scenes/levels/Killer/killer.tscn",
+	"TRAPPED" : "res://scenes/levels/Trapped/trapped.tscn",
 }
 
 
@@ -38,7 +39,8 @@ const CAMPAIGN = [
 	"CASTLE",
 	"CANNON",
 	"JUMP",
-	"KILLER"
+	"KILLER",
+	"TRAPPED"
 ]
 
 const SINGLE_LEVEL = [
@@ -52,6 +54,7 @@ const SINGLE_LEVEL = [
 	"KILLER",
 	"LAZER MAZE",
 	"LOOPS",
-	"ROLLERCOASTER"
+	"ROLLERCOASTER",
+	"TRAPPED"
 ]
 

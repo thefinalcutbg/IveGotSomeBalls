@@ -1,0 +1,304 @@
+[gd_scene load_steps=23 format=3 uid="uid://8w6ff02xd3oq"]
+
+[ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="1_abxqu"]
+[ext_resource type="PackedScene" uid="uid://c7ki8ywx626xq" path="res://assets/sprites/trapped.gltf" id="2_endml"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_ikakr"]
+[ext_resource type="Texture2D" uid="uid://b8h8ioo8iykl5" path="res://assets/sprites/Tutshngl.png" id="3_s0xb0"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jq57m"]
+panorama = ExtResource("1_abxqu")
+
+[sub_resource type="Sky" id="Sky_tjpdt"]
+sky_material = SubResource("PanoramaSkyMaterial_jq57m")
+
+[sub_resource type="Environment" id="Environment_gpohp"]
+background_mode = 2
+sky = SubResource("Sky_tjpdt")
+sky_rotation = Vector3(0, 3.14159, 0)
+ambient_light_color = Color(0.803922, 0.341176, 0.47451, 1)
+tonemap_mode = 2
+ssr_max_steps = 1
+ssr_fade_in = 1.883
+ssr_fade_out = 0.183011
+ssr_depth_tolerance = 49.71
+ssao_radius = 3.55
+ssao_intensity = 6.03
+ssao_power = 0.11949
+ssao_horizon = 1.0
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_yfddo"]
+resource_name = "new_animation"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -14.5966, 2.61735, -0.631416, 2.5, 1, -30.3, 2.617, -0.631)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -39, 2.617, 29.5, 2.5, 1, -39, 2.617, 42)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform4")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -193.637, 4.88997, 34.861, 2.5, 1, -130, 4.89, 34.861)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dqtci"]
+_data = {
+"new_animation": SubResource("Animation_yfddo")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_gobyr"]
+size = Vector3(3, 1, 17.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4vk3"]
+albedo_color = Color(0.0666667, 0.568627, 0.478431, 1)
+albedo_texture = ExtResource("3_s0xb0")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(2.08165e-12, 2.08165e-12, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sd7d4"]
+size = Vector3(3, 1, 17.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bk2fe"]
+albedo_color = Color(0.0666667, 0.568627, 0.478431, 1)
+albedo_texture = ExtResource("3_s0xb0")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(2.08165e-12, 2.08165e-12, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_to1tm"]
+size = Vector3(3, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqg4w"]
+albedo_color = Color(0.0666667, 0.568627, 0.478431, 1)
+albedo_texture = ExtResource("3_s0xb0")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(2.08165e-12, 2.08165e-12, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lvq0y"]
+size = Vector3(3, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_um52o"]
+size = Vector3(3, 3.25, 17.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wrl12"]
+size = Vector3(3, 3.25, 17.25)
+
+[sub_resource type="Animation" id="Animation_k4grp"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform5")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -134.439, 4.875, -27.576, 5, 1, -266, 4.875, -27.576)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform6")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -252.383, 4.8, 62.465, 5, 1, -252.383, 4.8, -17)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform7")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -212.663, 4.835, -12, 5, 1, -212.663, 4.83481, 104.956)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kluxr"]
+_data = {
+"new_animation": SubResource("Animation_k4grp")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_vnobo"]
+size = Vector3(3, 3.25, 13.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_23tdl"]
+size = Vector3(3, 3.25, 13.3)
+
+[node name="Trapped" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 3.65073e-30, 0, -4.37114e-08, 1, 8.35189e-23, -1, -4.37114e-08, 0, 1000, 0)
+light_color = Color(0.505882, 0.231373, 0.396078, 1)
+light_bake_mode = 1
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gpohp")
+
+[node name="trapped" parent="." instance=ExtResource("2_endml")]
+
+[node name="Platforms" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms"]
+libraries = {
+"": SubResource("AnimationLibrary_dqtci")
+}
+autoplay = "new_animation"
+
+[node name="Platform1" type="AnimatableBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5281, 2.61715, -0.631179)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform1"]
+mesh = SubResource("BoxMesh_gobyr")
+surface_material_override/0 = SubResource("StandardMaterial3D_g4vk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.02, 2.08165e-12)
+shape = SubResource("BoxShape3D_sd7d4")
+
+[node name="Platform2" type="AnimatableBody3D" parent="Platforms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39, 2.617, 36.6095)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform2"]
+mesh = SubResource("BoxMesh_gobyr")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk2fe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.02, 2.08165e-12)
+shape = SubResource("BoxShape3D_sd7d4")
+
+[node name="Platform3" type="AnimatableBody3D" parent="Platforms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -113.995, 2.617, 32.0639)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+mesh = SubResource("BoxMesh_to1tm")
+surface_material_override/0 = SubResource("StandardMaterial3D_lqg4w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.02, 2.08165e-12)
+shape = SubResource("BoxShape3D_lvq0y")
+
+[node name="Platform4" type="AnimatableBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.443, 4.88999, 34.861)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128692, 0)
+mesh = SubResource("BoxMesh_um52o")
+surface_material_override/0 = SubResource("StandardMaterial3D_g4vk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_wrl12")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Platforms"]
+libraries = {
+"": SubResource("AnimationLibrary_kluxr")
+}
+autoplay = "new_animation"
+
+[node name="Platform5" type="AnimatableBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.222, 4.875, -27.576)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128692, 0)
+mesh = SubResource("BoxMesh_um52o")
+surface_material_override/0 = SubResource("StandardMaterial3D_g4vk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_wrl12")
+
+[node name="Platform6" type="AnimatableBody3D" parent="Platforms"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -252.383, 4.8, 59.5762)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128692, 0)
+mesh = SubResource("BoxMesh_um52o")
+surface_material_override/0 = SubResource("StandardMaterial3D_g4vk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_wrl12")
+
+[node name="Platform7" type="AnimatableBody3D" parent="Platforms"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -212.663, 4.83499, -7.74836)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128692, 0)
+mesh = SubResource("BoxMesh_vnobo")
+surface_material_override/0 = SubResource("StandardMaterial3D_g4vk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("BoxShape3D_23tdl")
+
+[node name="Diamonds" type="Node3D" parent="."]
+
+[node name="1" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08014, 4.52188, -50.2718)
+
+[node name="2" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22587, 4.52188, -56.3037)
+
+[node name="3" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.07066, 4.52188, -60.4427)
+
+[node name="4" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1513, 4.52188, -60.4427)
+
+[node name="5" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2632, 4.52188, -56.3037)
+
+[node name="6" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3317, 4.52188, -50.2718)
+
+[node name="7" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.8598, 4.52188, 18.127)
+
+[node name="8" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.736, 4.52188, 53.1036)
+
+[node name="9" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.7723, 4.52188, 35.6109)
+
+[node name="10" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.8765, 4.52188, 24.8268)
+
+[node name="11" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.5322, 4.52188, 46.6949)
+
+[node name="12" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -65.749, 4.52188, 53.2183)
+
+[node name="13" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -64.8728, 4.52188, 18.2417)
+
+[node name="14" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -53.8365, 4.52188, 35.7344)
+
+[node name="15" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -57.7323, 4.52188, 46.5185)
+
+[node name="16" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -57.0766, 4.52188, 24.6503)
+
+[node name="17" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -144.851, 4.52188, 16.5485)
+
+[node name="18" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -233.982, 4.52188, -1.84907)
+
+[node name="19" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -252.943, 4.52188, 92.7766)
+
+[node name="20" parent="Diamonds" instance=ExtResource("3_ikakr")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -175.728, 7.56911, 91.2549)
