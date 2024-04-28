@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://8w6ff02xd3oq"]
+[gd_scene load_steps=24 format=3 uid="uid://8w6ff02xd3oq"]
 
+[ext_resource type="Script" path="res://scenes/levels/Trapped/trapped.gd" id="1_a2xsy"]
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="1_abxqu"]
 [ext_resource type="PackedScene" uid="uid://c7ki8ywx626xq" path="res://assets/sprites/trapped.gltf" id="2_endml"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_ikakr"]
@@ -13,9 +14,12 @@ sky_material = SubResource("PanoramaSkyMaterial_jq57m")
 
 [sub_resource type="Environment" id="Environment_gpohp"]
 background_mode = 2
+background_energy_multiplier = 0.41
 sky = SubResource("Sky_tjpdt")
 sky_rotation = Vector3(0, 3.14159, 0)
-ambient_light_color = Color(0.803922, 0.341176, 0.47451, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.0
 tonemap_mode = 2
 ssr_max_steps = 1
 ssr_fade_in = 1.883
@@ -132,12 +136,14 @@ size = Vector3(3, 3.25, 13.3)
 size = Vector3(3, 3.25, 13.3)
 
 [node name="Trapped" type="Node3D"]
+script = ExtResource("1_a2xsy")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 8.35189e-23, 3.65073e-30, 0, -4.37114e-08, 1, 8.35189e-23, -1, -4.37114e-08, 0, 1000, 0)
-light_color = Color(0.505882, 0.231373, 0.396078, 1)
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 0, 1000, 0)
+light_color = Color(0.396078, 0.192157, 0.317647, 1)
+light_energy = 1.808
 light_bake_mode = 1
-shadow_enabled = true
+shadow_opacity = 0.55
 sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
