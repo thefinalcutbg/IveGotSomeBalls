@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cm5mmdv2gkg87" path="res://assets/sprites/bounce.gltf" id="1_x5hyn"]
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="2_uasub"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_cn5ut"]
-[ext_resource type="Texture2D" uid="uid://f8jpm36k6bd4" path="res://assets/sprites/Metal7.bmp" id="5_mlnxe"]
+[ext_resource type="Texture2D" uid="uid://ci4ymxc3squv4" path="res://assets/sprites/Metal7.png" id="5_mlnxe"]
 [ext_resource type="PackedScene" uid="uid://bqcbx62skxl3r" path="res://assets/sprites/bounce_simple.gltf" id="7_r7twn"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pawxk"]
