@@ -256,16 +256,11 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Material.004",
-			"pbrMetallicRoughness":{
-				"metallicFactor":0,
-				"roughnessFactor":0.5
-			}
-		},
-		{
-			"doubleSided":true,
 			"name":"Material.005",
 			"pbrMetallicRoughness":{
+				"baseColorTexture":{
+					"index":3
+				},
 				"metallicFactor":0,
 				"roughnessFactor":0.5
 			}
@@ -403,7 +398,7 @@
 						"TEXCOORD_0":38
 					},
 					"indices":35,
-					"material":5
+					"material":4
 				}
 			]
 		},
@@ -448,6 +443,10 @@
 		{
 			"sampler":0,
 			"source":2
+		},
+		{
+			"sampler":0,
+			"source":3
 		}
 	],
 	"images":[
@@ -465,6 +464,11 @@
 			"mimeType":"image/png",
 			"name":"1ball",
 			"uri":"1ball.png"
+		},
+		{
+			"mimeType":"image/png",
+			"name":"Tutshngl",
+			"uri":"Tutshngl.png"
 		}
 	],
 	"accessors":[
@@ -807,14 +811,14 @@
 			"componentType":5126,
 			"count":192,
 			"max":[
-				5.323575973510742,
+				5.3188276290893555,
 				0.15438497066497803,
-				9.681974411010742
+				9.681353569030762
 			],
 			"min":[
-				-7.960360527038574,
-				-27.94692611694336,
-				-10.205659866333008
+				-7.965109825134277,
+				-27.942731857299805,
+				-10.206282615661621
 			],
 			"type":"VEC3"
 		},
@@ -841,7 +845,7 @@
 			"componentType":5126,
 			"count":192,
 			"max":[
-				5.318814754486084,
+				5.318815231323242,
 				0.15438497066497803,
 				9.681351661682129
 			],

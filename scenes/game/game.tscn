@@ -27,7 +27,7 @@ font_size = 100
 [sub_resource type="LabelSettings" id="LabelSettings_aw8jc"]
 font = ExtResource("9_vo4aa")
 font_size = 100
-font_color = Color(0.443137, 0.6, 0.996078, 0.890196)
+font_color = Color(0.443137, 0.6, 0.996078, 0.709804)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_doodi")

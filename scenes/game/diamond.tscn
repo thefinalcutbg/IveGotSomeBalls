@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dxlt4a5d2s16m"]
 
 [ext_resource type="Script" path="res://scenes/game/diamond.gd" id="1_2bsul"]
-[ext_resource type="Texture2D" uid="uid://cxcl0kd1o047d" path="res://assets/sprites/diamond_ame.png" id="2_4od2f"]
+[ext_resource type="Texture2D" uid="uid://dmthfh7jhle7b" path="res://assets/sprites/ame.png" id="2_ui86t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ytwk"]
 size = Vector3(1, 0.8, 1)
@@ -12,7 +12,7 @@ resource_name = "Material"
 transparency = 1
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_4od2f")
+albedo_texture = ExtResource("2_ui86t")
 roughness = 0.0
 emission_enabled = true
 emission = Color(0.976471, 0.792157, 0.85098, 1)
@@ -59,7 +59,7 @@ transparency = 1
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 0.658824, 0.74902, 0.360784)
-albedo_texture = ExtResource("2_4od2f")
+albedo_texture = ExtResource("2_ui86t")
 roughness = 0.0
 emission_enabled = true
 emission = Color(0.858824, 0.596078, 0.54902, 1)

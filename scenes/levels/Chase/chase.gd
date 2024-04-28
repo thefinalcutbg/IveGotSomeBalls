@@ -5,7 +5,8 @@ func _ready():
 	$AccelerationArea.set_vector(Vector3(0,0,1))
 	$AccelerationArea.coef = 14000
 	$AnimationPlayer.play("BarrierAnimation")
-
+	$chase/Funnel.mesh.surface_get_material(0).albedo_color = "ffe1005b"
+	
 func _physics_process(delta):
 	$Diamonds/Path3D/PathFollow3D.progress += 90.0*delta
 	

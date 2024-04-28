@@ -64,14 +64,15 @@ func start_game():
 func open_ingame_menu(menu):
 	add_child(menu)
 
-func diamond_collected():
+func diamond_collected(play_sound):
 	
 	#_diamond_count = 0
 	_diamond_count -= 1
 	
 	$HUD/Diamonds.text = str(_diamond_count)
 	
-	$Audio/DiamondSound.play()
+	if play_sound:
+		$Audio/DiamondSound.play()
 	
 	if _diamond_count != 0: return
 	

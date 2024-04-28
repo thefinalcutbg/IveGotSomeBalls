@@ -24,10 +24,6 @@ func _physics_process(delta):
 		queue_free()
 
 
-func collect():
-	_game.diamond_collected()
-	collected = true
-
 func _on_area_entered(area):
 
 	if collected: return
@@ -38,7 +34,9 @@ func _on_area_entered(area):
 	
 	_game.spawn_thunder(area.get_parent(), self)
 	
-	collect()
+	_game.diamond_collected(false)
+	
+	collected = true
 
 
 func _on_body_entered(body):
@@ -47,5 +45,7 @@ func _on_body_entered(body):
 	
 	if body.name != "Player": return
 	
-	collect()
+	_game.diamond_collected(true)
+	
+	collected = true
 
