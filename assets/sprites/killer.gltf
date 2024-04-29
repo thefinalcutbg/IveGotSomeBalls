@@ -154,7 +154,7 @@
 			"name":"lamp-col",
 			"translation":[
 				-73.85169982910156,
-				7.534891128540039,
+				7.5566864013671875,
 				-46.133445739746094
 			]
 		},
@@ -204,28 +204,19 @@
 			"name":"lamp-col.004",
 			"translation":[
 				-169.1131134033203,
-				132.08065795898438,
+				132.1371307373047,
 				-102.43341064453125
 			]
 		}
 	],
 	"materials":[
 		{
-			"extensions":{
-				"KHR_materials_specular":{
-					"specularFactor":0
-				},
-				"KHR_materials_ior":{
-					"ior":1.4500000476837158
-				}
-			},
 			"name":"Material",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
 				},
-				"metallicFactor":0,
-				"roughnessFactor":0.5
+				"metallicFactor":0.5
 			}
 		},
 		{

@@ -233,9 +233,9 @@
 			"alphaMode":"BLEND",
 			"doubleSided":true,
 			"emissiveFactor":[
-				0.6000020503997803,
-				0.5030041717772065,
-				0.5165213354700029
+				0.20000000298023224,
+				0.16766748678188748,
+				0.17217319268246278
 			],
 			"extensions":{
 				"KHR_materials_specular":{
