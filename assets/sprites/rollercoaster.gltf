@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v3.6.28",
+		"generator":"Khronos glTF Blender I/O v4.1.63",
 		"version":"2.0"
 	},
 	"scene":0,
@@ -63,25 +63,25 @@
 			"mesh":6,
 			"name":"cylinder-col",
 			"translation":[
-				-13.432232856750488,
-				-20.04061508178711,
-				-95.60539245605469
+				17.503427505493164,
+				-12.051874160766602,
+				-191.333984375
 			]
 		},
 		{
 			"mesh":7,
 			"name":"cyl_rotate-col",
 			"translation":[
-				28.26677131652832,
-				-90.37830352783203,
-				-680.273681640625
+				59.20243835449219,
+				-82.38956451416016,
+				-776.0022583007812
 			]
 		}
 	],
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Material.001",
+			"name":"Tutsnhgl",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
@@ -92,7 +92,7 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Material.002",
+			"name":"Metal",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":1
@@ -439,35 +439,35 @@
 		{
 			"bufferView":20,
 			"componentType":5126,
-			"count":280,
+			"count":206,
 			"max":[
-				14.333642959594727,
-				-48.9822998046875,
+				12.841228485107422,
+				-50.07628631591797,
 				-258.001953125
 			],
 			"min":[
 				-37.453792572021484,
 				-78.64315032958984,
-				-423.61871337890625
+				-426.30267333984375
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":21,
 			"componentType":5126,
-			"count":280,
+			"count":206,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":22,
 			"componentType":5126,
-			"count":280,
+			"count":206,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":23,
 			"componentType":5123,
-			"count":420,
+			"count":312,
 			"type":"SCALAR"
 		},
 		{
@@ -662,74 +662,74 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":3360,
+			"byteLength":2472,
 			"byteOffset":104384,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":3360,
-			"byteOffset":107744,
+			"byteLength":2472,
+			"byteOffset":106856,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":2240,
-			"byteOffset":111104,
+			"byteLength":1648,
+			"byteOffset":109328,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":840,
-			"byteOffset":113344,
+			"byteLength":624,
+			"byteOffset":110976,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":84480,
-			"byteOffset":114184,
+			"byteOffset":111600,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":84480,
-			"byteOffset":198664,
+			"byteOffset":196080,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":56320,
-			"byteOffset":283144,
+			"byteOffset":280560,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":21120,
-			"byteOffset":339464,
+			"byteOffset":336880,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":17808,
-			"byteOffset":360584,
+			"byteOffset":358000,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":17808,
-			"byteOffset":378392,
+			"byteOffset":375808,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":11872,
-			"byteOffset":396200,
+			"byteOffset":393616,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":6984,
-			"byteOffset":408072,
+			"byteOffset":405488,
 			"target":34963
 		}
 	],
@@ -741,7 +741,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":415056,
+			"byteLength":412472,
 			"uri":"rollercoaster.bin"
 		}
 	]
