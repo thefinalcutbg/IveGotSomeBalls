@@ -4,9 +4,10 @@ var _diamond_count = 0
 var game_state := Globals.GAME_STATE.PLAYING
 var _level_path : String
 var _level_name : String
+var _level_best : float
 
 const LEVELLABEL = preload("res://scenes/game/level_label.tscn")
-
+const ENDBEST = preload("res://scenes/menu/end_best.tscn")
 signal menu_requested()
 
 func _ready():
@@ -27,6 +28,7 @@ func load_level(LevelName : String):
 	
 	_level_path = Globals.LEVEL_MAP[LevelName]
 	_level_name = LevelName
+	
 	start_game()
 
 func start_game():
@@ -59,6 +61,13 @@ func start_game():
 	if level.has_method("set_player_parameters"):
 		level.set_player_parameters($Player)
 	
+	#getting highscore
+	var score = get_highscore(_level_name)
+	
+	_level_best = score[0]
+	
+	$HUD/Best.text = "BEST: " + str(score[0]).pad_decimals(2) + " " + score[1]
+	
 	$HUD/Timer.reset()
 
 func open_ingame_menu(menu):
@@ -80,7 +89,7 @@ func diamond_collected(play_sound):
 	
 	$HUD/Timer.stop()
 	
-	_end_game(false)
+	_end_game()
 
 const THUNDER_BOLT = preload("res://scenes/game/thunder_bolt.tscn")
 
@@ -108,11 +117,12 @@ func _create_label(text : String, color : Color):
 	label.set_color(color)
 	add_child(label)
 
-func _end_game(best_time : bool)->void:
+func _end_game():
 	
-	if best_time:
-		_create_label("BEST\nTIME", Color("RED"))
-		$Audio/EndBest.play()
+	if _level_best == 0 or $HUD/Timer.time_elapsed < _level_best:
+		var best = ENDBEST.instantiate()
+		best.input_name_finished.connect(_input_name_finished)
+		add_child(best)
 	else:
 		_create_label("LEVEL\nCOMPLETED", Color("GREEN"))
 		$Audio/EndSound.play()
@@ -127,9 +137,29 @@ func _on_death_area_body_entered(body):
 func _on_end_sound_finished():
 	menu_requested.emit()
 
-func _on_end_best_finished():
-	#highscore input logic goes here
+func _input_name_finished(text):
+	_save_highscore(_level_name, $HUD/Timer.time_elapsed, text)
 	menu_requested.emit()
 
 func _on_game_music_finished():
 	$Audio/GameMusicLoop.play()
+
+func _save_highscore(level_name, time, initials):
+	
+	var highscores = Globals.get_highscores()
+	
+	highscores[level_name] = [time, initials]
+	
+	var file = FileAccess.open("user://scores.json", FileAccess.WRITE)
+	
+	file.store_string(JSON.stringify(highscores))
+
+
+func get_highscore(level_name):
+	
+	var highscores = Globals.get_highscores()
+	
+	if highscores.has(level_name):
+		return highscores[level_name]
+	
+	return [0.00, "???"]

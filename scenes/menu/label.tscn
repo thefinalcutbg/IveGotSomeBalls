@@ -18,8 +18,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-text = "Label
-"
+text = "Enter your name:
+   "
 label_settings = SubResource("LabelSettings_0mspk")
 horizontal_alignment = 1
 vertical_alignment = 1

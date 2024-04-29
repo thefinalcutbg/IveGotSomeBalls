@@ -38,13 +38,15 @@ func start_game():
 	
 	_game().load_level(Globals.CAMPAIGN[_level_index])
 
-func play_level(index):
+func play_level(level_name):
+	
+	if !Globals.LEVEL_MAP.has(level_name): return
 	
 	_level_index = -1
 	
 	_create_game()
 	
-	_game().load_level(Globals.SINGLE_LEVEL[index])
+	_game().load_level(level_name)
 
 
 func _play_main_menu_music():

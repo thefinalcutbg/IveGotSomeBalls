@@ -3,6 +3,10 @@ extends Node3D
 @onready var MAINMENU = $SubViewport/MainMenuLabels
 @onready var SUBMENU =  $SubMenuScreen/SubMenuViewport/SubMenu
 
+enum MENU_SECTION {NONE, SINGLE, HIGHSCORE, SETTINGS}
+
+var _section : MENU_SECTION = MENU_SECTION.NONE
+
 func setViewport(object, vp):
 	var material = object.get_active_material(0)
 	material.set_texture(0, vp.get_texture())
@@ -39,8 +43,26 @@ func _on_main_menu_labels_option_selected(label_name):
 			get_tree().get_current_scene().start_game()
 			return
 		"SingleMap":
-			for i in Globals.SINGLE_LEVEL.size():
-				SUBMENU.add_label(Globals.SINGLE_LEVEL[i])
+			var unlocked = Globals.get_highscores().keys()
+			if unlocked.is_empty():
+				SUBMENU.add_label("Play more to unlock this section")
+			
+			for level_name in Globals.get_highscores().keys():
+				SUBMENU.add_label(level_name)
+				
+			_section = MENU_SECTION.SINGLE
+		"Scores":
+			var scores = Globals.get_highscores()
+			
+			if scores.is_empty():
+				SUBMENU.add_label("No scores found")
+				
+			for key in scores:
+				var text = key + " " 
+				text += str(scores[key][0]).pad_decimals(2)
+				text += " [" + scores[key][1] + "]"
+				SUBMENU.add_label(text)
+				
 		"Quit": get_tree().quit()
 	
 	MAINMENU.disable_input = true
@@ -56,5 +78,10 @@ func _on_sub_menu_menu_canceled():
 
 
 func _on_sub_menu_option_selected(index):
-	get_tree().get_current_scene().play_level(index)
-
+	
+	match _section:
+		MENU_SECTION.NONE:
+			return
+		MENU_SECTION.SINGLE:
+			var level_name = SUBMENU.get_label_text(index)
+			get_tree().get_current_scene().play_level(level_name)

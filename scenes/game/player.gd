@@ -2,8 +2,7 @@ extends RigidBody3D
 
 #some constants
 const _break_coef = 0.08
-const _speed_coef = 2.5
-const _speed_boost = 1.2 #initial boost when speed powerup is applied
+const _speed_coef = 2.7
 var jump_coef = [30,35,45,65] #for each successive jump
 var _is_colliding = false
 
@@ -81,7 +80,6 @@ func set_powerup(pw):
 	particles.draw_pass_1.material.emission = color
 	
 	if m_powerup == Globals.POWERUP.SPEED:
-			apply_central_impulse(linear_velocity*_speed_boost)
 			particles.emitting = true
 			gravity_scale = 2
 	else:

@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxlt4a5d2s16m"]
+[gd_scene load_steps=11 format=3 uid="uid://dxlt4a5d2s16m"]
 
 [ext_resource type="Script" path="res://scenes/game/diamond.gd" id="1_2bsul"]
 [ext_resource type="Texture2D" uid="uid://dmthfh7jhle7b" path="res://assets/sprites/ame.png" id="2_ui86t"]
+[ext_resource type="AudioStream" uid="uid://dearrcky4qwvq" path="res://assets/audio/dia.wav" id="3_i3ig4"]
+[ext_resource type="AudioStream" uid="uid://40vapaye3uie" path="res://assets/audio/thun.wav" id="4_4aox7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ytwk"]
 size = Vector3(1, 0.8, 1)
@@ -101,6 +103,12 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.05286, 0)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_xb5kl")
 skeleton = NodePath("")
+
+[node name="DiamondSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i3ig4")
+
+[node name="ThunderSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4aox7")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

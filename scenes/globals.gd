@@ -1,3 +1,5 @@
+extends Node
+
 enum GAME_STATE {
 	PLAYING,
 	LEVEL_COMPLETED,
@@ -43,18 +45,18 @@ const CAMPAIGN = [
 	"TRAPPED"
 ]
 
-const SINGLE_LEVEL = [
-	"BOUNCE",
-	"CANNON",
-	"CASTLE",
-	"CHASE",
-	"CITY",
-	"DISCO",
-	"JUMP",
-	"KILLER",
-	"LAZER MAZE",
-	"LOOPS",
-	"ROLLERCOASTER",
-	"TRAPPED"
-]
-
+func get_highscores()->Dictionary:
+	
+	if !FileAccess.file_exists("user://scores.json"):
+		return {}
+		
+	var file = FileAccess.open("user://scores.json", FileAccess.READ)
+	
+	var json_object = JSON.new()
+	
+	if json_object.parse(file.get_as_text()):
+		return {}
+	
+	var highscores : Dictionary = json_object.get_data()
+	
+	return highscores

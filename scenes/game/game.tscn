@@ -144,12 +144,9 @@ stream = ExtResource("8_u4ajb")
 [node name="GameMusic" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("6_23iaj")
 
-[node name="EndBest" type="AudioStreamPlayer" parent="Audio"]
-
 [node name="Level" type="Node" parent="."]
 
 [connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]
 [connection signal="finished" from="Audio/EndSound" to="." method="_on_end_sound_finished"]
 [connection signal="finished" from="Audio/GameMusicLoop" to="Audio/GameMusic" method="_on_loop_finished"]
 [connection signal="finished" from="Audio/GameMusic" to="." method="_on_game_music_finished"]
-[connection signal="finished" from="Audio/EndBest" to="." method="_on_end_best_finished"]

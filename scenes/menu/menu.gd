@@ -5,7 +5,7 @@ const LABEL = preload("res://scenes/menu/label.tscn")
 var scroll = true
 var offset_y = 0
 
-var _current_index = 0
+var _current_index = -1
 var _target_index = 0
 var _direction = 0
 var _frame_counter = 0
@@ -123,3 +123,10 @@ func _handle_reloop():
 		
 func set_label_text(index, text):
 	get_child(index).text = text
+
+func get_label_text(index)->String:
+	
+	if index < 0 or index >= get_child_count():
+		return ""
+		
+	return get_child(index).text
