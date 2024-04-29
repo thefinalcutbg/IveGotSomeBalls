@@ -141,7 +141,7 @@ script = ExtResource("1_xssdr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -521.995)
 
 [node name="SmallPiston1" type="AnimatableBody3D" parent="Pistons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.689, -59.6358, -2.797)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.689, -57.7724, -2.797)
 physics_material_override = SubResource("PhysicsMaterial_7ps03")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/SmallPiston1"]
@@ -161,7 +161,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00383377, 0.00359726, 0.000
 shape = SubResource("CylinderShape3D_bromv")
 
 [node name="SmallPiston2" type="AnimatableBody3D" parent="Pistons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.567, -57.4088, 17.407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3199, -59.8139, 17.6829)
 physics_material_override = SubResource("PhysicsMaterial_2yoa7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/SmallPiston2"]
@@ -180,7 +180,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_em8q4")
 shape = SubResource("CylinderShape3D_bromv")
 
 [node name="MediumPiston1" type="AnimatableBody3D" parent="Pistons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.591, -61.1957, 14.488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.591, -57.3895, 14.488)
 physics_material_override = SubResource("PhysicsMaterial_4b300")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/MediumPiston1"]
@@ -198,7 +198,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_eyec8")
 shape = SubResource("CylinderShape3D_ab6sn")
 
 [node name="MediumPiston2" type="AnimatableBody3D" parent="Pistons"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3242, -57.0334, 6.98889)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.369, -60.8752, 7.24004)
 physics_material_override = SubResource("PhysicsMaterial_4b300")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pistons/MediumPiston2"]
@@ -312,7 +312,7 @@ transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 42.8224, -5
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 38.6013, -54.8983, -504.599)
 
 [node name="30" parent="Diamonds" instance=ExtResource("3_u8p7g")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 31.2207, -53.38, -514.97)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 32.6905, -53.38, -514.727)
 
 [node name="31" parent="Diamonds" instance=ExtResource("3_u8p7g")]
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 38.8514, -54.5224, -524.692)

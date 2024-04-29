@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3ixhsk35061a"]
+
+[ext_resource type="Texture2D" uid="uid://csnsxb05nkmqr" path="res://assets/sprites/sunrise.png" id="1_j5fra"]
+[ext_resource type="Script" path="res://scenes/levels/Castlecoaster/castlecoaster.gd" id="1_tmr4o"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="2_38wh7"]
+[ext_resource type="PackedScene" uid="uid://srntjko52wn2" path="res://assets/sprites/castlecoaster.gltf" id="2_l6o7h"]
+[ext_resource type="PackedScene" uid="uid://dsh6g0qknhuac" path="res://scenes/game/acceleration_area.tscn" id="5_dtecx"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bpikm"]
+panorama = ExtResource("1_j5fra")
+
+[sub_resource type="Sky" id="Sky_t2veq"]
+sky_material = SubResource("PanoramaSkyMaterial_bpikm")
+
+[sub_resource type="Environment" id="Environment_0qj6m"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_t2veq")
+sky_rotation = Vector3(0, -1.5708, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wnb7d"]
+size = Vector3(10, 1, 42)
+
+[node name="Castlecoaster" type="Node3D"]
+script = ExtResource("1_tmr4o")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+light_energy = 0.211
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0qj6m")
+
+[node name="castlecoaster" parent="." instance=ExtResource("2_l6o7h")]
+
+[node name="Diamond1" parent="." instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8415, -0.526682, -6.6768)
+
+[node name="AccelerationArea" parent="." instance=ExtResource("5_dtecx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.9087, -21.352, -127.599)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AccelerationArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71719, -5.21722)
+shape = SubResource("BoxShape3D_wnb7d")

@@ -19,13 +19,13 @@ size = Vector3(25, 1, 18.5)
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xf5r3"]
 panorama = ExtResource("2_fkt45")
 
-[sub_resource type="Sky" id="Sky_t2veq"]
+[sub_resource type="Sky" id="Sky_o7gin"]
 sky_material = SubResource("PanoramaSkyMaterial_xf5r3")
 
 [sub_resource type="Environment" id="Environment_ck0bj"]
 background_mode = 2
 background_energy_multiplier = 0.5
-sky = SubResource("Sky_t2veq")
+sky = SubResource("Sky_o7gin")
 sky_rotation = Vector3(0, -1.5708, 0)
 
 [node name="Disco" type="Node3D"]
