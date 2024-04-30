@@ -14,9 +14,9 @@ sky_material = SubResource("PanoramaSkyMaterial_bpikm")
 
 [sub_resource type="Environment" id="Environment_0qj6m"]
 background_mode = 2
-background_energy_multiplier = 0.5
+background_energy_multiplier = 0.8
 sky = SubResource("Sky_t2veq")
-sky_rotation = Vector3(0, -1.5708, 0)
+sky_rotation = Vector3(3.48787e-16, 3.48787e-16, 3.48787e-16)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wnb7d"]
 size = Vector3(10, 1, 42)
@@ -26,7 +26,7 @@ script = ExtResource("1_tmr4o")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
-light_energy = 0.211
+light_energy = 0.5
 shadow_enabled = true
 sky_mode = 1
 
@@ -35,12 +35,59 @@ environment = SubResource("Environment_0qj6m")
 
 [node name="castlecoaster" parent="." instance=ExtResource("2_l6o7h")]
 
-[node name="Diamond1" parent="." instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8415, -0.526682, -6.6768)
-
 [node name="AccelerationArea" parent="." instance=ExtResource("5_dtecx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.9087, -21.352, -127.599)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AccelerationArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71719, -5.21722)
 shape = SubResource("BoxShape3D_wnb7d")
+
+[node name="Diamonds" type="Node3D" parent="."]
+
+[node name="1" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.407698, 1.10513, -62.3451)
+
+[node name="2" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.0872, 1.10513, -62.3451)
+
+[node name="3" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, 1.03418)
+
+[node name="4" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -115.039)
+
+[node name="5" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -123.488)
+
+[node name="6" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -130.831)
+
+[node name="7" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -137.831)
+
+[node name="8" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -144.998)
+
+[node name="9" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -151.721)
+
+[node name="10" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -158.2)
+
+[node name="11" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.5793, 44.8038, -131.729)
+
+[node name="12" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.4, 44.8038, -84.9206)
+
+[node name="13" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.114, 44.8038, -84.9206)
+
+[node name="14" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.352, 44.8038, -84.9206)
+
+[node name="15" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.351, 44.8038, -84.9206)
+
+[node name="16" parent="Diamonds" instance=ExtResource("2_38wh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.477, 6.03634, -66.709)
