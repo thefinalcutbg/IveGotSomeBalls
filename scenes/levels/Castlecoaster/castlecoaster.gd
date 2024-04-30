@@ -8,7 +8,10 @@ func set_player_parameters(player):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AccelerationArea.set_vector(Vector3(0,0,-1))
-	$AccelerationArea.coef = 6000
+	$AccelerationArea.coef = 7000
+	
+	$AccelerationArea2.set_vector(Vector3(0,1,-1))
+	$AccelerationArea2.coef = 3000
 	pass # Replace with function body.
 
 
