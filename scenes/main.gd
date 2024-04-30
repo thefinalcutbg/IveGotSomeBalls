@@ -37,6 +37,8 @@ func start_game():
 	_create_game()
 	
 	_game().load_level(Globals.CAMPAIGN[_level_index])
+	
+	_game().show_speedrun()
 
 func play_level(level_name):
 	
@@ -103,6 +105,7 @@ func _process_menu_choice(option):
 		MenuChoice.CONTINUE:
 			if _level_index == Globals.CAMPAIGN.size()-1:
 				_level_index = -1
+				_can_continue = false
 				_game().queue_free()
 				add_child(_menu_scene)
 				_play_main_menu_music()

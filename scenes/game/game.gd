@@ -5,6 +5,8 @@ var game_state := Globals.GAME_STATE.PLAYING
 var _level_path : String
 var _level_name : String
 var _level_best : float
+var total_playtime : float = 0
+
 
 const LEVELLABEL = preload("res://scenes/game/level_label.tscn")
 const ENDBEST = preload("res://scenes/menu/end_best.tscn")
@@ -18,6 +20,9 @@ func _process(delta):
 	_update_hud()
 	
 func _physics_process(delta):
+	
+	if _diamond_count:
+		total_playtime += delta
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if game_state != Globals.GAME_STATE.PLAYING: return
@@ -93,6 +98,9 @@ func diamond_collected(play_sound):
 
 const THUNDER_BOLT = preload("res://scenes/game/thunder_bolt.tscn")
 
+func show_speedrun():
+	$HUD/Speedrun.visible = true
+
 func spawn_thunder(player, diamond):
 	
 	var thunder = THUNDER_BOLT.instantiate()
@@ -110,6 +118,15 @@ func _update_hud():
 	$HUD/Speed.text = "SPEED: " + playerSpeed + "KMH"
 	
 	$HUD/FPS.text = "FPS " + str(Engine.get_frames_per_second())
+	
+	var time = total_playtime
+	
+	var mins = int(time) / 60
+	time -= mins * 60
+	var secs = int(time) 
+	var mili = int((time - int(time)) * 100)
+	
+	$HUD/Speedrun.text = "SPEEDRUN: " + str("%0*d" % [2, mins]) + ":" + str("%0*d" % [2, secs]) + ":" + str("%0*d" % [2, mili])
 	
 func _create_label(text : String, color : Color):
 	var label = LEVELLABEL.instantiate()

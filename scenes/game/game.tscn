@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dukmodvnhgacq"]
+[gd_scene load_steps=17 format=3 uid="uid://dukmodvnhgacq"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_doodi"]
 [ext_resource type="PackedScene" uid="uid://cj0j47il8b1ry" path="res://scenes/game/player.tscn" id="1_ps65f"]
@@ -28,6 +28,11 @@ font_size = 100
 font = ExtResource("9_vo4aa")
 font_size = 100
 font_color = Color(0.443137, 0.6, 0.996078, 0.709804)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kqo1t"]
+font = ExtResource("9_vo4aa")
+font_size = 100
+font_color = Color(1, 1, 1, 0.694118)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_doodi")
@@ -107,6 +112,21 @@ offset_bottom = 379.0
 text = "SPEED:
 "
 label_settings = SubResource("LabelSettings_aw8jc")
+
+[node name="Speedrun" type="Label" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -120.0
+offset_right = 936.0
+offset_bottom = 3.0
+grow_vertical = 0
+text = "SPEEDRUN: 
+"
+label_settings = SubResource("LabelSettings_kqo1t")
 
 [node name="TextureRect" type="TextureRect" parent="HUD"]
 layout_mode = 1
