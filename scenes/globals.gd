@@ -32,7 +32,6 @@ const LEVEL_MAP : Dictionary = {
 
 
 const CAMPAIGN = [
-	"CASTLECOASTER",
 	"LAZER MAZE",
 	"CHASE",
 	"BOUNCE",
@@ -44,7 +43,8 @@ const CAMPAIGN = [
 	"CANNON",
 	"JUMP",
 	"KILLER",
-	"TRAPPED"
+	"TRAPPED",
+	"CASTLECOASTER"
 ]
 
 func get_highscores()->Dictionary:

@@ -1,10 +1,45 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3ixhsk35061a"]
+[gd_scene load_steps=17 format=3 uid="uid://d3ixhsk35061a"]
 
 [ext_resource type="Texture2D" uid="uid://csnsxb05nkmqr" path="res://assets/sprites/sunrise.png" id="1_j5fra"]
 [ext_resource type="Script" path="res://scenes/levels/Castlecoaster/castlecoaster.gd" id="1_tmr4o"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="2_38wh7"]
+[ext_resource type="Texture2D" uid="uid://8ns6fiulitb8" path="res://assets/sprites/crome.png" id="2_ilp8m"]
 [ext_resource type="PackedScene" uid="uid://srntjko52wn2" path="res://assets/sprites/castlecoaster.gltf" id="2_l6o7h"]
 [ext_resource type="PackedScene" uid="uid://dsh6g0qknhuac" path="res://scenes/game/acceleration_area.tscn" id="5_dtecx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hidef"]
+size = Vector3(25, 19, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hddr4"]
+albedo_texture = ExtResource("2_ilp8m")
+uv1_scale = Vector3(1.8, 1.8, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lqrlj"]
+size = Vector3(25, 19, 15)
+
+[sub_resource type="Animation" id="Animation_v8yt5"]
+resource_name = "new_animation"
+length = 0.7
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.4, 1, 126.845, 33.9787, -85.5708, 0.7, 1, 126.845, 13, -85.571)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody3D2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 126.845, -5, -4.064, 0.3, 1, 126.845, 15.7454, -4.06448)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7okqg"]
+_data = {
+"new_animation": SubResource("Animation_v8yt5")
+}
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bpikm"]
 panorama = ExtResource("1_j5fra")
@@ -19,10 +54,43 @@ sky = SubResource("Sky_t2veq")
 sky_rotation = Vector3(3.48787e-16, 3.48787e-16, 3.48787e-16)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wnb7d"]
-size = Vector3(10, 1, 42)
+size = Vector3(10, 1, 72)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83tas"]
+size = Vector3(10, 1, 10)
 
 [node name="Castlecoaster" type="Node3D"]
 script = ExtResource("1_tmr4o")
+
+[node name="Gates" type="Node3D" parent="."]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Gates"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.845, 33.9787, -85.5708)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Gates/AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+mesh = SubResource("BoxMesh_hidef")
+surface_material_override/0 = SubResource("StandardMaterial3D_hddr4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gates/AnimatableBody3D"]
+shape = SubResource("BoxShape3D_lqrlj")
+
+[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="Gates"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.845, -5, -4.064)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Gates/AnimatableBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+mesh = SubResource("BoxMesh_hidef")
+surface_material_override/0 = SubResource("StandardMaterial3D_hddr4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gates/AnimatableBody3D2"]
+shape = SubResource("BoxShape3D_lqrlj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gates"]
+libraries = {
+"": SubResource("AnimationLibrary_7okqg")
+}
+autoplay = "new_animation"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
@@ -39,15 +107,16 @@ environment = SubResource("Environment_0qj6m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.3872, -21.352, -127.599)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AccelerationArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71719, -5.21722)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71719, 10.7134)
 shape = SubResource("BoxShape3D_wnb7d")
 
-[node name="AccelerationArea2" parent="." instance=ExtResource("5_dtecx")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 89.3872, -1.64248, -171.363)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AccelerationArea"]
+transform = Transform3D(1, 0, 0, 0, 0.835759, -0.549096, 0, 0.549096, 0.83576, 0, 2.93553, -36.6414)
+shape = SubResource("BoxShape3D_83tas")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AccelerationArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71719, -5.21722)
-shape = SubResource("BoxShape3D_wnb7d")
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="AccelerationArea"]
+transform = Transform3D(1, 0, 0, 0, 0.311075, -0.950386, 0, 0.950386, 0.311075, 0, 9.12428, -41.8999)
+shape = SubResource("BoxShape3D_83tas")
 
 [node name="Diamonds" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52153, 0, 0)
@@ -59,28 +128,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.407698, 1.10513, -62.3451)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.0872, 1.10513, -62.3451)
 
 [node name="3" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, 1.03418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, 7.69484)
 
 [node name="4" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -115.039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -104.716)
 
 [node name="5" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -123.488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -113.165)
 
 [node name="6" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -130.831)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -120.508)
 
 [node name="7" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -137.831)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -127.508)
 
 [node name="8" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -144.998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -134.675)
 
 [node name="9" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -151.721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -141.398)
 
 [node name="10" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -158.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -147.877)
 
 [node name="11" parent="Diamonds" instance=ExtResource("2_38wh7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.1213, 44.8038, -131.729)
