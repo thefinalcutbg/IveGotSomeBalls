@@ -62,7 +62,7 @@ func _animate():
 	if _direction == 0: return
 
 	#the animation has just finished
-	if _frame_counter == 32:
+	if _frame_counter == 64:
 		_current_index = _target_index
 		_direction = 0
 		_frame_counter = 0
@@ -75,11 +75,11 @@ func _animate():
 		get_child(_target_index).select()
 		if _reloop: 
 			_handle_reloop()
-			_frame_counter+=16
+			_frame_counter+=32
 	
 	if !_reloop and scroll:
 		for child in get_children():
-			child.position.y -= 2*_direction
+			child.position.y -= _direction
 	
 	_frame_counter+=1
 	

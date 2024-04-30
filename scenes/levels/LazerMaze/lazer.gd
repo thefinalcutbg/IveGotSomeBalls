@@ -10,16 +10,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	barriers.get_child(0).rotate_y(-0.025)
+	barriers.get_child(0).rotate_y(-0.0125)
 	
-	barriers.get_child(1).rotate_z(+0.01)
-	barriers.get_child(2).rotate_z(+0.01)
-	barriers.get_child(3).rotate_z(+0.01)
-	barriers.get_child(4).rotate_z(+0.01)
-	barriers.get_child(5).rotate_z(-0.01)
-	barriers.get_child(6).rotate_z(-0.01)
-	barriers.get_child(7).rotate_z(-0.01)
-	barriers.get_child(8).rotate_z(-0.01)
+	barriers.get_child(1).rotate_z(+0.005)
+	barriers.get_child(2).rotate_z(+0.005)
+	barriers.get_child(3).rotate_z(+0.005)
+	barriers.get_child(4).rotate_z(+0.005)
+	barriers.get_child(5).rotate_z(-0.005)
+	barriers.get_child(6).rotate_z(-0.005)
+	barriers.get_child(7).rotate_z(-0.005)
+	barriers.get_child(8).rotate_z(-0.005)
 
 func set_player_parameters(player):
 	player.physics_material_override.bounce = 0.4

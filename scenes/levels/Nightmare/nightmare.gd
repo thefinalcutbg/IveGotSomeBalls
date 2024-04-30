@@ -1,18 +1,16 @@
 extends Node3D
 
-@onready var barriers = $Barriers
+func set_player_parameters(player):
+	player.jump_coef = [35,50,65]
+	#player.physics_material_override.bounce = 0.5
+	pass
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$trapped/light.cast_shadow = false
-	$trapped/light_001.cast_shadow = false
+	$Gate.set_powerup(Globals.POWERUP.JUMP)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	$trapped/light.rotate_y(+0.005)
-	
-
-func set_player_parameters(player):
+func _process(delta):
 	pass
-

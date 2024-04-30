@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://bamw5wd1hukdh"]
+
+[ext_resource type="Script" path="res://scenes/levels/Nightmare/nightmare.gd" id="1_bolya"]
+[ext_resource type="Texture2D" uid="uid://dlvj0h26lkt0n" path="res://assets/sprites/ta5.png" id="2_xpw3f"]
+[ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_gjsb6"]
+[ext_resource type="PackedScene" uid="uid://cqx7ok3jsmw0w" path="res://assets/sprites/nightmare_begin.gltf" id="4_2ho2n"]
+[ext_resource type="PackedScene" uid="uid://d2bivs1dcqln1" path="res://assets/sprites/nightmare.gltf" id="4_076os"]
+[ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="5_armfo"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kgjrw"]
+panorama = ExtResource("2_xpw3f")
+
+[sub_resource type="Sky" id="Sky_o7gin"]
+sky_material = SubResource("PanoramaSkyMaterial_kgjrw")
+
+[sub_resource type="Environment" id="Environment_7nkqr"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_o7gin")
+sky_rotation = Vector3(3.48787e-16, -2.0944, 3.48787e-16)
+
+[sub_resource type="Animation" id="Animation_yj8vp"]
+resource_name = "new_animation"
+length = 4.5
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("platform8")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1000, -25, -50, 4.5, 1, 1000, -25, 150)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fbedw"]
+_data = {
+"new_animation": SubResource("Animation_yj8vp")
+}
+
+[node name="Nightmare" type="Node3D"]
+script = ExtResource("1_bolya")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+light_energy = 0.211
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7nkqr")
+
+[node name="Diamond1" parent="." instance=ExtResource("3_gjsb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8844, 1.59814, 17.3495)
+
+[node name="nightmare_begin" parent="." instance=ExtResource("4_2ho2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08866, -6.91761)
+
+[node name="Gate" parent="." instance=ExtResource("5_armfo")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.504688, 3.83529, -8.45901)
+
+[node name="platform1" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9981, -5.72751, -59.3489)
+
+[node name="platform2" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5058, 18.0623, -73.99)
+
+[node name="platform3" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.695, 34.544, -253.468)
+
+[node name="platform4" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.7566, -13.5174, -515.108)
+
+[node name="platform5" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.091, -4.76089, -556.391)
+
+[node name="platform6" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 527.688, 26.3286, -477.448)
+
+[node name="platform7" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 685.387, -5.9777, -171.102)
+
+[node name="MovingPlatforms" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms"]
+libraries = {
+"": SubResource("AnimationLibrary_fbedw")
+}
+autoplay = "new_animation"
+
+[node name="platform8" parent="MovingPlatforms" instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, -25, 129.543)

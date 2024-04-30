@@ -28,6 +28,6 @@ window/size/borderless=true
 
 [physics]
 
-common/physics_ticks_per_second=120
+common/physics_ticks_per_second=240
 3d/physics_engine="GodotPhysics3D"
 3d/default_gravity=35.0

@@ -15,7 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	$city/revolve1.rotate_x(+0.01)
-	$city/revolve2.rotate_y(-0.015)
-	$city/revolve3.rotate_y(+0.015)
+	$city/revolve1.rotate_x(+0.005)
+	$city/revolve2.rotate_y(-0.0075)
+	$city/revolve3.rotate_y(+0.0075)
 	pass

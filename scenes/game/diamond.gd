@@ -13,12 +13,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	$Outer.rotate_y(deg_to_rad(2))
+	$Outer.rotate_y(deg_to_rad(1))
 
 	if !collected: return
 	
-	$Inner.scale = lerp($Inner.scale, Vector3.ZERO, 0.1)
-	$Outer.scale = lerp($Outer.scale, Vector3.ZERO, 0.1)
+	$Inner.scale = lerp($Inner.scale, Vector3.ZERO, 0.05)
+	$Outer.scale = lerp($Outer.scale, Vector3.ZERO, 0.05)
 	
 	if $Outer.scale < Vector3(0.01,0.01,0.01):
 		queue_free()

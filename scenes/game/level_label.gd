@@ -12,7 +12,7 @@ func _physics_process(delta):
 	if $Label.label_settings.font_color.a < 0: 
 		queue_free()
 	
-	$Label.scale.x +=0.05
-	$Label.scale.y +=0.05
-	$Label.label_settings.font_color.a -= 0.006
+	$Label.scale.x +=0.025
+	$Label.scale.y +=0.025
+	$Label.label_settings.font_color.a -= 0.003
 

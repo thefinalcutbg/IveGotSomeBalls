@@ -27,11 +27,13 @@ const LEVEL_MAP : Dictionary = {
 	"JUMP" : "res://scenes/levels/Jump/jump.tscn",
 	"KILLER" : "res://scenes/levels/Killer/killer.tscn",
 	"TRAPPED" : "res://scenes/levels/Trapped/trapped.tscn",
-	"CASTLECOASTER" : "res://scenes/levels/Castlecoaster/castlecoaster.tscn"
+	"CASTLECOASTER" : "res://scenes/levels/Castlecoaster/castlecoaster.tscn",
+	"NIGHTMARE" : "res://scenes/levels/Nightmare/nightmare.tscn"
 }
 
 
 const CAMPAIGN = [
+	"NIGHTMARE",
 	"LAZER MAZE",
 	"CHASE",
 	"BOUNCE",
@@ -44,7 +46,8 @@ const CAMPAIGN = [
 	"JUMP",
 	"KILLER",
 	"TRAPPED",
-	"CASTLECOASTER"
+	"CASTLECOASTER",
+	"NIGHTMARE"
 ]
 
 func get_highscores()->Dictionary:

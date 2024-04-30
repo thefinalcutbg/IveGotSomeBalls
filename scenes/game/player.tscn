@@ -159,7 +159,7 @@ physics_material_override = SubResource("PhysicsMaterial_u3vxc")
 can_sleep = false
 lock_rotation = true
 continuous_cd = true
-max_contacts_reported = 5
+max_contacts_reported = 10
 contact_monitor = true
 script = ExtResource("1_kerjs")
 

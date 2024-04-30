@@ -10,6 +10,6 @@ func set_player_parameters(player):
 
 func _physics_process(delta):
 
-	$Platform1/Piston.rotate_x(-0.0128)
-	$Platform2/Piston.rotate_x(-0.0128)
-	$Platform3/Piston.rotate_x(-0.0128)
+	$Platform1/Piston.rotate_x(-0.0064)
+	$Platform2/Piston.rotate_x(-0.0064)
+	$Platform3/Piston.rotate_x(-0.0064)

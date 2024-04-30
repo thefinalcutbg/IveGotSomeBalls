@@ -8,7 +8,7 @@ func set_player_parameters(player):
 
 func _ready():
 	$rollercoaster/cyl_rotate/StaticBody3D.constant_angular_velocity.z = 3
-	$Gate1.set_powerup(Globals.POWERUP.THUNDER)
+	$Gate.set_powerup(Globals.POWERUP.THUNDER)
 
 func _physics_process(delta):
-	$rollercoaster/cyl_rotate.rotate_z(+0.01)
+	$rollercoaster/cyl_rotate.rotate_z(+0.005)

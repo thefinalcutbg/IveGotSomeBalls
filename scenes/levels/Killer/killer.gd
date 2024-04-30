@@ -23,6 +23,6 @@ func _physics_process(delta):
 	elif current_pos < max_low: direction = 1
 	
 	
-	$killer/platform.position.y = current_pos + direction  * 0.1
+	$killer/platform.position.y = current_pos + direction  * 0.05
 	
 	pass

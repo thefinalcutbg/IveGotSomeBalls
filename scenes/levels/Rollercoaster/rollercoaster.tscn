@@ -30,7 +30,7 @@ environment = SubResource("Environment_vav6j")
 
 [node name="rollercoaster" parent="." instance=ExtResource("2_utgi7")]
 
-[node name="Gate1" parent="." instance=ExtResource("5_47qnh")]
+[node name="Gate" parent="." instance=ExtResource("5_47qnh")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -0.0865993, -0.6085, -21.7819)
 
 [node name="Diamonds" type="Node3D" parent="."]
