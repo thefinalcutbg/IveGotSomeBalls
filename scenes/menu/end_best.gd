@@ -28,7 +28,7 @@ func _process_begin():
 	$Label2.scale.y +=0.07
 	$Label2.label_settings.font_color.a -= 0.003
 	
-	if $Label2.label_settings.font_color.a < 0.3:
+	if $Label2.label_settings.font_color.a < 0.6:
 		$Label.visible = true
 		_state = STATE.INPUT
 
@@ -50,10 +50,16 @@ func _input(event):
 	
 	if _state != STATE.INPUT: return
 	
-	if event is InputEventKey:
-		
-		if event.is_pressed():
+	if event is InputEventKey and event.is_pressed():
 			
+			#delete characted
+			if event.keycode == KEY_ESCAPE:
+				var text = $Label.text
+				if text.length() <= 18: return
+				$Label.text = text.left(text.length() - 1)
+				return
+			
+			#add character
 			var input = char(event.unicode)
 			
 			var regex = RegEx.new()
@@ -63,6 +69,6 @@ func _input(event):
 			if !regex.search(input): return
 			
 			$Label.text = $Label.text + char(event.unicode)
-		
-		if $Label.text.length() == 21:
-			_state = STATE.END
+			#3 char name max
+			if $Label.text.length() == 21:
+				_state = STATE.END

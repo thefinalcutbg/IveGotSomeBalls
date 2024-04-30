@@ -29,7 +29,28 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("platform8")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 1000, -25, -50, 4.5, 1, 1000, -25, 150)
+tracks/0/keys = PackedFloat32Array(0, 1, 1000, -25, 2.08165e-12, 4.5, 1, 1000, -25, 150)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("platform9")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1300, -25, 260, 4.5, 1, 1300, -25, 50)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("vertical1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 2.08165e-12, 120, 2.08165e-12, 4.5, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("vertical2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 2.08165e-12, -120, 2.08165e-12, 4.5, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fbedw"]
 _data = {
@@ -49,7 +70,7 @@ sky_mode = 1
 environment = SubResource("Environment_7nkqr")
 
 [node name="Diamond1" parent="." instance=ExtResource("3_gjsb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8844, 1.59814, 17.3495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1609.63, -6.8977, -1359.21)
 
 [node name="nightmare_begin" parent="." instance=ExtResource("4_2ho2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08866, -6.91761)
@@ -78,6 +99,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 527.688, 26.3286, -477.448)
 [node name="platform7" parent="." instance=ExtResource("4_076os")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 685.387, -5.9777, -171.102)
 
+[node name="platform8" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1535.63, -12.9535, 80.5579)
+
+[node name="platform9" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1609.63, 14.9775, -4.19175)
+
+[node name="platform10" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1609.63, 39.4796, -148.234)
+
+[node name="platform11" parent="." instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1609.63, -8.47327, -1359.21)
+
 [node name="MovingPlatforms" type="Node3D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms"]
@@ -87,4 +120,28 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="platform8" parent="MovingPlatforms" instance=ExtResource("4_076os")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, -25, 129.543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, -25, 107.168)
+
+[node name="platform9" parent="MovingPlatforms" instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1300, -25, 109.965)
+
+[node name="vertical1" type="AnimatableBody3D" parent="MovingPlatforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 34.2658, 2.08165e-12)
+
+[node name="platform11" parent="MovingPlatforms/vertical1" instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1609.63, -90.9249, -417.95)
+
+[node name="platform12" parent="MovingPlatforms/vertical1" instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1609.63, -90, -840.653)
+
+[node name="platform13" parent="MovingPlatforms/vertical1" instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1609.63, -90, -1197.62)
+
+[node name="vertical2" type="AnimatableBody3D" parent="MovingPlatforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -34.2658, 2.08165e-12)
+
+[node name="platform12" parent="MovingPlatforms/vertical2" instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1609.63, 40, -650)
+
+[node name="platform13" parent="MovingPlatforms/vertical2" instance=ExtResource("4_076os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1609.63, 40, -1044.28)

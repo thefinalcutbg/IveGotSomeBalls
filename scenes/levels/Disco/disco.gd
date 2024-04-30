@@ -8,6 +8,6 @@ func _ready():
 	$Gate1.set_powerup(Globals.POWERUP.THUNDER)
 	$Accelerator/AccelerationArea.set_vector(Vector3(-1,0,0))
 	$Accelerator/AccelerationArea2.set_vector(Vector3(-1,1,0))
-	$Accelerator/AccelerationArea.coef = 25000
-	$Accelerator/AccelerationArea2.coef = 15000
+	$Accelerator/AccelerationArea.coef = 50000
+	$Accelerator/AccelerationArea2.coef = 30000
 	
