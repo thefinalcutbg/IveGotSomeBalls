@@ -43,7 +43,8 @@ func _on_main_menu_labels_option_selected(label_name):
 			get_tree().get_current_scene().start_game()
 			return
 		"SingleMap":
-			var unlocked = Globals.get_highscores().keys()
+			var unlocked = Globals.LEVEL_MAP.keys()
+			#var unlocked = Globals.get_highscores().keys()
 			if unlocked.is_empty():
 				SUBMENU.add_label("Play more to unlock this section")
 			
