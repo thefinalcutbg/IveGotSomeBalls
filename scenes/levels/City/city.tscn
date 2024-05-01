@@ -37,13 +37,13 @@ environment = SubResource("Environment_agmkx")
 [node name="city" parent="." instance=ExtResource("3_nru7o")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.925838, -0.233912, -0.296833, -2.73389e-08, -0.785436, 0.618943, -0.377922, -0.573041, -0.727186, -18.403, 13.1422, -41.9863)
+transform = Transform3D(0.925838, -0.233912, -0.296833, -2.73389e-08, -0.785436, 0.618943, -0.377922, -0.573041, -0.727186, -1.84, 13.142, -41.986)
 light_color = Color(0.607843, 0.239216, 0.458824, 1)
 light_volumetric_fog_energy = 0.0
 sky_mode = 1
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 3.33598e-08, -6.87018e-08, 6.87018e-08, -0.785857, 0.618408, -3.33598e-08, -0.618408, -0.785857, 7.06337, 233.234, 4.54181)
+transform = Transform3D(1, 3.33598e-08, -6.87018e-08, 6.87018e-08, -0.785857, 0.618408, -3.33598e-08, -0.618408, -0.785857, 7.063, 23.323, 0.454)
 light_color = Color(0.694118, 0.176471, 0.211765, 1)
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
@@ -79,19 +79,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.165, 0.344, -1.601)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.165, 0.344, -2.982)
 
 [node name="9" parent="diamonds" instance=ExtResource("4_715u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203, 0.344, -2.982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24625, 0.344, -2.982)
 
 [node name="10" parent="diamonds" instance=ExtResource("4_715u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.192, 0.344, -2.982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.747422, 0.344, -2.982)
 
 [node name="11" parent="diamonds" instance=ExtResource("4_715u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.567, 2.67, 0.975)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.612515, 2.67, 0.977683)
 
 [node name="12" parent="diamonds" instance=ExtResource("4_715u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57, 2.67, -0.339)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60318, 2.67, -0.309525)
 
 [node name="13" parent="diamonds" instance=ExtResource("4_715u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.872, 2.667, 0.975)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90064, 2.667, 0.977681)
 
 [node name="14" parent="diamonds" instance=ExtResource("4_715u0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.889, 2.667, -0.326)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89862, 2.667, -0.301621)

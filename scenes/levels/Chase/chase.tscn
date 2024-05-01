@@ -40,7 +40,7 @@ point_count = 39
 
 [sub_resource type="Animation" id="Animation_2s77m"]
 resource_name = "BarrierAnimation"
-length = 3.0
+length = 3.25
 loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = false
@@ -48,7 +48,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("AnimationPlayer/Barriers")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 2.08165e-12, -0.4, 2.08165e-12, 2, 1, 2.08165e-12, -0.4, 2.08165e-12, 3, 1, 0, 0, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1.3, 1, 2.08165e-12, -0.4, 2.08165e-12, 2.1, 1, 2.08165e-12, -0.4, 2.08165e-12, 3.3, 1, 0, 0, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0w3o6"]
 _data = {
@@ -56,14 +56,14 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4dmcy"]
-size = Vector3(0.9, 0.4, 0.1)
+size = Vector3(1, 0.4, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc4dk"]
 albedo_texture = ExtResource("7_148e2")
 
 [sub_resource type="BoxMesh" id="BoxMesh_ui4e2"]
 material = SubResource("StandardMaterial3D_dc4dk")
-size = Vector3(0.9, 0.4, 0.1)
+size = Vector3(1, 0.4, 0.1)
 
 [node name="Chase" type="Node3D"]
 script = ExtResource("1_v12mk")
@@ -79,7 +79,7 @@ sky_mode = 1
 environment = SubResource("Environment_pms67")
 
 [node name="chase" parent="." instance=ExtResource("2_qajf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00956786, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0226073, 0, 0)
 
 [node name="AccelerationArea" parent="." instance=ExtResource("6_3qqai")]
 transform = Transform3D(0.999301, -0.027348, 0.0254927, 0.00577426, 0.786574, 0.617471, -0.0369384, -0.616891, 0.786182, 3.202, 0.034, 2.064)
@@ -113,10 +113,10 @@ libraries = {
 autoplay = "BarrierAnimation"
 
 [node name="Barriers" type="Node3D" parent="AnimationPlayer"]
-transform = Transform3D(1, -1.86265e-09, 0, 3.72529e-09, 1, 2.98023e-08, 3.72529e-09, 0, 1, 1.81004e-12, -0.347808, 1.81004e-12)
+transform = Transform3D(1, -1.86265e-09, 0, 3.72529e-09, 1, 2.98023e-08, 3.72529e-09, 0, 1, 2.08165e-12, -0.4, 2.08165e-12)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="AnimationPlayer/Barriers"]
-transform = Transform3D(1, -1.60712e-40, 0, -1.11022e-16, 1, 0, 0, 3.30871e-24, 1, 3.25099, -0.125333, 1.31533e-10)
+transform = Transform3D(1, -2.52548e-40, 0, -1.11022e-16, 1, 0, 0, 4.96307e-24, 1, 3.27658, -0.125333, 3.62157e-11)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimationPlayer/Barriers/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
