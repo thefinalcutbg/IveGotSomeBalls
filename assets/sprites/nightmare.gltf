@@ -69,7 +69,7 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":1920,
+			"count":1938,
 			"max":[
 				11.948385238647461,
 				0.4579797685146332,
@@ -85,13 +85,13 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":1920,
+			"count":1938,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":1920,
+			"count":1938,
 			"type":"VEC2"
 		},
 		{
@@ -104,26 +104,26 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":23040,
+			"byteLength":23256,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":23040,
-			"byteOffset":23040,
+			"byteLength":23256,
+			"byteOffset":23256,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":15360,
-			"byteOffset":46080,
+			"byteLength":15504,
+			"byteOffset":46512,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":5748,
-			"byteOffset":61440,
+			"byteOffset":62016,
 			"target":34963
 		}
 	],
@@ -135,7 +135,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":67188,
+			"byteLength":67764,
 			"uri":"nightmare.bin"
 		}
 	]

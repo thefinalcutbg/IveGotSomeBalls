@@ -292,14 +292,6 @@
 				"metallicFactor":0,
 				"roughnessFactor":0.5
 			}
-		},
-		{
-			"doubleSided":true,
-			"name":"Voltage.009",
-			"pbrMetallicRoughness":{
-				"metallicFactor":0,
-				"roughnessFactor":0.5
-			}
 		}
 	],
 	"meshes":[
@@ -522,7 +514,7 @@
 						"TEXCOORD_0":63
 					},
 					"indices":60,
-					"material":4
+					"material":3
 				}
 			]
 		},
