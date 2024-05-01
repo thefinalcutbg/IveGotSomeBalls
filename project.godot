@@ -30,4 +30,4 @@ window/size/borderless=true
 
 common/physics_ticks_per_second=240
 3d/physics_engine="GodotPhysics3D"
-3d/default_gravity=35.0
+3d/default_gravity=3.0

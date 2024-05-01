@@ -6,7 +6,7 @@ var coef
 var _player_old_bounce
 
 func _ready():
-	coef = 13000
+	coef = 1300
 	_vector = Vector3.ZERO
 
 func _physics_process(delta):

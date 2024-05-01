@@ -1,9 +1,9 @@
 extends RigidBody3D
 
 #some constants
-const _break_coef = 0.04
-const _speed_coef = 2.7
-var jump_coef = [30,35,45,65] #for each successive jump
+const _break_coef = 0.004
+const _speed_coef = 0.25
+var jump_coef = [3,3.5,4.5,6.5] #for each successive jump
 var _is_colliding = false
 
 @onready var particles = $GPUParticles3D
@@ -30,7 +30,7 @@ func _physics_process(delta):
 	input.x = Input.get_axis("ui_left", "ui_right")
 	input.z = Input.get_axis("ui_up", "ui_down")
 
-	var force = $CameraPivot.basis * input * 30
+	var force = $CameraPivot.basis * input * 0.35
 
 	_rotate_camera()
 	
@@ -38,7 +38,7 @@ func _physics_process(delta):
 	
 	#grounding on slopes
 	if _is_colliding and $RayCast3D.is_colliding():
-		force.y = -5
+		force.y = -0.5
 
 	apply_central_force(force)
 	
@@ -98,12 +98,12 @@ func respawn():
 	jump_guard = false
 	_is_colliding = false
 	linear_velocity = Vector3.ZERO
-	global_position = Vector3(0,3,0)
+	global_position = Vector3(0,0.3,0)
 	$CameraPivot.rotation = Vector3.ZERO
 	physics_material_override.bounce = 0.6
 	gravity_scale = 1
-	jump_coef = [30,35,45]
-	set_thunder_range(20)
+	jump_coef = [3,3.5,4.5]
+	set_thunder_range(2)
 	m_powerup = Globals.POWERUP.NONE
 	$MeshInstance3D.mesh.material.albedo_color = Color("WHITE", 1)
 	$Thunder.visible = false
@@ -121,7 +121,7 @@ func _rotate_camera():
 	elif twist_input > 90 :
 		twist_input = 180-twist_input
 		
-	$CameraPivot.rotate_y(twist_input*0.000015*movement_vec2d.length())
+	$CameraPivot.rotate_y(twist_input*0.00015*movement_vec2d.length())
 
 
 var jump_index := 0

@@ -10,26 +10,26 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	barriers.get_child(0).rotate_y(-0.0125)
-	
-	barriers.get_child(1).rotate_z(+0.005)
-	barriers.get_child(2).rotate_z(+0.005)
-	barriers.get_child(3).rotate_z(+0.005)
-	barriers.get_child(4).rotate_z(+0.005)
-	barriers.get_child(5).rotate_z(-0.005)
-	barriers.get_child(6).rotate_z(-0.005)
-	barriers.get_child(7).rotate_z(-0.005)
-	barriers.get_child(8).rotate_z(-0.005)
+	$lazer/propeller.rotate_y(-0.0125)
+	$lazer/propeller1.rotate_z(-0.005)
+	$lazer/propeller3.rotate_z(-0.005)
+	$lazer/propeller5.rotate_z(-0.005)
+	$lazer/propeller7.rotate_z(-0.005)
+	$lazer/propeller2.rotate_z(+0.005)
+	$lazer/propeller4.rotate_z(+0.005)
+	$lazer/propeller6.rotate_z(+0.005)
+	$lazer/propeller8.rotate_z(+0.005)
 
 func set_player_parameters(player):
 	player.physics_material_override.bounce = 0.4
-	
-	barriers.get_child(0).constant_angular_velocity.y = -4
-	barriers.get_child(1).constant_angular_velocity.z = 2
-	barriers.get_child(2).constant_angular_velocity.z = 2
-	barriers.get_child(3).constant_angular_velocity.z = 2
-	barriers.get_child(4).constant_angular_velocity.z = 2
-	barriers.get_child(5).constant_angular_velocity.z = -2
-	barriers.get_child(6).constant_angular_velocity.z = -2
-	barriers.get_child(7).constant_angular_velocity.z = -2
-	barriers.get_child(7).constant_angular_velocity.z = -2
+
+	$lazer/propeller/StaticBody3D.constant_angular_velocity.y = -10
+	$lazer/propeller1/StaticBody3D.constant_angular_velocity.z = -5
+	$lazer/propeller3/StaticBody3D.constant_angular_velocity.z = -5
+	$lazer/propeller5/StaticBody3D.constant_angular_velocity.z = -5
+	$lazer/propeller7/StaticBody3D.constant_angular_velocity.z = -5
+	$lazer/propeller2/StaticBody3D.constant_angular_velocity.z = +5
+	$lazer/propeller4/StaticBody3D.constant_angular_velocity.z = +5
+	$lazer/propeller6/StaticBody3D.constant_angular_velocity.z = +5
+	$lazer/propeller8/StaticBody3D.constant_angular_velocity.z = +5
+

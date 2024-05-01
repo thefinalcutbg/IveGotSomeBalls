@@ -26,17 +26,17 @@ texture_filter = 0
 [sub_resource type="SphereMesh" id="SphereMesh_mc7ej"]
 lightmap_size_hint = Vector2i(17, 10)
 material = SubResource("StandardMaterial3D_qedv7")
-radius = 0.75
-height = 1.05
+radius = 0.075
+height = 0.1
 radial_segments = 60
 rings = 20
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vhjrk"]
-radius = 0.75
-height = 1.5
+radius = 0.075
+height = 0.15
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
-radius = 20.0512
+radius = 1.0
 
 [sub_resource type="Gradient" id="Gradient_bs2hl"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
@@ -46,7 +46,7 @@ gradient = SubResource("Gradient_bs2hl")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y6yds"]
 emission_shape = 1
-emission_sphere_radius = 0.7
+emission_sphere_radius = 0.07
 direction = Vector3(0, 0, 0)
 spread = 10.0
 initial_velocity_min = 0.01
@@ -76,7 +76,7 @@ grow_amount = -1.318
 [sub_resource type="PlaneMesh" id="PlaneMesh_w40ge"]
 material = SubResource("StandardMaterial3D_sd7jm")
 uv2_padding = 0.0
-size = Vector2(1, 1)
+size = Vector2(0.1, 0.1)
 orientation = 2
 
 [sub_resource type="Shader" id="Shader_rryh2"]
@@ -145,16 +145,17 @@ shader_parameter/texture_albedo = ExtResource("4_ncvar")
 
 [sub_resource type="SphereMesh" id="SphereMesh_o5vgj"]
 material = SubResource("ShaderMaterial_brypd")
-radius = 0.8
-height = 1.2
+radius = 0.08
+height = 0.12
 
 [sub_resource type="SphereMesh" id="SphereMesh_51sb0"]
 material = SubResource("ShaderMaterial_brypd")
-radius = 0.8
-height = 1.2
+radius = 0.08
+height = 0.12
 
 [node name="Player" type="RigidBody3D"]
 input_ray_pickable = false
+mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_u3vxc")
 can_sleep = false
 lock_rotation = true
@@ -167,12 +168,12 @@ script = ExtResource("1_kerjs")
 mesh = SubResource("SphereMesh_mc7ej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.208109, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.021, 2.08165e-12)
 shape = SubResource("CapsuleShape3D_vhjrk")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 6.51926e-09, 0, -6.51926e-09, 1, 0, 0.193412, -0.00129263)
-target_position = Vector3(0, -1.2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 6.51926e-09, 0, -6.51926e-09, 1, 2.08165e-12, 0.019, 2.08165e-12)
+target_position = Vector3(2.08165e-12, -0.12, 2.08165e-12)
 
 [node name="ThunderRange" type="Area3D" parent="."]
 
@@ -184,7 +185,7 @@ shape = SubResource("SphereShape3D_mbjqs")
 [node name="CameraPivot" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 5.46389e-09, 3.55622e-09, -6.51926e-09, 0.838119, 0.545487, -5.32907e-14, -0.545487, 0.838119, 0.00956507, 12.3346, 16.0829)
+transform = Transform3D(1, 5.46389e-09, 3.55622e-09, -6.51926e-09, 0.838119, 0.545487, -5.32907e-14, -0.545487, 0.838119, 0.00956507, 1.44733, 1.88233)
 fov = 60.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
@@ -203,7 +204,6 @@ draw_pass_1 = SubResource("PlaneMesh_w40ge")
 one_shot = true
 
 [node name="Thunder" type="Node3D" parent="."]
-visible = false
 
 [node name="SphereThunder2" type="MeshInstance3D" parent="Thunder"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)

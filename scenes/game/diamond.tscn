@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://40vapaye3uie" path="res://assets/audio/thun.wav" id="4_4aox7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ytwk"]
-size = Vector3(1, 0.8, 1)
+size = Vector3(0.1, 0.08, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwdbx"]
 resource_local_to_scene = true
@@ -93,13 +93,13 @@ transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0.0162808, 0)
 shape = SubResource("BoxShape3D_7ytwk")
 
 [node name="Inner" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.8, -2.79029e-16, 2.7903e-16, 2.7903e-16, 0.8, -2.7903e-16, -2.7903e-16, 2.79029e-16, 0.8, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(0.08, -2.7903e-17, 2.7903e-17, 2.7903e-17, 0.08, -2.79029e-17, -2.7903e-17, 2.79029e-17, 0.08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_6mwfd")
 skeleton = NodePath("")
 
 [node name="Outer" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.05286, 0)
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_xb5kl")
 skeleton = NodePath("")
