@@ -3,7 +3,7 @@ extends Node3D
 var max_heigh
 var max_low = -1.5
 func set_player_parameters(player):
-	player.jump_coef = [3,3.5,4.5,5.5,6.5]
+	player.jump_coef = [3,3.5,4.5,5.6]
 	#player.physics_material_override.bounce = 0.4
 	#player.set_thunder_range(15)
 	pass
