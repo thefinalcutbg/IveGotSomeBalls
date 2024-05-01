@@ -33,6 +33,12 @@ script = ExtResource("1_a6gj7")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1lkdw")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 2.08165e-12, 100, 2.08165e-12)
+light_energy = 0.5
+shadow_enabled = true
+sky_mode = 1
+
 [node name="Diamonds" type="Node3D" parent="."]
 
 [node name="Diamond1" parent="Diamonds" instance=ExtResource("3_cn5ut")]
