@@ -51,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155322, 0.530905, -10.0438)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0780542, 2.08165e-12, 2.08165e-12)
 
 [node name="1" parent="Diamonds" instance=ExtResource("2_qdkeq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.542689, 0.569276, -6.883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2891, 0.569276, -6.883)
 
 [node name="2" parent="Diamonds" instance=ExtResource("2_qdkeq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13225, 0.569261, -6.88258)
