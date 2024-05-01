@@ -18,7 +18,7 @@
 			"name":"Sphere-col",
 			"translation":[
 				0,
-				-0.48157528042793274,
+				-0.04324556514620781,
 				0
 			]
 		}
@@ -69,29 +69,29 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":1938,
+			"count":1930,
 			"max":[
-				11.948385238647461,
-				0.4579797685146332,
-				11.948382377624512
+				1.1948387622833252,
+				0.04579798877239227,
+				1.194838523864746
 			],
 			"min":[
-				-11.948380470275879,
-				-10.371407508850098,
-				-11.948387145996094
+				-1.194838285446167,
+				-1.037140965461731,
+				-1.1948390007019043
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":1938,
+			"count":1930,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":1938,
+			"count":1930,
 			"type":"VEC2"
 		},
 		{
@@ -104,26 +104,26 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":23256,
+			"byteLength":23160,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":23256,
-			"byteOffset":23256,
+			"byteLength":23160,
+			"byteOffset":23160,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":15504,
-			"byteOffset":46512,
+			"byteLength":15440,
+			"byteOffset":46320,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":5748,
-			"byteOffset":62016,
+			"byteOffset":61760,
 			"target":34963
 		}
 	],
@@ -135,7 +135,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":67764,
+			"byteLength":67508,
 			"uri":"nightmare.bin"
 		}
 	]

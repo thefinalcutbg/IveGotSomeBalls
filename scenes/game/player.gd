@@ -30,7 +30,7 @@ func _physics_process(delta):
 	input.x = Input.get_axis("ui_left", "ui_right")
 	input.z = Input.get_axis("ui_up", "ui_down")
 
-	var force = $CameraPivot.basis * input * 0.3
+	var force = $CameraPivot.basis * input * 0.28
 
 	_rotate_camera()
 	

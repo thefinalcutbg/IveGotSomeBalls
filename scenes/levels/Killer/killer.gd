@@ -1,9 +1,9 @@
 extends Node3D
 
 var max_heigh
-var max_low = -15
+var max_low = -1.5
 func set_player_parameters(player):
-	player.jump_coef = [30,35,45,55,65]
+	player.jump_coef = [3,3.5,4.5,5.5,6.5]
 	#player.physics_material_override.bounce = 0.4
 	#player.set_thunder_range(15)
 	pass
@@ -23,6 +23,6 @@ func _physics_process(delta):
 	elif current_pos < max_low: direction = 1
 	
 	
-	$killer/platform.position.y = current_pos + direction  * 0.05
+	$killer/platform.position.y = current_pos + direction  * 0.005
 	
 	pass

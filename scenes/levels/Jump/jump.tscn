@@ -38,14 +38,14 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("Platform1")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 214.984, -57.6962, -543.268, 8, 1, 300, -57.696, -743.228)
+tracks/0/keys = PackedFloat32Array(0, 1, 21.498, -5.77, -54.327, 8, 1, 30, -5.77, -74.323)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Platform2")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 651, -74.851, -700, 8, 1, 360, -74.851, -743.228)
+tracks/1/keys = PackedFloat32Array(0, 1, 65.1, -7.485, -70, 8, 1, 36, -7.485, -74.323)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bmv6p"]
 _data = {
@@ -53,21 +53,23 @@ _data = {
 }
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_o2txg"]
-top_radius = 15.0
-bottom_radius = 15.0
+top_radius = 1.5
+bottom_radius = 1.5
+height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rv1nr"]
 albedo_texture = ExtResource("6_o86g2")
 uv1_scale = Vector3(4, 4, 4)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ejlsb"]
-radius = 15.0
+height = 0.2
+radius = 1.5
 
 [node name="Jump" type="Node3D"]
 script = ExtResource("1_fp2cr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 2.08165e-12, 100, 2.08165e-12)
 light_energy = 0.91
 shadow_enabled = true
 sky_mode = 1
@@ -78,10 +80,10 @@ environment = SubResource("Environment_kwofh")
 [node name="jump" parent="." instance=ExtResource("2_tf484")]
 
 [node name="Gate" parent="." instance=ExtResource("5_1r4x6")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.016602, 3.98924, -21.3573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0156423, 0.404835, -2.49293)
 
 [node name="Gate2" parent="." instance=ExtResource("5_1r4x6")]
-transform = Transform3D(1.12986, 0, -0.82669, 0, 1.4, 0, 0.82669, 0, 1.12986, 166.033, -58.1508, -555.482)
+transform = Transform3D(0.807043, 0, -0.590493, 0, 1, 0, 0.590493, 0, 0.807043, 16.7524, -5.84033, -55.7327)
 
 [node name="Platforms" type="Node3D" parent="."]
 
@@ -92,7 +94,7 @@ libraries = {
 autoplay = "platform_animation"
 
 [node name="Platform1" type="AnimatableBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 286.185, -57.696, -710.734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5616, -5.77, -68.5882)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform1"]
 mesh = SubResource("CylinderMesh_o2txg")
@@ -102,7 +104,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rv1nr")
 shape = SubResource("CylinderShape3D_ejlsb")
 
 [node name="Platform2" type="AnimatableBody3D" parent="Platforms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 407.287, -74.851, -736.203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.3459, -7.485, -73.0832)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Platform2"]
 mesh = SubResource("CylinderMesh_o2txg")
@@ -114,63 +116,62 @@ shape = SubResource("CylinderShape3D_ejlsb")
 [node name="Diamonds" type="Node3D" parent="."]
 
 [node name="1" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5381, 0.800655, -96.7029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.354, 0.08, -9.67)
 
 [node name="2" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0129, -8.48727, -151.192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.101, -0.849, -15.119)
 
 [node name="3" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.548, -13.2427, -174.395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.055, -1.324, -17.439)
 
 [node name="4" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.642, -17.7356, -307.533)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.864, -1.774, -30.753)
 
 [node name="5" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5019, -27.0235, -348.543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, -2.702, -34.854)
 
 [node name="6" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6091, -31.7789, -371.035)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.761, -3.178, -37.103)
 
 [node name="7" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 30.9718, -47.1909, -435.58)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 3.097, -4.719, -43.558)
 
 [node name="8" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, -8.72815, -47.1909, -504.931)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -0.873, -4.719, -50.493)
 
 [node name="9" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, -89.0374, -47.1909, -519.039)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -8.904, -4.719, -51.904)
 
 [node name="10" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 108.365, -59.7013, -583.793)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 10.837, -5.97, -58.379)
 
 [node name="11" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 164.164, -59.7013, -462.041)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 16.416, -5.97, -46.204)
 
 [node name="13" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 208.926, -59.7013, -507.132)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 20.893, -5.97, -50.713)
 
 [node name="12" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 40.9784, -59.7013, -518.956)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 4.098, -5.97, -51.896)
 
 [node name="14" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 534.475, -137.237, -787.078)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 53.448, -13.724, -78.708)
 
 [node name="15" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 534.475, -130.673, -787.078)
+transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 53.448, -13.067, -78.708)
 
 [node name="16" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 534.475, -118.127, -787.078)
+transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 53.448, -11.813, -78.708)
 
 [node name="17" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 534.475, -123.928, -787.078)
+transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 53.448, -12.393, -78.708)
 
 [node name="SpotLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0516216, 0.998667, 0, -0.998667, -0.0516216, 534.475, -114.499, -787.078)
+transform = Transform3D(1, 0, 0, 0, -0.0516216, 0.998667, 0, -0.998667, -0.0516216, 53.448, -9.35409, -78.708)
 light_color = Color(1, 0.858824, 0.894118, 1)
-light_energy = 5.848
+light_energy = 6.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.001
 light_specular = 0.0
-omni_range = 46.751
-omni_attenuation = 0.574349
+omni_range = 10.0

@@ -4,6 +4,16 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Gate.set_powerup(Globals.POWERUP.BREAK)
+	
+	$lazer/propeller/StaticBody3D.constant_angular_velocity.y = -10
+	$lazer/propeller1/StaticBody3D.constant_angular_velocity.z = -3
+	$lazer/propeller3/StaticBody3D.constant_angular_velocity.z = -3
+	$lazer/propeller5/StaticBody3D.constant_angular_velocity.z = -3
+	$lazer/propeller7/StaticBody3D.constant_angular_velocity.z = -3
+	$lazer/propeller2/StaticBody3D.constant_angular_velocity.z = +3
+	$lazer/propeller4/StaticBody3D.constant_angular_velocity.z = +3
+	$lazer/propeller6/StaticBody3D.constant_angular_velocity.z = +3
+	$lazer/propeller8/StaticBody3D.constant_angular_velocity.z = +3
 	pass # Replace with function body.
 
 
@@ -23,13 +33,4 @@ func _physics_process(delta):
 func set_player_parameters(player):
 	player.physics_material_override.bounce = 0.4
 
-	$lazer/propeller/StaticBody3D.constant_angular_velocity.y = -10
-	$lazer/propeller1/StaticBody3D.constant_angular_velocity.z = -5
-	$lazer/propeller3/StaticBody3D.constant_angular_velocity.z = -5
-	$lazer/propeller5/StaticBody3D.constant_angular_velocity.z = -5
-	$lazer/propeller7/StaticBody3D.constant_angular_velocity.z = -5
-	$lazer/propeller2/StaticBody3D.constant_angular_velocity.z = +5
-	$lazer/propeller4/StaticBody3D.constant_angular_velocity.z = +5
-	$lazer/propeller6/StaticBody3D.constant_angular_velocity.z = +5
-	$lazer/propeller8/StaticBody3D.constant_angular_velocity.z = +5
 
