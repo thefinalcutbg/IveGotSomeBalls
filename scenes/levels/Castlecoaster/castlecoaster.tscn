@@ -8,14 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://dsh6g0qknhuac" path="res://scenes/game/acceleration_area.tscn" id="5_dtecx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hidef"]
-size = Vector3(25, 19, 15)
+size = Vector3(2.5, 1.9, 1.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hddr4"]
 albedo_texture = ExtResource("2_ilp8m")
 uv1_scale = Vector3(1.8, 1.8, 1.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lqrlj"]
-size = Vector3(25, 19, 15)
+size = Vector3(2.5, 1.9, 1.5)
 
 [sub_resource type="Animation" id="Animation_v8yt5"]
 resource_name = "new_animation"
@@ -27,14 +27,14 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("AnimatableBody3D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.4, 1, 126.845, 33.9787, -85.5708, 0.7, 1, 126.845, 13, -85.571)
+tracks/0/keys = PackedFloat32Array(0.4, 1, 12.685, 3.398, -8.557, 0.7, 1, 12.685, 1.43975, -8.557)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("AnimatableBody3D2")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 126.845, -5, -4.064, 0.3, 1, 126.845, 15.7454, -4.06448)
+tracks/1/keys = PackedFloat32Array(0, 1, 12.685, -0.31, -0.648, 0.3, 1, 12.685, 1.58451, -0.648488)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7okqg"]
 _data = {
@@ -54,10 +54,10 @@ sky = SubResource("Sky_t2veq")
 sky_rotation = Vector3(3.48787e-16, 3.48787e-16, 3.48787e-16)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wnb7d"]
-size = Vector3(10, 1, 72)
+size = Vector3(1, 0.1, 7.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_83tas"]
-size = Vector3(10, 1, 10)
+size = Vector3(1, 0.1, 1)
 
 [node name="Castlecoaster" type="Node3D"]
 script = ExtResource("1_tmr4o")
@@ -65,7 +65,7 @@ script = ExtResource("1_tmr4o")
 [node name="Gates" type="Node3D" parent="."]
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="Gates"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.845, 33.9787, -85.5708)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.685, 1.43975, -8.557)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Gates/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
@@ -76,7 +76,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hddr4")
 shape = SubResource("BoxShape3D_lqrlj")
 
 [node name="AnimatableBody3D2" type="AnimatableBody3D" parent="Gates"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.845, -5, -4.064)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.685, 1.58451, -0.648488)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Gates/AnimatableBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
@@ -93,7 +93,7 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1000, 0)
+transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 2.08165e-12, 100, 2.08165e-12)
 light_energy = 0.5
 shadow_enabled = true
 sky_mode = 1
@@ -104,73 +104,73 @@ environment = SubResource("Environment_0qj6m")
 [node name="castlecoaster" parent="." instance=ExtResource("2_l6o7h")]
 
 [node name="AccelerationArea" parent="." instance=ExtResource("5_dtecx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.3872, -21.352, -127.599)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.939, -2.135, -12.76)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AccelerationArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71719, 10.7134)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.072, 1.071)
 shape = SubResource("BoxShape3D_wnb7d")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AccelerationArea"]
-transform = Transform3D(1, 0, 0, 0, 0.835759, -0.549096, 0, 0.549096, 0.83576, 0, 2.93553, -36.6414)
+transform = Transform3D(1, 0, 0, 0, 0.835759, -0.549096, 0, 0.549096, 0.83576, 2.08165e-12, 0.294, -3.664)
 shape = SubResource("BoxShape3D_83tas")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="AccelerationArea"]
-transform = Transform3D(1, 0, 0, 0, 0.311075, -0.950386, 0, 0.950386, 0.311075, 0, 9.12428, -41.8999)
+transform = Transform3D(1, 0, 0, 0, 0.311075, -0.950386, 0, 0.950386, 0.311075, 2.08165e-12, 0.912, -4.19)
 shape = SubResource("BoxShape3D_83tas")
 
 [node name="Diamonds" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52153, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="1" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.407698, 1.10513, -62.3451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041, 0.111, -6.235)
 
 [node name="2" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.0872, 1.10513, -62.3451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.509, 0.111, -6.235)
 
 [node name="3" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, 7.69484)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, 0.77)
 
 [node name="4" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -104.716)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -10.472)
 
 [node name="5" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -113.165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -11.316)
 
 [node name="6" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -120.508)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -12.051)
 
 [node name="7" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -127.508)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -12.751)
 
 [node name="8" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -134.675)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -13.467)
 
 [node name="9" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -141.398)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -14.14)
 
 [node name="10" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.7553, -19.8032, -147.877)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -14.788)
 
 [node name="11" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.1213, 44.8038, -131.729)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.012, 4.48, -13.173)
 
 [node name="12" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.593, 44.8038, -84.9206)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.459, 4.48, -8.492)
 
 [node name="13" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.307, 44.8038, -84.9206)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.231, 4.48, -8.492)
 
 [node name="14" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.545, 44.8038, -84.9206)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.955, 4.48, -8.492)
 
 [node name="15" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.544, 44.8038, -84.9206)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.754, 4.48, -8.492)
 
 [node name="16" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.458, 6.14539, -70.381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.746, 0.615, -7.038)
 
 [node name="17" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.458, -11.6789, 10.509)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.746, -1.168, 1.051)
 
 [node name="18" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.458, -27.1605, 66.7632)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.746, -2.716, 6.676)

@@ -40,7 +40,7 @@ script = ExtResource("1_doodi")
 [node name="Player" parent="." instance=ExtResource("1_ps65f")]
 
 [node name="DeathArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -150, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -15, 2.08165e-12)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathArea"]
 shape = SubResource("BoxShape3D_t8si8")

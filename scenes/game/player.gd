@@ -2,7 +2,7 @@ extends RigidBody3D
 
 #some constants
 const _break_coef = 0.004
-const _speed_coef = 0.25
+const _speed_coef = 2.5
 var jump_coef = [3,3.5,4.5,6.5] #for each successive jump
 var _is_colliding = false
 
@@ -30,7 +30,7 @@ func _physics_process(delta):
 	input.x = Input.get_axis("ui_left", "ui_right")
 	input.z = Input.get_axis("ui_up", "ui_down")
 
-	var force = $CameraPivot.basis * input * 0.35
+	var force = $CameraPivot.basis * input * 0.3
 
 	_rotate_camera()
 	
@@ -103,7 +103,7 @@ func respawn():
 	physics_material_override.bounce = 0.6
 	gravity_scale = 1
 	jump_coef = [3,3.5,4.5]
-	set_thunder_range(2)
+	set_thunder_range(1.5)
 	m_powerup = Globals.POWERUP.NONE
 	$MeshInstance3D.mesh.material.albedo_color = Color("WHITE", 1)
 	$Thunder.visible = false
