@@ -1,23 +1,25 @@
 [gd_scene load_steps=12 format=3 uid="uid://bamw5wd1hukdh"]
 
 [ext_resource type="Script" path="res://scenes/levels/Nightmare/nightmare.gd" id="1_bolya"]
-[ext_resource type="Texture2D" uid="uid://dlvj0h26lkt0n" path="res://assets/sprites/ta5.png" id="2_xpw3f"]
+[ext_resource type="Texture2D" uid="uid://csxpus8bf03u6" path="res://assets/sprites/nightmare.png" id="2_c76y8"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_gjsb6"]
 [ext_resource type="PackedScene" uid="uid://cqx7ok3jsmw0w" path="res://assets/sprites/nightmare_begin.gltf" id="4_2ho2n"]
 [ext_resource type="PackedScene" uid="uid://d2bivs1dcqln1" path="res://assets/sprites/nightmare.gltf" id="4_076os"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="5_armfo"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kgjrw"]
-panorama = ExtResource("2_xpw3f")
+panorama = ExtResource("2_c76y8")
 
 [sub_resource type="Sky" id="Sky_o7gin"]
 sky_material = SubResource("PanoramaSkyMaterial_kgjrw")
 
 [sub_resource type="Environment" id="Environment_7nkqr"]
 background_mode = 2
-background_energy_multiplier = 0.5
 sky = SubResource("Sky_o7gin")
-sky_rotation = Vector3(3.48787e-16, -2.0944, 3.48787e-16)
+sky_rotation = Vector3(3.48787e-16, 3.14159, 3.48787e-16)
+volumetric_fog_density = 0.0029
+volumetric_fog_anisotropy = -0.4
+adjustment_enabled = true
 
 [sub_resource type="Animation" id="Animation_yj8vp"]
 resource_name = "new_animation"
@@ -62,7 +64,7 @@ script = ExtResource("1_bolya")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 2.08165e-12, 100, 2.08165e-12)
-light_energy = 0.211
+light_color = Color(0.847059, 0.509804, 0.960784, 1)
 shadow_enabled = true
 sky_mode = 1
 

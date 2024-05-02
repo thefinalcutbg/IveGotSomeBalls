@@ -31,7 +31,7 @@ environment = SubResource("Environment_vav6j")
 [node name="rollercoaster" parent="." instance=ExtResource("2_utgi7")]
 
 [node name="Gate" parent="." instance=ExtResource("5_47qnh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009, 0.198321, -2.44339)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009, 0.119137, -2.44339)
 
 [node name="Diamonds" type="Node3D" parent="."]
 
@@ -69,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60645, -4.88407, -2.19107)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66845, -5.09807, -3.75369)
 
 [node name="13" parent="Diamonds" instance=ExtResource("4_j8knc")]
-transform = Transform3D(0.995895, 0, 0.0905109, 0, 1, 0, -0.0905109, 0, 0.995895, 1.811, -6.21267, -23.9099)
+transform = Transform3D(0.995895, 0, 0.0905109, 0, 1, 0, -0.0905109, 0, 0.995895, 1.80519, -6.29089, -23.9099)
 
 [node name="14" parent="Diamonds" instance=ExtResource("4_j8knc")]
 transform = Transform3D(0.995895, 0, 0.0905109, 0, 1, 0, -0.0905109, 0, 0.995895, 2.08113, -5.48483, -25.4659)
