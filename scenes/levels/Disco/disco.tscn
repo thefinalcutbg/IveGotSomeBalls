@@ -38,23 +38,23 @@ script = ExtResource("1_mcue1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33556, 0.783564, 0.793161)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.685, -0.172, -0.667)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.581324, -0.172, -0.667)
 shape = SubResource("BoxShape3D_fln31")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
-transform = Transform3D(0.938421, 0.345495, 0, -0.345495, 0.938421, 0, 0, 0, 1, -1.184, -0.089, -0.667)
+transform = Transform3D(0.9573, 0.289099, 0, -0.289099, 0.9573, 0, 0, 0, 1, -1.1056, -0.136299, -0.667)
 shape = SubResource("BoxShape3D_fln31")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
-transform = Transform3D(0.780059, 0.625706, 0, -0.625706, 0.780059, 0, 0, 0, 1, -1.612, 0.145, -0.667)
+transform = Transform3D(0.872845, 0.487997, 0, -0.487997, 0.872845, 0, 0, 0, 1, -1.57591, 0.0781085, -0.667)
 shape = SubResource("BoxShape3D_fln31")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
-transform = Transform3D(0.685132, 0.728419, 0, -0.728419, 0.685132, 0, 0, 0, 1, -2.011, 0.447, -0.667)
+transform = Transform3D(0.725531, 0.68819, 0, -0.68819, 0.725531, 0, 0, 0, 1, -2.00349, 0.372833, -0.667)
 shape = SubResource("BoxShape3D_fln31")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
-transform = Transform3D(0.470581, 0.882357, 0, -0.882357, 0.470581, 0, 0, 0, 1, -2.307, 0.793, -0.667)
+transform = Transform3D(0.470581, 0.882357, 0, -0.882357, 0.470581, 0, 0, 0, 1, -2.307, 0.784336, -0.667)
 shape = SubResource("BoxShape3D_fln31")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Accelerator/AccelerationArea"]
@@ -62,7 +62,7 @@ transform = Transform3D(0.351547, 0.93617, 0, -0.93617, 0.351547, 0, 0, 0, 1, -2
 shape = SubResource("BoxShape3D_fln31")
 
 [node name="AccelerationArea2" parent="Accelerator" instance=ExtResource("2_vd5nt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95556, 2.96256, 0.139162)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95556, 2.98885, 0.139162)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Accelerator/AccelerationArea2"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0315986, 0.561597, 0)
@@ -81,7 +81,7 @@ transform = Transform3D(0.999997, 0, -0.00226893, 0, 1, 0, 0.00226893, 0, 0.9999
 transform = Transform3D(-0.717106, -0.194847, 6.45295e-08, -0.194847, 0.717106, 7.50398e-09, -6.42393e-08, -9.67857e-09, -0.743105, -31.85, 9.841, 2.08165e-12)
 
 [node name="disco_sphere" parent="." instance=ExtResource("5_s6tos")]
-transform = Transform3D(0.764531, -0.258819, 0.590342, -0.204855, -0.965926, -0.158182, 0.611168, 0, -0.791501, -57.7053, 13.8929, 2.08165e-12)
+transform = Transform3D(0.764531, -0.258819, 0.590342, -0.204855, -0.965926, -0.158182, 0.611168, 0, -0.791501, -57.7053, 15.4504, 2.08165e-12)
 
 [node name="DiscoLight10" type="SpotLight3D" parent="disco_sphere"]
 transform = Transform3D(0.764532, -0.630772, -0.132735, -0.258819, -0.111808, -0.959433, 0.590343, 0.767871, -0.248737, -0.364124, -1.71691, -0.281162)
@@ -240,7 +240,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 10.857, 37.648)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 13.562, 42.663)
 
 [node name="Diamond17" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 14.3466, 47.653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 15.2894, 47.653)
 
 [node name="Diamond18" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(0.999977, 0, -0.00678928, 0, 1, 0, 0.00678928, 0, 0.999977, -1, 14.6224, 53.16)
+transform = Transform3D(0.999977, 0, -0.00678928, 0, 1, 0, 0.00678928, 0, 0.999977, -1, 15.5652, 53.16)

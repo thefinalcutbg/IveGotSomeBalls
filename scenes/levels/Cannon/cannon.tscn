@@ -50,25 +50,25 @@ environment = SubResource("Environment_0cwdb")
 [node name="Diamonds" type="Node3D" parent="."]
 
 [node name="1" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 6.39974, 1.289, -1.21709)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 6.55358, 1.289, -1.28916)
 
 [node name="2" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 6.67474, 1.289, -3.91309)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 6.7955, 1.289, -3.98516)
 
 [node name="3" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 5.64174, 1.289, -6.28009)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 5.7625, 1.289, -6.35216)
 
 [node name="4" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 3.86774, 1.289, -7.75609)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 4.03847, 1.289, -7.7611)
 
 [node name="5" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 0.647735, 1.289, -7.77271)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 0.867846, 1.289, -7.90974)
 
 [node name="6" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -1.1572, 1.289, -6.35009)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -1.01053, 1.289, -6.38391)
 
 [node name="7" parent="Diamonds" instance=ExtResource("2_qo4gd")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -2.15117, 1.289, -4.68109)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -2.18001, 1.289, -4.75316)
 
 [node name="8" parent="Diamonds" instance=ExtResource("2_qo4gd")]
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, 2.32864, -9.279, -98.8091)
