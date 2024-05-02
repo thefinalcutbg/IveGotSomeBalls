@@ -13,6 +13,7 @@ func _game():
 	return get_node("Game")
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_play_main_menu_music()
 	add_child(MENU.instantiate())
 
