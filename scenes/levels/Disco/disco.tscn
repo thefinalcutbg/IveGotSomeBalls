@@ -81,7 +81,7 @@ transform = Transform3D(0.999997, 0, -0.00226893, 0, 1, 0, 0.00226893, 0, 0.9999
 transform = Transform3D(-0.738794, 0.0799324, 6.28255e-08, 0.0799324, 0.738794, -1.65324e-08, -6.42393e-08, -9.67857e-09, -0.743105, -31.85, 18.2189, 2.08165e-12)
 
 [node name="disco_sphere" parent="." instance=ExtResource("5_s6tos")]
-transform = Transform3D(0.764531, -0.258819, 0.590342, -0.204855, -0.965926, -0.158182, 0.611168, 0, -0.791501, -59.3002, 24.9952, 2.08165e-12)
+transform = Transform3D(0.764531, -0.258819, 0.590342, -0.204855, -0.965926, -0.158182, 0.611168, 0, -0.791501, -59.3002, 26.8209, 2.08165e-12)
 
 [node name="DiscoLight10" type="SpotLight3D" parent="disco_sphere"]
 transform = Transform3D(0.764532, -0.630772, -0.132735, -0.258819, -0.111808, -0.959433, 0.590343, 0.767871, -0.248737, -0.364124, -1.71691, -0.281162)
@@ -234,13 +234,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 20.6699, 22.291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.2326, 26.895)
 
 [node name="Diamond15" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 20.8203, 37.7915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 22.646, 37.7915)
 
 [node name="Diamond16" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 23.9936, 42.1376)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 25.8193, 42.1376)
 
 [node name="Diamond17" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 24.8791, 47.996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 26.7048, 47.996)
 
 [node name="Diamond18" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(0.999977, 0, -0.00678928, 0, 1, 0, 0.00678928, 0, 0.999977, -1, 24.7209, 53.5865)
+transform = Transform3D(0.999977, 0, -0.00678928, 0, 1, 0, 0.00678928, 0, 0.999977, -1, 26.5466, 53.5865)
