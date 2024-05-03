@@ -19,8 +19,8 @@ func _physics_process(delta):
 	
 	$OmniLight3D.light_energy = 0
 	
-	$Inner.scale = lerp($Inner.scale, Vector3.ZERO, 0.05)
-	$Outer.scale = lerp($Outer.scale, Vector3.ZERO, 0.05)
+	$Inner.scale = lerp($Inner.scale, Vector3.ZERO, 0.025)
+	$Outer.scale = lerp($Outer.scale, Vector3.ZERO, 0.025)
 	
 	if $Outer.scale < Vector3(0.01,0.01,0.01):
 		queue_free()

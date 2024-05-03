@@ -108,7 +108,7 @@ environment = SubResource("Environment_0qj6m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.939, -2.135, -12.76)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AccelerationArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0421982, 0.072, 1.87321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0103397, 0.072, 1.87321)
 shape = SubResource("BoxShape3D_wnb7d")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AccelerationArea"]
@@ -132,25 +132,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.509, 0.111, -6.235)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, 0.77)
 
 [node name="4" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -8.71208)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94414, -1.98, -8.71208)
 
 [node name="5" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -9.55608)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94414, -1.98, -9.55608)
 
 [node name="6" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -10.2911)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94414, -1.98, -10.2911)
 
 [node name="7" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -10.9911)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94414, -1.98, -10.9911)
 
 [node name="8" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -11.7071)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94414, -1.98, -11.7071)
 
 [node name="9" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -12.3801)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94414, -1.98, -12.3801)
 
 [node name="10" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.976, -1.98, -13.0281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94414, -1.98, -13.0281)
 
 [node name="11" parent="Diamonds" instance=ExtResource("2_38wh7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.012, 4.48, -13.173)
@@ -214,6 +214,6 @@ pixel_size = 0.0005
 no_depth_test = false
 
 [node name="LightSphere8" parent="Lights" instance=ExtResource("7_tyw8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3935, 3.31458, -8.53955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2972, 3.31458, -8.53955)
 pixel_size = 0.0005
 no_depth_test = false
