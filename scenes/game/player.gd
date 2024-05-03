@@ -167,10 +167,10 @@ func processBreak():
 
 func _on_jump_particle_timer_timeout():
 	particles.emitting = false
-	processJump()
 
 func _on_body_entered(body):
 	_is_colliding = true
+	processJump()
 
 func _on_body_exited(body):
 	_is_colliding = false
