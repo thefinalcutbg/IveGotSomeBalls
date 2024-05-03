@@ -42,6 +42,8 @@ func start_game():
 
 	var level = load(_level_path).instantiate()
 	
+	_setDeathZone(level)
+	
 	_create_label(_level_name, Color("#7199fe"))
 	
 	if $Level.get_child_count():
@@ -180,3 +182,13 @@ func get_highscore(level_name):
 		return highscores[level_name]
 	
 	return [0.00, "???"]
+
+func _setDeathZone(node):
+	#to implement...
+	for N in node.get_children():
+		
+		if N.get_child_count() > 0:
+			_setDeathZone(N)
+		
+		if N is MeshInstance3D:
+			print(N.get_aabb())

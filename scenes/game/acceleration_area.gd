@@ -23,14 +23,9 @@ func _on_body_entered(body):
 	if body.name != "Player": return
 	
 	_player = body
-	_player_old_bounce = _player.physics_material_override.bounce
-	_player.physics_material_override.bounce = 0.1
 
 func _on_body_exited(body):
 	
 	if body.name != "Player": return
-	
-	_player.physics_material_override.bounce = _player_old_bounce
-	
 	_player = null
 
