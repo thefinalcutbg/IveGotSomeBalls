@@ -48,7 +48,7 @@ func _on_main_menu_labels_option_selected(label_name):
 			if unlocked.is_empty():
 				SUBMENU.add_label("Play more to unlock this section")
 			
-			for level_name in Globals.get_highscores().keys():
+			for level_name in unlocked:
 				SUBMENU.add_label(level_name)
 				
 			_section = MENU_SECTION.SINGLE
