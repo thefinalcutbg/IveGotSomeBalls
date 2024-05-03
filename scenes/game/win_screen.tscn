@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkyuqljjiktr0"]
+
+[ext_resource type="Texture2D" uid="uid://3gx365y88j2s" path="res://assets/sprites/yrgsb.bmp" id="1_rtspa"]
+[ext_resource type="Script" path="res://scenes/game/win_screen.gd" id="1_tf63y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yowb"]
+albedo_texture = ExtResource("1_rtspa")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_87yuc"]
+material = SubResource("StandardMaterial3D_3yowb")
+size = Vector2(0.3, 0.3)
+orientation = 2
+
+[sub_resource type="Environment" id="Environment_6ons0"]
+
+[node name="WinScreen" type="Node3D"]
+script = ExtResource("1_tf63y")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.00589)
+
+[node name="GPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(0.0516214, 0, -0.998667, 0, 1, 0, 0.998667, 0, 0.0516214, 0, 0, -7.57513)
+amount = 10
+lifetime = 2.0
+speed_scale = 0.5
+fixed_fps = 60
+fract_delta = false
+mesh = SubResource("PlaneMesh_87yuc")
+particle_flag_rotate_y = true
+spread = 152.27
+gravity = Vector3(2.08165e-12, 2.08165e-12, 4)
+initial_velocity_max = 5.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6ons0")

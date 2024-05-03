@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgy2tvl4fkqrb"]
+[gd_scene load_steps=6 format=3 uid="uid://cgy2tvl4fkqrb"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_wuhcg"]
 [ext_resource type="AudioStream" uid="uid://df452a6e4yfjd" path="res://assets/audio/gotballs.wav" id="2_sb403"]
 [ext_resource type="AudioStream" uid="uid://dvapvlmhw61v5" path="res://assets/audio/menu.wav" id="3_vum7x"]
+[ext_resource type="AudioStream" uid="uid://mikfjssxt4x" path="res://assets/audio/drumfill.wav" id="4_xr7f7"]
+[ext_resource type="AudioStream" uid="uid://dxncrl87xcsnb" path="res://assets/audio/gameloop.wav" id="5_vsyvx"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_wuhcg")
@@ -13,4 +15,12 @@ stream = ExtResource("2_sb403")
 [node name="MenuLoopAudio" type="AudioStreamPlayer" parent="MfBallsAudio"]
 stream = ExtResource("3_vum7x")
 
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_xr7f7")
+
+[node name="GameMusicLoop" type="AudioStreamPlayer" parent="GameMusic"]
+stream = ExtResource("5_vsyvx")
+
 [connection signal="finished" from="MfBallsAudio" to="." method="_on_mf_balls_audio_finished"]
+[connection signal="finished" from="GameMusic" to="." method="_on_game_music_finished"]

@@ -13,7 +13,6 @@ const ENDBEST = preload("res://scenes/menu/end_best.tscn")
 signal menu_requested()
 
 func _ready():
-	$Audio/GameMusic.play()
 	pass
 
 func _process(delta):
@@ -41,8 +40,6 @@ func start_game():
 	game_state = Globals.GAME_STATE.PLAYING
 
 	var level = load(_level_path).instantiate()
-
-	_create_label(_level_name, Color("#7199fe"))
 	
 	if $Level.get_child_count():
 		var oldLevel = $Level.get_child(0)
@@ -59,6 +56,15 @@ func start_game():
 	
 	for d in diamonds: d.set_game(self)
 	
+	#getting highscore
+	var score = get_highscore(_level_name)
+	
+	_level_best = score[0]
+	
+	$HUD/Best.text = "BEST: " + str(score[0]).pad_decimals(2) + " " + score[1]
+		
+	_create_label(_level_name, Color("#7199fe"))
+	
 	$Audio/SpawnAudio.play()
 	
 	$Player.respawn()
@@ -66,14 +72,8 @@ func start_game():
 	if level.has_method("set_player_parameters"):
 		level.set_player_parameters($Player)
 	
-	#getting highscore
-	var score = get_highscore(_level_name)
-	
-	_level_best = score[0]
-	
-	$HUD/Best.text = "BEST: " + str(score[0]).pad_decimals(2) + " " + score[1]
-	
 	$HUD/Timer.reset()
+	
 
 func open_ingame_menu(menu):
 	add_child(menu)
@@ -157,9 +157,6 @@ func _on_end_sound_finished():
 func _input_name_finished(text):
 	_save_highscore(_level_name, $HUD/Timer.time_elapsed, text)
 	menu_requested.emit()
-
-func _on_game_music_finished():
-	$Audio/GameMusicLoop.play()
 
 func _save_highscore(level_name, time, initials):
 	

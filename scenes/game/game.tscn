@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dukmodvnhgacq"]
+[gd_scene load_steps=15 format=3 uid="uid://dukmodvnhgacq"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_doodi"]
 [ext_resource type="PackedScene" uid="uid://cj0j47il8b1ry" path="res://scenes/game/player.tscn" id="1_ps65f"]
@@ -7,9 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dyy15wd1ca6h8" path="res://assets/audio/end.wav" id="5_hg3ko"]
 [ext_resource type="Texture2D" uid="uid://bi0lo5kg27unh" path="res://assets/sprites/diaIcon.png" id="5_mh1e8"]
 [ext_resource type="AudioStream" uid="uid://ci23vbd280plg" path="res://assets/audio/start.wav" id="5_paent"]
-[ext_resource type="AudioStream" uid="uid://mikfjssxt4x" path="res://assets/audio/drumfill.wav" id="6_23iaj"]
 [ext_resource type="Script" path="res://scenes/game/timer.gd" id="8_lklee"]
-[ext_resource type="AudioStream" uid="uid://dxncrl87xcsnb" path="res://assets/audio/gameloop.wav" id="8_u4ajb"]
 [ext_resource type="FontFile" uid="uid://co6wlid0v0bqi" path="res://assets/impact.ttf" id="9_vo4aa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t8si8"]
@@ -158,15 +156,7 @@ volume_db = 10.0
 [node name="EndSound" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("5_hg3ko")
 
-[node name="GameMusicLoop" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("8_u4ajb")
-
-[node name="GameMusic" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("6_23iaj")
-
 [node name="Level" type="Node" parent="."]
 
 [connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]
 [connection signal="finished" from="Audio/EndSound" to="." method="_on_end_sound_finished"]
-[connection signal="finished" from="Audio/GameMusicLoop" to="Audio/GameMusic" method="_on_loop_finished"]
-[connection signal="finished" from="Audio/GameMusic" to="." method="_on_game_music_finished"]

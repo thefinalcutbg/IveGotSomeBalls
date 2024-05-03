@@ -2,6 +2,7 @@ extends Node3D
 
 const GAME = preload("res://scenes/game/game.tscn")
 const MENU = preload("res://scenes/menu/main_menu.tscn")
+const WINSCREEN = preload("res://scenes/game/win_screen.tscn")
 const INGAME_MENU = preload("res://scenes/menu/ingame_menu.tscn")
 
 var _menu_scene
@@ -10,7 +11,7 @@ var _level_index = -1
 var _can_continue = false
 
 func _game():
-	return get_node("Game")
+	return get_child(2)
 
 func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -20,10 +21,10 @@ func _ready():
 
 func _create_game():
 	
-	_stop_main_menu_music()
+	_play_game_music()
 	
-	_menu_scene = get_child(1)
-	remove_child(get_child(1))
+	_menu_scene = get_child(2)
+	remove_child(get_child(2))
 	
 	var game = GAME.instantiate()
 	
@@ -53,15 +54,21 @@ func play_level(level_name):
 
 
 func _play_main_menu_music():
+	$GameMusic.stop()
+	$GameMusic/GameMusicLoop.stop()
 	$MfBallsAudio.play()
+	
+
+func _play_game_music():
+	$MfBallsAudio.stop()
+	$MfBallsAudio/MenuLoopAudio.stop()
+	$GameMusic.play()
 
 func _on_mf_balls_audio_finished():
 	$MfBallsAudio/MenuLoopAudio.play()
-
-func _stop_main_menu_music():
-	$MfBallsAudio.stop()
-	$MfBallsAudio/MenuLoopAudio.stop()
-
+	
+func _on_game_music_finished():
+	$GameMusic/GameMusicLoop.play()
 
 enum MenuChoice {
 	RESUME,
@@ -104,17 +111,16 @@ func _process_menu_choice(option):
 	match option:
 		
 		MenuChoice.CONTINUE:
+			#game finished
 			if _level_index == Globals.CAMPAIGN.size()-1:
-				_level_index = -1
-				_can_continue = false
 				_game().queue_free()
-				add_child(_menu_scene)
-				_play_main_menu_music()
+				add_child(WINSCREEN.instantiate())
+			#next level:
 			else:
 				_can_continue = false
 				_level_index += 1
-				_game().close_ingame_menu()
 				_game().load_level(Globals.CAMPAIGN[_level_index])
+				_game().close_ingame_menu()
 				
 		MenuChoice.RESUME: 
 			_game().close_ingame_menu()
@@ -124,10 +130,17 @@ func _process_menu_choice(option):
 			_game().start_game()
 			
 		MenuChoice.QUIT:
-			_level_index = -1
-			_can_continue = false
-			_game().queue_free()
-			add_child(_menu_scene)
-			_play_main_menu_music()
+			return_to_main_menu()
 
 	get_tree().paused = false
+
+func return_to_main_menu():
+	
+	_level_index = -1
+	_can_continue = false
+	
+	_game().queue_free()
+	
+	add_child(_menu_scene)
+	
+	_play_main_menu_music()
