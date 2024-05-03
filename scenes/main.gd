@@ -11,6 +11,9 @@ var _level_index = -1
 var _can_continue = false
 
 func _game():
+	return get_node("Game")
+	
+func _current_scene():
 	return get_child(2)
 
 func _ready():
@@ -139,7 +142,8 @@ func return_to_main_menu():
 	_level_index = -1
 	_can_continue = false
 	
-	_game().queue_free()
+	#could be game or win screen
+	_current_scene().queue_free()
 	
 	add_child(_menu_scene)
 	
