@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bamw5wd1hukdh"]
+[gd_scene load_steps=13 format=3 uid="uid://bamw5wd1hukdh"]
 
 [ext_resource type="Script" path="res://scenes/levels/Nightmare/nightmare.gd" id="1_bolya"]
 [ext_resource type="Texture2D" uid="uid://csxpus8bf03u6" path="res://assets/sprites/nightmare.png" id="2_c76y8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cqx7ok3jsmw0w" path="res://assets/sprites/nightmare_begin.gltf" id="4_2ho2n"]
 [ext_resource type="PackedScene" uid="uid://d2bivs1dcqln1" path="res://assets/sprites/nightmare.gltf" id="4_076os"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="5_armfo"]
+[ext_resource type="PackedScene" uid="uid://t1yhm07yjyy3" path="res://scenes/game/light_sphere.tscn" id="7_lxi1g"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kgjrw"]
 panorama = ExtResource("2_c76y8")
@@ -147,3 +148,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.963, 4, -65)
 
 [node name="platform13" parent="MovingPlatforms/vertical2" instance=ExtResource("4_076os")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.963, 4, -104.428)
+
+[node name="LightSphere5" parent="." instance=ExtResource("7_lxi1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.969, 2.28658, -136.016)
+pixel_size = 0.0005
+no_depth_test = false
