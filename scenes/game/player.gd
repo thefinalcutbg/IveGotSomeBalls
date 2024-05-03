@@ -4,7 +4,7 @@ extends RigidBody3D
 const _break_coef = 0.004
 const _speed_coef = 2.5
 var jump_coef = [3,3.5,4.5,6.5] #for each successive jump
-var _is_colliding = false
+var body_collisions : Array #stores the bodies the player is colling with
 
 @onready var particles = $GPUParticles3D
 
@@ -37,7 +37,7 @@ func _physics_process(delta):
 	if m_powerup == Globals.POWERUP.SPEED: force*=_speed_coef
 	
 	#grounding on slopes
-	if _is_colliding and $RayCast3D.is_colliding():
+	if body_collisions.size() and $RayCast3D.is_colliding():
 		force.y = -0.5
 
 	apply_central_force(force)
@@ -62,7 +62,6 @@ func set_powerup(pw):
 			color = Color("YELLOW", 1)
 			jump_guard = false
 			#sometimes collision doesn't work
-			_is_colliding = true
 		Globals.POWERUP.BREAK:
 			color = Color("GREEN", 0.8)
 		Globals.POWERUP.SPEED:
@@ -96,7 +95,6 @@ func set_thunder_range(radius):
 func respawn():
 	
 	jump_guard = false
-	_is_colliding = false
 	linear_velocity = Vector3.ZERO
 	global_position = Vector3(0,0.3,0)
 	$CameraPivot.rotation = Vector3.ZERO
@@ -131,7 +129,7 @@ func processJump():
 	
 	if m_powerup != Globals.POWERUP.JUMP: return
 	
-	if !_is_colliding:
+	if body_collisions.is_empty():
 		jump_guard = false
 		return
 	
@@ -168,8 +166,16 @@ func processBreak():
 func _on_jump_particle_timer_timeout():
 	particles.emitting = false
 
+
 func _on_body_entered(body):
-	_is_colliding = true
+	body_collisions.push_back(body)
 
 func _on_body_exited(body):
-	_is_colliding = false
+	
+	for i in body_collisions.size():
+		if body_collisions[i] == body:
+			body_collisions.pop_at(i)
+			return
+	
+	if body_collisions.is_empty():
+		jump_guard = false
