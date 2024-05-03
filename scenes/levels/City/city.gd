@@ -10,6 +10,8 @@ func _ready():
 	$city/revolve2/StaticBody3D.constant_angular_velocity.y = -3
 	$city/revolve3/StaticBody3D.constant_angular_velocity.y = 3
 	$Gate.set_powerup(Globals.POWERUP.SPEED)
+	$LightSphere/OmniLight3D.light_color = "b12d36"
+	$LightSphere/OmniLight3D.shadow_enabled = true
 	pass # Replace with function body.
 
 

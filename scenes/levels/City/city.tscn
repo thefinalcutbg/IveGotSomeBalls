@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://8paw76dxoexp"]
+[gd_scene load_steps=10 format=3 uid="uid://8paw76dxoexp"]
 
 [ext_resource type="Script" path="res://scenes/levels/City/city.gd" id="1_b1f3s"]
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="2_1jvnx"]
 [ext_resource type="PackedScene" uid="uid://ccb0x0l82dpfa" path="res://assets/sprites/city.gltf" id="3_nru7o"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="4_715u0"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="4_x1l05"]
+[ext_resource type="PackedScene" uid="uid://t1yhm07yjyy3" path="res://scenes/game/light_sphere.tscn" id="6_8biud"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ly4fj"]
 panorama = ExtResource("2_1jvnx")
@@ -38,15 +39,8 @@ environment = SubResource("Environment_agmkx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.925838, -0.233912, -0.296833, -2.73389e-08, -0.785436, 0.618943, -0.377922, -0.573041, -0.727186, -1.84, 13.142, -41.986)
-light_color = Color(0.607843, 0.239216, 0.458824, 1)
+light_color = Color(0.643137, 0.12549, 0.372549, 1)
 light_volumetric_fog_energy = 0.0
-sky_mode = 1
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 3.33598e-08, -6.87018e-08, 6.87018e-08, -0.785857, 0.618408, -3.33598e-08, -0.618408, -0.785857, 7.063, 23.323, 0.454)
-light_color = Color(0.694118, 0.176471, 0.211765, 1)
-light_volumetric_fog_energy = 0.0
-shadow_enabled = true
 sky_mode = 1
 
 [node name="Gate" parent="." instance=ExtResource("4_x1l05")]
@@ -95,3 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90064, 2.667, 0.977681)
 
 [node name="14" parent="diamonds" instance=ExtResource("4_715u0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89862, 2.667, -0.301621)
+
+[node name="LightSphere" parent="." instance=ExtResource("6_8biud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.793135, 1.24876, -4.44922)
+pixel_size = 0.0004

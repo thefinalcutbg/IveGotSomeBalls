@@ -25,6 +25,7 @@ func set_powerup(powerup):
 			color = Color("BLUE", 0.6)
 
 	$MeshInstance3D.mesh.material.albedo_color = color
+	$OmniLight3D.light_color = color
 	
 func player_passed_through(player):
 		

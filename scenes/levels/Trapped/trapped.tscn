@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://8w6ff02xd3oq"]
+[gd_scene load_steps=25 format=3 uid="uid://8w6ff02xd3oq"]
 
 [ext_resource type="Script" path="res://scenes/levels/Trapped/trapped.gd" id="1_a2xsy"]
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="1_abxqu"]
 [ext_resource type="PackedScene" uid="uid://c7ki8ywx626xq" path="res://assets/sprites/trapped.gltf" id="2_endml"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_ikakr"]
 [ext_resource type="Texture2D" uid="uid://b8h8ioo8iykl5" path="res://assets/sprites/Tutshngl.png" id="3_s0xb0"]
+[ext_resource type="PackedScene" uid="uid://t1yhm07yjyy3" path="res://scenes/game/light_sphere.tscn" id="6_38dcb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jq57m"]
 panorama = ExtResource("1_abxqu")
@@ -310,3 +311,11 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -25.29
 
 [node name="20" parent="Diamonds" instance=ExtResource("3_ikakr")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -17.573, 0.757, 9.126)
+
+[node name="LightSphere" parent="." instance=ExtResource("6_38dcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.640146, 1.71727, 5.24647)
+pixel_size = 0.0004
+
+[node name="LightSphere2" parent="." instance=ExtResource("6_38dcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.10179, 1.79465, 3.59615)
+pixel_size = 0.0004

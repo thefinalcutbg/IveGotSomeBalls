@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://t1yhm07yjyy3"]
+
+[ext_resource type="Texture2D" uid="uid://vgrwqs15lq3l" path="res://assets/sprites/flare.png" id="1_vw4s6"]
+[ext_resource type="Script" path="res://scenes/game/light_sphere.gd" id="2_1nep8"]
+
+[node name="LightSphere" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+cast_shadow = 0
+gi_mode = 0
+pixel_size = 0.0003
+billboard = 1
+no_depth_test = true
+texture = ExtResource("1_vw4s6")
+script = ExtResource("2_1nep8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]

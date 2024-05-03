@@ -24,5 +24,5 @@ func _physics_process(delta):
 	
 	
 	$killer/platform.position.y = current_pos + direction  * 0.005
-	
+	$MovingLights.position.y = current_pos + direction  * 0.005
 	pass

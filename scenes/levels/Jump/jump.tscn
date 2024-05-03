@@ -119,19 +119,19 @@ shape = SubResource("CylinderShape3D_ejlsb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.354, 0.08, -9.67)
 
 [node name="2" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.101, -0.849, -15.119)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.101, -0.737924, -15.119)
 
 [node name="3" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.055, -1.324, -17.439)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.055, -1.17001, -17.439)
 
 [node name="4" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.864, -1.774, -30.753)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.864, -1.72458, -30.753)
 
 [node name="5" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, -2.702, -34.854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, -2.60582, -34.854)
 
 [node name="6" parent="Diamonds" instance=ExtResource("4_2fbti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.761, -3.178, -37.103)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.761, -3.14599, -37.103)
 
 [node name="7" parent="Diamonds" instance=ExtResource("4_2fbti")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.86938, -4.719, -43.2291)

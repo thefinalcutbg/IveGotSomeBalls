@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://55ryjxtwyfof"]
+[gd_scene load_steps=16 format=3 uid="uid://55ryjxtwyfof"]
 
 [ext_resource type="Script" path="res://scenes/levels/Disco/disco.gd" id="1_mcue1"]
 [ext_resource type="Texture2D" uid="uid://csnsxb05nkmqr" path="res://assets/sprites/sunrise.png" id="2_fkt45"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://77q3y6xlju77" path="res://assets/sprites/disco_tube.gltf" id="4_hkfnh"]
 [ext_resource type="PackedScene" uid="uid://cipp4lhi5jeo8" path="res://assets/sprites/disco_sphere.gltf" id="5_s6tos"]
 [ext_resource type="Script" path="res://scenes/levels/Disco/disco_light.gd" id="6_10y3n"]
+[ext_resource type="PackedScene" uid="uid://t1yhm07yjyy3" path="res://scenes/game/light_sphere.tscn" id="10_vsxte"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fln31"]
 size = Vector3(0.5, 0.1, 1.85)
@@ -81,7 +82,7 @@ transform = Transform3D(0.999997, 0, -0.00226893, 0, 1, 0, 0.00226893, 0, 0.9999
 transform = Transform3D(-0.738794, 0.0799324, 6.28255e-08, 0.0799324, 0.738794, -1.65324e-08, -6.42393e-08, -9.67857e-09, -0.743105, -31.85, 18.2189, 2.08165e-12)
 
 [node name="disco_sphere" parent="." instance=ExtResource("5_s6tos")]
-transform = Transform3D(0.764531, -0.258819, 0.590342, -0.204855, -0.965926, -0.158182, 0.611168, 0, -0.791501, -59.3002, 26.8209, 2.08165e-12)
+transform = Transform3D(0.764531, -0.258819, 0.590342, -0.204855, -0.965926, -0.158182, 0.611168, 0, -0.791501, -59.3002, 23.3958, 2.08165e-12)
 
 [node name="DiscoLight10" type="SpotLight3D" parent="disco_sphere"]
 transform = Transform3D(0.764532, -0.630772, -0.132735, -0.258819, -0.111808, -0.959433, 0.590343, 0.767871, -0.248737, -0.364124, -1.71691, -0.281162)
@@ -236,6 +237,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 19.2326, 26.895)
 [node name="Diamond15" parent="Diamonds" instance=ExtResource("3_l1r6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 22.646, 37.7915)
 
+[node name="LightSphere" parent="Diamonds/Diamond15" instance=ExtResource("10_vsxte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142133, -4.42038, -8.28014)
+pixel_size = 0.0004
+no_depth_test = false
+
 [node name="Diamond16" parent="Diamonds" instance=ExtResource("3_l1r6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 25.8193, 42.1376)
 
@@ -243,4 +249,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 25.8193, 42.1376)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 26.7048, 47.996)
 
 [node name="Diamond18" parent="Diamonds" instance=ExtResource("3_l1r6g")]
-transform = Transform3D(0.999977, 0, -0.00678928, 0, 1, 0, 0.00678928, 0, 0.999977, -1, 26.5466, 53.5865)
+transform = Transform3D(0.999977, 0, -0.00678928, 0, 1, 0, 0.00678928, 0, 0.999977, -1, 25.4378, 54.0993)

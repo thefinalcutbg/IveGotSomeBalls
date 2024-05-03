@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm4l8pyiohlke"]
+[gd_scene load_steps=10 format=3 uid="uid://dm4l8pyiohlke"]
 
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="1_3n8yx"]
 [ext_resource type="Script" path="res://scenes/levels/Killer/killer.gd" id="1_cgquy"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="2_hwdxu"]
 [ext_resource type="PackedScene" uid="uid://bf6lhj8qawdbj" path="res://assets/sprites/killer.gltf" id="2_ltf85"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="2_qdkeq"]
+[ext_resource type="PackedScene" uid="uid://t1yhm07yjyy3" path="res://scenes/game/light_sphere.tscn" id="6_o3pec"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mln5f"]
 panorama = ExtResource("1_3n8yx")
@@ -14,6 +15,7 @@ sky_material = SubResource("PanoramaSkyMaterial_mln5f")
 
 [sub_resource type="Environment" id="Environment_lgcvh"]
 background_mode = 2
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_ygryj")
 sky_rotation = Vector3(0, 3.14159, 0)
 ambient_light_sky_contribution = 0.36
@@ -35,7 +37,7 @@ script = ExtResource("1_cgquy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 8.35189e-23, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 2.08165e-12, 100, 2.08165e-12)
-light_energy = 0.267
+light_energy = 0.186
 shadow_enabled = true
 sky_mode = 1
 
@@ -106,3 +108,87 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0912, 12.9763, -10.9916)
 
 [node name="19" parent="Diamonds" instance=ExtResource("2_qdkeq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0912, 12.9763, -9.76558)
+
+[node name="StaticLights" type="Node" parent="."]
+
+[node name="LightSphere5" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.935127, 1.44845, -1.61261)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere6" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.935127, 1.19396, -1.61261)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere7" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.935127, 0.832572, -1.61261)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere8" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16484, 1.33746, -4.82461)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere9" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16484, 1.08297, -4.82461)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere10" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16484, 0.721584, -4.82461)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere11" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5157, 1.33746, -11.7073)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere12" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5157, 1.08297, -11.7073)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere13" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5157, 0.721584, -11.7073)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere14" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6131, 9.59477, -3.64996)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere15" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6131, 9.34028, -3.64996)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere16" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6131, 8.97889, -3.64996)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere17" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7176, 13.7927, -10.4426)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere18" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7176, 13.5382, -10.4426)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="LightSphere19" parent="StaticLights" instance=ExtResource("6_o3pec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7176, 13.1769, -10.4426)
+pixel_size = 0.0005
+no_depth_test = false
+
+[node name="MovingLights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05466, 1.87406, -2.57938)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MovingLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.851381, 0)
+light_energy = 3.828

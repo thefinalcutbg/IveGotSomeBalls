@@ -15,7 +15,7 @@ size = Vector3(0.75, 0.6, 0.001)
 size = Vector3(0.75, 0.75, 0.001)
 
 [node name="Gate" type="Area3D"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 script = ExtResource("1_r2od2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -26,5 +26,12 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.689316, 0.72446, 0.000336854, 0.72446, 0.689316, -0.000354005, -0.000488662, 1.52892e-08, -1, -0.008, -0.149, 2.08165e-12)
 shape = SubResource("BoxShape3D_17wrn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.666667, 0, 0, 0, 0.666667, 0, 0, 0, 0.666667, 0.0633774, 0.0569739, 0.0606995)
+light_energy = 0.161
+shadow_enabled = true
+omni_range = 0.777
+omni_attenuation = 0.659755
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
