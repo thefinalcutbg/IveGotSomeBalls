@@ -253,22 +253,22 @@ shape = SubResource("BoxShape3D_23tdl")
 [node name="Diamonds" type="Node3D" parent="."]
 
 [node name="1" parent="Diamonds" instance=ExtResource("3_ikakr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208, 0.452, -5.027)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.216978, 0.452, -4.9548)
 
 [node name="2" parent="Diamonds" instance=ExtResource("3_ikakr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.223, 0.452, -5.63)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214022, 0.452, -5.5578)
 
 [node name="3" parent="Diamonds" instance=ExtResource("3_ikakr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.907, 0.452, -6.044)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898022, 0.452, -5.9718)
 
 [node name="4" parent="Diamonds" instance=ExtResource("3_ikakr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.815, 0.452, -6.044)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80602, 0.452, -5.9718)
 
 [node name="5" parent="Diamonds" instance=ExtResource("3_ikakr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.426, 0.452, -5.63)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41702, 0.452, -5.5578)
 
 [node name="6" parent="Diamonds" instance=ExtResource("3_ikakr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.833, 0.452, -5.027)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82402, 0.452, -4.9548)
 
 [node name="7" parent="Diamonds" instance=ExtResource("3_ikakr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.386, 0.452, 1.813)
