@@ -175,7 +175,6 @@ func _on_body_exited(body):
 	for i in body_collisions.size():
 		if body_collisions[i] == body:
 			body_collisions.pop_at(i)
-			return
 	
 	if body_collisions.is_empty():
 		jump_guard = false
