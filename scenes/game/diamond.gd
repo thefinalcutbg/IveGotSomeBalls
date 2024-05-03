@@ -17,6 +17,8 @@ func _physics_process(delta):
 
 	if !collected: return
 	
+	$OmniLight3D.light_energy = 0
+	
 	$Inner.scale = lerp($Inner.scale, Vector3.ZERO, 0.05)
 	$Outer.scale = lerp($Outer.scale, Vector3.ZERO, 0.05)
 	
