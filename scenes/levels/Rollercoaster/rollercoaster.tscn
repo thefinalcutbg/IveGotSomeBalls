@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl35n4qe6s3mk"]
+[gd_scene load_steps=13 format=3 uid="uid://dl35n4qe6s3mk"]
 
 [ext_resource type="Script" path="res://scenes/levels/Rollercoaster/rollercoaster.gd" id="1_dg1qn"]
 [ext_resource type="Texture2D" uid="uid://igobwxi8q2xm" path="res://assets/sprites/clouds.png" id="1_sp1n3"]
 [ext_resource type="PackedScene" uid="uid://bc4d0bcj4el45" path="res://assets/sprites/rollercoaster.gltf" id="2_utgi7"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="4_j8knc"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="5_47qnh"]
+[ext_resource type="PackedScene" uid="uid://t1yhm07yjyy3" path="res://scenes/game/light_sphere.tscn" id="6_vm0x6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yvh6e"]
 panorama = ExtResource("1_sp1n3")
@@ -15,6 +16,44 @@ sky_material = SubResource("PanoramaSkyMaterial_yvh6e")
 [sub_resource type="Environment" id="Environment_vav6j"]
 background_mode = 2
 sky = SubResource("Sky_7rwxe")
+
+[sub_resource type="Animation" id="Animation_5ot3u"]
+resource_name = "new_animation"
+length = 0.75
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SphereAnim:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.42815, -4.24823, -5.96757), Vector3(1.336, -5, -21.676)]
+}
+
+[sub_resource type="Animation" id="Animation_xbgtk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SphereAnim:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.42815, -4.24823, -5.96757)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_urk4t"]
+_data = {
+"RESET": SubResource("Animation_xbgtk"),
+"new_animation": SubResource("Animation_5ot3u")
+}
 
 [node name="Rollercoaster" type="Node3D"]
 script = ExtResource("1_dg1qn")
@@ -130,3 +169,47 @@ transform = Transform3D(0.995895, 2.16957e-10, 0.090511, -0.000799325, 0.999961,
 
 [node name="33" parent="Diamonds" instance=ExtResource("4_j8knc")]
 transform = Transform3D(0.995895, 2.16957e-10, 0.090511, -0.000799325, 0.999961, 0.00879501, -0.0905074, -0.00883125, 0.995857, 5.88713, -8.96683, -86.7779)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="LightSphere10" parent="Lights" instance=ExtResource("6_vm0x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0634843, -0.278468, -4.09715)
+pixel_size = 0.0002
+
+[node name="LightSphere13" parent="Lights" instance=ExtResource("6_vm0x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.60573, -2.4094, -2.97754)
+pixel_size = 0.0002
+
+[node name="LightSphere17" parent="Lights" instance=ExtResource("6_vm0x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.411119, -4.10806, 0.178037)
+pixel_size = 0.0002
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights"]
+libraries = {
+"": SubResource("AnimationLibrary_urk4t")
+}
+autoplay = "new_animation"
+
+[node name="SphereAnim" parent="Lights" instance=ExtResource("6_vm0x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42815, -4.24823, -5.96757)
+pixel_size = 0.0005
+
+[node name="LightSphere4" parent="Lights" instance=ExtResource("6_vm0x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02387, -1.56075, -24.3018)
+pixel_size = 0.0005
+
+[node name="LightSphere5" parent="Lights" instance=ExtResource("6_vm0x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1276, -1.6878, -57.7181)
+pixel_size = 0.0005
+
+[node name="LightSphere6" parent="Lights" instance=ExtResource("6_vm0x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87403, -8.39193, -66.1604)
+pixel_size = 0.0005
+
+[node name="LightSphere7" parent="Lights" instance=ExtResource("6_vm0x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87403, -8.39193, -73.6572)
+pixel_size = 0.0005
+
+[node name="LightSphere9" parent="Lights" instance=ExtResource("6_vm0x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87403, -8.39193, -87.7053)
+pixel_size = 0.0005
