@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceb8hmayqvamy"]
+[gd_scene load_steps=13 format=3 uid="uid://ceb8hmayqvamy"]
 
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="1_2lrt1"]
 [ext_resource type="Script" path="res://scenes/levels/LazerMaze/lazer.gd" id="1_14q3y"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="2_wggrt"]
 [ext_resource type="PackedScene" uid="uid://b8tkshns8e6a0" path="res://assets/sprites/lazermaze.gltf" id="3_flv0o"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="4_7n5ih"]
+[ext_resource type="PackedScene" uid="uid://t1yhm07yjyy3" path="res://scenes/game/light_sphere.tscn" id="6_l3v5e"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pwfno"]
 panorama = ExtResource("1_2lrt1")
@@ -26,6 +27,68 @@ ssao_intensity = 6.03
 ssao_power = 0.11949
 ssao_horizon = 1.0
 glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_5cm76"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightSphere:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4, -2.5, -2.747)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightSphere2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.983, -2.5, -36)]
+}
+
+[sub_resource type="Animation" id="Animation_3v46g"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightSphere:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1.5, 1.5),
+"update": 0,
+"values": [Vector3(4, -2.5, 2.08165e-12), Vector3(4, -2.5, -36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightSphere2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1.5, 1.5),
+"update": 0,
+"values": [Vector3(1.983, -2.5, -36), Vector3(1.983, -2.5, 2.08165e-12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1gven"]
+_data = {
+"RESET": SubResource("Animation_5cm76"),
+"new_animation": SubResource("Animation_3v46g")
+}
 
 [node name="LazerMaze" type="Node3D"]
 script = ExtResource("1_14q3y")
@@ -138,3 +201,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86602, -3.66681, -38.1095)
 
 [node name="Gate" parent="." instance=ExtResource("4_7n5ih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14, -0.874755, -1.58051)
+
+[node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.465205, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights"]
+libraries = {
+"": SubResource("AnimationLibrary_1gven")
+}
+autoplay = "new_animation"
+
+[node name="LightSphere" parent="Lights" instance=ExtResource("6_l3v5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -2.5, -2.747)
+
+[node name="LightSphere2" parent="Lights" instance=ExtResource("6_l3v5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.983, -2.5, -36)

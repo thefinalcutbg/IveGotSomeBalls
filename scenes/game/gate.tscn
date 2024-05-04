@@ -28,7 +28,14 @@ transform = Transform3D(-0.689316, 0.72446, 0.000336854, 0.72446, 0.689316, -0.0
 shape = SubResource("BoxShape3D_17wrn")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(0.666667, 0, 0, 0, 0.666667, 0, 0, 0, 0.666667, 0.0633774, 0.0569739, 0.0606995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0633774, 0.0569739, 0.0606995)
+light_energy = 0.161
+shadow_enabled = true
+omni_range = 0.777
+omni_attenuation = 0.659755
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0633774, 0.0569739, -0.0558531)
 light_energy = 0.161
 shadow_enabled = true
 omni_range = 0.777

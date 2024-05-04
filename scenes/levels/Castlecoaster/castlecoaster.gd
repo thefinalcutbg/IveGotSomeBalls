@@ -15,4 +15,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	$castlecoaster/arrow1.rotate_x(0.03)
+	$castlecoaster/arrow2.rotate_x(0.03)

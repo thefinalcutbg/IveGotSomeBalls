@@ -114,77 +114,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0912, 12.9763, -9.76558)
 [node name="LightSphere5" parent="StaticLights" instance=ExtResource("6_o3pec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.935127, 1.44845, -1.61261)
 pixel_size = 0.0005
-no_depth_test = false
-
-[node name="LightSphere6" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.935127, 1.19396, -1.61261)
-pixel_size = 0.0005
-no_depth_test = false
-
-[node name="LightSphere7" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.935127, 0.832572, -1.61261)
-pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere8" parent="StaticLights" instance=ExtResource("6_o3pec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16484, 1.33746, -4.82461)
 pixel_size = 0.0005
-no_depth_test = false
-
-[node name="LightSphere9" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16484, 1.08297, -4.82461)
-pixel_size = 0.0005
-no_depth_test = false
-
-[node name="LightSphere10" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16484, 0.721584, -4.82461)
-pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere11" parent="StaticLights" instance=ExtResource("6_o3pec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5157, 1.33746, -11.7073)
 pixel_size = 0.0005
-no_depth_test = false
-
-[node name="LightSphere12" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5157, 1.08297, -11.7073)
-pixel_size = 0.0005
-no_depth_test = false
-
-[node name="LightSphere13" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5157, 0.721584, -11.7073)
-pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere14" parent="StaticLights" instance=ExtResource("6_o3pec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6131, 9.59477, -3.64996)
 pixel_size = 0.0005
-no_depth_test = false
-
-[node name="LightSphere15" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6131, 9.34028, -3.64996)
-pixel_size = 0.0005
-no_depth_test = false
-
-[node name="LightSphere16" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6131, 8.97889, -3.64996)
-pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere17" parent="StaticLights" instance=ExtResource("6_o3pec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7176, 13.7927, -10.4426)
 pixel_size = 0.0005
-no_depth_test = false
 
-[node name="LightSphere18" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7176, 13.5382, -10.4426)
-pixel_size = 0.0005
-no_depth_test = false
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.890417, 0.90671, -1.66144)
+light_energy = 6.0
+omni_range = 1.0
+omni_attenuation = 2.0
 
-[node name="LightSphere19" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7176, 13.1769, -10.4426)
-pixel_size = 0.0005
-no_depth_test = false
+[node name="OmniLight3D2" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.20357, 0.860465, -4.76525)
+light_energy = 6.0
+omni_range = 1.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.52326, 0.860465, -11.7282)
+light_energy = 6.0
+omni_range = 1.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6147, 9.18683, -3.64634)
+light_energy = 6.0
+omni_range = 1.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7382, 13.2556, -10.403)
+light_energy = 6.0
+omni_range = 1.0
+omni_attenuation = 2.0
 
 [node name="MovingLights" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05466, 1.87406, -2.57938)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpqgjup1rm88v"]
+[gd_scene load_steps=9 format=3 uid="uid://cpqgjup1rm88v"]
 
 [ext_resource type="Script" path="res://scenes/levels/Bounce/bounce.gd" id="1_a6gj7"]
 [ext_resource type="PackedScene" uid="uid://cm5mmdv2gkg87" path="res://assets/sprites/bounce.gltf" id="1_x5hyn"]
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="2_uasub"]
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="3_cn5ut"]
+[ext_resource type="PackedScene" uid="uid://t1yhm07yjyy3" path="res://scenes/game/light_sphere.tscn" id="5_1arij"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pawxk"]
 panorama = ExtResource("2_uasub")
@@ -188,9 +189,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.0
 [node name="Spotlights" type="Node3D" parent="."]
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -0.0516215, 0.998667, 0, -0.998667, -0.0516215, -0.803349, 1.52553, -4.50331)
+transform = Transform3D(1, 0, 0, 0, -0.0516215, 0.998667, 0, -0.998667, -0.0516215, -0.803349, 1.4795, -4.50331)
 light_color = Color(0.964706, 0, 0.494118, 1)
-light_energy = 2.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.651
@@ -199,9 +199,8 @@ spot_attenuation = 0.707107
 spot_angle = 90.0
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -0.0516215, 0.998667, 0, -0.998667, -0.0516215, -0.803349, 1.52553, -1.03296)
+transform = Transform3D(1, 0, 0, 0, -0.0516215, 0.998667, 0, -0.998667, -0.0516215, -0.803349, 1.4795, -1.03296)
 light_color = Color(0.964706, 0, 0.494118, 1)
-light_energy = 2.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.651
@@ -210,9 +209,8 @@ spot_attenuation = 0.707107
 spot_angle = 90.0
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -0.0516215, 0.998667, 0, -0.998667, -0.0516215, -4.82523, 1.52553, -1.66422)
+transform = Transform3D(1, 0, 0, 0, -0.0516215, 0.998667, 0, -0.998667, -0.0516215, -4.82523, 1.4795, -1.66422)
 light_color = Color(0.964706, 0, 0.494118, 1)
-light_energy = 2.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.651
@@ -221,9 +219,8 @@ spot_attenuation = 0.707107
 spot_angle = 90.0
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -0.0516215, 0.998667, 0, -0.998667, -0.0516215, -4.82523, 1.52553, -4.58594)
+transform = Transform3D(1, 0, 0, 0, -0.0516215, 0.998667, 0, -0.998667, -0.0516215, -4.82523, 1.4795, -4.58594)
 light_color = Color(0.964706, 0, 0.494118, 1)
-light_energy = 2.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.651
@@ -406,3 +403,19 @@ light_size = 0.651
 light_specular = 0.0
 spot_attenuation = 0.707107
 spot_angle = 90.0
+
+[node name="LightSphere5" parent="Spotlights" instance=ExtResource("5_1arij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66454, 3.48569, -2.8344)
+pixel_size = 0.0005
+
+[node name="LightSphere6" parent="Spotlights" instance=ExtResource("5_1arij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47929, 5.49877, -9.45925)
+pixel_size = 0.0005
+
+[node name="LightSphere7" parent="Spotlights" instance=ExtResource("5_1arij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80011, 8.79139, -8.72883)
+pixel_size = 0.0005
+
+[node name="LightSphere8" parent="Spotlights" instance=ExtResource("5_1arij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91951, 11.4402, -1.29634)
+pixel_size = 0.0005

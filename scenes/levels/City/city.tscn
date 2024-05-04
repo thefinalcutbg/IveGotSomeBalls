@@ -44,7 +44,7 @@ light_volumetric_fog_energy = 0.0
 sky_mode = 1
 
 [node name="Gate" parent="." instance=ExtResource("4_x1l05")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32637, 0.0181373, 1.13236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32637, 0.0181373, 1.08039)
 
 [node name="diamonds" type="Node3D" parent="."]
 

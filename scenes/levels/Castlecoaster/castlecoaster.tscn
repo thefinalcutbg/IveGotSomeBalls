@@ -168,52 +168,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.955, 4.48, -8.492)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.754, 4.48, -8.492)
 
 [node name="16" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.746, 0.615, -7.038)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.632, 0.615, -7.18273)
 
 [node name="17" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.746, -1.168, 1.051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6045, -1.168, 0.906266)
 
 [node name="18" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.746, -2.716, 6.676)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6838, -2.716, 6.53127)
 
 [node name="Lights" type="Node" parent="."]
 
 [node name="LightSphere" parent="Lights" instance=ExtResource("7_tyw8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99209, -0.0322769, 2.45689)
 pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere2" parent="Lights" instance=ExtResource("7_tyw8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.06795, -0.0322769, 3.64683)
 pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere3" parent="Lights" instance=ExtResource("7_tyw8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71293, -0.0322769, 4.04395)
 pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere4" parent="Lights" instance=ExtResource("7_tyw8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.12622, -0.0322769, 3.74531)
 pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere5" parent="Lights" instance=ExtResource("7_tyw8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23561, -0.0322769, 2.62253)
 pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere6" parent="Lights" instance=ExtResource("7_tyw8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6372, -1.54972, 6.65451)
 pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere7" parent="Lights" instance=ExtResource("7_tyw8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32093, -1.84306, -8.1234)
 pixel_size = 0.0005
-no_depth_test = false
 
 [node name="LightSphere8" parent="Lights" instance=ExtResource("7_tyw8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2972, 3.31458, -8.53955)
 pixel_size = 0.0005
-no_depth_test = false

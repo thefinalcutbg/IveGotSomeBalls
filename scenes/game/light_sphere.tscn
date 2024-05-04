@@ -9,7 +9,6 @@ cast_shadow = 0
 gi_mode = 0
 pixel_size = 0.0003
 billboard = 1
-no_depth_test = true
 texture = ExtResource("1_vw4s6")
 script = ExtResource("2_1nep8")
 

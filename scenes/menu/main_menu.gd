@@ -44,6 +44,7 @@ func _on_main_menu_labels_option_selected(label_name):
 			return
 		"SingleMap":
 			var unlocked = Globals.LEVEL_MAP.keys()
+			unlocked.sort()
 			#var unlocked = Globals.get_highscores().keys()
 			if unlocked.is_empty():
 				SUBMENU.add_label("Play more to unlock this section")
