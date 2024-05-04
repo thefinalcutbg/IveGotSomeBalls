@@ -9,7 +9,17 @@ Open the project.godot file with Godot 4.2
 - Main menu original shader
 - Better powerup particles
 - Lightning shader
-- Flare light
 - Replays
 - Settings
 - Fix out-of-nowhere collisions
+
+## Screenshots
+
+![Alt text](/screenshots/1.png?raw=true)
+
+![Alt text](/screenshots/2.png?raw=true)
+
+![Alt text](/screenshots/3.png?raw=true)
+
+![Alt text](/screenshots/4.png?raw=true)
+
