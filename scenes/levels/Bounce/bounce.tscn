@@ -405,17 +405,17 @@ spot_attenuation = 0.707107
 spot_angle = 90.0
 
 [node name="LightSphere5" parent="Spotlights" instance=ExtResource("5_1arij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66454, 3.48569, -2.8344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66454, 4.30713, -2.8344)
 pixel_size = 0.0005
 
 [node name="LightSphere6" parent="Spotlights" instance=ExtResource("5_1arij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47929, 5.49877, -9.45925)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47929, 7.1837, -9.45925)
 pixel_size = 0.0005
 
 [node name="LightSphere7" parent="Spotlights" instance=ExtResource("5_1arij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80011, 8.79139, -8.72883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80011, 9.17565, -8.72883)
 pixel_size = 0.0005
 
 [node name="LightSphere8" parent="Spotlights" instance=ExtResource("5_1arij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91951, 11.4402, -1.29634)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91951, 11.5011, -1.29634)
 pixel_size = 0.0005
