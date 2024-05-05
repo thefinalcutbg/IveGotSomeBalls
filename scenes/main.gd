@@ -116,8 +116,10 @@ func _process_menu_choice(option):
 		MenuChoice.CONTINUE:
 			#game finished
 			if _level_index == Globals.CAMPAIGN.size()-1:
+				var win_screen = WINSCREEN.instantiate()
+				win_screen.set_time(_game().total_playtime)
 				_game().queue_free()
-				add_child(WINSCREEN.instantiate())
+				add_child(win_screen)
 			#next level:
 			else:
 				_can_continue = false

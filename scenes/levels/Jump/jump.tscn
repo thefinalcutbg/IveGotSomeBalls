@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://vfvugbsq1kos"]
+[gd_scene load_steps=16 format=3 uid="uid://vfvugbsq1kos"]
 
 [ext_resource type="Script" path="res://scenes/levels/Jump/jump.gd" id="1_fp2cr"]
 [ext_resource type="PackedScene" uid="uid://cioyuaf5mpe8n" path="res://assets/sprites/jump.gltf" id="2_tf484"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxlt4a5d2s16m" path="res://scenes/game/diamond.tscn" id="4_2fbti"]
 [ext_resource type="PackedScene" uid="uid://dexyp2wo1yx7k" path="res://scenes/game/gate.tscn" id="5_1r4x6"]
 [ext_resource type="Texture2D" uid="uid://d1qw5qhwut38" path="res://assets/sprites/Loosedrt.png" id="6_o86g2"]
+[ext_resource type="PackedScene" uid="uid://t1yhm07yjyy3" path="res://scenes/game/light_sphere.tscn" id="7_tucqn"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ehue8"]
 panorama = ExtResource("2_yon20")
@@ -167,7 +168,7 @@ transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 
 transform = Transform3D(0.845103, 0, -0.534603, 0, 1, 0, 0.534603, 0, 0.845103, 53.448, -12.393, -78.708)
 
 [node name="SpotLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0516216, 0.998667, 0, -0.998667, -0.0516216, 53.448, -9.35409, -78.708)
+transform = Transform3D(1, 0, 0, 0, -0.0516216, 0.998667, 0, -0.998667, -0.0516216, 53.509, -9.35409, -78.749)
 light_color = Color(1, 0.858824, 0.894118, 1)
 light_energy = 6.0
 light_indirect_energy = 0.0
@@ -175,3 +176,7 @@ light_volumetric_fog_energy = 0.0
 light_size = 0.001
 light_specular = 0.0
 omni_range = 10.0
+
+[node name="LightSphere5" parent="." instance=ExtResource("7_tucqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6268, -9.29169, -78.756)
+pixel_size = 0.0005

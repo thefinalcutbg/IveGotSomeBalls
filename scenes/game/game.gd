@@ -121,12 +121,19 @@ func _update_hud():
 	
 	var time = total_playtime
 	
-	var mins = int(time) / 60
-	time -= mins * 60
-	var secs = int(time) 
-	var mili = int((time - int(time)) * 100)
+	var hours = int(time)/3600
+	time -= hours * 3600
 	
-	$HUD/Speedrun.text = "SPEEDRUN: " + str("%0*d" % [2, mins]) + ":" + str("%0*d" % [2, secs]) + ":" + str("%0*d" % [2, mili])
+	var minutes = int(time) / 60
+	time -= minutes * 60
+	
+	var seconds = int(time) 
+	
+	var milliseconds = int((time - int(time)) * 100)
+	
+	var time_string = "%02d:%02d:%02d:%02d" % [hours, minutes, seconds, milliseconds]
+	
+	$HUD/Speedrun.text = "SPEEDRUN: " + time_string
 	
 func _create_label(text : String, color : Color):
 	var label = LEVELLABEL.instantiate()

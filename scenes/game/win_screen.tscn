@@ -1,38 +1,146 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkyuqljjiktr0"]
+[gd_scene load_steps=15 format=3 uid="uid://dkyuqljjiktr0"]
 
-[ext_resource type="Texture2D" uid="uid://3gx365y88j2s" path="res://assets/sprites/yrgsb.bmp" id="1_rtspa"]
 [ext_resource type="Script" path="res://scenes/game/win_screen.gd" id="1_tf63y"]
+[ext_resource type="Texture2D" uid="uid://cllu2re84rvl3" path="res://assets/sprites/yrgsb.png" id="3_on844"]
+[ext_resource type="PackedScene" uid="uid://la07l2h6ln26" path="res://scenes/menu/label.tscn" id="3_ybpx8"]
+[ext_resource type="FontFile" uid="uid://co6wlid0v0bqi" path="res://assets/impact.ttf" id="4_nlwtc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yowb"]
-albedo_texture = ExtResource("1_rtspa")
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wkt6b"]
+emission_shape_scale = Vector3(30, 30, 2.08165e-12)
+emission_shape = 2
+emission_sphere_radius = 1.0
+angle_min = 3.9968e-14
+angle_max = 3.9968e-14
+direction = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+spread = 0.0
+angular_velocity_min = 1.4988e-14
+angular_velocity_max = 1.4988e-14
+gravity = Vector3(2.08165e-12, 2.08165e-12, 10)
+linear_accel_min = 2.08167e-15
+linear_accel_max = 2.08167e-15
+radial_accel_min = 2.08167e-15
+radial_accel_max = 2.08167e-15
+tangential_accel_min = 2.08167e-15
+tangential_accel_max = 2.08167e-15
+turbulence_noise_speed = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rj0k"]
+transparency = 1
+diffuse_mode = 1
+albedo_texture = ExtResource("3_on844")
+metallic_specular = 0.0
+backlight = Color(1, 1, 1, 1)
 billboard_mode = 1
-billboard_keep_scale = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_87yuc"]
-material = SubResource("StandardMaterial3D_3yowb")
-size = Vector2(0.3, 0.3)
+[sub_resource type="PlaneMesh" id="PlaneMesh_gtqi3"]
+material = SubResource("StandardMaterial3D_3rj0k")
+size = Vector2(1, 1)
+center_offset = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 orientation = 2
 
-[sub_resource type="Environment" id="Environment_6ons0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8cei"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l7ty4"]
+material = SubResource("StandardMaterial3D_i8cei")
+size = Vector2(500, 500)
+orientation = 2
+
+[sub_resource type="Environment" id="Environment_hre0j"]
+background_energy_multiplier = 10.0
+
+[sub_resource type="Animation" id="Animation_d2chj"]
+resource_name = "new_animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 6),
+"transitions": PackedFloat32Array(3.03143, 1),
+"update": 0,
+"values": [Vector3(2.08165e-12, 2.08165e-12, -101), Vector3(2.08165e-12, 2.08165e-12, 12)]
+}
+
+[sub_resource type="Animation" id="Animation_qt7pv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -30.2102)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m4wei"]
+_data = {
+"RESET": SubResource("Animation_qt7pv"),
+"new_animation": SubResource("Animation_d2chj")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_jsnpd"]
+resource_local_to_scene = true
+font = ExtResource("4_nlwtc")
+font_size = 80
+font_color = Color(1, 1, 1, 0.686275)
 
 [node name="WinScreen" type="Node3D"]
 script = ExtResource("1_tf63y")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.00589)
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 15)
 
-[node name="GPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(0.0516214, 0, -0.998667, 0, 1, 0, 0.998667, 0, 0.0516214, 0, 0, -7.57513)
-amount = 10
-lifetime = 2.0
-speed_scale = 0.5
-fixed_fps = 60
-fract_delta = false
-mesh = SubResource("PlaneMesh_87yuc")
-particle_flag_rotate_y = true
-spread = 152.27
-gravity = Vector3(2.08165e-12, 2.08165e-12, 4)
-initial_velocity_max = 5.0
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, -67.3669)
+amount = 600
+lifetime = 8.0
+process_material = SubResource("ParticleProcessMaterial_wkt6b")
+draw_pass_1 = SubResource("PlaneMesh_gtqi3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -100)
+mesh = SubResource("PlaneMesh_l7ty4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6ons0")
+environment = SubResource("Environment_hre0j")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30.2102)
+billboard = 1
+texture = ExtResource("3_on844")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m4wei")
+}
+autoplay = "new_animation"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" parent="Control" instance=ExtResource("3_ybpx8")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_top = -98.0
+offset_bottom = 0.0
+grow_vertical = 0
+text = "TOTAL TIME: "
+label_settings = SubResource("LabelSettings_jsnpd")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
