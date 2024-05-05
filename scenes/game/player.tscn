@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cj0j47il8b1ry"]
+[gd_scene load_steps=17 format=3 uid="uid://cj0j47il8b1ry"]
 
 [ext_resource type="Script" path="res://scenes/game/player.gd" id="1_kerjs"]
 [ext_resource type="Texture2D" uid="uid://ckudf8vicb70r" path="res://assets/sprites/capture.png" id="2_2ce53"]
+[ext_resource type="Texture2D" uid="uid://bsvmn01r4quks" path="res://assets/sprites/bang.png" id="3_m726h"]
 [ext_resource type="Texture2D" uid="uid://cpl6xnbyigxyk" path="res://assets/sprites/thunder1.png" id="4_ncvar"]
-[ext_resource type="Texture2D" uid="uid://cp1bftdlx3qtj" path="res://assets/sprites/smoke_07.png" id="4_vbuex"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u3vxc"]
 friction = 0.0
@@ -38,23 +38,21 @@ height = 0.15
 [sub_resource type="SphereShape3D" id="SphereShape3D_mbjqs"]
 radius = 1.0
 
-[sub_resource type="Gradient" id="Gradient_bs2hl"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_gqcvh"]
-gradient = SubResource("Gradient_bs2hl")
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y6yds"]
 emission_shape = 1
-emission_sphere_radius = 0.07
+emission_sphere_radius = 0.03
 direction = Vector3(0, 0, 0)
-spread = 10.0
+spread = 0.0
 initial_velocity_min = 0.01
 initial_velocity_max = 0.01
+angular_velocity_min = 10.0
+angular_velocity_max = 10.0
 gravity = Vector3(0, 0, 0)
+attractor_interaction_enabled = false
 scale_min = 0.0
 scale_max = 0.0
-color_ramp = SubResource("GradientTexture1D_gqcvh")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
 turbulence_noise_scale = 1.29
 turbulence_noise_speed_random = 4.0
 turbulence_influence_min = 0.24
@@ -63,20 +61,19 @@ turbulence_influence_max = 0.44
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd7jm"]
 transparency = 1
 blend_mode = 1
-albedo_color = Color(0, 1, 0.0117647, 1)
-albedo_texture = ExtResource("4_vbuex")
-metallic_specular = 0.11
-roughness = 0.0
-emission_enabled = true
-emission = Color(0, 1, 0.0117647, 1)
-emission_energy_multiplier = 0.0
-billboard_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.0196078)
+albedo_texture = ExtResource("3_m726h")
+billboard_mode = 3
+particles_anim_h_frames = 4
+particles_anim_v_frames = 8
+particles_anim_loop = false
 grow_amount = -1.318
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_w40ge"]
 material = SubResource("StandardMaterial3D_sd7jm")
 uv2_padding = 0.0
-size = Vector2(0.1, 0.1)
+size = Vector2(0.3, 0.3)
 orientation = 2
 
 [sub_resource type="Shader" id="Shader_rryh2"]
@@ -190,12 +187,11 @@ fov = 60.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 5.58794e-09, 0, -5.58794e-09, 1, 0, 0, 0)
-emitting = false
-amount = 1000
-lifetime = 4.0
-speed_scale = 10.0
-randomness = 0.17
+amount = 60
+lifetime = 5.0
+speed_scale = 5.0
 fixed_fps = 60
+visibility_aabb = AABB(-4, -4, -0.183205, 8, 8, 0.36641)
 trail_lifetime = 2.26
 process_material = SubResource("ParticleProcessMaterial_y6yds")
 draw_pass_1 = SubResource("PlaneMesh_w40ge")

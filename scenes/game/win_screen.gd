@@ -1,10 +1,7 @@
 extends Node3D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$Control/Label.visible = false
-	pass # Replace with function body.
 
 func set_time(time : float):
 	
@@ -23,9 +20,11 @@ func set_time(time : float):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("ui_select"):
+	
+	if $AnimationPlayer.is_playing(): return
+	
+	if Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_cancel"):
 		get_parent().return_to_main_menu()
-
 
 func _on_animation_player_animation_finished(anim_name):
 	$Control/Label.visible = true

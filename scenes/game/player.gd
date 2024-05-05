@@ -59,7 +59,7 @@ func set_powerup(pw):
 		
 	match m_powerup:
 		Globals.POWERUP.JUMP: 
-			color = Color("YELLOW", 1)
+			color = Color("YELLOW")
 			jump_guard = false
 			#sometimes collision doesn't work
 		Globals.POWERUP.BREAK:
@@ -67,16 +67,16 @@ func set_powerup(pw):
 		Globals.POWERUP.SPEED:
 			color = Color("RED", 0.8)
 		Globals.POWERUP.THUNDER:
-			color = Color("BLUE", 0.3)
+			color = Color("BLUE")
 		Globals.POWERUP.NONE:
-			color = Color("WHITE", 1)
+			color = Color("WHITE")
 	
 	if m_powerup != Globals.POWERUP.NONE:
 		$PowerUpPlayer.play()
 	
 	$MeshInstance3D.mesh.material.albedo_color = color
+	color.a = 1
 	particles.draw_pass_1.material.albedo_color = color
-	particles.draw_pass_1.material.emission = color
 	
 	if m_powerup == Globals.POWERUP.SPEED:
 			particles.emitting = true
