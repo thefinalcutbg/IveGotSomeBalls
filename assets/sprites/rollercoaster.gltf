@@ -86,23 +86,27 @@
 		{
 			"mesh":7,
 			"name":"cyl_rotate-col",
+			"rotation":[
+				0.7071068286895752,
+				0,
+				0,
+				0.7071068286895752
+			],
 			"translation":[
-				5.929255485534668,
-				-7.999490261077881,
-				-77.66155242919922
+				5.93051815032959,
+				-7.980478286743164,
+				-77.6614990234375
 			]
 		}
 	],
 	"materials":[
 		{
-			"doubleSided":true,
 			"name":"Tutsnhgl",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
 				},
-				"metallicFactor":0,
-				"roughnessFactor":0.5
+				"metallicFactor":0
 			}
 		},
 		{
@@ -235,7 +239,7 @@
 			]
 		},
 		{
-			"name":"Cylinder.005",
+			"name":"Circle",
 			"primitives":[
 				{
 					"attributes":{
@@ -522,35 +526,35 @@
 		{
 			"bufferView":28,
 			"componentType":5126,
-			"count":1484,
+			"count":2924,
 			"max":[
-				1.1807820796966553,
-				1.197326898574829,
-				11.684759140014648
+				1.2000068426132202,
+				11.684710502624512,
+				1.2000038623809814
 			],
 			"min":[
-				-1.1782418489456177,
-				-1.2034324407577515,
-				-10.203359603881836
+				-1.1999932527542114,
+				-10.203404426574707,
+				-1.1999971866607666
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":29,
 			"componentType":5126,
-			"count":1484,
+			"count":2924,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":30,
 			"componentType":5126,
-			"count":1484,
+			"count":2924,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":31,
 			"componentType":5123,
-			"count":3492,
+			"count":6948,
 			"type":"SCALAR"
 		}
 	],
@@ -725,26 +729,26 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":17808,
+			"byteLength":35088,
 			"byteOffset":358000,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":17808,
-			"byteOffset":375808,
+			"byteLength":35088,
+			"byteOffset":393088,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":11872,
-			"byteOffset":393616,
+			"byteLength":23392,
+			"byteOffset":428176,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":6984,
-			"byteOffset":405488,
+			"byteLength":13896,
+			"byteOffset":451568,
 			"target":34963
 		}
 	],
@@ -756,7 +760,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":412472,
+			"byteLength":465464,
 			"uri":"rollercoaster.bin"
 		}
 	]
