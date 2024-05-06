@@ -168,13 +168,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.955, 4.48, -8.492)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.754, 4.48, -8.492)
 
 [node name="16" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.632, 0.615, -7.18273)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7, 0.615, -7.18273)
 
 [node name="17" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6045, -1.168, 0.906266)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7, -1.168, 0.906)
 
 [node name="18" parent="Diamonds" instance=ExtResource("2_38wh7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6838, -2.716, 6.53127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7, -2.716, 6.531)
 
 [node name="Lights" type="Node" parent="."]
 
