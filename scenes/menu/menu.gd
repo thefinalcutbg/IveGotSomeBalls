@@ -33,6 +33,10 @@ func _physics_process(delta):
 	
 		var max = get_child_count()-1
 		
+		#normalizing in case of analog stick
+		if _direction < 0: _direction = -1
+		elif _direction >0: _direction = 1
+		
 		if _direction == 1 and _current_index == max:
 			_target_index = 0
 		elif _direction == -1 and _current_index == 0:
@@ -60,7 +64,7 @@ func setCurrentIndex(index):
 func _animate():
 
 	if _direction == 0: return
-
+	
 	#the animation has just finished
 	if _frame_counter == 64:
 		_current_index = _target_index

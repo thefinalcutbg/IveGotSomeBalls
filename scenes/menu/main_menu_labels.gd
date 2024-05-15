@@ -32,6 +32,10 @@ func move():
 	
 	if _direction == 0: return
 	
+	#normalizing in case of analog stick
+	if _direction < 0: _direction = -1
+	else: _direction = 1
+	
 	if _frame_counter == 128:
 		_direction = 0
 		_frame_counter = 0

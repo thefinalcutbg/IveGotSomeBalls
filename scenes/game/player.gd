@@ -133,7 +133,7 @@ func processJump():
 		jump_guard = false
 		return
 	
-	if !Input.is_key_pressed(KEY_SPACE):
+	if !Input.is_action_pressed("ui_select"):
 		jump_index = max(jump_index-1, 0)
 		return
 	
@@ -155,7 +155,7 @@ func processBreak():
 	
 	if m_powerup != Globals.POWERUP.BREAK: return
 	
-	if !Input.is_key_pressed(KEY_SPACE): 
+	if !Input.is_action_pressed("ui_select"):
 		particles.emitting = false
 		return
 	
