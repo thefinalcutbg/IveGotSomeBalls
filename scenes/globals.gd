@@ -65,3 +65,13 @@ func get_highscores()->Dictionary:
 	var highscores : Dictionary = json_object.get_data()
 	
 	return highscores
+
+func normalize_axis(axis : float) :
+	
+	print(axis)
+	
+	if axis == 0: return axis
+	
+	if axis < 0: return -1
+	
+	return 1

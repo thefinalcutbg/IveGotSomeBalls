@@ -27,8 +27,8 @@ func _ready():
 func _physics_process(delta):
 	
 	var input := Vector3.ZERO
-	input.x = Input.get_axis("ui_left", "ui_right")
-	input.z = Input.get_axis("ui_up", "ui_down")
+	input.x = Globals.normalize_axis(Input.get_axis("ui_left", "ui_right"))
+	input.z = Globals.normalize_axis(Input.get_axis("ui_up", "ui_down"))
 
 	var force = $CameraPivot.basis * input * 0.28
 
