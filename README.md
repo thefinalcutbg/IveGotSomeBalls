@@ -7,10 +7,8 @@ Open the project.godot file with Godot 4.2
 
 ## TO DO:
 - Main menu original shader
-- Better powerup particles
 - Lightning shader
 - Replays
-- Settings
 - Fix out-of-nowhere collisions
 
 ## Screenshots
