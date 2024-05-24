@@ -2,9 +2,9 @@ extends Node
 
 const settingsPath : String = "user://settings.json"
 
-enum SET { RES , MODE , MSAA, SYNC, FX, MUSIC, SPEEDRUN}
+enum SET { RES , MODE , MSAA, SYNC, FX, MUSIC, FPS, SPEEDRUN}
 
-var _settings : Array = [8,0,0,0,4,4,0]
+var _settings : Array = [8,0,0,0,4,4,0,0]
 
 const _constants = [
 	[
@@ -38,6 +38,7 @@ const _constants = [
 	],
 	[-80.0, -20.0, -10.0, -5.0, 0 ],
 	[-80.0, -20.0, -10.0, -5.0, 0 ],
+	[0,1],
 	[0,1]
 ]
 
@@ -60,6 +61,7 @@ const _text = [
 	["DISABLED", "ENABLED", "ADAPTIVE"],
 	["0%", "25%", "50%", "75%", "100%"],
 	["0%", "25%", "50%", "75%", "100%"],
+	["HIDE", "SHOW"],
 	["HIDE", "SHOW"]
 	
 ]
@@ -113,6 +115,8 @@ func _set_value(option : SET, value : int) :
 			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"), _constants[SET.FX][value])
 		SET.MUSIC:
 			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), _constants[SET.FX][value])
+		SET.FPS:
+			Globals.show_fps = _constants[SET.FPS][value]
 		SET.SPEEDRUN:
 			Globals.show_speedrun = _constants[SET.SPEEDRUN][value]
 			
@@ -122,7 +126,7 @@ func _set_value(option : SET, value : int) :
 
 func get_label_text(index : int)->String:
 	
-	const descr = ["Resolution: ", "Window Mode: ", "Anti-Aliasing: ", "VSync: ", "Sound: ", "Music: ", "Speedrun Timer: " ]
+	const descr = ["Resolution: ", "Window Mode: ", "Anti-Aliasing: ", "VSync: ", "Sound: ", "Music: ", "FPS Counter: ", "Speedrun Timer: " ]
 	
 	return descr[index] + _text[index][_settings[index]]
 

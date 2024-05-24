@@ -1,6 +1,7 @@
 extends Node
 
 var show_speedrun : bool = false
+var show_fps : bool = false
 
 enum GAME_STATE {
 	PLAYING,

@@ -13,7 +13,7 @@ const ENDBEST = preload("res://scenes/menu/end_best.tscn")
 signal menu_requested()
 
 func _ready():
-	pass
+	$HUD/FPS.visible = Globals.show_fps
 
 func _process(delta):
 	_update_hud()
