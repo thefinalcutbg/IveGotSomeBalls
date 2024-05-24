@@ -8,13 +8,13 @@
 [sub_resource type="LabelSettings" id="LabelSettings_0yd4r"]
 resource_local_to_scene = true
 font = ExtResource("3_pgqxv")
-font_size = 80
+font_size = 60
 font_color = Color(1, 0.2, 0, 0.72549)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1sws0"]
 resource_local_to_scene = true
 font = ExtResource("3_pgqxv")
-font_size = 48
+font_size = 50
 font_color = Color(1, 0.2, 0, 0.768627)
 
 [node name="EndBest" type="Control"]
@@ -46,16 +46,16 @@ label_settings = SubResource("LabelSettings_0yd4r")
 
 [node name="Label2" parent="." instance=ExtResource("2_ww0hu")]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.500926
 offset_left = -109.0
 offset_top = -63.0
 offset_right = 109.0
 offset_bottom = 63.0
-scale = Vector2(1, 1.14496)
+scale = Vector2(0.7, 0.7)
 pivot_offset = Vector2(111, 62.0023)
 text = "BEST
 TIME
@@ -65,3 +65,4 @@ metadata/_edit_use_anchors_ = true
 
 [node name="EndBest" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_h1u6x")
+bus = &"Sound"

@@ -171,7 +171,7 @@ func _save_highscore(level_name, time, initials):
 	
 	highscores[level_name] = [time, initials]
 	
-	var file = FileAccess.open("user://scores.json", FileAccess.WRITE)
+	var file = FileAccess.open_encrypted_with_pass(Globals.scorePath, FileAccess.WRITE, Globals.scorePass)
 	
 	file.store_string(JSON.stringify(highscores))
 

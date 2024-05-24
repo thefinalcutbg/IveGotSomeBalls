@@ -35,7 +35,7 @@ func add_label(text, option):
 	var label = LABEL.instantiate()
 	label.text = text
 	
-	label.set_font_size(80)
+	label.set_font_size(60)
 	
 	var labelCount = $VBoxContainer.get_child_count()
 	

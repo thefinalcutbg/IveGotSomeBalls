@@ -11,16 +11,20 @@ script = ExtResource("1_wuhcg")
 
 [node name="MfBallsAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_sb403")
+bus = &"Music"
 
 [node name="MenuLoopAudio" type="AudioStreamPlayer" parent="MfBallsAudio"]
 stream = ExtResource("3_vum7x")
+bus = &"Music"
 
 [node name="GameMusic" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("4_xr7f7")
+bus = &"Music"
 
 [node name="GameMusicLoop" type="AudioStreamPlayer" parent="GameMusic"]
 stream = ExtResource("5_vsyvx")
+bus = &"Music"
 
 [connection signal="finished" from="MfBallsAudio" to="." method="_on_mf_balls_audio_finished"]
 [connection signal="finished" from="GameMusic" to="." method="_on_game_music_finished"]

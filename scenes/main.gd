@@ -43,7 +43,8 @@ func start_game():
 	
 	_game().load_level(Globals.CAMPAIGN[_level_index])
 	
-	_game().show_speedrun()
+	if Globals.show_speedrun:
+		_game().show_speedrun()
 
 func play_level(level_name):
 	
@@ -61,6 +62,7 @@ func _play_main_menu_music():
 	$GameMusic/GameMusicLoop.stop()
 	$MfBallsAudio.play()
 	
+	
 
 func _play_game_music():
 	$MfBallsAudio.stop()
@@ -68,6 +70,7 @@ func _play_game_music():
 	$GameMusic.play()
 
 func _on_mf_balls_audio_finished():
+
 	$MfBallsAudio/MenuLoopAudio.play()
 	
 func _on_game_music_finished():
@@ -147,6 +150,6 @@ func return_to_main_menu():
 	#could be game or win screen
 	_current_scene().queue_free()
 	
-	add_child(_menu_scene)
-	
 	_play_main_menu_music()
+
+	add_child(_menu_scene)

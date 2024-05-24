@@ -1,5 +1,7 @@
 extends Node
 
+var show_speedrun : bool = false
+
 enum GAME_STATE {
 	PLAYING,
 	LEVEL_COMPLETED,
@@ -50,12 +52,16 @@ const CAMPAIGN = [
 	"NIGHTMARE"
 ]
 
+
+const scorePath : String = "user://scores.igsb"
+const scorePass : String = "SebastianAaltonen"
+
 func get_highscores()->Dictionary:
 	
-	if !FileAccess.file_exists("user://scores.json"):
+	if !FileAccess.file_exists(scorePath):
 		return {}
 		
-	var file = FileAccess.open("user://scores.json", FileAccess.READ)
+	var file = FileAccess.open_encrypted_with_pass(scorePath, FileAccess.READ, scorePass)
 	
 	var json_object = JSON.new()
 	
@@ -67,8 +73,6 @@ func get_highscores()->Dictionary:
 	return highscores
 
 func normalize_axis(axis : float) :
-	
-	print(axis)
 	
 	if axis == 0: return axis
 	

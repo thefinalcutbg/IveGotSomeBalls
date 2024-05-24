@@ -15,21 +15,21 @@ size = Vector3(10000, 1, 10000)
 
 [sub_resource type="LabelSettings" id="LabelSettings_23eju"]
 font = ExtResource("9_vo4aa")
-font_size = 70
+font_size = 50
 font_color = Color(0.694118, 0.952941, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mv4ge"]
 font = ExtResource("9_vo4aa")
-font_size = 100
+font_size = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_aw8jc"]
 font = ExtResource("9_vo4aa")
-font_size = 100
+font_size = 60
 font_color = Color(0.443137, 0.6, 0.996078, 0.709804)
 
 [sub_resource type="LabelSettings" id="LabelSettings_kqo1t"]
 font = ExtResource("9_vo4aa")
-font_size = 100
+font_size = 60
 font_color = Color(1, 1, 1, 0.694118)
 
 [node name="Game" type="Node3D"]
@@ -70,10 +70,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -272.0
-offset_top = 48.0
-offset_right = -72.0
-offset_bottom = 134.0
+offset_left = -221.0
+offset_top = 4.0
+offset_right = -21.0
+offset_bottom = 127.0
 grow_horizontal = 0
 text = "0
 "
@@ -82,20 +82,20 @@ horizontal_alignment = 2
 
 [node name="Best" type="Label" parent="HUD"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 920.0
-offset_bottom = 110.0
+offset_left = 11.0
+offset_top = 2.0
+offset_right = 907.0
+offset_bottom = 88.0
 text = "BEST: 0.00
 "
 label_settings = SubResource("LabelSettings_aw8jc")
 
 [node name="Timer" type="Label" parent="HUD"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 144.0
-offset_right = 920.0
-offset_bottom = 267.0
+offset_left = 11.0
+offset_top = 77.0
+offset_right = 907.0
+offset_bottom = 200.0
 text = "TIME:
 "
 label_settings = SubResource("LabelSettings_aw8jc")
@@ -103,10 +103,10 @@ script = ExtResource("8_lklee")
 
 [node name="Speed" type="Label" parent="HUD"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 256.0
-offset_right = 920.0
-offset_bottom = 379.0
+offset_left = 11.0
+offset_top = 156.0
+offset_right = 907.0
+offset_bottom = 279.0
 text = "SPEED:
 "
 label_settings = SubResource("LabelSettings_aw8jc")
@@ -117,24 +117,25 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = -120.0
-offset_right = 936.0
-offset_bottom = 3.0
+offset_left = 18.0
+offset_top = -128.0
+offset_right = 914.0
+offset_bottom = -5.0
 grow_vertical = 0
 text = "SPEEDRUN: 
 "
 label_settings = SubResource("LabelSettings_kqo1t")
+vertical_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="HUD"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -312.0
-offset_top = 36.0
-offset_right = -167.0
-offset_bottom = 176.0
+offset_left = -203.0
+offset_top = 1.0
+offset_right = -117.0
+offset_bottom = 87.0
 grow_horizontal = 0
 texture = ExtResource("5_mh1e8")
 expand_mode = 3
@@ -145,16 +146,20 @@ process_mode = 3
 
 [node name="DiamondSound" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("3_cght8")
+bus = &"Sound"
 
 [node name="ThunderSound" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("4_26ats")
+bus = &"Sound"
 
 [node name="SpawnAudio" type="AudioStreamPlayer3D" parent="Audio"]
 stream = ExtResource("5_paent")
 volume_db = 10.0
+bus = &"Sound"
 
 [node name="EndSound" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("5_hg3ko")
+bus = &"Sound"
 
 [node name="Level" type="Node" parent="."]
 

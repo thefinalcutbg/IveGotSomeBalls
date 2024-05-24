@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://0e6ysdyu3yi0"]
+[gd_scene load_steps=26 format=3 uid="uid://0e6ysdyu3yi0"]
 
 [ext_resource type="Script" path="res://scenes/menu/main_menu.gd" id="1_kwkpn"]
 [ext_resource type="Texture2D" uid="uid://ctugo7k0o6sw3" path="res://assets/sprites/ballsEndless.png" id="2_4hgcw"]
 [ext_resource type="Texture2D" uid="uid://cw8c88b8srliy" path="res://assets/sprites/hotorget.png" id="2_cxsb4"]
 [ext_resource type="PackedScene" uid="uid://ced4irrsxkwt5" path="res://scenes/menu/main_menu_labels.tscn" id="4_880jj"]
 [ext_resource type="Texture2D" uid="uid://cpl6xnbyigxyk" path="res://assets/sprites/thunder1.png" id="5_wcyib"]
+[ext_resource type="PackedScene" uid="uid://dy5dlyycix7mm" path="res://scenes/menu/settings.tscn" id="7_ug827"]
 [ext_resource type="PackedScene" uid="uid://c46hx8f6ck7ge" path="res://scenes/menu/menu.tscn" id="8_djqin"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8cso1"]
@@ -303,6 +304,8 @@ transparent_bg = true
 size = Vector2i(1000, 1000)
 
 [node name="SubMenu" parent="SubMenuScreen/SubMenuViewport" instance=ExtResource("8_djqin")]
+
+[node name="Settings" parent="." instance=ExtResource("7_ug827")]
 
 [connection signal="option_selected" from="SubViewport/MainMenuLabels" to="." method="_on_main_menu_labels_option_selected"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

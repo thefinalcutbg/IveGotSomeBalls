@@ -101,7 +101,7 @@ func add_label(text):
 		label.select()
 
 func change_current_text(text):
-	get_child(_current_index).text = text
+	get_child(_target_index).text = text
 
 func clear():
 	

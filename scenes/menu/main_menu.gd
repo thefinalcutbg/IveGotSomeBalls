@@ -2,8 +2,9 @@ extends Node3D
 
 @onready var MAINMENU = $SubViewport/MainMenuLabels
 @onready var SUBMENU =  $SubMenuScreen/SubMenuViewport/SubMenu
+@onready var SETTINGS = $Settings
 
-enum MENU_SECTION {NONE, SINGLE, HIGHSCORE, SETTINGS}
+enum MENU_SECTION {NONE, SINGLE, HIGHSCORE, SETUP}
 
 var _section : MENU_SECTION = MENU_SECTION.NONE
 
@@ -64,7 +65,9 @@ func _on_main_menu_labels_option_selected(label_name):
 				text += str(scores[key][0]).pad_decimals(2)
 				text += " [" + scores[key][1] + "]"
 				SUBMENU.add_label(text)
-				
+		"Setup":
+			for i in SETTINGS.options_count(): SUBMENU.add_label(SETTINGS.get_label_text(i))
+			_section = MENU_SECTION.SETUP
 		"Quit": get_tree().quit()
 	
 	MAINMENU.disable_input = true
@@ -87,3 +90,7 @@ func _on_sub_menu_option_selected(index):
 		MENU_SECTION.SINGLE:
 			var level_name = SUBMENU.get_label_text(index)
 			get_tree().get_current_scene().play_level(level_name)
+		MENU_SECTION.SETUP:
+			SETTINGS.settings_changed(index)
+			SUBMENU.change_current_text(SETTINGS.get_label_text(index))
+		

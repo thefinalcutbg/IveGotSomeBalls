@@ -106,9 +106,11 @@ skeleton = NodePath("")
 
 [node name="DiamondSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_i3ig4")
+bus = &"Sound"
 
 [node name="ThunderSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_4aox7")
+bus = &"Sound"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(1, 0.862745, 0.478431, 1)
