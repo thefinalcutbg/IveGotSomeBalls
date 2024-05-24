@@ -2,9 +2,9 @@ extends Node
 
 const settingsPath : String = "user://settings.json"
 
-enum SET { RES = 0, MODE = 1, SYNC = 2, FX = 3, MUSIC = 4, SPEEDRUN = 5}
+enum SET { RES , MODE , MSAA, SYNC, FX, MUSIC, SPEEDRUN}
 
-var _settings : Array = [8,0,0,4,4,0]
+var _settings : Array = [8,0,0,0,4,4,0]
 
 const _constants = [
 	[
@@ -23,6 +23,13 @@ const _constants = [
 	[
 	 DisplayServer.WINDOW_MODE_FULLSCREEN,
 	 DisplayServer.WINDOW_MODE_MAXIMIZED
+	],
+	[
+		Viewport.MSAA_DISABLED,
+		Viewport.MSAA_2X,
+		Viewport.MSAA_4X,
+		Viewport.MSAA_8X,
+		Viewport.MSAA_MAX
 	],
 	[
 	 DisplayServer.VSYNC_DISABLED,
@@ -49,6 +56,7 @@ const _text = [
 		"3840x2160"
 	],
 	["FULLSCREEN","WINDOWED"],
+	["Disabled", "2x", "4x", "8x", "Max"],
 	["DISABLED", "ENABLED", "ADAPTIVE"],
 	["0%", "25%", "50%", "75%", "100%"],
 	["0%", "25%", "50%", "75%", "100%"],
@@ -96,6 +104,9 @@ func _set_value(option : SET, value : int) :
 			get_viewport().content_scale_size = _constants[SET.RES][value]
 		SET.MODE:
 			DisplayServer.window_set_mode(_constants[SET.MODE][value])
+		SET.MSAA:
+			get_viewport().msaa_2d = _constants[SET.MSAA][value]
+			get_viewport().msaa_3d = _constants[SET.MSAA][value]
 		SET.SYNC:
 			DisplayServer.window_set_vsync_mode(value)
 		SET.FX:
@@ -111,7 +122,7 @@ func _set_value(option : SET, value : int) :
 
 func get_label_text(index : int)->String:
 	
-	const descr = ["Resolution: ", "Window Mode: ", "VSync: ", "Sound: ", "Music: ", "Speedrun Timer: " ]
+	const descr = ["Resolution: ", "Window Mode: ", "Anti-Aliasing: ", "VSync: ", "Sound: ", "Music: ", "Speedrun Timer: " ]
 	
 	return descr[index] + _text[index][_settings[index]]
 
