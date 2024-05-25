@@ -113,7 +113,7 @@ func close_ingame_menu():
 
 func _update_hud():
 	
-	var playerSpeed = str($Player.linear_velocity.length()).pad_decimals(0)
+	var playerSpeed = str($Player.linear_velocity.length()).pad_decimals(2)
 	
 	$HUD/Speed.text = "SPEED: " + playerSpeed + "KMH"
 	
