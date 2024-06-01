@@ -29,9 +29,11 @@ func _physics_process(delta):
 	var input := Vector3.ZERO
 	input.x = Globals.normalize_axis(Input.get_axis("ui_left", "ui_right"))
 	input.z = Globals.normalize_axis(Input.get_axis("ui_up", "ui_down"))
+	
+	#var angle = rad_to_deg(input.angle_to(linear_velocity))
 
 	var force = $CameraPivot.basis * input * 0.28
-
+	
 	_rotate_camera()
 	
 	if m_powerup == Globals.POWERUP.SPEED: force*=_speed_coef
