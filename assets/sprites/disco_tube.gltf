@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.1.63",
+		"generator":"Khronos glTF Blender I/O v3.6.28",
 		"version":"2.0"
 	},
 	"scene":0,
@@ -15,7 +15,12 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"tube-col"
+			"name":"tube-col",
+			"translation":[
+				0,
+				0.008947988972067833,
+				0
+			]
 		}
 	],
 	"materials":[
@@ -64,61 +69,61 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":18176,
+			"count":10752,
 			"max":[
-				2.8095340728759766,
+				3.01585054397583,
 				1.7629404067993164,
 				0.7022560238838196
 			],
 			"min":[
 				-4.547304630279541,
 				-1.27190101146698,
-				-0.7022563815116882
+				-0.7022561430931091
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":18176,
+			"count":10752,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":18176,
+			"count":10752,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":27264,
+			"count":16128,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":218112,
+			"byteLength":129024,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":218112,
-			"byteOffset":218112,
+			"byteLength":129024,
+			"byteOffset":129024,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":145408,
-			"byteOffset":436224,
+			"byteLength":86016,
+			"byteOffset":258048,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":54528,
-			"byteOffset":581632,
+			"byteLength":32256,
+			"byteOffset":344064,
 			"target":34963
 		}
 	],
@@ -130,7 +135,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":636160,
+			"byteLength":376320,
 			"uri":"disco_tube.bin"
 		}
 	]
