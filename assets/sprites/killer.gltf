@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.1.63",
+		"generator":"Khronos glTF Blender I/O v3.6.28",
 		"version":"2.0"
 	},
 	"extensionsUsed":[
@@ -183,19 +183,24 @@
 		{
 			"mesh":15,
 			"name":"cube-col",
+			"scale":[
+				0.8655493855476379,
+				1,
+				0.8655493855476379
+			],
 			"translation":[
-				-16.6911563873291,
+				-16.2565975189209,
 				8.566131591796875,
-				-10.357643127441406
+				-10.038195610046387
 			]
 		},
 		{
 			"mesh":16,
 			"name":"lamp-col.004",
 			"translation":[
-				-16.85679817199707,
+				-16.422239303588867,
 				13.381336212158203,
-				-10.543586730957031
+				-10.224139213562012
 			]
 		}
 	],
@@ -214,7 +219,11 @@
 			"doubleSided":true,
 			"extensions":{
 				"KHR_materials_specular":{
-					"specularFactor":0
+					"specularColorFactor":[
+						0,
+						0,
+						0
+					]
 				},
 				"KHR_materials_ior":{
 					"ior":1.4500000476837158
@@ -876,7 +885,7 @@
 			"min":[
 				-14.456549644470215,
 				-0.6432743072509766,
-				1.546051025390625
+				2.0413436889648438
 			],
 			"type":"VEC3"
 		},

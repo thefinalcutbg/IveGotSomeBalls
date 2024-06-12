@@ -98,16 +98,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43825, 0.569261, -11.6176)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.93725, 0.569261, -11.6176)
 
 [node name="16" parent="Diamonds" instance=ExtResource("2_qdkeq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4392, 12.9763, -10.9976)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9049, 12.9763, -10.6164)
 
 [node name="17" parent="Diamonds" instance=ExtResource("2_qdkeq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4532, 12.9763, -9.74758)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9123, 12.9763, -9.479)
 
 [node name="18" parent="Diamonds" instance=ExtResource("2_qdkeq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0912, 12.9763, -10.9916)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.79, 12.9763, -10.6049)
 
 [node name="19" parent="Diamonds" instance=ExtResource("2_qdkeq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0912, 12.9763, -9.76558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7832, 12.9763, -9.51036)
 
 [node name="StaticLights" type="Node" parent="."]
 
@@ -128,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6131, 9.59477, -3.64996)
 pixel_size = 0.0005
 
 [node name="LightSphere17" parent="StaticLights" instance=ExtResource("6_o3pec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7176, 13.7927, -10.4426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2636, 13.7927, -10.0422)
 pixel_size = 0.0005
 
 [node name="OmniLight3D" type="OmniLight3D" parent="StaticLights"]
@@ -156,7 +156,7 @@ omni_range = 1.0
 omni_attenuation = 2.0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="StaticLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7382, 13.2556, -10.403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3134, 13.3932, -10.0604)
 light_energy = 6.0
 omni_range = 1.0
 omni_attenuation = 2.0

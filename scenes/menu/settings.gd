@@ -106,6 +106,12 @@ func _set_value(option : SET, value : int) :
 			get_viewport().content_scale_size = _constants[SET.RES][value]
 		SET.MODE:
 			DisplayServer.window_set_mode(_constants[SET.MODE][value])
+			
+			if DisplayServer.window_get_mode() == Window.MODE_FULLSCREEN:
+				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+			else: 
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				
 		SET.MSAA:
 			get_viewport().msaa_2d = _constants[SET.MSAA][value]
 			get_viewport().msaa_3d = _constants[SET.MSAA][value]

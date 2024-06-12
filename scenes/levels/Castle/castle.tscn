@@ -343,7 +343,7 @@ transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -6.01123, -
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -6.01123, -3.42247, -60.2361)
 
 [node name="10" parent="Diamonds" instance=ExtResource("3_u8p7g")]
-transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -4.88923, -3.42247, -61.5191)
+transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -4.889, -3.422, -61.483)
 
 [node name="11" parent="Diamonds" instance=ExtResource("3_u8p7g")]
 transform = Transform3D(1.00134, 0, 0, 0, 1.00134, 0, 0, 0, 1.00134, -0.692226, -3.42247, -61.4831)
