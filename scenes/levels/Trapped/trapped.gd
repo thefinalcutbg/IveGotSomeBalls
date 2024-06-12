@@ -4,7 +4,8 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$trapped/light.cast_shadow = false
-	$trapped/light_001.cast_shadow = false
+#	$trapped/light_001.cast_shadow = false
+	$trapped/AnimationPlayer.play("CubeAction")
 	pass # Replace with function body.
 
 

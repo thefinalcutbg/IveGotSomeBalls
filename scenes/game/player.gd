@@ -2,7 +2,7 @@ extends RigidBody3D
 
 #some constants
 const _break_coef = 0.004
-const _speed_coef = 2.5
+
 var jump_coef = [3,3.5,4.5,6.5] #for each successive jump
 var body_collisions : Array #stores the bodies the player is colling with
 
@@ -24,15 +24,24 @@ var collision := false
 func _ready():
 	pass
 
+const _speed_coef = 2.5
+
 func _physics_process(delta):
 	
 	var input := Vector3.ZERO
 	input.x = Globals.normalize_axis(Input.get_axis("ui_left", "ui_right"))
 	input.z = Globals.normalize_axis(Input.get_axis("ui_up", "ui_down"))
-	
-	#var angle = rad_to_deg(input.angle_to(linear_velocity))
 
-	var force = $CameraPivot.basis * input * 0.28
+
+	var force = $CameraPivot.basis * input
+
+	var coef = 0.28
+	
+	var angle = rad_to_deg(force.angle_to(linear_velocity))
+	#modify coef here according to angle:
+	#if angle > 90: coef += angle*0.003
+	
+	force *= coef
 	
 	_rotate_camera()
 	
@@ -47,7 +56,6 @@ func _physics_process(delta):
 	processJump()
 	
 	processBreak()
-
 
 func set_powerup(pw):
 	
@@ -95,7 +103,7 @@ func set_thunder_range(radius):
 	$ThunderRange/CollisionShape3D.shape.radius = radius
 
 func respawn():
-	
+	#resetting all parameters to default
 	jump_guard = false
 	linear_velocity = Vector3.ZERO
 	global_position = Vector3(0,0.3,0)
@@ -103,6 +111,7 @@ func respawn():
 	physics_material_override.bounce = 0.6
 	gravity_scale = 1
 	jump_coef = [3,3.5,4.5]
+	jump_index = 0
 	set_thunder_range(1.5)
 	m_powerup = Globals.POWERUP.NONE
 	$MeshInstance3D.mesh.material.albedo_color = Color("WHITE", 1)
