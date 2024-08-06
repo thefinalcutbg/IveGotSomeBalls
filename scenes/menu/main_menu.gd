@@ -79,6 +79,7 @@ func _on_main_menu_labels_option_selected(label_name):
 func _on_sub_menu_menu_canceled():
 	
 	SUBMENU.disable_input = true
+	_section = MENU_SECTION.NONE
 	$AnimationPlayer.play("ComeOut")
 
 
@@ -90,9 +91,7 @@ func _on_sub_menu_option_selected(index):
 		MENU_SECTION.SINGLE:
 			var level_name = SUBMENU.get_label_text(index)
 			get_tree().get_current_scene().play_level(level_name)
-			return
 		MENU_SECTION.SETUP:
 			SETTINGS.settings_changed(index)
 			SUBMENU.change_current_text(SETTINGS.get_label_text(index))
-			return
 		
