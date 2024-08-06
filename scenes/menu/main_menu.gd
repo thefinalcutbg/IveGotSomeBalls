@@ -90,7 +90,9 @@ func _on_sub_menu_option_selected(index):
 		MENU_SECTION.SINGLE:
 			var level_name = SUBMENU.get_label_text(index)
 			get_tree().get_current_scene().play_level(level_name)
+			return
 		MENU_SECTION.SETUP:
 			SETTINGS.settings_changed(index)
 			SUBMENU.change_current_text(SETTINGS.get_label_text(index))
+			return
 		
