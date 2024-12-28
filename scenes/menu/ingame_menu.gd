@@ -21,6 +21,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_down"): direction = 1
 	
 	if direction == 0: return
+	#disable looping:
+	if direction == -1 and !_current_index: return;
+	if direction == 1 and _current_index == _option_arr.size()-1: return;
 	
 	var max = _option_arr.size()-1
 	
