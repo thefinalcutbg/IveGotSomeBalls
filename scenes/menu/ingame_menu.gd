@@ -25,13 +25,14 @@ func _process(delta):
 	if direction == -1 and !_current_index: return;
 	if direction == 1 and _current_index == _option_arr.size()-1: return;
 	
-	var max = _option_arr.size()-1
+#	var max = _option_arr.size()-1
 	
-	if direction == 1 and _current_index == max:
-		_select_label(0)
-	elif direction == -1 and _current_index == 0:
-		_select_label(max)
-	else: _select_label(_current_index + direction)
+#	if direction == 1 and _current_index == max:
+#		_select_label(0)
+#	elif direction == -1 and _current_index == 0:
+#		_select_label(max)
+#	else: 
+	_select_label(_current_index + direction)
 	
 func add_label(text, option):
 	
