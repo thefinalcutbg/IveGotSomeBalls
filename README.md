@@ -6,8 +6,6 @@ Remake of the 1999 freeware game I've Got Some BALLS by Sebastian Aaltonen. Real
 Open the project.godot file with Godot 4.2
 
 ## TO DO:
-- Main menu original shader
-- Lightning shader
 - Replays
 - Fix out-of-nowhere collisions
 
