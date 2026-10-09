@@ -6,6 +6,7 @@ var _level_path : String
 var _level_name : String
 var _level_best : float
 var total_playtime : float = 0
+var _active_thunder: Node3D
 
 
 const LEVELLABEL = preload("res://scenes/game/level_label.tscn")
@@ -103,8 +104,13 @@ func show_speedrun():
 
 func spawn_thunder(player, diamond):
 	
+	if is_instance_valid(_active_thunder):
+		_active_thunder.hide()
+		_active_thunder.queue_free()
+
 	var thunder = THUNDER_BOLT.instantiate()
 	thunder.set_connectors(player, diamond)
+	_active_thunder = thunder
 	add_child(thunder)
 	$Audio/ThunderSound.play()
 
